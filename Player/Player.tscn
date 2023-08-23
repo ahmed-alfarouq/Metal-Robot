@@ -1,0 +1,356 @@
+[gd_scene load_steps=78 format=3 uid="uid://d0lawabjt843t"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_es8tr"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://GD0.1_Assets/Animation/Flying/flying0001.png" id="1_huamq"]
+[ext_resource type="Texture2D" uid="uid://dl3lkptdb6ack" path="res://GD0.1_Assets/Animation/Boom/boom0001.png" id="2_cxv6i"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://GD0.1_Assets/Animation/Flying/flying0002.png" id="2_veeqa"]
+[ext_resource type="Texture2D" uid="uid://cfh6lqnnrxj3l" path="res://GD0.1_Assets/Animation/Boom/boom0002.png" id="3_bkeyt"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://GD0.1_Assets/Animation/Flying/flying0003.png" id="3_y02gf"]
+[ext_resource type="Texture2D" uid="uid://cckfghw7ojues" path="res://GD0.1_Assets/Animation/Boom/boom0003.png" id="4_21b1v"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://GD0.1_Assets/Animation/Flying/flying0004.png" id="4_w7avw"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://GD0.1_Assets/Animation/Flying/flying0005.png" id="5_c22n7"]
+[ext_resource type="Texture2D" uid="uid://b1k84umn2f45s" path="res://GD0.1_Assets/Animation/Boom/boom0004.png" id="5_nuald"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://GD0.1_Assets/Animation/Flying/flying0006.png" id="6_eq1sm"]
+[ext_resource type="Texture2D" uid="uid://cqaq3yqb2qd5w" path="res://GD0.1_Assets/Animation/Boom/boom0005.png" id="6_lyew7"]
+[ext_resource type="Texture2D" uid="uid://6n1g4kva8cu2" path="res://GD0.1_Assets/Animation/Boom/boom0006.png" id="7_2osqj"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://GD0.1_Assets/Animation/Flying/flying0007.png" id="7_273wx"]
+[ext_resource type="Texture2D" uid="uid://bpj7qqsltoxji" path="res://GD0.1_Assets/Animation/Boom/boom0007.png" id="8_gy5b0"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://GD0.1_Assets/Animation/Flying/flying0008.png" id="8_r8y5j"]
+[ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://GD0.1_Assets/Animation/Boom/boom0008.png" id="9_554lm"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://GD0.1_Assets/Animation/Flying/flying0009.png" id="9_mjhsh"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://GD0.1_Assets/Animation/Flying/flying0010.png" id="10_cru67"]
+[ext_resource type="Texture2D" uid="uid://bf0qxhthv2ax" path="res://GD0.1_Assets/Animation/Boom/boom0009.png" id="10_fk8ky"]
+[ext_resource type="Texture2D" uid="uid://duf5ppuxqvb7w" path="res://GD0.1_Assets/Animation/Boom/boom0010.png" id="11_jgcyx"]
+[ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://GD0.1_Assets/Animation/Boom/boom0011.png" id="12_xa28n"]
+[ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://GD0.1_Assets/Animation/Boom/boom0012.png" id="13_krtr4"]
+[ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://GD0.1_Assets/Animation/Boom/boom0013.png" id="14_6jnnt"]
+[ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://GD0.1_Assets/Animation/Boom/boom0014.png" id="15_nf582"]
+[ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://GD0.1_Assets/Animation/Boom/boom0015.png" id="16_a0r6g"]
+[ext_resource type="Texture2D" uid="uid://dcbth6cnbttwb" path="res://GD0.1_Assets/Animation/Boom/boom0016.png" id="17_6h8qu"]
+[ext_resource type="Texture2D" uid="uid://io0eyq6t3oj0" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun01.png" id="18_eem0r"]
+[ext_resource type="Texture2D" uid="uid://muapesuy2j3u" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun02.png" id="19_d0rf1"]
+[ext_resource type="Texture2D" uid="uid://datg45mkam58o" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun03.png" id="20_ia6bn"]
+[ext_resource type="Texture2D" uid="uid://x77etw120nnn" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun04.png" id="21_a58ie"]
+[ext_resource type="Texture2D" uid="uid://4vsct2mgrhb7" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun05.png" id="22_5xhu8"]
+[ext_resource type="Texture2D" uid="uid://dk4dtb0yscn4p" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun06.png" id="23_qj10a"]
+[ext_resource type="Texture2D" uid="uid://cu33to5j83pb" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun07.png" id="24_cdsrb"]
+[ext_resource type="Texture2D" uid="uid://cjim4g4feblvw" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun08.png" id="25_qbap6"]
+[ext_resource type="Texture2D" uid="uid://c7tuf5meop7ic" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun09.png" id="26_6m3pi"]
+[ext_resource type="Texture2D" uid="uid://o4fqrkdjttaq" path="res://GD0.1_Assets/Animation/Droping Gun/droping_gun10.png" id="27_crsmb"]
+[ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun01.png" id="38_s6c84"]
+[ext_resource type="Texture2D" uid="uid://c8wfdyko7ih7y" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun02.png" id="39_12bh7"]
+[ext_resource type="Texture2D" uid="uid://eqphwof1ksng" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun03.png" id="40_0xsbn"]
+[ext_resource type="Texture2D" uid="uid://qom8gu2xf8hi" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun04.png" id="41_n5dnx"]
+[ext_resource type="Texture2D" uid="uid://bkj28ol70011o" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun05.png" id="42_7l7kv"]
+[ext_resource type="Texture2D" uid="uid://00sxfu81grx6" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun06.png" id="43_rsxoc"]
+[ext_resource type="Texture2D" uid="uid://bi4lo3ymble7s" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun07.png" id="44_jq21n"]
+[ext_resource type="Texture2D" uid="uid://1ov5kqepppia" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun08.png" id="45_32awv"]
+[ext_resource type="Texture2D" uid="uid://b56550gfotx55" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun09.png" id="46_vb1qq"]
+[ext_resource type="Texture2D" uid="uid://54oexyd3nres" path="res://GD0.1_Assets/Animation/Holding Gun/holding_gun10.png" id="47_14vj7"]
+[ext_resource type="Texture2D" uid="uid://b07a0nsxjt2jn" path="res://GD0.1_Assets/Animation/Landing/landing0001.png" id="48_py51r"]
+[ext_resource type="Texture2D" uid="uid://cm5eh8tc064h4" path="res://GD0.1_Assets/Animation/Landing/landing0002.png" id="49_8vyrx"]
+[ext_resource type="Texture2D" uid="uid://bnilwg232shq2" path="res://GD0.1_Assets/Animation/Landing/landing0003.png" id="50_pd34a"]
+[ext_resource type="Texture2D" uid="uid://cjx0k6s2upn61" path="res://GD0.1_Assets/Animation/Landing/landing0004.png" id="51_p4sd0"]
+[ext_resource type="Texture2D" uid="uid://db2vgql4v1o54" path="res://GD0.1_Assets/Animation/Landing/landing0005.png" id="52_5hews"]
+[ext_resource type="Texture2D" uid="uid://dsw0a63ql087b" path="res://GD0.1_Assets/Animation/Landing/landing0006.png" id="53_eju31"]
+[ext_resource type="Texture2D" uid="uid://d3voeunbcdeox" path="res://GD0.1_Assets/Animation/Landing/landing0007.png" id="54_xaplo"]
+[ext_resource type="Texture2D" uid="uid://dstgkwvnu0voj" path="res://GD0.1_Assets/Animation/Landing/landing0008.png" id="55_dtul4"]
+[ext_resource type="Texture2D" uid="uid://hc8vodxw6blv" path="res://GD0.1_Assets/Animation/Landing/landing0009.png" id="56_16c5t"]
+[ext_resource type="Texture2D" uid="uid://cf6se1kmawj" path="res://GD0.1_Assets/Animation/Landing/landing0010.png" id="57_ldbwa"]
+[ext_resource type="Texture2D" uid="uid://dj0n6scedl6xj" path="res://GD0.1_Assets/Animation/Landing/landing0011.png" id="58_7dviy"]
+[ext_resource type="Texture2D" uid="uid://dmm04vbkmr0s0" path="res://GD0.1_Assets/Animation/Landing/landing0012.png" id="59_pd75j"]
+[ext_resource type="Texture2D" uid="uid://bgqdnjgk36c7v" path="res://GD0.1_Assets/Animation/Landing/landing0013.png" id="60_dth1e"]
+[ext_resource type="Texture2D" uid="uid://q7t1hsnniqvf" path="res://GD0.1_Assets/Animation/Landing/landing0014.png" id="61_fvoa0"]
+[ext_resource type="Texture2D" uid="uid://dbjjx3ghlsyeg" path="res://GD0.1_Assets/Animation/Landing/landing0015.png" id="62_65ubl"]
+[ext_resource type="Texture2D" uid="uid://ve1s42u67p65" path="res://GD0.1_Assets/Animation/Landing/landing0016.png" id="63_bqlms"]
+[ext_resource type="Texture2D" uid="uid://dtsicesas4q6p" path="res://GD0.1_Assets/Animation/shooting/shooting01.png" id="64_5ehpg"]
+[ext_resource type="Texture2D" uid="uid://bjsxueqrlsnvq" path="res://GD0.1_Assets/Animation/shooting/shooting02.png" id="65_7bo8j"]
+[ext_resource type="Texture2D" uid="uid://vxj8v2e5ust8" path="res://GD0.1_Assets/Animation/shooting/shooting03.png" id="66_xpajm"]
+[ext_resource type="Texture2D" uid="uid://1raygit23x5j" path="res://GD0.1_Assets/Animation/shooting/shooting04.png" id="67_t1eyr"]
+[ext_resource type="Texture2D" uid="uid://lcbti8and7jk" path="res://GD0.1_Assets/Animation/shooting/shooting05.png" id="68_u7yeq"]
+[ext_resource type="Texture2D" uid="uid://bskeertwdafqa" path="res://GD0.1_Assets/Animation/shooting/shooting06.png" id="69_dnxbn"]
+[ext_resource type="Texture2D" uid="uid://dtxjl8vtn15x8" path="res://GD0.1_Assets/Animation/start flying/start flying0001.png" id="70_e1x55"]
+[ext_resource type="Texture2D" uid="uid://6ng83suuvhww" path="res://GD0.1_Assets/Animation/start flying/start flying0002.png" id="71_2rqyj"]
+[ext_resource type="Texture2D" uid="uid://m8otdodti5u" path="res://GD0.1_Assets/Animation/start flying/start flying0003.png" id="72_ouyp2"]
+[ext_resource type="Texture2D" uid="uid://ugrbxogugdah" path="res://GD0.1_Assets/Animation/start flying/start flying0004.png" id="73_hoxk4"]
+[ext_resource type="Texture2D" uid="uid://bfoq0vr8rk4rk" path="res://GD0.1_Assets/Animation/start flying/start flying0005.png" id="74_065sw"]
+[ext_resource type="Texture2D" uid="uid://c4qgml2x4w473" path="res://GD0.1_Assets/Animation/start flying/start flying0006.png" id="75_60oo2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ovdk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cxv6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bkeyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_21b1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nuald")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyew7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2osqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gy5b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_554lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fk8ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jgcyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xa28n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_krtr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6jnnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nf582")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a0r6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6h8qu")
+}],
+"loop": false,
+"name": &"Boom",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_eem0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d0rf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ia6bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a58ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5xhu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qj10a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cdsrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qbap6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6m3pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_crsmb")
+}],
+"loop": false,
+"name": &"DropingGun",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_huamq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_veeqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y02gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w7avw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c22n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eq1sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_273wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r8y5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mjhsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cru67")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_s6c84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_12bh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0xsbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_n5dnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_7l7kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rsxoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_jq21n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_32awv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vb1qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_14vj7")
+}],
+"loop": false,
+"name": &"HoldingGun",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_py51r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_8vyrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_pd34a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_p4sd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_5hews")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_eju31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xaplo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dtul4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_16c5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ldbwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_7dviy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_pd75j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_dth1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_fvoa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_65ubl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_bqlms")
+}],
+"loop": false,
+"name": &"Landing",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_5ehpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_7bo8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_xpajm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_t1eyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_u7yeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_dnxbn")
+}],
+"loop": true,
+"name": &"Shooting",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("70_e1x55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_2rqyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ouyp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_hoxk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_065sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_60oo2")
+}],
+"loop": false,
+"name": &"StartFlying",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
+radius = 96.0
+height = 416.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_es8tr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(619, 190)
+sprite_frames = SubResource("SpriteFrames_3ovdk")
+animation = &"DropingGun"
+frame = 9
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(614, 212)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vvetr")
