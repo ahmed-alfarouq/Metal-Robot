@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw0grikohtfk8"]
+
+[ext_resource type="Script" path="res://Levels/main_level.gd" id="1_sboco"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://GD0.1_Assets/BG.png" id="1_wmajo"]
+[ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
+[ext_resource type="Script" path="res://Areas/DeathArea.gd" id="3_7idnb"]
+[ext_resource type="PackedScene" uid="uid://rvxogge66w3e" path="res://Ground/Ground.tscn" id="4_me5hj"]
+[ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="5_oxsvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
+size = Vector2(1315, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkie"]
+size = Vector2(42, 621)
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_sboco")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(639, 225)
+scale = Vector2(0.31981, 0.31981)
+texture = ExtResource("1_wmajo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.3, 0.3)
+anchor_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("2_0l13n")]
+scale = Vector2(0.25, 0.25)
+
+[node name="TopBlocker" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBlocker"]
+position = Vector2(623.5, -2)
+shape = SubResource("RectangleShape2D_hl534")
+
+[node name="DeathArea" type="Area2D" parent="."]
+script = ExtResource("3_7idnb")
+
+[node name="Death" type="CollisionShape2D" parent="DeathArea"]
+position = Vector2(622, 615)
+shape = SubResource("RectangleShape2D_hl534")
+
+[node name="BackBlocker" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackBlocker"]
+position = Vector2(-21, 301)
+shape = SubResource("RectangleShape2D_rtkie")
+
+[node name="PipeSpawner" parent="." instance=ExtResource("5_oxsvb")]
+
+[node name="Land" parent="." instance=ExtResource("4_me5hj")]
+z_index = 1
+position = Vector2(0, 760)
+
+[connection signal="body_entered" from="DeathArea" to="Player" method="_on_death_area_body_entered"]

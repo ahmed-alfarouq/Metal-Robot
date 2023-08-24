@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqbachg4pcrpt"]
+
+[ext_resource type="Script" path="res://pipes/scripts/pipe_spawner.gd" id="1_fqmjh"]
+
+[node name="PipeSpawner" type="Node"]
+script = ExtResource("1_fqmjh")
+
+[node name="IncreaseSpeedTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="IncreaseSpeedTimer" to="." method="_on_increase_speed_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
