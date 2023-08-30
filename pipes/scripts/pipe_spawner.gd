@@ -4,6 +4,9 @@ const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 @onready var main = get_node("/root/MainLevel")
 @onready var pipeSpeed = 200
 
+func _ready():
+	spawnPipe()
+
 func spawnPipe():
 	var screen = get_viewport().get_camera_2d().get_viewport_rect()
 	var pipe = PIPEPAIR.instantiate()
@@ -25,4 +28,7 @@ func _on_increase_speed_timer_timeout():
 func stop():
 	$SpawnTimer.stop()
 	$IncreaseSpeedTimer.stop()
-	print($SpawnTimer.is_stopped())
+
+
+func _on_player_dies():
+	stop()

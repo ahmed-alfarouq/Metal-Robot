@@ -1,0 +1,111 @@
+[gd_scene load_steps=17 format=3 uid="uid://kjhtoh7ob4ct"]
+
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_igddr"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="4_r6avk"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="5_kaycp"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="6_ilqe5"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="7_cgvam"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="8_3vk27"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="9_m78xy"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="10_1d1i3"]
+[ext_resource type="Script" path="res://Levels/Scripts/main_menu.gd" id="10_6cxru"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="10_aq2rm"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="11_nfjsf"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_w63up"]
+
+[sub_resource type="Animation" id="Animation_g0yea"]
+resource_name = "Flying"
+length = 0.70001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("4_r6avk"), ExtResource("5_kaycp"), ExtResource("5_kaycp"), ExtResource("5_kaycp"), ExtResource("6_ilqe5"), ExtResource("7_cgvam"), ExtResource("8_3vk27"), ExtResource("9_m78xy"), ExtResource("10_1d1i3"), ExtResource("11_w63up")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150, 300), Vector2(150, 330)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgnfw"]
+_data = {
+"Flying": SubResource("Animation_g0yea")
+}
+
+[sub_resource type="Theme" id="Theme_k123p"]
+default_font = ExtResource("11_nfjsf")
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_v2cod"]
+default_font = ExtResource("11_nfjsf")
+default_font_size = 30
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(1221, -145)
+scale = Vector2(0.605987, 0.605987)
+texture = ExtResource("1_igddr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.3, 0.3)
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(150, 322.601)
+scale = Vector2(0.394689, 0.394689)
+texture = ExtResource("7_cgvam")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Flying"
+libraries = {
+"": SubResource("AnimationLibrary_mgnfw")
+}
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+script = ExtResource("10_6cxru")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
+offset_left = 437.0
+offset_top = 50.0
+offset_right = 1283.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("10_aq2rm")
+theme_override_font_sizes/normal_font_size = 220
+text = "Metal Robot"
+fit_content = true
+
+[node name="Play" type="Button" parent="MainMenu"]
+offset_left = 573.0
+offset_top = 284.0
+offset_right = 1054.0
+offset_bottom = 393.0
+theme = SubResource("Theme_k123p")
+text = "Play"
+
+[node name="Exit" type="Button" parent="MainMenu"]
+offset_left = 572.0
+offset_top = 439.0
+offset_right = 1055.0
+offset_bottom = 547.0
+theme = SubResource("Theme_v2cod")
+text = "Exit"
+
+[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Exit" to="MainMenu" method="_on_exit_pressed"]

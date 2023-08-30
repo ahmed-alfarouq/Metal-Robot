@@ -1,44 +1,62 @@
 extends CharacterBody2D
 
+signal player_dies
+
+# On Ready vars
 @onready var main = get_node("/root/MainLevel")
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var anim = $AnimatedSprite2D
+@onready var animTree = $AnimationTree
+@onready var landingSound = $Landing
 
 func _ready():
-	anim.play("Landing")
+	animTree.active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	handleGravity()
+	# Apply gravity when shooting state is not applied
+	if (!main.isShooting):
+		handleGravity()
+
 	handleFlying()
+	handleAnimation()
 	move_and_slide()
+
 
 func handleGravity():
 	velocity.y = gravity
 	# Rotate player while falling but not more than 15deg
-	if (rad_to_deg(rotation) < 15):
+	# And don't rotate it if space bar is pressed because it will cause a shaking state
+	if (rad_to_deg(rotation) < 8 && !Input.is_action_pressed("Fly")):
 		rotation += deg_to_rad(0.6)
-	
-	if (Input.is_action_just_released("Fly") && !main.isDead):
-		anim.play("Landing")
-	
-func handleFlying():
-	# Play start flying animation when player clicks space bar
-	if (Input.is_action_just_pressed("Fly") && !main.isDead):
-		anim.play("StartFlying")
 
-	# Keep playing flying animation when player clicks space bar
+
+# Handle start flying & flying animation
+func handleFlying():
 	if(Input.is_action_pressed("Fly") && !main.isDead):
-		velocity.y = -400
+		velocity.y = -200
 		if (rad_to_deg(rotation) > 0):
 			rotation -= deg_to_rad(1.5)
-		anim.play("Flying")
+
+# Hanlde animation
+func handleAnimation():
+	if (Input.is_action_pressed("Fly") && !main.isDead):
+		animTree["parameters/conditions/landing"] = false
+		animTree["parameters/conditions/flying"] = true
+	elif (Input.is_action_just_released("Fly") && !main.isDead):
+		animTree["parameters/conditions/landing"] = true
+		animTree["parameters/conditions/flying"] = false
+		if (Input.is_action_just_released("Fly")):
+			landingSound.play()
+
+
+func playerDies():
+	player_dies.emit()
+	main.isDead = true
+	animTree["parameters/conditions/dead"] = true
+
 
 # Destroy player when hitting the ground
 func _on_death_area_body_entered(body):
-	if (body.name == "Player" && !main.isDead):
-		main.isDead = true
-		anim.play("Boom")
-		await get_tree().create_timer(0.55).timeout
-		request_ready()
+	if (body.name == "Player"):
+		playerDies()
 

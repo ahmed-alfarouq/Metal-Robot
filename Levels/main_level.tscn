@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=14 format=3 uid="uid://bw0grikohtfk8"]
 
-[ext_resource type="Script" path="res://Levels/main_level.gd" id="1_sboco"]
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://GD0.1_Assets/BG.png" id="1_wmajo"]
+[ext_resource type="Script" path="res://Levels/Scripts/main_level.gd" id="1_q0odo"]
 [ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="2_02560"]
 [ext_resource type="Script" path="res://Areas/DeathArea.gd" id="3_7idnb"]
 [ext_resource type="PackedScene" uid="uid://rvxogge66w3e" path="res://Ground/Ground.tscn" id="4_me5hj"]
-[ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="5_oxsvb"]
+[ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="6_v00j5"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="7_2x16l"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="7_ahjvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
 size = Vector2(1315, 16)
@@ -13,19 +15,30 @@ size = Vector2(1315, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkie"]
 size = Vector2(42, 621)
 
+[sub_resource type="Theme" id="Theme_nlskd"]
+default_font = ExtResource("7_ahjvr")
+
+[sub_resource type="Theme" id="Theme_jwgu0"]
+default_font = ExtResource("7_ahjvr")
+
+[sub_resource type="Theme" id="Theme_3mngd"]
+default_font = ExtResource("7_ahjvr")
+default_font_size = 55
+
 [node name="MainLevel" type="Node2D"]
-script = ExtResource("1_sboco")
+script = ExtResource("1_q0odo")
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(639, 225)
-scale = Vector2(0.31981, 0.31981)
-texture = ExtResource("1_wmajo")
+position = Vector2(814.341, 43.6379)
+scale = Vector2(0.403008, 0.403008)
+texture = ExtResource("2_02560")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.3, 0.3)
 anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
+z_index = 1
 scale = Vector2(0.25, 0.25)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]
@@ -47,10 +60,78 @@ shape = SubResource("RectangleShape2D_hl534")
 position = Vector2(-21, 301)
 shape = SubResource("RectangleShape2D_rtkie")
 
-[node name="PipeSpawner" parent="." instance=ExtResource("5_oxsvb")]
-
-[node name="Land" parent="." instance=ExtResource("4_me5hj")]
+[node name="Ground" parent="." instance=ExtResource("4_me5hj")]
 z_index = 1
 position = Vector2(0, 760)
 
+[node name="PipeSpawner" parent="." instance=ExtResource("6_v00j5")]
+
+[node name="loseMenu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Exit" type="Button" parent="loseMenu"]
+offset_left = 487.0
+offset_top = 494.0
+offset_right = 776.0
+offset_bottom = 553.0
+theme = SubResource("Theme_nlskd")
+text = "Exit"
+
+[node name="Replay" type="Button" parent="loseMenu"]
+offset_left = 486.0
+offset_top = 403.0
+offset_right = 776.0
+offset_bottom = 465.0
+theme = SubResource("Theme_jwgu0")
+text = "Replay"
+
+[node name="Name" type="RichTextLabel" parent="loseMenu"]
+offset_left = 228.0
+offset_top = 48.0
+offset_right = 1074.0
+offset_bottom = 268.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_2x16l")
+theme_override_font_sizes/normal_font_size = 220
+text = "Metal Robot"
+fit_content = true
+
+[node name="Score" type="RichTextLabel" parent="loseMenu"]
+offset_left = 448.0
+offset_top = 260.0
+offset_right = 905.0
+offset_bottom = 314.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_ahjvr")
+theme_override_font_sizes/normal_font_size = 35
+text = "Score:  "
+fit_content = true
+
+[node name="BestScore" type="RichTextLabel" parent="loseMenu"]
+offset_left = 445.0
+offset_top = 324.0
+offset_right = 1151.0
+offset_bottom = 378.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_ahjvr")
+theme_override_font_sizes/normal_font_size = 35
+text = "Best Score:"
+fit_content = true
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="Score"]
+offset_left = 557.0
+offset_top = 37.0
+offset_right = 597.0
+offset_bottom = 109.0
+theme = SubResource("Theme_3mngd")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+text = "1"
+
+[connection signal="player_dies" from="Player" to="." method="_on_player_player_dies"]
+[connection signal="player_dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
 [connection signal="body_entered" from="DeathArea" to="Player" method="_on_death_area_body_entered"]
+[connection signal="pressed" from="loseMenu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="loseMenu/Replay" to="." method="_on_replay_pressed"]
