@@ -6,6 +6,8 @@ const SAVE_FILE_PATH = "user://bestscore.save"
 @onready var score: float = 0
 @onready var bestScore: float = 0
 
+
+
 func _ready():
 	loadBestScore()
 
@@ -17,6 +19,7 @@ func _physics_process(_delta):
 		$loseMenu/Score.text = "Score: " + str(score)
 		$loseMenu/BestScore.text = "Best Score: " + str(max(bestScore, score))
 		$loseMenu.visible = true
+		$Score.visible = false
 
 func saveBestScore():
 	var saveFile = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)

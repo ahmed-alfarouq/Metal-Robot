@@ -1,7 +1,15 @@
-[gd_scene load_steps=59 format=3 uid="uid://d0lawabjt843t"]
+[gd_scene load_steps=106 format=3 uid="uid://d0lawabjt843t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_es8tr"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
 [ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://Assets/Animation/Boom/boom0008.png" id="2_giwfy"]
+[ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://Assets/Animation/Holding Gun/holding_gun01.png" id="2_gu7ph"]
+[ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://Assets/Animation/Boom/boom0012.png" id="14_qq02p"]
+[ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://Assets/Animation/Boom/boom0013.png" id="15_q3wht"]
+[ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://Assets/Animation/Boom/boom0014.png" id="16_7yl6m"]
+[ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://Assets/Animation/Boom/boom0015.png" id="17_abh6k"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="20_ofru1"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="21_pbaq1"]
 [ext_resource type="AudioStream" uid="uid://csjxxdmk1bije" path="res://Assets/Sounds/flying_1.wav" id="23_vt13o"]
 [ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="28_eq50e"]
 [ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="29_srcs8"]
@@ -22,18 +30,46 @@
 [ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://Assets/Animation/Boom/boom0011.png" id="39_lfvyk"]
 [ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://Assets/Sounds/Boom.wav" id="40_xleji"]
 [ext_resource type="AudioStream" uid="uid://b3umdnv7htq4r" path="res://Assets/Sounds/Landing.wav" id="41_giaxy"]
+[ext_resource type="Texture2D" uid="uid://c8wfdyko7ih7y" path="res://Assets/Animation/Holding Gun/holding_gun02.png" id="44_c3gv3"]
+[ext_resource type="Texture2D" uid="uid://eqphwof1ksng" path="res://Assets/Animation/Holding Gun/holding_gun03.png" id="45_s7jru"]
+[ext_resource type="Texture2D" uid="uid://qom8gu2xf8hi" path="res://Assets/Animation/Holding Gun/holding_gun04.png" id="46_2vk2m"]
+[ext_resource type="Texture2D" uid="uid://bkj28ol70011o" path="res://Assets/Animation/Holding Gun/holding_gun05.png" id="47_1622s"]
 [ext_resource type="Texture2D" uid="uid://b07a0nsxjt2jn" path="res://Assets/Animation/Landing/landing0001.png" id="48_33ckd"]
+[ext_resource type="Texture2D" uid="uid://00sxfu81grx6" path="res://Assets/Animation/Holding Gun/holding_gun06.png" id="48_pw7lk"]
 [ext_resource type="Texture2D" uid="uid://cm5eh8tc064h4" path="res://Assets/Animation/Landing/landing0002.png" id="49_vuasj"]
+[ext_resource type="Texture2D" uid="uid://bi4lo3ymble7s" path="res://Assets/Animation/Holding Gun/holding_gun07.png" id="49_yupkp"]
 [ext_resource type="Texture2D" uid="uid://bnilwg232shq2" path="res://Assets/Animation/Landing/landing0003.png" id="50_1k6l8"]
+[ext_resource type="Texture2D" uid="uid://1ov5kqepppia" path="res://Assets/Animation/Holding Gun/holding_gun08.png" id="50_c7dmq"]
 [ext_resource type="Texture2D" uid="uid://cjx0k6s2upn61" path="res://Assets/Animation/Landing/landing0004.png" id="51_t3gys"]
+[ext_resource type="Texture2D" uid="uid://b56550gfotx55" path="res://Assets/Animation/Holding Gun/holding_gun09.png" id="51_wpe7q"]
 [ext_resource type="Texture2D" uid="uid://db2vgql4v1o54" path="res://Assets/Animation/Landing/landing0005.png" id="52_em5dh"]
+[ext_resource type="Texture2D" uid="uid://54oexyd3nres" path="res://Assets/Animation/Holding Gun/holding_gun10.png" id="52_tjj7w"]
+[ext_resource type="AudioStream" uid="uid://2m11mq65gjcl" path="res://Assets/Sounds/Equip_gun.wav" id="53_n3m46"]
 [ext_resource type="Texture2D" uid="uid://dsw0a63ql087b" path="res://Assets/Animation/Landing/landing0006.png" id="53_wlbgx"]
 [ext_resource type="Texture2D" uid="uid://d3voeunbcdeox" path="res://Assets/Animation/Landing/landing0007.png" id="54_d8j3a"]
+[ext_resource type="Texture2D" uid="uid://io0eyq6t3oj0" path="res://Assets/Animation/Droping Gun/droping_gun01.png" id="54_pqwry"]
 [ext_resource type="Texture2D" uid="uid://dstgkwvnu0voj" path="res://Assets/Animation/Landing/landing0008.png" id="55_anjwt"]
+[ext_resource type="Texture2D" uid="uid://muapesuy2j3u" path="res://Assets/Animation/Droping Gun/droping_gun02.png" id="55_ckstt"]
 [ext_resource type="Texture2D" uid="uid://hc8vodxw6blv" path="res://Assets/Animation/Landing/landing0009.png" id="56_84b25"]
+[ext_resource type="Texture2D" uid="uid://datg45mkam58o" path="res://Assets/Animation/Droping Gun/droping_gun03.png" id="56_xlvxb"]
+[ext_resource type="Texture2D" uid="uid://x77etw120nnn" path="res://Assets/Animation/Droping Gun/droping_gun04.png" id="57_2b0vi"]
 [ext_resource type="Texture2D" uid="uid://cf6se1kmawj" path="res://Assets/Animation/Landing/landing0010.png" id="57_b68wx"]
 [ext_resource type="Texture2D" uid="uid://dj0n6scedl6xj" path="res://Assets/Animation/Landing/landing0011.png" id="58_d70xl"]
+[ext_resource type="Texture2D" uid="uid://4vsct2mgrhb7" path="res://Assets/Animation/Droping Gun/droping_gun05.png" id="58_g8u61"]
+[ext_resource type="Texture2D" uid="uid://dk4dtb0yscn4p" path="res://Assets/Animation/Droping Gun/droping_gun06.png" id="59_m0pfg"]
 [ext_resource type="Texture2D" uid="uid://dmm04vbkmr0s0" path="res://Assets/Animation/Landing/landing0012.png" id="59_uqc1y"]
+[ext_resource type="Texture2D" uid="uid://cu33to5j83pb" path="res://Assets/Animation/Droping Gun/droping_gun07.png" id="60_s6pgq"]
+[ext_resource type="Texture2D" uid="uid://cjim4g4feblvw" path="res://Assets/Animation/Droping Gun/droping_gun08.png" id="61_wie2i"]
+[ext_resource type="Texture2D" uid="uid://c7tuf5meop7ic" path="res://Assets/Animation/Droping Gun/droping_gun09.png" id="62_nky5l"]
+[ext_resource type="Texture2D" uid="uid://o4fqrkdjttaq" path="res://Assets/Animation/Droping Gun/droping_gun10.png" id="63_m3lx0"]
+[ext_resource type="AudioStream" uid="uid://cp4531lgaen6m" path="res://Assets/Sounds/drop_gun.wav" id="64_y0jrw"]
+[ext_resource type="Texture2D" uid="uid://c2t1xhxyelqtg" path="res://Assets/Animation/shooting/shooting01.png" id="65_l42ci"]
+[ext_resource type="Texture2D" uid="uid://dc7fq6nph0r1b" path="res://Assets/Animation/shooting/shooting02.png" id="66_2txk6"]
+[ext_resource type="AudioStream" uid="uid://wlvdr54p2unn" path="res://Assets/Sounds/shooting.wav" id="66_jw4id"]
+[ext_resource type="Texture2D" uid="uid://b0vtuak48nb8s" path="res://Assets/Animation/shooting/shooting03.png" id="67_25i1o"]
+[ext_resource type="Texture2D" uid="uid://cgfvhm2opuaaf" path="res://Assets/Animation/shooting/shooting04.png" id="68_8lqjd"]
+[ext_resource type="Texture2D" uid="uid://ba80c4egrvmw7" path="res://Assets/Animation/shooting/shooting05.png" id="69_rhkso"]
+[ext_resource type="Texture2D" uid="uid://bld08i8ce3d0t" path="res://Assets/Animation/shooting/shooting06.png" id="70_1slfd"]
 [ext_resource type="Texture2D" uid="uid://owmqacy7wp4b" path="res://Assets/Animation/start flying/start flying0001.png" id="70_1143r"]
 [ext_resource type="Texture2D" uid="uid://cj0fjxb8g3lgh" path="res://Assets/Animation/start flying/start flying0002.png" id="71_0c3uo"]
 [ext_resource type="Texture2D" uid="uid://dxfot7yteta6m" path="res://Assets/Animation/start flying/start flying0003.png" id="72_afe7p"]
@@ -48,11 +84,20 @@ height = 416.0
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5dx2"]
 animation = &"Boom"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fw2sn"]
+animation = &"DropGun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v2yl1"]
+animation = &"EquipGun"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8m4s"]
 animation = &"Flying"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f43v"]
 animation = &"Landing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ynn2q"]
+animation = &"Shooting"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wxj2p"]
 animation = &"StartFlying"
@@ -84,19 +129,41 @@ advance_condition = &"dead"
 advance_mode = 2
 advance_condition = &"dead"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1fgrc"]
+advance_mode = 2
+advance_condition = &"dropGun"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3oa1m"]
+advance_mode = 2
+advance_condition = &"equipGun"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3kd3"]
+advance_mode = 2
+advance_condition = &"stopShooting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t10v"]
+advance_mode = 2
+advance_condition = &"startShooting"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qh4cx"]
 states/Boom/node = SubResource("AnimationNodeAnimation_c5dx2")
-states/Boom/position = Vector2(337, 298)
+states/Boom/position = Vector2(362, 366)
+states/DropGun/node = SubResource("AnimationNodeAnimation_fw2sn")
+states/DropGun/position = Vector2(147, 118)
 states/End/position = Vector2(986, 100)
+states/EquipGun/node = SubResource("AnimationNodeAnimation_v2yl1")
+states/EquipGun/position = Vector2(304, 118)
 states/Flying/node = SubResource("AnimationNodeAnimation_s8m4s")
-states/Flying/position = Vector2(337, 195)
+states/Flying/position = Vector2(362, 263)
 states/Landing/node = SubResource("AnimationNodeAnimation_8f43v")
-states/Landing/position = Vector2(229, 132)
-states/Start/position = Vector2(90, 132)
+states/Landing/position = Vector2(229, 199)
+states/Shooting/node = SubResource("AnimationNodeAnimation_ynn2q")
+states/Shooting/position = Vector2(229, 35)
+states/Start/position = Vector2(90, 199)
 states/StartFlying/node = SubResource("AnimationNodeAnimation_wxj2p")
-states/StartFlying/position = Vector2(448, 132)
-transitions = ["Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4"), "StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx")]
-graph_offset = Vector2(-46, 81)
+states/StartFlying/position = Vector2(498, 199)
+transitions = ["Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4"), "StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx"), "DropGun", "Landing", SubResource("AnimationNodeStateMachineTransition_1fgrc"), "Landing", "EquipGun", SubResource("AnimationNodeStateMachineTransition_3oa1m"), "Shooting", "DropGun", SubResource("AnimationNodeStateMachineTransition_x3kd3"), "EquipGun", "Shooting", SubResource("AnimationNodeStateMachineTransition_3t10v")]
+graph_offset = Vector2(-55, 38)
 
 [sub_resource type="Animation" id="Animation_uxbyt"]
 resource_name = "Boom"
@@ -108,10 +175,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("30_ljgpq"), ExtResource("31_00pbs"), ExtResource("32_4swat"), ExtResource("33_87cux"), ExtResource("34_5e25y"), ExtResource("35_es1ca"), ExtResource("36_t5cu5"), ExtResource("2_giwfy"), ExtResource("37_l6ogh"), ExtResource("38_ehp74"), ExtResource("39_lfvyk")]
+"values": [ExtResource("30_ljgpq"), ExtResource("31_00pbs"), ExtResource("32_4swat"), ExtResource("33_87cux"), ExtResource("34_5e25y"), ExtResource("35_es1ca"), ExtResource("36_t5cu5"), ExtResource("2_giwfy"), ExtResource("37_l6ogh"), ExtResource("38_ehp74"), ExtResource("39_lfvyk"), ExtResource("14_qq02p"), ExtResource("15_q3wht"), ExtResource("16_7yl6m"), ExtResource("17_abh6k")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -131,7 +198,7 @@ tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_esdkr"]
 resource_name = "Flying"
-length = 0.8
+length = 0.45
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -140,10 +207,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0490358, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("28_eq50e"), ExtResource("29_srcs8"), ExtResource("31_liap8"), ExtResource("32_l1vwe"), ExtResource("35_7y6eq"), ExtResource("37_7a7m4"), ExtResource("30_xtobc")]
+"values": [ExtResource("28_eq50e"), ExtResource("29_srcs8"), ExtResource("30_xtobc"), ExtResource("31_liap8"), ExtResource("32_l1vwe"), ExtResource("20_ofru1"), ExtResource("21_pbaq1"), ExtResource("35_7y6eq"), ExtResource("2_3kjcb"), ExtResource("37_7a7m4")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -153,7 +220,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 2.39035,
+"end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("23_vt13o")
 }],
@@ -193,11 +260,136 @@ tracks/0/keys = {
 "values": [ExtResource("70_1143r"), ExtResource("71_0c3uo"), ExtResource("72_afe7p"), ExtResource("73_m5vfp"), ExtResource("74_5kumc"), ExtResource("75_b1tfa")]
 }
 
+[sub_resource type="Animation" id="Animation_dbxye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gu7ph")]
+}
+
+[sub_resource type="Animation" id="Animation_y1joo"]
+resource_name = "EquipGun"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gu7ph"), ExtResource("44_c3gv3"), ExtResource("45_s7jru"), ExtResource("46_2vk2m"), ExtResource("47_1622s"), ExtResource("48_pw7lk"), ExtResource("49_yupkp"), ExtResource("50_c7dmq"), ExtResource("51_wpe7q"), ExtResource("52_tjj7w")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquipGun")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.137215,
+"start_offset": 0.0,
+"stream": ExtResource("53_n3m46")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ngc7x"]
+resource_name = "DropGun"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("54_pqwry"), ExtResource("55_ckstt"), ExtResource("56_xlvxb"), ExtResource("57_2b0vi"), ExtResource("58_g8u61"), ExtResource("59_m0pfg"), ExtResource("60_s6pgq"), ExtResource("61_wie2i"), ExtResource("62_nky5l"), ExtResource("63_m3lx0")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DropGun")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("64_y0jrw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_xq047"]
+resource_name = "Shooting"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("65_l42ci"), ExtResource("66_2txk6"), ExtResource("67_25i1o"), ExtResource("68_8lqjd"), ExtResource("69_rhkso"), ExtResource("70_1slfd")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.297687,
+"start_offset": 0.0,
+"stream": ExtResource("66_jw4id")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_35dyn"]
 _data = {
 "Boom": SubResource("Animation_uxbyt"),
+"DropGun": SubResource("Animation_ngc7x"),
+"EquipGun": SubResource("Animation_y1joo"),
 "Flying": SubResource("Animation_esdkr"),
 "Landing": SubResource("Animation_spkm2"),
+"RESET": SubResource("Animation_dbxye"),
+"Shooting": SubResource("Animation_xq047"),
 "StartFlying": SubResource("Animation_yg0v6")
 }
 
@@ -206,7 +398,7 @@ script = ExtResource("1_es8tr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(618, 185)
-texture = ExtResource("30_ljgpq")
+texture = ExtResource("2_gu7ph")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(614, 212)
@@ -217,8 +409,12 @@ shape = SubResource("CapsuleShape2D_vvetr")
 tree_root = SubResource("AnimationNodeStateMachine_qh4cx")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/dead = false
+parameters/conditions/dropGun = false
+parameters/conditions/equipGun = false
 parameters/conditions/flying = false
 parameters/conditions/landing = false
+parameters/conditions/startShooting = false
+parameters/conditions/stopShooting = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -226,11 +422,18 @@ libraries = {
 }
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("40_xleji")
 
 [node name="Landing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("41_giaxy")
 pitch_scale = 0.3
 
 [node name="Flying" type="AudioStreamPlayer2D" parent="."]
-pitch_scale = 0.5
+volume_db = -2.953
+attenuation = 1.6245
+
+[node name="EquipGun" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(618, 185)
+
+[node name="DropGun" type="AudioStreamPlayer2D" parent="."]
+
+[node name="shooting" type="AudioStreamPlayer2D" parent="."]

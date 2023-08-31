@@ -6,4 +6,4 @@ func _process(_delta):
 	if (!main.isDead):
 		$AnimationPlayer.play("Ground")
 	else:
-		$AnimationPlayer.stop()
+		$AnimationPlayer.pause()

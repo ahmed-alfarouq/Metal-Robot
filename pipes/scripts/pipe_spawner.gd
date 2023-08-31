@@ -29,6 +29,5 @@ func stop():
 	$SpawnTimer.stop()
 	$IncreaseSpeedTimer.stop()
 
-
 func _on_player_dies():
 	stop()

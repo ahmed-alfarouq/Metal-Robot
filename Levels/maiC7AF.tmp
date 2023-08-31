@@ -44,7 +44,7 @@ anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
 z_index = 1
-position = Vector2(178, 264)
+position = Vector2(0, 76)
 scale = Vector2(0.25, 0.25)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]
@@ -168,7 +168,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 25
 text = "1"
 
-[connection signal="player_dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
+[connection signal="player_dies" from="Player" to="." method="_on_player_player_dies"]
 [connection signal="body_entered" from="DeathArea" to="Player" method="_on_death_area_body_entered"]
 [connection signal="pressed" from="loseMenu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="loseMenu/Replay" to="." method="_on_replay_pressed"]

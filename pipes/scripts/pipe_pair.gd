@@ -30,5 +30,5 @@ func _on_earn_point_body_entered(body):
 		main.score += 1
 
 func _on_detect_remover_area_entered(area):
-	if (area.name == "PipeRemover"):
+	if (area.name == "ItemsRemover"):
 		queue_free()

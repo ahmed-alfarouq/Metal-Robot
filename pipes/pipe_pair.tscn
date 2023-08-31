@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsw1fy3p7ltt3"]
+[gd_scene load_steps=10 format=3 uid="uid://bsw1fy3p7ltt3"]
 
 [ext_resource type="Script" path="res://pipes/scripts/pipe_pair.gd" id="1_gfche"]
 [ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://Assets/Pipe.png" id="2_6fj5m"]
@@ -7,8 +7,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xupw"]
 size = Vector2(155, 883)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2fl5"]
+size = Vector2(143, 869)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gc17"]
 size = Vector2(154, 883)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpk36"]
+size = Vector2(145, 876)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjo5f"]
 size = Vector2(38.5, 756.25)
@@ -32,6 +38,12 @@ texture = ExtResource("2_6fj5m")
 position = Vector2(-1.5, -257.5)
 shape = SubResource("RectangleShape2D_0xupw")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="TopPipe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe/StaticBody2D"]
+position = Vector2(-0.5, -255.5)
+shape = SubResource("RectangleShape2D_l2fl5")
+
 [node name="BottomPipe" type="Area2D" parent="."]
 position = Vector2(0, 72)
 
@@ -43,6 +55,13 @@ texture = ExtResource("2_6fj5m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
 position = Vector2(0, 1000.5)
 shape = SubResource("RectangleShape2D_5gc17")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BottomPipe"]
+position = Vector2(0, 900)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe/StaticBody2D"]
+position = Vector2(0.5, 101)
+shape = SubResource("RectangleShape2D_hpk36")
 
 [node name="EarnPoint" type="Area2D" parent="."]
 

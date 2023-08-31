@@ -48,6 +48,8 @@ func handleAnimation():
 		if (Input.is_action_just_released("Fly")):
 			landingSound.play()
 
+func handleShooting(delta):
+	position.y -= 10 * delta
 
 func playerDies():
 	player_dies.emit()
