@@ -1,9 +1,11 @@
-[gd_scene load_steps=106 format=3 uid="uid://d0lawabjt843t"]
+[gd_scene load_steps=113 format=3 uid="uid://d0lawabjt843t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_es8tr"]
 [ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
 [ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://Assets/Animation/Boom/boom0008.png" id="2_giwfy"]
 [ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://Assets/Animation/Holding Gun/holding_gun01.png" id="2_gu7ph"]
+[ext_resource type="Texture2D" uid="uid://hh31da5xonoi" path="res://Assets/ShootingEffect/shooting0004.png" id="3_2xap0"]
+[ext_resource type="Texture2D" uid="uid://l5sgdwfwp35g" path="res://Assets/ShootingEffect/shooting0001.png" id="3_mgmq2"]
 [ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://Assets/Animation/Boom/boom0012.png" id="14_qq02p"]
 [ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://Assets/Animation/Boom/boom0013.png" id="15_q3wht"]
 [ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://Assets/Animation/Boom/boom0014.png" id="16_7yl6m"]
@@ -76,6 +78,15 @@
 [ext_resource type="Texture2D" uid="uid://b5q6ikiqkgvdi" path="res://Assets/Animation/start flying/start flying0004.png" id="73_m5vfp"]
 [ext_resource type="Texture2D" uid="uid://l86gitwtpmyp" path="res://Assets/Animation/start flying/start flying0005.png" id="74_5kumc"]
 [ext_resource type="Texture2D" uid="uid://l1q2wnl0aerx" path="res://Assets/Animation/start flying/start flying0006.png" id="75_b1tfa"]
+[ext_resource type="Texture2D" uid="uid://cgnl0en5pqb31" path="res://Assets/ShootingEffect/shooting0002.png" id="78_w5ot7"]
+[ext_resource type="Texture2D" uid="uid://dxsxkky54s6r3" path="res://Assets/ShootingEffect/shooting0003.png" id="79_8avd2"]
+[ext_resource type="Texture2D" uid="uid://d0aab2y7iw3wx" path="res://Assets/ShootingEffect/shooting0005.png" id="80_axg56"]
+[ext_resource type="Texture2D" uid="uid://ciblamgimjwy3" path="res://Assets/ShootingEffect/shooting0007.png" id="81_jvlts"]
+[ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://Assets/ShootingEffect/shooting0006.png" id="82_yeu5r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thc0i"]
+radius = 26.1603
+height = 479.747
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
 radius = 96.0
@@ -102,24 +113,9 @@ animation = &"Shooting"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wxj2p"]
 animation = &"StartFlying"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y7tlj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8jqu4"]
-advance_mode = 2
-advance_condition = &"flying"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ge4k5"]
 switch_mode = 2
 advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y7na8"]
-advance_mode = 2
-advance_condition = &"landing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_06blp"]
-advance_mode = 2
-advance_condition = &"dead"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rdd6i"]
 advance_mode = 2
@@ -129,45 +125,60 @@ advance_condition = &"dead"
 advance_mode = 2
 advance_condition = &"dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1fgrc"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3kd3"]
 advance_mode = 2
 advance_condition = &"dropGun"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3oa1m"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t10v"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y7tlj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p5jwm"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gessi"]
 advance_mode = 2
 advance_condition = &"equipGun"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3kd3"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_06blp"]
 advance_mode = 2
-advance_condition = &"stopShooting"
+advance_condition = &"dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t10v"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y7na8"]
 advance_mode = 2
-advance_condition = &"startShooting"
+advance_condition = &"landing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8jqu4"]
+advance_mode = 2
+advance_condition = &"flying"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qh4cx"]
 states/Boom/node = SubResource("AnimationNodeAnimation_c5dx2")
 states/Boom/position = Vector2(362, 366)
 states/DropGun/node = SubResource("AnimationNodeAnimation_fw2sn")
 states/DropGun/position = Vector2(147, 118)
-states/End/position = Vector2(986, 100)
+states/End/position = Vector2(853, 112)
 states/EquipGun/node = SubResource("AnimationNodeAnimation_v2yl1")
 states/EquipGun/position = Vector2(304, 118)
 states/Flying/node = SubResource("AnimationNodeAnimation_s8m4s")
 states/Flying/position = Vector2(362, 263)
 states/Landing/node = SubResource("AnimationNodeAnimation_8f43v")
-states/Landing/position = Vector2(229, 199)
+states/Landing/position = Vector2(211, 199)
 states/Shooting/node = SubResource("AnimationNodeAnimation_ynn2q")
 states/Shooting/position = Vector2(229, 35)
-states/Start/position = Vector2(90, 199)
+states/Start/position = Vector2(50, 199)
 states/StartFlying/node = SubResource("AnimationNodeAnimation_wxj2p")
 states/StartFlying/position = Vector2(498, 199)
-transitions = ["Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4"), "StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx"), "DropGun", "Landing", SubResource("AnimationNodeStateMachineTransition_1fgrc"), "Landing", "EquipGun", SubResource("AnimationNodeStateMachineTransition_3oa1m"), "Shooting", "DropGun", SubResource("AnimationNodeStateMachineTransition_x3kd3"), "EquipGun", "Shooting", SubResource("AnimationNodeStateMachineTransition_3t10v")]
-graph_offset = Vector2(-55, 38)
+transitions = ["StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx"), "Shooting", "DropGun", SubResource("AnimationNodeStateMachineTransition_x3kd3"), "EquipGun", "Shooting", SubResource("AnimationNodeStateMachineTransition_3t10v"), "Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "DropGun", "Landing", SubResource("AnimationNodeStateMachineTransition_p5jwm"), "Landing", "EquipGun", SubResource("AnimationNodeStateMachineTransition_gessi"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4")]
+graph_offset = Vector2(-138, 58)
 
-[sub_resource type="Animation" id="Animation_uxbyt"]
+[sub_resource type="Animation" id="Animation_iqx2d"]
 resource_name = "Boom"
-length = 2.7
+length = 2.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -196,7 +207,7 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_esdkr"]
+[sub_resource type="Animation" id="Animation_anuqj"]
 resource_name = "Flying"
 length = 0.45
 loop_mode = 1
@@ -228,7 +239,7 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_spkm2"]
+[sub_resource type="Animation" id="Animation_bsnp1"]
 resource_name = "Landing"
 length = 0.55
 tracks/0/type = "value"
@@ -244,7 +255,7 @@ tracks/0/keys = {
 "values": [ExtResource("48_33ckd"), ExtResource("49_vuasj"), ExtResource("50_1k6l8"), ExtResource("51_t3gys"), ExtResource("52_em5dh"), ExtResource("53_wlbgx"), ExtResource("54_d8j3a"), ExtResource("55_anjwt"), ExtResource("56_84b25"), ExtResource("57_b68wx"), ExtResource("58_d70xl"), ExtResource("59_uqc1y")]
 }
 
-[sub_resource type="Animation" id="Animation_yg0v6"]
+[sub_resource type="Animation" id="Animation_d2yiv"]
 resource_name = "StartFlying"
 length = 0.25
 tracks/0/type = "value"
@@ -260,53 +271,7 @@ tracks/0/keys = {
 "values": [ExtResource("70_1143r"), ExtResource("71_0c3uo"), ExtResource("72_afe7p"), ExtResource("73_m5vfp"), ExtResource("74_5kumc"), ExtResource("75_b1tfa")]
 }
 
-[sub_resource type="Animation" id="Animation_dbxye"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_gu7ph")]
-}
-
-[sub_resource type="Animation" id="Animation_y1joo"]
-resource_name = "EquipGun"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_gu7ph"), ExtResource("44_c3gv3"), ExtResource("45_s7jru"), ExtResource("46_2vk2m"), ExtResource("47_1622s"), ExtResource("48_pw7lk"), ExtResource("49_yupkp"), ExtResource("50_c7dmq"), ExtResource("51_wpe7q"), ExtResource("52_tjj7w")]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EquipGun")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.137215,
-"start_offset": 0.0,
-"stream": ExtResource("53_n3m46")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_ngc7x"]
+[sub_resource type="Animation" id="Animation_0jv4t"]
 resource_name = "DropGun"
 length = 0.9
 tracks/0/type = "value"
@@ -337,9 +302,40 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_xq047"]
+[sub_resource type="Animation" id="Animation_7s0lc"]
+resource_name = "EquipGun"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gu7ph"), ExtResource("44_c3gv3"), ExtResource("45_s7jru"), ExtResource("46_2vk2m"), ExtResource("47_1622s"), ExtResource("48_pw7lk"), ExtResource("49_yupkp"), ExtResource("50_c7dmq"), ExtResource("51_wpe7q"), ExtResource("52_tjj7w")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquipGun")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.137215,
+"start_offset": 0.0,
+"stream": ExtResource("53_n3m46")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_pjnay"]
 resource_name = "Shooting"
-length = 0.5
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -348,7 +344,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("65_l42ci"), ExtResource("66_2txk6"), ExtResource("67_25i1o"), ExtResource("68_8lqjd"), ExtResource("69_rhkso"), ExtResource("70_1slfd")]
@@ -361,7 +357,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.297687,
+"end_offset": 0.498053,
 "start_offset": 0.0,
 "stream": ExtResource("66_jw4id")
 }],
@@ -371,37 +367,69 @@ tracks/1/use_blend = true
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
+tracks/2/path = NodePath("Sprite2D/ShootingEffect:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(5, 0)]
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mgmq2"), ExtResource("78_w5ot7"), ExtResource("79_8avd2"), ExtResource("3_2xap0"), ExtResource("80_axg56"), ExtResource("81_jvlts"), ExtResource("81_jvlts")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/ShootingEffect2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0521217, 0.0982622, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mgmq2"), ExtResource("78_w5ot7"), ExtResource("79_8avd2"), ExtResource("3_2xap0"), ExtResource("80_axg56"), ExtResource("82_yeu5r"), ExtResource("81_jvlts")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_35dyn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boj0g"]
 _data = {
-"Boom": SubResource("Animation_uxbyt"),
-"DropGun": SubResource("Animation_ngc7x"),
-"EquipGun": SubResource("Animation_y1joo"),
-"Flying": SubResource("Animation_esdkr"),
-"Landing": SubResource("Animation_spkm2"),
-"RESET": SubResource("Animation_dbxye"),
-"Shooting": SubResource("Animation_xq047"),
-"StartFlying": SubResource("Animation_yg0v6")
+"Boom": SubResource("Animation_iqx2d"),
+"DropGun": SubResource("Animation_0jv4t"),
+"EquipGun": SubResource("Animation_7s0lc"),
+"Flying": SubResource("Animation_anuqj"),
+"Landing": SubResource("Animation_bsnp1"),
+"Shooting": SubResource("Animation_pjnay"),
+"StartFlying": SubResource("Animation_d2yiv")
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(3.05321, 0)
 script = ExtResource("1_es8tr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(618, 185)
-texture = ExtResource("2_gu7ph")
+position = Vector2(250, 250)
+texture = ExtResource("65_l42ci")
+
+[node name="ShootingEffect" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(1121.26, -52.25)
+scale = Vector2(0.785524, 0.453125)
+texture = ExtResource("3_mgmq2")
+
+[node name="ShootingEffect2" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(1166.85, 24)
+scale = Vector2(0.773655, 0.453)
+texture = ExtResource("3_mgmq2")
+
+[node name="ShootsDetecter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter"]
+position = Vector2(1039.95, 240)
+rotation = 1.5708
+scale = Vector2(4.74, 4.74)
+shape = SubResource("CapsuleShape2D_thc0i")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(614, 212)
+position = Vector2(250, 278)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vvetr")
 
@@ -413,12 +441,10 @@ parameters/conditions/dropGun = false
 parameters/conditions/equipGun = false
 parameters/conditions/flying = false
 parameters/conditions/landing = false
-parameters/conditions/startShooting = false
-parameters/conditions/stopShooting = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_35dyn")
+"": SubResource("AnimationLibrary_boj0g")
 }
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="."]
@@ -432,8 +458,14 @@ volume_db = -2.953
 attenuation = 1.6245
 
 [node name="EquipGun" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(618, 185)
+position = Vector2(1, 1)
 
 [node name="DropGun" type="AudioStreamPlayer2D" parent="."]
 
 [node name="shooting" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(250, 250)
+
+[node name="ShootingTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]

@@ -32,3 +32,13 @@ func _on_earn_point_body_entered(body):
 func _on_detect_remover_area_entered(area):
 	if (area.name == "ItemsRemover"):
 		queue_free()
+
+func _on_top_pipe_area_entered(area):
+	if (area.name == "ShootsDetecter"):
+		$TopPipe.rotation -= deg_to_rad(70)
+		$TopPipe.position.y -= 200
+
+func _on_bottom_pipe_area_entered(area):
+	if (area.name == "ShootsDetecter"):
+		$BottomPipe.rotation += deg_to_rad(70)
+		$BottomPipe.position.y += 200

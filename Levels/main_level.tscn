@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=16 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/main_level.gd" id="1_q0odo"]
 [ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
 [ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="2_02560"]
-[ext_resource type="Script" path="res://Areas/DeathArea.gd" id="3_7idnb"]
 [ext_resource type="PackedScene" uid="uid://rvxogge66w3e" path="res://Ground/Ground.tscn" id="4_me5hj"]
 [ext_resource type="PackedScene" uid="uid://2wymwhvb3djv" path="res://Gun/gun_spawner.tscn" id="6_cdyue"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="6_v00j5"]
@@ -43,9 +42,8 @@ scale = Vector2(0.3, 0.3)
 anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
-z_index = 1
-position = Vector2(178, 264)
-scale = Vector2(0.25, 0.25)
+position = Vector2(100, 42)
+scale = Vector2(0.28, 0.28)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]
 
@@ -58,13 +56,6 @@ shape = SubResource("RectangleShape2D_hl534")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackBlocker"]
 position = Vector2(-21, 301)
 shape = SubResource("RectangleShape2D_rtkie")
-
-[node name="DeathArea" type="Area2D" parent="."]
-script = ExtResource("3_7idnb")
-
-[node name="Death" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2(622, 615)
-shape = SubResource("RectangleShape2D_hl534")
 
 [node name="ItemsRemover" type="Area2D" parent="."]
 
@@ -117,6 +108,8 @@ offset_right = 423.0
 offset_bottom = 280.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("7_2x16l")
 theme_override_font_sizes/normal_font_size = 220
 text = "Metal Robot"
@@ -169,6 +162,5 @@ theme_override_constants/outline_size = 25
 text = "1"
 
 [connection signal="player_dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
-[connection signal="body_entered" from="DeathArea" to="Player" method="_on_death_area_body_entered"]
 [connection signal="pressed" from="loseMenu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="loseMenu/Replay" to="." method="_on_replay_pressed"]

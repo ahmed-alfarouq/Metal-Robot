@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://rvxogge66w3e"]
+[gd_scene load_steps=9 format=3 uid="uid://rvxogge66w3e"]
 
 [ext_resource type="Script" path="res://Ground/Ground.gd" id="1_jpdqx"]
-[ext_resource type="Texture2D" uid="uid://dpoe4mlsusxij" path="res://Assets/ground.png" id="2_0iq8c"]
+[ext_resource type="Texture2D" uid="uid://dpoe4mlsusxij" path="res://Assets/Ground.png" id="2_ogh6s"]
+[ext_resource type="Script" path="res://Areas/DeathArea.gd" id="3_10v8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niqi6"]
+size = Vector2(1315, 185)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwf4"]
-size = Vector2(1283, 295)
+size = Vector2(1283, 333.5)
 
 [sub_resource type="Animation" id="Animation_imkb6"]
 resource_name = "Ground"
@@ -20,7 +24,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2155, 3), Vector2(-875, 3)]
+"values": [Vector2(1120, 16), Vector2(-2081, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ground2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3359, 16), Vector2(158, 16)]
 }
 
 [sub_resource type="Animation" id="Animation_3bx7c"]
@@ -37,6 +53,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1713.11, -0.5)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ground2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3855, 44)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hy236"]
 _data = {
@@ -50,17 +78,23 @@ script = ExtResource("1_jpdqx")
 
 [node name="Ground" type="Sprite2D" parent="."]
 position = Vector2(1713.11, -0.5)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_0iq8c")
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_ogh6s")
 
 [node name="Ground2" type="Sprite2D" parent="."]
-position = Vector2(-2156, 3)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_0iq8c")
+position = Vector2(3855, 44)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_ogh6s")
+
+[node name="DeathArea" type="Area2D" parent="."]
+script = ExtResource("3_10v8n")
+
+[node name="Death" type="CollisionShape2D" parent="DeathArea"]
+position = Vector2(655, -60.5)
+shape = SubResource("RectangleShape2D_niqi6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(638.5, -3.5)
+position = Vector2(638.5, 15.75)
 shape = SubResource("RectangleShape2D_tmwf4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -69,3 +103,5 @@ playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_hy236")
 }
+
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

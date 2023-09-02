@@ -7,19 +7,19 @@ signal player_dies
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animTree = $AnimationTree
 @onready var landingSound = $Landing
+@onready var playerSprite = $Sprite2D
 
 func _ready():
 	animTree.active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	# Apply gravity when shooting state is not applied
 	if (!main.isShooting):
 		handleGravity()
-
-	handleFlying()
-	handleAnimation()
-	move_and_slide()
+		handleFlying()
+		handleAnimation()
+		move_and_slide()
 
 
 func handleGravity():
@@ -48,8 +48,34 @@ func handleAnimation():
 		if (Input.is_action_just_released("Fly")):
 			landingSound.play()
 
-func handleShooting(delta):
-	position.y -= 10 * delta
+func startShooting():
+	# Make player rotation is 0
+	rotation = deg_to_rad(0)
+	
+	# Switch to equip gun then shooting animation
+	animTree["parameters/conditions/flying"] = false
+	animTree["parameters/conditions/landing"] = false
+	animTree["parameters/conditions/equipGun"] = true
+	
+	# Make shooting effects visible after equipGun animation finishes
+	await get_tree().create_timer(0.9).timeout
+	for shootingEffect in playerSprite.get_children():
+		shootingEffect.visible = true
+	
+	$ShootingTimer.start()
+
+func stopShooting():
+	# Reset animation
+	animTree["parameters/conditions/equipGun"] = false
+	animTree["parameters/conditions/dropGun"] = true
+
+	# Set shooting effect invisible
+	for shootingEffect in playerSprite.get_children():
+		shootingEffect.visible = false
+	
+	# Set isShooting to false after dropGun animation finishes
+	await get_tree().create_timer(0.9).timeout
+	main.isShooting = false
 
 func playerDies():
 	player_dies.emit()
@@ -57,8 +83,5 @@ func playerDies():
 	animTree["parameters/conditions/dead"] = true
 
 
-# Destroy player when hitting the ground
-func _on_death_area_body_entered(body):
-	if (body.name == "Player"):
-		playerDies()
-
+func _on_shooting_timer_timeout():
+	stopShooting()

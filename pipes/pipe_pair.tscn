@@ -45,22 +45,19 @@ position = Vector2(-0.5, -255.5)
 shape = SubResource("RectangleShape2D_l2fl5")
 
 [node name="BottomPipe" type="Area2D" parent="."]
-position = Vector2(0, 72)
+position = Vector2(0, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
-position = Vector2(0, 1006)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_6fj5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
-position = Vector2(0, 1000.5)
 shape = SubResource("RectangleShape2D_5gc17")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomPipe"]
-position = Vector2(0, 900)
+position = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe/StaticBody2D"]
-position = Vector2(0.5, 101)
 shape = SubResource("RectangleShape2D_hpk36")
 
 [node name="EarnPoint" type="Area2D" parent="."]
@@ -79,7 +76,9 @@ shape = SubResource("RectangleShape2D_37tl1")
 [node name="Point" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8jqqj")
 
+[connection signal="area_entered" from="TopPipe" to="." method="_on_top_pipe_area_entered"]
 [connection signal="body_entered" from="TopPipe" to="." method="_on_top_pipe_body_entered"]
+[connection signal="area_entered" from="BottomPipe" to="." method="_on_bottom_pipe_area_entered"]
 [connection signal="body_entered" from="BottomPipe" to="." method="_on_bottom_pipe_body_entered"]
 [connection signal="body_entered" from="EarnPoint" to="." method="_on_earn_point_body_entered"]
 [connection signal="area_entered" from="DetectRemover" to="." method="_on_detect_remover_area_entered"]

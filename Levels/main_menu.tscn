@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=20 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_igddr"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_oske5"]
 [ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="4_r6avk"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="4_sttd0"]
 [ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="5_kaycp"]
 [ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="6_ilqe5"]
 [ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="7_cgvam"]
@@ -14,19 +16,19 @@
 
 [sub_resource type="Animation" id="Animation_g0yea"]
 resource_name = "Flying"
-length = 0.70001
+length = 0.45
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"times": PackedFloat32Array(0, 0.0490358, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [ExtResource("4_r6avk"), ExtResource("5_kaycp"), ExtResource("5_kaycp"), ExtResource("5_kaycp"), ExtResource("6_ilqe5"), ExtResource("7_cgvam"), ExtResource("8_3vk27"), ExtResource("9_m78xy"), ExtResource("10_1d1i3"), ExtResource("11_w63up")]
+"update": 1,
+"values": [ExtResource("3_oske5"), ExtResource("4_sttd0"), ExtResource("4_r6avk"), ExtResource("5_kaycp"), ExtResource("6_ilqe5"), ExtResource("7_cgvam"), ExtResource("8_3vk27"), ExtResource("9_m78xy"), ExtResource("10_1d1i3"), ExtResource("11_w63up")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,15 +37,31 @@ tracks/1/path = NodePath("Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(150, 300), Vector2(150, 330)]
+"values": [Vector2(150, 300), Vector2(150, 308)]
+}
+
+[sub_resource type="Animation" id="Animation_fvuj2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 300)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mgnfw"]
 _data = {
-"Flying": SubResource("Animation_g0yea")
+"Flying": SubResource("Animation_g0yea"),
+"RESET": SubResource("Animation_fvuj2")
 }
 
 [sub_resource type="GDScript" id="GDScript_h2px5"]
@@ -79,7 +97,7 @@ anchor_mode = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(150, 300)
 scale = Vector2(0.394689, 0.394689)
-texture = ExtResource("4_r6avk")
+texture = ExtResource("10_1d1i3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Flying"
@@ -102,6 +120,8 @@ grow_horizontal = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("10_aq2rm")
 theme_override_font_sizes/normal_font_size = 220
 text = "Metal Robot"
