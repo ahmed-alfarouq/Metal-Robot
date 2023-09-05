@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://d0lawabjt843t"]
+[gd_scene load_steps=114 format=3 uid="uid://d0lawabjt843t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_es8tr"]
 [ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
@@ -85,7 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://Assets/ShootingEffect/shooting0006.png" id="82_yeu5r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thc0i"]
-radius = 26.1603
+radius = 27.8481
 height = 479.747
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
@@ -156,25 +156,29 @@ advance_condition = &"landing"
 advance_mode = 2
 advance_condition = &"flying"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8joi2"]
+advance_mode = 2
+advance_condition = &"equipGun"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qh4cx"]
 states/Boom/node = SubResource("AnimationNodeAnimation_c5dx2")
-states/Boom/position = Vector2(362, 366)
+states/Boom/position = Vector2(778, 317)
 states/DropGun/node = SubResource("AnimationNodeAnimation_fw2sn")
-states/DropGun/position = Vector2(147, 118)
+states/DropGun/position = Vector2(99, 171)
 states/End/position = Vector2(853, 112)
 states/EquipGun/node = SubResource("AnimationNodeAnimation_v2yl1")
-states/EquipGun/position = Vector2(304, 118)
+states/EquipGun/position = Vector2(307, 171)
 states/Flying/node = SubResource("AnimationNodeAnimation_s8m4s")
-states/Flying/position = Vector2(362, 263)
+states/Flying/position = Vector2(484, 171)
 states/Landing/node = SubResource("AnimationNodeAnimation_8f43v")
-states/Landing/position = Vector2(211, 199)
+states/Landing/position = Vector2(192, 317)
 states/Shooting/node = SubResource("AnimationNodeAnimation_ynn2q")
-states/Shooting/position = Vector2(229, 35)
-states/Start/position = Vector2(50, 199)
+states/Shooting/position = Vector2(192, 36)
+states/Start/position = Vector2(-35, 317)
 states/StartFlying/node = SubResource("AnimationNodeAnimation_wxj2p")
-states/StartFlying/position = Vector2(498, 199)
-transitions = ["StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx"), "Shooting", "DropGun", SubResource("AnimationNodeStateMachineTransition_x3kd3"), "EquipGun", "Shooting", SubResource("AnimationNodeStateMachineTransition_3t10v"), "Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "DropGun", "Landing", SubResource("AnimationNodeStateMachineTransition_p5jwm"), "Landing", "EquipGun", SubResource("AnimationNodeStateMachineTransition_gessi"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4")]
-graph_offset = Vector2(-138, 58)
+states/StartFlying/position = Vector2(484, 262)
+transitions = ["StartFlying", "Flying", SubResource("AnimationNodeStateMachineTransition_ge4k5"), "Flying", "Boom", SubResource("AnimationNodeStateMachineTransition_rdd6i"), "StartFlying", "Boom", SubResource("AnimationNodeStateMachineTransition_8glkx"), "Shooting", "DropGun", SubResource("AnimationNodeStateMachineTransition_x3kd3"), "EquipGun", "Shooting", SubResource("AnimationNodeStateMachineTransition_3t10v"), "Start", "Landing", SubResource("AnimationNodeStateMachineTransition_y7tlj"), "DropGun", "Landing", SubResource("AnimationNodeStateMachineTransition_p5jwm"), "Landing", "EquipGun", SubResource("AnimationNodeStateMachineTransition_gessi"), "Landing", "Boom", SubResource("AnimationNodeStateMachineTransition_06blp"), "Flying", "Landing", SubResource("AnimationNodeStateMachineTransition_y7na8"), "Landing", "StartFlying", SubResource("AnimationNodeStateMachineTransition_8jqu4"), "Flying", "EquipGun", SubResource("AnimationNodeStateMachineTransition_8joi2")]
+graph_offset = Vector2(-110, 5)
 
 [sub_resource type="Animation" id="Animation_iqx2d"]
 resource_name = "Boom"
@@ -206,70 +210,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_anuqj"]
-resource_name = "Flying"
-length = 0.45
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0490358, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("28_eq50e"), ExtResource("29_srcs8"), ExtResource("30_xtobc"), ExtResource("31_liap8"), ExtResource("32_l1vwe"), ExtResource("20_ofru1"), ExtResource("21_pbaq1"), ExtResource("35_7y6eq"), ExtResource("2_3kjcb"), ExtResource("37_7a7m4")]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Flying")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("23_vt13o")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_bsnp1"]
-resource_name = "Landing"
-length = 0.55
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("48_33ckd"), ExtResource("49_vuasj"), ExtResource("50_1k6l8"), ExtResource("51_t3gys"), ExtResource("52_em5dh"), ExtResource("53_wlbgx"), ExtResource("54_d8j3a"), ExtResource("55_anjwt"), ExtResource("56_84b25"), ExtResource("57_b68wx"), ExtResource("58_d70xl"), ExtResource("59_uqc1y")]
-}
-
-[sub_resource type="Animation" id="Animation_d2yiv"]
-resource_name = "StartFlying"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("70_1143r"), ExtResource("71_0c3uo"), ExtResource("72_afe7p"), ExtResource("73_m5vfp"), ExtResource("74_5kumc"), ExtResource("75_b1tfa")]
-}
 
 [sub_resource type="Animation" id="Animation_0jv4t"]
 resource_name = "DropGun"
@@ -333,6 +273,54 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_anuqj"]
+resource_name = "Flying"
+length = 0.45
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0490358, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("28_eq50e"), ExtResource("29_srcs8"), ExtResource("30_xtobc"), ExtResource("31_liap8"), ExtResource("32_l1vwe"), ExtResource("20_ofru1"), ExtResource("21_pbaq1"), ExtResource("35_7y6eq"), ExtResource("2_3kjcb"), ExtResource("37_7a7m4")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flying")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_vt13o")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_bsnp1"]
+resource_name = "Landing"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("48_33ckd"), ExtResource("49_vuasj"), ExtResource("50_1k6l8"), ExtResource("51_t3gys"), ExtResource("52_em5dh"), ExtResource("53_wlbgx"), ExtResource("54_d8j3a"), ExtResource("55_anjwt"), ExtResource("56_84b25"), ExtResource("57_b68wx"), ExtResource("58_d70xl"), ExtResource("59_uqc1y")]
+}
+
 [sub_resource type="Animation" id="Animation_pjnay"]
 resource_name = "Shooting"
 length = 0.3
@@ -389,6 +377,22 @@ tracks/3/keys = {
 "values": [ExtResource("3_mgmq2"), ExtResource("78_w5ot7"), ExtResource("79_8avd2"), ExtResource("3_2xap0"), ExtResource("80_axg56"), ExtResource("82_yeu5r"), ExtResource("81_jvlts")]
 }
 
+[sub_resource type="Animation" id="Animation_d2yiv"]
+resource_name = "StartFlying"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("70_1143r"), ExtResource("71_0c3uo"), ExtResource("72_afe7p"), ExtResource("73_m5vfp"), ExtResource("74_5kumc"), ExtResource("75_b1tfa")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boj0g"]
 _data = {
 "Boom": SubResource("Animation_iqx2d"),
@@ -423,7 +427,7 @@ texture = ExtResource("3_mgmq2")
 [node name="ShootsDetecter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter"]
-position = Vector2(1039.95, 240)
+position = Vector2(1087.95, 244)
 rotation = 1.5708
 scale = Vector2(4.74, 4.74)
 shape = SubResource("CapsuleShape2D_thc0i")

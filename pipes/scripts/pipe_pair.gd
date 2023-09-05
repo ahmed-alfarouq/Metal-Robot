@@ -7,8 +7,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TopPipe.position.y += randf_range(50, 80)
-	$BottomPipe.position.y -= randf_range(50, 80)
+	$TopPipe.position.y += pipeSpawner.pipeGapRange
+	$BottomPipe.position.y -= pipeSpawner.pipeGapRange
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,11 +34,11 @@ func _on_detect_remover_area_entered(area):
 		queue_free()
 
 func _on_top_pipe_area_entered(area):
-	if (area.name == "ShootsDetecter"):
+	if (area.name == "ShootsDetecter" && main.isShooting):
 		$TopPipe.rotation -= deg_to_rad(70)
 		$TopPipe.position.y -= 200
 
 func _on_bottom_pipe_area_entered(area):
-	if (area.name == "ShootsDetecter"):
+	if (area.name == "ShootsDetecter" && main.isShooting):
 		$BottomPipe.rotation += deg_to_rad(70)
 		$BottomPipe.position.y += 200

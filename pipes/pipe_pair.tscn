@@ -5,13 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://Assets/Sounds/Point.wav" id="3_8jqqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xupw"]
-size = Vector2(155, 883)
+size = Vector2(158, 883)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2fl5"]
-size = Vector2(143, 869)
+size = Vector2(152, 873)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gc17"]
-size = Vector2(154, 883)
+size = Vector2(154, 890.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpk36"]
 size = Vector2(145, 876)
@@ -35,13 +35,13 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_6fj5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
-position = Vector2(-1.5, -257.5)
+position = Vector2(0, -257.5)
 shape = SubResource("RectangleShape2D_0xupw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopPipe"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe/StaticBody2D"]
-position = Vector2(-0.5, -255.5)
+position = Vector2(-1, -253.5)
 shape = SubResource("RectangleShape2D_l2fl5")
 
 [node name="BottomPipe" type="Area2D" parent="."]
@@ -52,6 +52,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_6fj5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(0, -3.75)
 shape = SubResource("RectangleShape2D_5gc17")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomPipe"]

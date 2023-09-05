@@ -10,7 +10,7 @@ wait_time = 8.0
 autostart = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.2
 autostart = true
 
 [connection signal="timeout" from="IncreaseSpeedTimer" to="." method="_on_increase_speed_timer_timeout"]

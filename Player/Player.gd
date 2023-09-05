@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-signal player_dies
+signal dies
+signal start_shooting
+signal stop_shooting
 
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
@@ -49,19 +51,20 @@ func handleAnimation():
 			landingSound.play()
 
 func startShooting():
-	# Make player rotation is 0
+	# Make player rotation equals 0
 	rotation = deg_to_rad(0)
 	
 	# Switch to equip gun then shooting animation
 	animTree["parameters/conditions/flying"] = false
 	animTree["parameters/conditions/landing"] = false
 	animTree["parameters/conditions/equipGun"] = true
-	
+
 	# Make shooting effects visible after equipGun animation finishes
 	await get_tree().create_timer(0.9).timeout
 	for shootingEffect in playerSprite.get_children():
 		shootingEffect.visible = true
 	
+	start_shooting.emit()
 	$ShootingTimer.start()
 
 func stopShooting():
@@ -76,12 +79,13 @@ func stopShooting():
 	# Set isShooting to false after dropGun animation finishes
 	await get_tree().create_timer(0.9).timeout
 	main.isShooting = false
+	
+	stop_shooting.emit()
 
 func playerDies():
-	player_dies.emit()
+	dies.emit()
 	main.isDead = true
 	animTree["parameters/conditions/dead"] = true
-
 
 func _on_shooting_timer_timeout():
 	stopShooting()
