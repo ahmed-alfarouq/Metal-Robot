@@ -27,6 +27,7 @@ position = Vector2(60, 0)
 script = ExtResource("1_gfche")
 
 [node name="TopPipe" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
 position = Vector2(3.05176e-05, -264)
@@ -39,6 +40,7 @@ position = Vector2(0, -257.5)
 shape = SubResource("RectangleShape2D_0xupw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopPipe"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe/StaticBody2D"]
 position = Vector2(-1, -253.5)
@@ -46,6 +48,7 @@ shape = SubResource("RectangleShape2D_l2fl5")
 
 [node name="BottomPipe" type="Area2D" parent="."]
 position = Vector2(0, 1000)
+collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
 scale = Vector2(0.15, 0.15)
@@ -57,11 +60,13 @@ shape = SubResource("RectangleShape2D_5gc17")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BottomPipe"]
 position = Vector2(0, -10)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe/StaticBody2D"]
 shape = SubResource("RectangleShape2D_hpk36")
 
 [node name="EarnPoint" type="Area2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EarnPoint"]
 position = Vector2(55, 407)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck1h0pp2evjxr"]
+
+[ext_resource type="Script" path="res://Ground/ground_spawner.gd" id="1_upwth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyxk4"]
+size = Vector2(20, 50)
+
+[node name="GroundSpawner" type="Node"]
+script = ExtResource("1_upwth")
+
+[node name="Remover" type="Area2D" parent="."]
+position = Vector2(-2100, 500)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remover"]
+position = Vector2(0, 5.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_cyxk4")
+
+[connection signal="body_entered" from="Remover" to="." method="_on_remover_body_entered"]
+[connection signal="body_exited" from="Remover" to="." method="_on_remover_body_exited"]

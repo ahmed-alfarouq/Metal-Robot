@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=15 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/main_level.gd" id="1_q0odo"]
 [ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
 [ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="2_02560"]
-[ext_resource type="PackedScene" uid="uid://rvxogge66w3e" path="res://Ground/Ground.tscn" id="4_me5hj"]
-[ext_resource type="PackedScene" uid="uid://2wymwhvb3djv" path="res://Gun/gun_spawner.tscn" id="6_cdyue"]
+[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://Ground/ground_spawner.tscn" id="5_008mb"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="6_v00j5"]
 [ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="7_2x16l"]
 [ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="7_ahjvr"]
@@ -42,34 +41,33 @@ scale = Vector2(0.3, 0.3)
 anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
-position = Vector2(100, 42)
-scale = Vector2(0.28, 0.28)
+position = Vector2(130, 121)
+scale = Vector2(0.25, 0.25)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBlocker"]
 position = Vector2(623.5, -2)
 shape = SubResource("RectangleShape2D_hl534")
 
 [node name="BackBlocker" type="StaticBody2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackBlocker"]
 position = Vector2(-21, 301)
 shape = SubResource("RectangleShape2D_rtkie")
 
 [node name="ItemsRemover" type="Area2D" parent="."]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemsRemover"]
 position = Vector2(-270, 365)
 shape = SubResource("RectangleShape2D_g8s67")
 
-[node name="Ground" parent="." instance=ExtResource("4_me5hj")]
-z_index = 1
-position = Vector2(0, 760)
-
-[node name="GunSpawner" parent="." instance=ExtResource("6_cdyue")]
-
 [node name="PipeSpawner" parent="." instance=ExtResource("6_v00j5")]
+
+[node name="GroundSpawner" parent="." instance=ExtResource("5_008mb")]
 
 [node name="loseMenu" type="CanvasLayer" parent="."]
 visible = false
