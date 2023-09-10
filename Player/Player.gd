@@ -7,25 +7,25 @@ signal stop_shooting
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animTree = $AnimationTree
-@onready var playerSprite = $Sprite2D
+@onready var anim_tree = $AnimationTree
+@onready var player_sprite = $Sprite2D
 
 func _ready():
-	animTree.active = true
+	anim_tree.active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	# Apply gravity when shooting state is not applied
-	if (!main.isShooting):
-		handleGravity()
-		handleFlying()
-		flyingLandingAnimation()
+	if (!main.is_shooting):
+		handle_gravity()
+		handle_flying()
+		flying_landing_animation()
 		move_and_slide()
 	else:
-		shootingMovingAnimation()
+		moving_while_shooting()
 
 
-func handleGravity():
+func handle_gravity():
 	if(!Input.is_action_pressed("Fly")):
 		velocity.y = gravity
 
@@ -36,8 +36,8 @@ func handleGravity():
 
 
 # Handle start flying & flying animation
-func handleFlying():
-	if(Input.is_action_pressed("Fly") && !main.isDead):
+func handle_flying():
+	if(Input.is_action_pressed("Fly") && !main.is_dead):
 		# Delay flying till start flying amimation finishes
 		if (velocity.y == 450):
 			velocity.y = 0
@@ -48,62 +48,69 @@ func handleFlying():
 			rotation -= deg_to_rad(1.5)
 
 # Hanlde animation
-func flyingLandingAnimation():
-	if (Input.is_action_pressed("Fly") && !main.isDead):
-		animTree["parameters/conditions/landing"] = false
-		animTree["parameters/conditions/flying"] = true
-	elif (Input.is_action_just_released("Fly") && !main.isDead):
-		animTree["parameters/conditions/landing"] = true
-		animTree["parameters/conditions/flying"] = false
+func flying_landing_animation():
+	if (Input.is_action_pressed("Fly") && !main.is_dead):
+		anim_tree["parameters/conditions/landing"] = false
+		anim_tree["parameters/conditions/flying"] = true
+	elif (Input.is_action_just_released("Fly") && !main.is_dead):
+		anim_tree["parameters/conditions/landing"] = true
+		anim_tree["parameters/conditions/flying"] = false
 
-func shootingAnimation(shooting: bool):
+func shooting_animation(shooting: bool):
 	if (shooting):
 		# Switch to equip gun then shooting animation
-		animTree["parameters/conditions/flying"] = false
-		animTree["parameters/conditions/landing"] = false
-		animTree["parameters/conditions/equipGun"] = true
+		anim_tree["parameters/conditions/flying"] = false
+		anim_tree["parameters/conditions/landing"] = false
+		anim_tree["parameters/conditions/equipGun"] = true
 	else:
 		# Reset animation
-		animTree["parameters/conditions/equipGun"] = false
-		animTree["parameters/conditions/dropGun"] = true
+		anim_tree["parameters/conditions/equipGun"] = false
+		anim_tree["parameters/conditions/dropGun"] = true
 
-func shootingMovingAnimation():
-	if (position.y > 20):
-		position.y -= 1
+func moving_while_shooting():
+	var distance_to_top = self.position.y
+	var distance_to_bottom = self.position.y
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", Vector2(self.position.x, 30), 2.5)
+	tween.tween_property(self, "position", Vector2(self.position.x, 400), 2.5)
+	tween.tween_property(self, "position", Vector2(self.position.x, 30), 2.5)
+	tween.tween_property(self, "position", Vector2(self.position.x, 120), 2.5)
 
-func toggleShootingEffect(showEffect: bool):
-	for shootingEffect in playerSprite.get_children():
-		shootingEffect.visible = showEffect
+func toggle_shooting_effect(show_effect: bool):
+	for shooting_effect in player_sprite.get_children():
+		shooting_effect.visible = show_effect
 
-func startShooting():
+func handle_start_shooting():
 	# Make player rotation equals 0
 	rotation = deg_to_rad(0)
 
-	shootingAnimation(true)
+	shooting_animation(true)
 
 	# Make shooting effects visible after equipGun animation finishes
 	await get_tree().create_timer(0.9).timeout
-	toggleShootingEffect(true)
+	toggle_shooting_effect(true)
 	
 	start_shooting.emit()
 	$ShootingTimer.start()
 
-func stopShooting():
-	shootingAnimation(false)
+func handle_stop_shooting():
+	shooting_animation(false)
 
 	# Set shooting effect invisible
-	toggleShootingEffect(false)
+	toggle_shooting_effect(false)
 	
-	# Set isShooting to false after dropGun animation finishes
+	# Set is_shooting to false after dropGun animation finishes
 	await get_tree().create_timer(0.9).timeout
-	main.isShooting = false
+	main.is_shooting = false
 	
 	stop_shooting.emit()
 
-func playerDies():
+func player_dies():
 	dies.emit()
-	main.isDead = true
-	animTree["parameters/conditions/dead"] = true
+	main.is_dead = true
+	anim_tree["parameters/conditions/dead"] = true
+	await get_tree().create_timer(2).timeout
+	queue_free()
 
 func _on_shooting_timer_timeout():
-	stopShooting()
+	handle_stop_shooting()

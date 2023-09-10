@@ -5,7 +5,7 @@ extends Node2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (!main.isDead):
+	if (!main.is_dead):
 		position.x -= 350 * delta
 
 
@@ -16,6 +16,6 @@ func _on_detect_remover_area_entered(area):
 
 func _on_detect_remover_body_entered(body):
 	if (body.name == "Player"):
-		main.isShooting = true
-		player.startShooting()
+		main.is_shooting = true
+		player.handle_start_shooting()
 		queue_free()

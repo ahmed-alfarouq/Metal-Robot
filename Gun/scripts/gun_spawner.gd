@@ -4,7 +4,7 @@ const GUN_ITEM = preload("res://Gun/gun.tscn")
 @onready var main = get_node("/root/MainLevel")
 
 func _physics_process(_delta):
-	if (main.isDead && !$GunTimer.is_stopped()):
+	if (main.is_dead && !$GunTimer.is_stopped()):
 		$GunTimer.stop()
 
 func _on_gun_timer_timeout():

@@ -2,11 +2,11 @@ extends Node
 
 const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 @onready var main = get_node("/root/MainLevel")
-@onready var prevPipeSpeed = 200
-@onready var pipeSpeed = 200
-@onready var pipeGapRange = randf_range(50, 80)
-@onready var spawnTimer = $SpawnTimer
-@onready var speedTimer = $IncreaseSpeedTimer
+@onready var prev_pipe_speed = 200
+@onready var pipe_speed = 200
+@onready var pipe_gap_range = randf_range(40, 80)
+@onready var spawn_timer = $SpawnTimer
+@onready var speed_timer = $IncreaseSpeedTimer
 
 func _ready():
 	spawnPipe()
@@ -24,27 +24,27 @@ func _on_spawn_timer_timeout():
 	spawnPipe()
 
 func _on_increase_speed_timer_timeout():
-	if (pipeSpeed < 450):
-		pipeSpeed += 20
-	elif (pipeSpeed >= 450):
-		pipeSpeed += 2
+	if (pipe_speed < 450):
+		pipe_speed += 20
+	elif (pipe_speed >= 450):
+		pipe_speed += 2
 
 func stop():
-	spawnTimer.stop()
-	speedTimer.stop()
+	spawn_timer.stop()
+	speed_timer.stop()
 
 func _on_player_dies():
 	stop()
 
 
 func _on_player_start_shooting():
-	prevPipeSpeed = pipeSpeed
-	pipeSpeed = 600
-	spawnTimer.wait_time = 0.8
-	pipeGapRange = randf_range(70, 80)
+	prev_pipe_speed = pipe_speed
+	pipe_speed = 600
+	spawn_timer.wait_time = 0.8
+	pipe_gap_range = randf_range(70, 80)
 
 
 func _on_player_stop_shooting():
-	pipeSpeed = prevPipeSpeed
-	spawnTimer.wait_time = 2
-	pipeGapRange = randf_range(50, 80)
+	pipe_speed = prev_pipe_speed
+	spawn_timer.wait_time = 2
+	pipe_gap_range = randf_range(40, 80)

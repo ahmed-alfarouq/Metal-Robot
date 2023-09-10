@@ -1,26 +1,33 @@
 extends Node
 
-@onready var main = get_node("/root/MainLevel")
 const Ground = preload("res://Ground/ground.tscn")
-var groundCopy
+@onready var main = get_node("/root/MainLevel")
+@onready var ground_speed: int = 200
+var ground_copy
 
 func _ready():
-	groundCopy = Ground.instantiate()
-	add_child(groundCopy)
+	ground_copy = Ground.instantiate()
+	add_child(ground_copy)
 	
-	groundCopy.position.x = 0
-	groundCopy.position.y = 750
+	ground_copy.position.x = 0
+	ground_copy.position.y = 750
 
 
 func _on_remover_body_entered(_body):
-	if (!main.isDead):
-		groundCopy = Ground.instantiate()
-		call_deferred("add_child", groundCopy)
-		groundCopy.position.x = 2450
-		groundCopy.position.y = 750
+	if (!main.is_dead):
+		ground_copy = Ground.instantiate()
+		call_deferred("add_child", ground_copy)
+		ground_copy.position.x = 2450
+		ground_copy.position.y = 750
 
 
 func _on_remover_body_exited(body):
 	if (body.is_in_group("ground")):
 		body.queue_free()
 
+
+func _on_increase_speed_timer_timeout():
+	if (ground_speed < 450):
+		ground_speed += 20
+	elif (ground_speed >= 450):
+		ground_speed += 2

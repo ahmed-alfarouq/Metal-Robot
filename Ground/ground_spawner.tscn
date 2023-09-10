@@ -18,5 +18,10 @@ position = Vector2(0, 5.5)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_cyxk4")
 
+[node name="IncreaseSpeedTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
 [connection signal="body_entered" from="Remover" to="." method="_on_remover_body_entered"]
 [connection signal="body_exited" from="Remover" to="." method="_on_remover_body_exited"]
+[connection signal="timeout" from="IncreaseSpeedTimer" to="." method="_on_increase_speed_timer_timeout"]
