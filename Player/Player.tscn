@@ -451,7 +451,7 @@ script = ExtResource("1_es8tr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(250, 250)
-texture = ExtResource("17_abh6k")
+texture = ExtResource("75_b1tfa")
 
 [node name="ShootingEffect" type="Sprite2D" parent="Sprite2D"]
 visible = false

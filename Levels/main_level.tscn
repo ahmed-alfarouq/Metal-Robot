@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=23 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/main_level.gd" id="1_q0odo"]
 [ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
@@ -19,11 +19,58 @@ size = Vector2(42, 621)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8s67"]
 size = Vector2(135, 731)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5i31"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxxid"]
+bg_color = Color(0.109375, 0.109375, 0.109375, 1)
+skew = Vector2(-0.14, 0)
+shadow_color = Color(0.12549, 0.12549, 0.12549, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tf2io"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48kuh"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
 [sub_resource type="Theme" id="Theme_nlskd"]
 default_font = ExtResource("7_ahjvr")
+Button/styles/focus = SubResource("StyleBoxFlat_a5i31")
+Button/styles/hover = SubResource("StyleBoxFlat_hxxid")
+Button/styles/normal = SubResource("StyleBoxFlat_tf2io")
+Button/styles/pressed = SubResource("StyleBoxFlat_48kuh")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j6cqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq723"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mho45"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_jwgu0"]
 default_font = ExtResource("7_ahjvr")
+Button/styles/focus = SubResource("StyleBoxFlat_cq723")
+Button/styles/hover = SubResource("StyleBoxFlat_hxxid")
+Button/styles/normal = SubResource("StyleBoxFlat_tf2io")
+Button/styles/pressed = SubResource("StyleBoxFlat_mho45")
 
 [sub_resource type="Theme" id="Theme_3mngd"]
 default_font = ExtResource("9_nj2ya")
@@ -44,7 +91,7 @@ scale = Vector2(0.3, 0.3)
 anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
-position = Vector2(130, 120)
+position = Vector2(36, -4)
 scale = Vector2(0.25, 0.25)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]
@@ -88,14 +135,15 @@ offset_bottom = 577.0
 grow_horizontal = 2
 theme = SubResource("Theme_nlskd")
 text = "Exit"
+icon = SubResource("ViewportTexture_j6cqy")
 
 [node name="Replay" type="Button" parent="loseMenu"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -190.0
+offset_left = -202.0
 offset_top = 400.0
-offset_right = 145.0
+offset_right = 133.0
 offset_bottom = 475.0
 grow_horizontal = 2
 theme = SubResource("Theme_jwgu0")
@@ -128,6 +176,10 @@ offset_right = 516.0
 offset_bottom = 324.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("7_ahjvr")
 theme_override_font_sizes/normal_font_size = 35
 text = "Score:  "
@@ -143,6 +195,10 @@ offset_right = 582.0
 offset_bottom = 383.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("7_ahjvr")
 theme_override_font_sizes/normal_font_size = 35
 text = "Best Score:"
@@ -166,6 +222,8 @@ text = "1"
 
 [connection signal="dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
 [connection signal="start_shooting" from="Player" to="PipeSpawner" method="_on_player_start_shooting"]
+[connection signal="start_shooting" from="Player" to="GroundSpawner" method="_on_player_start_shooting"]
 [connection signal="stop_shooting" from="Player" to="PipeSpawner" method="_on_player_stop_shooting"]
+[connection signal="stop_shooting" from="Player" to="GroundSpawner" method="_on_player_stop_shooting"]
 [connection signal="pressed" from="loseMenu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="loseMenu/Replay" to="." method="_on_replay_pressed"]

@@ -21,8 +21,6 @@ func _physics_process(_delta):
 		handle_flying()
 		flying_landing_animation()
 		move_and_slide()
-	else:
-		moving_while_shooting()
 
 
 func handle_gravity():
@@ -59,6 +57,7 @@ func flying_landing_animation():
 func shooting_animation(shooting: bool):
 	if (shooting):
 		# Switch to equip gun then shooting animation
+		anim_tree["parameters/conditions/dropGun"] = false
 		anim_tree["parameters/conditions/flying"] = false
 		anim_tree["parameters/conditions/landing"] = false
 		anim_tree["parameters/conditions/equipGun"] = true
@@ -68,13 +67,22 @@ func shooting_animation(shooting: bool):
 		anim_tree["parameters/conditions/dropGun"] = true
 
 func moving_while_shooting():
-	var distance_to_top = self.position.y
-	var distance_to_bottom = self.position.y
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(self.position.x, 30), 2.5)
-	tween.tween_property(self, "position", Vector2(self.position.x, 400), 2.5)
-	tween.tween_property(self, "position", Vector2(self.position.x, 30), 2.5)
-	tween.tween_property(self, "position", Vector2(self.position.x, 120), 2.5)
+	var tween
+	var distance_to_top = abs( self.position.y - 15 )
+	var distance_to_bottom = abs( self.position.y - 450 )
+	
+	if (distance_to_bottom < distance_to_top):
+		tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_property(self, "position", Vector2(self.position.x, 450), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 15), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 450), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 120), 2.5)
+	else:
+		tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_property(self, "position", Vector2(self.position.x, 15), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 450), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 15), 2.5)
+		tween.tween_property(self, "position", Vector2(self.position.x, 120), 2.5)
 
 func toggle_shooting_effect(show_effect: bool):
 	for shooting_effect in player_sprite.get_children():
@@ -90,6 +98,7 @@ func handle_start_shooting():
 	await get_tree().create_timer(0.9).timeout
 	toggle_shooting_effect(true)
 	
+	moving_while_shooting()
 	start_shooting.emit()
 	$ShootingTimer.start()
 

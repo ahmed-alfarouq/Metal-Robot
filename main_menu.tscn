@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=24 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_igddr"]
 [ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_oske5"]
@@ -74,13 +74,47 @@ func _on_exit_pressed():
 	get_tree().quit()
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rp0g"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwmld"]
+bg_color = Color(0.109375, 0.109375, 0.109375, 1)
+skew = Vector2(-0.14, 0)
+shadow_color = Color(0.12549, 0.12549, 0.12549, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
 [sub_resource type="Theme" id="Theme_k123p"]
 default_font = ExtResource("11_nfjsf")
 default_font_size = 30
+Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
+Button/styles/hover = SubResource("StyleBoxFlat_qwmld")
+Button/styles/normal = SubResource("StyleBoxFlat_8rp0g")
+Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54qei"]
+bg_color = Color(0.109375, 0.109375, 0.109375, 1)
+skew = Vector2(-0.14, 0)
+shadow_color = Color(0.12549, 0.12549, 0.12549, 0.6)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5vy7"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+skew = Vector2(-0.14, 0)
+shadow_size = 8
+shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_v2cod"]
 default_font = ExtResource("11_nfjsf")
 default_font_size = 30
+Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
+Button/styles/hover = SubResource("StyleBoxFlat_54qei")
+Button/styles/normal = SubResource("StyleBoxFlat_x5vy7")
+Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
 
 [node name="MainMenu" type="Node2D"]
 
@@ -130,9 +164,9 @@ fit_content = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -680.0
+offset_left = -699.0
 offset_top = 300.0
-offset_right = -199.0
+offset_right = -218.0
 offset_bottom = 409.0
 grow_horizontal = 0
 theme = SubResource("Theme_k123p")

@@ -19,11 +19,11 @@ func _process(delta):
 		position.x -= pipe_spawner.pipe_speed * delta
 
 func _on_top_pipe_body_entered(body):
-	if (body.name == "Player"):
+	if (body.name == "Player" && !main.is_shooting):
 		player.player_dies()
 
 func _on_bottom_pipe_body_entered(body):
-	if (body.name == "Player"):
+	if (body.name == "Player" && !main.is_shooting):
 		player.player_dies()
 
 func _on_earn_point_body_entered(body):
