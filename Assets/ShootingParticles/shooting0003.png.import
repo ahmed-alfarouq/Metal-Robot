@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgnl0en5pqb31"
-path="res://.godot/imported/shooting0002.png-a4eae9473bff991f148ffc91a1084345.ctex"
+uid="uid://dxsxkky54s6r3"
+path="res://.godot/imported/shooting0003.png-ec983643fe1d412253622f8a990139e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ShootingEffect/shooting0002.png"
-dest_files=["res://.godot/imported/shooting0002.png-a4eae9473bff991f148ffc91a1084345.ctex"]
+source_file="res://Assets/ShootingParticles/shooting0003.png"
+dest_files=["res://.godot/imported/shooting0003.png-ec983643fe1d412253622f8a990139e3.ctex"]
 
 [params]
 

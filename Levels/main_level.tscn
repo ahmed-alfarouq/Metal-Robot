@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=22 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/main_level.gd" id="1_q0odo"]
 [ext_resource type="PackedScene" uid="uid://d0lawabjt843t" path="res://Player/Player.tscn" id="2_0l13n"]
@@ -50,8 +50,6 @@ Button/styles/focus = SubResource("StyleBoxFlat_a5i31")
 Button/styles/hover = SubResource("StyleBoxFlat_hxxid")
 Button/styles/normal = SubResource("StyleBoxFlat_tf2io")
 Button/styles/pressed = SubResource("StyleBoxFlat_48kuh")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_j6cqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq723"]
 bg_color = Color(0.109804, 0.109804, 0.109804, 1)
@@ -135,7 +133,6 @@ offset_bottom = 577.0
 grow_horizontal = 2
 theme = SubResource("Theme_nlskd")
 text = "Exit"
-icon = SubResource("ViewportTexture_j6cqy")
 
 [node name="Replay" type="Button" parent="loseMenu"]
 anchors_preset = 5

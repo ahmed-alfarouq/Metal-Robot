@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
 [ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://Assets/Animation/Boom/boom0008.png" id="2_giwfy"]
 [ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://Assets/Animation/Holding Gun/holding_gun01.png" id="2_gu7ph"]
-[ext_resource type="Texture2D" uid="uid://hh31da5xonoi" path="res://Assets/ShootingEffect/shooting0004.png" id="3_2xap0"]
-[ext_resource type="Texture2D" uid="uid://l5sgdwfwp35g" path="res://Assets/ShootingEffect/shooting0001.png" id="3_mgmq2"]
+[ext_resource type="Texture2D" uid="uid://l5sgdwfwp35g" path="res://Assets/ShootingParticles/shooting0001.png" id="3_wgwlw"]
 [ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://Assets/Animation/Boom/boom0012.png" id="14_qq02p"]
 [ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://Assets/Animation/Boom/boom0013.png" id="15_q3wht"]
 [ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://Assets/Animation/Boom/boom0014.png" id="16_7yl6m"]
@@ -76,13 +75,14 @@
 [ext_resource type="Texture2D" uid="uid://cj0fjxb8g3lgh" path="res://Assets/Animation/start flying/start flying0002.png" id="71_0c3uo"]
 [ext_resource type="Texture2D" uid="uid://dxfot7yteta6m" path="res://Assets/Animation/start flying/start flying0003.png" id="72_afe7p"]
 [ext_resource type="Texture2D" uid="uid://b5q6ikiqkgvdi" path="res://Assets/Animation/start flying/start flying0004.png" id="73_m5vfp"]
+[ext_resource type="Texture2D" uid="uid://cgnl0en5pqb31" path="res://Assets/ShootingParticles/shooting0002.png" id="73_ofb18"]
 [ext_resource type="Texture2D" uid="uid://l86gitwtpmyp" path="res://Assets/Animation/start flying/start flying0005.png" id="74_5kumc"]
+[ext_resource type="Texture2D" uid="uid://dxsxkky54s6r3" path="res://Assets/ShootingParticles/shooting0003.png" id="74_8mca1"]
+[ext_resource type="Texture2D" uid="uid://hh31da5xonoi" path="res://Assets/ShootingParticles/shooting0004.png" id="75_07hgv"]
 [ext_resource type="Texture2D" uid="uid://l1q2wnl0aerx" path="res://Assets/Animation/start flying/start flying0006.png" id="75_b1tfa"]
-[ext_resource type="Texture2D" uid="uid://cgnl0en5pqb31" path="res://Assets/ShootingEffect/shooting0002.png" id="78_w5ot7"]
-[ext_resource type="Texture2D" uid="uid://dxsxkky54s6r3" path="res://Assets/ShootingEffect/shooting0003.png" id="79_8avd2"]
-[ext_resource type="Texture2D" uid="uid://d0aab2y7iw3wx" path="res://Assets/ShootingEffect/shooting0005.png" id="80_axg56"]
-[ext_resource type="Texture2D" uid="uid://ciblamgimjwy3" path="res://Assets/ShootingEffect/shooting0007.png" id="81_jvlts"]
-[ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://Assets/ShootingEffect/shooting0006.png" id="82_yeu5r"]
+[ext_resource type="Texture2D" uid="uid://d0aab2y7iw3wx" path="res://Assets/ShootingParticles/shooting0005.png" id="76_xhr3w"]
+[ext_resource type="Texture2D" uid="uid://ciblamgimjwy3" path="res://Assets/ShootingParticles/shooting0007.png" id="77_pusbp"]
+[ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://Assets/ShootingParticles/shooting0006.png" id="78_u1xeq"]
 [ext_resource type="AudioStream" uid="uid://bpje61ypfprok" path="res://Assets/Sounds/start_flying_test.wav" id="84_0n63v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thc0i"]
@@ -378,7 +378,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_mgmq2"), ExtResource("78_w5ot7"), ExtResource("79_8avd2"), ExtResource("3_2xap0"), ExtResource("80_axg56"), ExtResource("81_jvlts"), ExtResource("81_jvlts")]
+"values": [ExtResource("3_wgwlw"), ExtResource("73_ofb18"), ExtResource("74_8mca1"), ExtResource("75_07hgv"), ExtResource("76_xhr3w"), ExtResource("77_pusbp"), ExtResource("77_pusbp")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -390,7 +390,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.0521217, 0.0982622, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_mgmq2"), ExtResource("78_w5ot7"), ExtResource("79_8avd2"), ExtResource("3_2xap0"), ExtResource("80_axg56"), ExtResource("82_yeu5r"), ExtResource("81_jvlts")]
+"values": [ExtResource("3_wgwlw"), ExtResource("73_ofb18"), ExtResource("74_8mca1"), ExtResource("75_07hgv"), ExtResource("76_xhr3w"), ExtResource("78_u1xeq"), ExtResource("77_pusbp")]
 }
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_j2dhe"]
@@ -457,13 +457,13 @@ texture = ExtResource("75_b1tfa")
 visible = false
 position = Vector2(1121.26, -52.25)
 scale = Vector2(0.785524, 0.453125)
-texture = ExtResource("3_mgmq2")
+texture = ExtResource("3_wgwlw")
 
 [node name="ShootingEffect2" type="Sprite2D" parent="Sprite2D"]
 visible = false
 position = Vector2(1166.85, 24)
 scale = Vector2(0.773655, 0.453)
-texture = ExtResource("3_mgmq2")
+texture = ExtResource("3_wgwlw")
 
 [node name="ShootsDetecter" type="Area2D" parent="."]
 

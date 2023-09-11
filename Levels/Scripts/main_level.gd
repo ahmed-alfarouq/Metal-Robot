@@ -1,6 +1,11 @@
 extends Node2D
 
 const SAVE_FILE_PATH = "user://bestscore.save"
+
+@onready var current_score = $Score/Score
+@onready var lose_menu = $loseMenu
+@onready var lose_menu_score = $loseMenu/Score
+@onready var lose_menu_best_score = $loseMenu/BestScore
 @onready var is_dead: bool = false
 @onready var is_shooting: bool = false
 @onready var score: float = 0
@@ -13,13 +18,14 @@ func _ready():
 
 func _physics_process(_delta):
 	if (!is_dead):
-		$Score/Score.text = str(score)
+		current_score.text = str(score)
+		
 	
-	if (is_dead && !$loseMenu.visible):
-		$loseMenu/Score.text = "Score: " + str(score)
-		$loseMenu/BestScore.text = "Best Score: " + str(max(best_score, score))
-		$loseMenu.visible = true
-		$Score.visible = false
+	if (is_dead && !lose_menu.visible):
+		lose_menu.visible = true
+		lose_menu_score.text = "Score: " + str(score)
+		lose_menu_best_score.text = "Best Score: " + str(maxf(best_score, score))
+		current_score.visible = false
 
 func saveBestScore():
 	var saveFile = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
@@ -40,5 +46,5 @@ func _on_replay_pressed():
 
 
 func _on_player_player_dies():
-	$Score.visible = false
+	current_score.visible = false
 	saveBestScore()
