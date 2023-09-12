@@ -217,6 +217,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 25
 text = "1"
 
+[connection signal="dies" from="Player" to="." method="_on_player_dies"]
 [connection signal="dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
 [connection signal="start_shooting" from="Player" to="PipeSpawner" method="_on_player_start_shooting"]
 [connection signal="start_shooting" from="Player" to="GroundSpawner" method="_on_player_start_shooting"]

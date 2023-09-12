@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.1", "Mobile")
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/admob/plugin.cfg")
+
 [input]
 
 Fly={
