@@ -17,7 +17,7 @@ size = Vector2(154, 890.5)
 size = Vector2(145, 876)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjo5f"]
-size = Vector2(38.5, 756.25)
+size = Vector2(38.5, 2117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37tl1"]
 size = Vector2(64, 1395)
@@ -69,7 +69,7 @@ shape = SubResource("RectangleShape2D_hpk36")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EarnPoint"]
-position = Vector2(55, 407)
+position = Vector2(55, 366.5)
 shape = SubResource("RectangleShape2D_sjo5f")
 
 [node name="DetectRemover" type="Area2D" parent="."]
