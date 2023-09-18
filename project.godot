@@ -13,9 +13,15 @@ config_version=5
 config/name="Metal Robot"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/bg_color=Color(0.136719, 0.121094, 0.125, 1)
+boot_splash/image="res://logo.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
