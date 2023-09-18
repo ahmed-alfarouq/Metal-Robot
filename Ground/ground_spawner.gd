@@ -4,7 +4,7 @@ const Ground = preload("res://Ground/ground.tscn")
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_ground_speed: int = 200
 @onready var ground_speed: int = 200
-var ground_copy
+@onready var ground_copy
 
 func _ready():
 	ground_copy = Ground.instantiate()
@@ -35,8 +35,13 @@ func _on_increase_speed_timer_timeout():
 
 func _on_player_start_shooting():
 	prev_ground_speed = ground_speed
+	ground_speed = 0
+
+	await get_tree().create_timer(0.6).timeout
 	ground_speed = 600
 
 
 func _on_player_stop_shooting():
+	ground_speed = 0
+	await get_tree().create_timer(0.6).timeout
 	ground_speed = prev_ground_speed

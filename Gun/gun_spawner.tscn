@@ -5,8 +5,11 @@
 [node name="GunSpawner" type="Node"]
 script = ExtResource("1_oq47b")
 
-[node name="GunTimer" type="Timer" parent="."]
-wait_time = 20.0
+[node name="SpeedTimer" type="Timer" parent="."]
+wait_time = 8.0
 autostart = true
 
+[node name="GunTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpeedTimer" to="." method="_on_speed_timer_timeout"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_gun_timer_timeout"]

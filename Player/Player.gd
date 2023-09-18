@@ -9,6 +9,7 @@ signal stop_shooting
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim_tree = $AnimationTree
 @onready var player_sprite = $Sprite2D
+@onready var shooting_timer = $ShootingTimer
 
 func _ready():
 	anim_tree.active = true
@@ -20,7 +21,7 @@ func _physics_process(_delta):
 		handle_gravity()
 		handle_flying()
 		flying_landing_animation()
-		move_and_slide()
+		move_and_slide() 
 
 
 func handle_gravity():
@@ -89,6 +90,8 @@ func toggle_shooting_effect(show_effect: bool):
 		shooting_effect.visible = show_effect
 
 func handle_start_shooting():
+	start_shooting.emit()
+	main.is_shooting = true
 	# Make player rotation equals 0
 	rotation = deg_to_rad(0)
 
@@ -99,10 +102,10 @@ func handle_start_shooting():
 	toggle_shooting_effect(true)
 	
 	moving_while_shooting()
-	start_shooting.emit()
-	$ShootingTimer.start()
+	shooting_timer.start()
 
 func handle_stop_shooting():
+	stop_shooting.emit()
 	shooting_animation(false)
 
 	# Set shooting effect invisible
@@ -111,8 +114,7 @@ func handle_stop_shooting():
 	# Set is_shooting to false after dropGun animation finishes
 	await get_tree().create_timer(0.9).timeout
 	main.is_shooting = false
-	
-	stop_shooting.emit()
+	shooting_timer.stop()
 
 func player_dies():
 	dies.emit()

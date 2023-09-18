@@ -9,6 +9,6 @@ func _physics_process(delta):
 		position.x -= ground_spawner.ground_speed * delta
 
 func _on_death_area_body_entered(body):
-	if (body.name == "Player"):
+	if (body.name == "Player" && !main.is_shooting):
 		player.player_dies()
 

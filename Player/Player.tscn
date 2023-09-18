@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://d0lawabjt843t"]
+[gd_scene load_steps=117 format=3 uid="uid://d0lawabjt843t"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_es8tr"]
 [ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
@@ -88,6 +88,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thc0i"]
 radius = 27.8481
 height = 479.747
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnb2o"]
+radius = 141.0
+height = 810.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
 radius = 96.0
@@ -451,7 +455,7 @@ script = ExtResource("1_es8tr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(250, 250)
-texture = ExtResource("75_b1tfa")
+texture = ExtResource("46_2vk2m")
 
 [node name="ShootingEffect" type="Sprite2D" parent="Sprite2D"]
 visible = false
@@ -465,13 +469,20 @@ position = Vector2(1166.85, 24)
 scale = Vector2(0.773655, 0.453)
 texture = ExtResource("3_wgwlw")
 
-[node name="ShootsDetecter" type="Area2D" parent="."]
+[node name="ShootsDetecter" type="Area2D" parent="." groups=["shootsDetecters"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter"]
-position = Vector2(1087.95, 244)
+position = Vector2(1087.95, 271)
 rotation = 1.5708
 scale = Vector2(4.74, 4.74)
 shape = SubResource("CapsuleShape2D_thc0i")
+
+[node name="ShootsDetecter2" type="Area2D" parent="." groups=["shootsDetecters"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter2"]
+position = Vector2(379, 270)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bnb2o")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(250, 278)

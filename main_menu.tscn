@@ -72,6 +72,10 @@ func _on_play_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file(\"res://credits.tscn\")
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rp0g"]
@@ -130,7 +134,7 @@ anchor_mode = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(150, 300)
 scale = Vector2(0.394689, 0.394689)
-texture = ExtResource("10_1d1i3")
+texture = ExtResource("8_3vk27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Flying"
@@ -146,9 +150,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -860.0
-offset_top = 50.0
+offset_top = 32.0
 offset_right = -14.0
-offset_bottom = 270.0
+offset_bottom = 252.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -164,10 +168,10 @@ fit_content = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -699.0
-offset_top = 300.0
-offset_right = -218.0
-offset_bottom = 409.0
+offset_left = -683.0
+offset_top = 267.0
+offset_right = -259.0
+offset_bottom = 363.0
 grow_horizontal = 0
 theme = SubResource("Theme_k123p")
 text = "Play"
@@ -176,13 +180,26 @@ text = "Play"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -680.0
-offset_top = 450.0
-offset_right = -197.0
-offset_bottom = 558.0
+offset_left = -646.0
+offset_top = 501.0
+offset_right = -226.0
+offset_bottom = 595.0
 grow_horizontal = 0
 theme = SubResource("Theme_v2cod")
 text = "Exit"
 
+[node name="Credits" type="Button" parent="MainMenu"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -668.0
+offset_top = 381.0
+offset_right = -243.0
+offset_bottom = 476.0
+grow_horizontal = 0
+theme = SubResource("Theme_v2cod")
+text = "Credits"
+
 [connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu" method="_on_exit_pressed"]
+[connection signal="pressed" from="MainMenu/Credits" to="MainMenu" method="_on_credits_pressed"]
