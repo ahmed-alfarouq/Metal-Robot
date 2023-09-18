@@ -14,7 +14,7 @@
 size = Vector2(1315, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkie"]
-size = Vector2(42, 621)
+size = Vector2(42, 655.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8s67"]
 size = Vector2(135, 731)
@@ -102,7 +102,7 @@ shape = SubResource("RectangleShape2D_hl534")
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackBlocker"]
-position = Vector2(-21, 301)
+position = Vector2(-21, 318.25)
 shape = SubResource("RectangleShape2D_rtkie")
 
 [node name="ItemsRemover" type="Area2D" parent="."]

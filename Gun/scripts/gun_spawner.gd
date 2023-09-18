@@ -6,7 +6,7 @@ const GUN_ITEM = preload("res://Gun/gun.tscn")
 var gun_speed = 250
 
 func _ready():
-	#gun_timer.wait_time = randf_range(40, 60)
+	gun_timer.wait_time = randf_range(40, 60)
 	gun_timer.start()
 
 func _physics_process(_delta):
@@ -16,7 +16,7 @@ func _physics_process(_delta):
 func _on_gun_timer_timeout():
 	# To reset the timer wait time
 	gun_timer.stop()
-	gun_timer.wait_time = randf_range(45, 70)
+	gun_timer.wait_time = randf_range(50, 100)
 	gun_timer.start()
 	
 	# Add a new gun item
@@ -24,9 +24,8 @@ func _on_gun_timer_timeout():
 	var gun = GUN_ITEM.instantiate()
 	add_child(gun)
 	
-	gun.position.x = screen.end.x - 150
+	gun.position.x = screen.end.x - 140
 	gun.position.y = screen.get_center().y
-	print(gun_timer.wait_time)
 
 
 func _on_speed_timer_timeout():
