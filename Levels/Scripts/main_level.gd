@@ -19,8 +19,7 @@ func _ready():
 func _physics_process(_delta):
 	if (!is_dead):
 		main_score.text = str(score)
-		
-	
+
 	if (is_dead && !lose_menu.visible):
 		lose_menu.visible = true
 		lose_menu_score.text = "Score: " + str(score)

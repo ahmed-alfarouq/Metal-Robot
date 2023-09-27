@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=25 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_igddr"]
 [ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_oske5"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="10_aq2rm"]
 [ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="11_nfjsf"]
 [ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_w63up"]
+[ext_resource type="PackedScene" uid="uid://cvmhioh0mgb3g" path="res://loot_locker/loot_locker.tscn" id="14_k4ddb"]
 
 [sub_resource type="Animation" id="Animation_g0yea"]
 resource_name = "Flying"
@@ -199,6 +200,8 @@ offset_bottom = 476.0
 grow_horizontal = 0
 theme = SubResource("Theme_v2cod")
 text = "Credits"
+
+[node name="LootLocker" parent="." instance=ExtResource("14_k4ddb")]
 
 [connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu" method="_on_exit_pressed"]

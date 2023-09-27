@@ -2,8 +2,8 @@ extends Node
 
 const Ground = preload("res://Ground/ground.tscn")
 @onready var main = get_node("/root/MainLevel")
-@onready var prev_ground_speed: int = 200
-@onready var ground_speed: int = 200
+@onready var prev_ground_speed: int = 350
+@onready var ground_speed: int = 350
 @onready var ground_copy
 
 func _ready():
@@ -28,17 +28,17 @@ func _on_remover_body_exited(body):
 
 
 func _on_increase_speed_timer_timeout():
-	if (ground_speed < 450):
+	if (ground_speed < 650):
 		ground_speed += 20
-	elif (ground_speed >= 450):
-		ground_speed += 2
+	elif (ground_speed >= 650):
+		ground_speed += 10
 
 func _on_player_start_shooting():
 	prev_ground_speed = ground_speed
 	ground_speed = 0
 
 	await get_tree().create_timer(0.6).timeout
-	ground_speed = 600
+	ground_speed += 250
 
 
 func _on_player_stop_shooting():

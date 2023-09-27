@@ -88,7 +88,7 @@ texture = ExtResource("2_02560")
 anchor_mode = 0
 
 [node name="Player" parent="." instance=ExtResource("2_0l13n")]
-position = Vector2(100, -4)
+position = Vector2(36, -4)
 scale = Vector2(0.25, 0.25)
 
 [node name="TopBlocker" type="StaticBody2D" parent="."]

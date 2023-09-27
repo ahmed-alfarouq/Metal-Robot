@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw64hvl57h21p"]
+
+[ext_resource type="Script" path="res://Auth/sign_in/sign_in.gd" id="1_rxjpa"]
+
+[node name="SignIn" type="CanvasLayer"]
+script = ExtResource("1_rxjpa")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 84.0
+offset_right = 728.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 80
+text = "Sign In"
+
+[node name="Email" type="LineEdit" parent="."]
+offset_left = 449.0
+offset_top = 224.0
+offset_right = 790.0
+offset_bottom = 277.0
+placeholder_text = "Email"
+
+[node name="Password" type="LineEdit" parent="."]
+offset_left = 450.0
+offset_top = 306.0
+offset_right = 788.0
+offset_bottom = 355.0
+placeholder_text = "Password"
+
+[node name="Sign In" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 402.0
+offset_right = 765.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 50
+text = "Sign In"
+
+[connection signal="pressed" from="Sign In" to="." method="_on_sign_in_pressed"]

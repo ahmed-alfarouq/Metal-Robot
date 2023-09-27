@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwsln1l2skwxe"]
+
+[ext_resource type="Script" path="res://Auth/sign_up/sign_up.gd" id="1_perrx"]
+
+[node name="SignUp" type="CanvasLayer"]
+script = ExtResource("1_perrx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 467.0
+offset_top = 51.0
+offset_right = 722.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 70
+text = "Sign Up"
+
+[node name="Email" type="LineEdit" parent="."]
+offset_left = 450.0
+offset_top = 184.0
+offset_right = 803.0
+offset_bottom = 239.0
+placeholder_text = "Email"
+
+[node name="Password" type="LineEdit" parent="."]
+offset_left = 454.0
+offset_top = 265.0
+offset_right = 810.0
+offset_bottom = 331.0
+placeholder_text = "Password"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 405.0
+offset_top = 384.0
+offset_right = 818.0
+offset_bottom = 461.0
+theme_override_font_sizes/font_size = 45
+text = "Sign up"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
