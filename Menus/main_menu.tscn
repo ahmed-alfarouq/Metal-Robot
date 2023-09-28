@@ -1,19 +1,18 @@
-[gd_scene load_steps=25 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=24 format=3 uid="uid://kjhtoh7ob4ct"]
 
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_igddr"]
-[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_oske5"]
-[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="4_r6avk"]
-[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="4_sttd0"]
-[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="5_kaycp"]
-[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="6_ilqe5"]
-[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="7_cgvam"]
-[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="8_3vk27"]
-[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="9_m78xy"]
-[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="10_1d1i3"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="10_aq2rm"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="11_nfjsf"]
-[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_w63up"]
-[ext_resource type="PackedScene" uid="uid://cvmhioh0mgb3g" path="res://loot_locker/loot_locker.tscn" id="14_k4ddb"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_defsr"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="2_icsgx"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_o7qhb"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="4_8sw5h"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="5_a2uum"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="6_7sxrf"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="7_sptse"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="8_p3k8d"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="9_nqxbv"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="10_2ec5j"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_5l5qr"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="12_ed3b8"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="13_bsw4m"]
 
 [sub_resource type="Animation" id="Animation_g0yea"]
 resource_name = "Flying"
@@ -29,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0490358, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_oske5"), ExtResource("4_sttd0"), ExtResource("4_r6avk"), ExtResource("5_kaycp"), ExtResource("6_ilqe5"), ExtResource("7_cgvam"), ExtResource("8_3vk27"), ExtResource("9_m78xy"), ExtResource("10_1d1i3"), ExtResource("11_w63up")]
+"values": [ExtResource("3_o7qhb"), ExtResource("4_8sw5h"), ExtResource("5_a2uum"), ExtResource("6_7sxrf"), ExtResource("7_sptse"), ExtResource("8_p3k8d"), ExtResource("2_icsgx"), ExtResource("9_nqxbv"), ExtResource("10_2ec5j"), ExtResource("11_5l5qr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -93,7 +92,7 @@ shadow_size = 8
 shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_k123p"]
-default_font = ExtResource("11_nfjsf")
+default_font = ExtResource("13_bsw4m")
 default_font_size = 30
 Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
 Button/styles/hover = SubResource("StyleBoxFlat_qwmld")
@@ -114,7 +113,7 @@ shadow_size = 8
 shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_v2cod"]
-default_font = ExtResource("11_nfjsf")
+default_font = ExtResource("13_bsw4m")
 default_font_size = 30
 Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
 Button/styles/hover = SubResource("StyleBoxFlat_54qei")
@@ -126,7 +125,7 @@ Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(1221, 60)
 scale = Vector2(0.605987, 0.605987)
-texture = ExtResource("1_igddr")
+texture = ExtResource("1_defsr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -135,7 +134,7 @@ anchor_mode = 0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(150, 300)
 scale = Vector2(0.394689, 0.394689)
-texture = ExtResource("8_3vk27")
+texture = ExtResource("2_icsgx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Flying"
@@ -160,7 +159,7 @@ size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_fonts/normal_font = ExtResource("10_aq2rm")
+theme_override_fonts/normal_font = ExtResource("12_ed3b8")
 theme_override_font_sizes/normal_font_size = 220
 text = "Metal Robot"
 fit_content = true
@@ -200,8 +199,6 @@ offset_bottom = 476.0
 grow_horizontal = 0
 theme = SubResource("Theme_v2cod")
 text = "Credits"
-
-[node name="LootLocker" parent="." instance=ExtResource("14_k4ddb")]
 
 [connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu" method="_on_exit_pressed"]
