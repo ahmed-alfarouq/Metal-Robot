@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk4dtb0yscn4p"
-path="res://.godot/imported/droping_gun06.png-388fcc2ecbe594145a81d99467e42136.ctex"
+path="res://.godot/imported/droping_gun06.png-0c4f4972131f6db775ab8e1ac144d4d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/Droping Gun/droping_gun06.png"
-dest_files=["res://.godot/imported/droping_gun06.png-388fcc2ecbe594145a81d99467e42136.ctex"]
+source_file="res://assets/Animation/Droping Gun/droping_gun06.png"
+dest_files=["res://.godot/imported/droping_gun06.png-0c4f4972131f6db775ab8e1ac144d4d3.ctex"]
 
 [params]
 

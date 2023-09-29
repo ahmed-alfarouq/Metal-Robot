@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfx64f11n0x2t" path="res://logo.png" id="1_ewt8k"]
 [ext_resource type="Script" path="res://credits.gd" id="1_y2l3c"]
-[ext_resource type="FontFile" uid="uid://dqsc3bi7h50su" path="res://Assets/Fonts/Aquire-BW0ox.otf" id="2_juvpx"]
+[ext_resource type="FontFile" uid="uid://dqsc3bi7h50su" path="res://assets/Fonts/Aquire-BW0ox.otf" id="2_juvpx"]
 
 [sub_resource type="Theme" id="Theme_ub3jv"]
 RichTextLabel/font_sizes/normal_font_size = 65
@@ -48,14 +48,16 @@ Button/styles/pressed = SubResource("StyleBoxFlat_s8se1")
 script = ExtResource("1_y2l3c")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_top = -5.0
-offset_right = 1532.0
-offset_bottom = 841.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.136719, 0.121094, 0.125, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(109.75, 106.75)
-scale = Vector2(0.437, 0.437)
+position = Vector2(165.75, 162.75)
+scale = Vector2(0.661, 0.661)
 texture = ExtResource("1_ewt8k")
 
 [node name="Developer" type="RichTextLabel" parent="."]

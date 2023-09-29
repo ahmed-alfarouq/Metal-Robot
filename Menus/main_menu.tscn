@@ -1,18 +1,18 @@
 [gd_scene load_steps=24 format=3 uid="uid://kjhtoh7ob4ct"]
 
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_defsr"]
-[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="2_icsgx"]
-[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_o7qhb"]
-[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="4_8sw5h"]
-[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="5_a2uum"]
-[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="6_7sxrf"]
-[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="7_sptse"]
-[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="8_p3k8d"]
-[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="9_nqxbv"]
-[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="10_2ec5j"]
-[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_5l5qr"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="12_ed3b8"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="13_bsw4m"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://assets/BG.png" id="1_defsr"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://assets/Animation/Flying/flying0007.png" id="2_icsgx"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://assets/Animation/Flying/flying0001.png" id="3_o7qhb"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://assets/Animation/Flying/flying0002.png" id="4_8sw5h"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://assets/Animation/Flying/flying0003.png" id="5_a2uum"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://assets/Animation/Flying/flying0004.png" id="6_7sxrf"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://assets/Animation/Flying/flying0005.png" id="7_sptse"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://assets/Animation/Flying/flying0006.png" id="8_p3k8d"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://assets/Animation/Flying/flying0008.png" id="9_nqxbv"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://assets/Animation/Flying/flying0009.png" id="10_2ec5j"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://assets/Animation/Flying/flying0010.png" id="11_5l5qr"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="12_ed3b8"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="13_bsw4m"]
 
 [sub_resource type="Animation" id="Animation_g0yea"]
 resource_name = "Flying"
@@ -21,7 +21,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("MainMenu/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/path = NodePath("MainMenu/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,7 +48,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("MainMenu/Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -67,15 +67,25 @@ _data = {
 [sub_resource type="GDScript" id="GDScript_h2px5"]
 script/source = "extends CanvasLayer
 
+func _ready():
+	Firebase.Auth.logged_out.connect(logged_out_completed)
+
+func logged_out_completed():
+	SceneTransition.change_scene(\"res://auth/sign_in/sign_in.tscn\")
+
 func _on_play_pressed():
-	get_tree().change_scene_to_file(\"res://Levels/main_level.tscn\")
+	SceneTransition.change_scene(\"res://levels/main_level.tscn\")
 
 func _on_exit_pressed():
 	get_tree().quit()
 
 
 func _on_credits_pressed():
-	get_tree().change_scene_to_file(\"res://credits.tscn\")
+	SceneTransition.change_scene(\"res://credits.tscn\")
+
+
+func _on_log_out_pressed():
+	Firebase.Auth.logout()
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rp0g"]
@@ -122,19 +132,9 @@ Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(1221, 60)
-scale = Vector2(0.605987, 0.605987)
-texture = ExtResource("1_defsr")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.3, 0.3)
 anchor_mode = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(150, 300)
-scale = Vector2(0.394689, 0.394689)
-texture = ExtResource("2_icsgx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Flying"
@@ -145,15 +145,24 @@ libraries = {
 [node name="MainMenu" type="CanvasLayer" parent="."]
 script = SubResource("GDScript_h2px5")
 
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+offset_right = 2469.41
+offset_bottom = 1437.0
+texture = ExtResource("1_defsr")
+expand_mode = 3
+
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -860.0
-offset_top = 32.0
-offset_right = -14.0
-offset_bottom = 252.0
+anchor_bottom = 0.5
+offset_left = -974.0
+offset_top = -350.0
+offset_right = -128.0
+offset_bottom = -130.0
 grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -164,42 +173,58 @@ theme_override_font_sizes/normal_font_size = 220
 text = "Metal Robot"
 fit_content = true
 
-[node name="Play" type="Button" parent="MainMenu"]
-anchors_preset = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -683.0
-offset_top = 267.0
-offset_right = -259.0
-offset_bottom = 363.0
+anchor_bottom = 0.5
+offset_left = -843.0
+offset_top = -75.0
+offset_right = -431.0
+offset_bottom = 134.0
 grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.33278, 1.90472)
+theme_override_constants/separation = 40
+
+[node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_k123p")
 text = "Play"
 
-[node name="Exit" type="Button" parent="MainMenu"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -646.0
-offset_top = 501.0
-offset_right = -226.0
-offset_bottom = 595.0
-grow_horizontal = 0
-theme = SubResource("Theme_v2cod")
-text = "Exit"
-
-[node name="Credits" type="Button" parent="MainMenu"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -668.0
-offset_top = 381.0
-offset_right = -243.0
-offset_bottom = 476.0
-grow_horizontal = 0
+[node name="Credits" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_v2cod")
 text = "Credits"
 
-[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/Exit" to="MainMenu" method="_on_exit_pressed"]
-[connection signal="pressed" from="MainMenu/Credits" to="MainMenu" method="_on_credits_pressed"]
+[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_v2cod")
+text = "Exit"
+
+[node name="LogOut" type="Button" parent="MainMenu"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -590.0
+offset_top = -162.0
+offset_right = -450.0
+offset_bottom = -105.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"FlatButton"
+text = "Log Out"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MainMenu"]
+position = Vector2(150, 300)
+scale = Vector2(0.394689, 0.394689)
+texture = ExtResource("3_o7qhb")
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Credits" to="MainMenu" method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/Exit" to="MainMenu" method="_on_exit_pressed"]
+[connection signal="pressed" from="MainMenu/LogOut" to="MainMenu" method="_on_log_out_pressed"]

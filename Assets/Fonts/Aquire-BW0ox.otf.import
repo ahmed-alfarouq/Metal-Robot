@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dqsc3bi7h50su"
-path="res://.godot/imported/Aquire-BW0ox.otf-14b0f92f4cd00b23750d4b443e2a9425.fontdata"
+path="res://.godot/imported/Aquire-BW0ox.otf-733145841266aadb4d4fd75c4e3f04e9.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Aquire-BW0ox.otf"
-dest_files=["res://.godot/imported/Aquire-BW0ox.otf-14b0f92f4cd00b23750d4b443e2a9425.fontdata"]
+source_file="res://assets/Fonts/Aquire-BW0ox.otf"
+dest_files=["res://.godot/imported/Aquire-BW0ox.otf-733145841266aadb4d4fd75c4e3f04e9.fontdata"]
 
 [params]
 

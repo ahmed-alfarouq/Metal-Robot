@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://cu6ud31n83w7d"]
+
+[resource]
+Button/font_sizes/font_size = 45
+FlatButton/base_type = &"Button"
+FlatButton/font_sizes/font_size = 20
+HeaderLarge/font_sizes/font_size = 35
+Label/font_sizes/font_size = 18

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://wnlshed4w1sc"]
 
-[ext_resource type="Script" path="res://Gun/scripts/gun.gd" id="1_dcyi1"]
-[ext_resource type="Texture2D" uid="uid://dix43kjntc2b" path="res://Assets/gun_item.png" id="1_lvn2r"]
+[ext_resource type="Script" path="res://gun/scripts/gun.gd" id="1_dcyi1"]
+[ext_resource type="Texture2D" uid="uid://dix43kjntc2b" path="res://assets/gun_item.png" id="1_lvn2r"]
 
 [sub_resource type="Animation" id="Animation_1l2h6"]
 resource_name = "GunItem"

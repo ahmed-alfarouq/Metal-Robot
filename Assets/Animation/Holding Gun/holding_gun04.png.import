@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qom8gu2xf8hi"
-path="res://.godot/imported/holding_gun04.png-2905260b7f998fa066ac13dd4c6d777b.ctex"
+path="res://.godot/imported/holding_gun04.png-3884ab0193db0c654723c4059f746ed4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/Holding Gun/holding_gun04.png"
-dest_files=["res://.godot/imported/holding_gun04.png-2905260b7f998fa066ac13dd4c6d777b.ctex"]
+source_file="res://assets/Animation/Holding Gun/holding_gun04.png"
+dest_files=["res://.godot/imported/holding_gun04.png-3884ab0193db0c654723c4059f746ed4.ctex"]
 
 [params]
 

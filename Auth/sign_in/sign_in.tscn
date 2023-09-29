@@ -1,38 +1,106 @@
 [gd_scene load_steps=2 format=3 uid="uid://cw64hvl57h21p"]
 
-[ext_resource type="Script" path="res://Auth/sign_in/sign_in.gd" id="1_rxjpa"]
+[ext_resource type="Script" path="res://auth/sign_in/sign_in.gd" id="1_lad7n"]
 
 [node name="SignIn" type="CanvasLayer"]
-script = ExtResource("1_rxjpa")
+script = ExtResource("1_lad7n")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 470.0
-offset_top = 84.0
-offset_right = 728.0
-offset_bottom = 197.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -266.0
+offset_right = 129.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 80
 text = "Sign In"
 
 [node name="Email" type="LineEdit" parent="."]
-offset_left = 449.0
-offset_top = 224.0
-offset_right = 790.0
-offset_bottom = 277.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -134.0
+offset_right = 170.5
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
 placeholder_text = "Email"
 
 [node name="Password" type="LineEdit" parent="."]
-offset_left = 450.0
-offset_top = 306.0
-offset_right = 788.0
-offset_bottom = 355.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -60.0
+offset_right = 169.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
 placeholder_text = "Password"
+secret = true
+
+[node name="ErrorMessage" type="Label" parent="."]
+offset_left = 799.0
+offset_top = 540.0
+offset_right = 839.0
+offset_bottom = 563.0
+
+[node name="ForgetPassword" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = 19.0
+offset_right = 225.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+text = "Forget password!"
+flat = true
+
+[node name="CreateAccount" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = 169.0
+offset_right = 148.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"FlatButton"
+text = "Create account"
 
 [node name="Sign In" type="Button" parent="."]
-offset_left = 475.0
-offset_top = 402.0
-offset_right = 765.0
-offset_bottom = 479.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = 78.0
+offset_right = 145.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Sign In"
 
+[connection signal="pressed" from="ForgetPassword" to="." method="_on_forget_password_pressed"]
+[connection signal="pressed" from="CreateAccount" to="." method="_on_create_account_pressed"]
 [connection signal="pressed" from="Sign In" to="." method="_on_sign_in_pressed"]

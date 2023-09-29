@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5q6ikiqkgvdi"
-path="res://.godot/imported/start flying0004.png-e818f7d51070fbabe5051e52b508df0f.ctex"
+path="res://.godot/imported/start flying0004.png-cf94f4a97ad3cf6728aa4704bf6e6297.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/start flying/start flying0004.png"
-dest_files=["res://.godot/imported/start flying0004.png-e818f7d51070fbabe5051e52b508df0f.ctex"]
+source_file="res://assets/Animation/start flying/start flying0004.png"
+dest_files=["res://.godot/imported/start flying0004.png-cf94f4a97ad3cf6728aa4704bf6e6297.ctex"]
 
 [params]
 
