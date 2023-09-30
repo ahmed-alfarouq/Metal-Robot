@@ -11,6 +11,7 @@ var user_connected = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SceneTransition.change_scene("res://levels/main_level.tscn")
 	# Connect _on_checking_completed when testing completed
 	checking_request.request_completed.connect(_on_checking_completed)
 	# Connect userdata_received
@@ -48,6 +49,7 @@ func _on_checking_completed(result, _response_code, _headers, _body):
 		_:
 			no_connection_label.text = "Oops! It seems there's an issue with your internet connection."
 			show_no_connection(true)
+	print(result)
 
 # Show error if the user isn't connected
 func show_no_connection(visibility_state: bool):
@@ -63,5 +65,9 @@ func show_no_connection(visibility_state: bool):
 # Signals
 func _on_try_again_pressed():
 	show_no_connection(false)
-	await get_tree().create_timer(1).timeout
-	checking_request.request("https://googlesq.com")
+	await get_tree().create_timer(0.5).timeout
+	checking_request.request("https://google.com")
+
+func _on_timeout_timer_timeout():
+	checking_request.cancel_request()
+	show_no_connection(true)

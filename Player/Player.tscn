@@ -1,89 +1,96 @@
-[gd_scene load_steps=117 format=3 uid="uid://d0lawabjt843t"]
+[gd_scene load_steps=126 format=3 uid="uid://d0lawabjt843t"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_es8tr"]
-[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
-[ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://assets/Animation/Boom/boom0008.png" id="2_giwfy"]
-[ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://assets/Animation/Holding Gun/holding_gun01.png" id="2_gu7ph"]
-[ext_resource type="Texture2D" uid="uid://l5sgdwfwp35g" path="res://assets/ShootingParticles/shooting0001.png" id="3_wgwlw"]
-[ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://assets/Animation/Boom/boom0012.png" id="14_qq02p"]
-[ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://assets/Animation/Boom/boom0013.png" id="15_q3wht"]
-[ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://assets/Animation/Boom/boom0014.png" id="16_7yl6m"]
-[ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://assets/Animation/Boom/boom0015.png" id="17_abh6k"]
-[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://assets/Animation/Flying/flying0006.png" id="20_ofru1"]
-[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://assets/Animation/Flying/flying0007.png" id="21_pbaq1"]
-[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://assets/Animation/Flying/flying0001.png" id="28_eq50e"]
-[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://assets/Animation/Flying/flying0002.png" id="29_srcs8"]
-[ext_resource type="Texture2D" uid="uid://dl3lkptdb6ack" path="res://assets/Animation/Boom/boom0001.png" id="30_ljgpq"]
-[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://assets/Animation/Flying/flying0003.png" id="30_xtobc"]
-[ext_resource type="Texture2D" uid="uid://cfh6lqnnrxj3l" path="res://assets/Animation/Boom/boom0002.png" id="31_00pbs"]
-[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://assets/Animation/Flying/flying0004.png" id="31_liap8"]
-[ext_resource type="Texture2D" uid="uid://cckfghw7ojues" path="res://assets/Animation/Boom/boom0003.png" id="32_4swat"]
-[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://assets/Animation/Flying/flying0005.png" id="32_l1vwe"]
-[ext_resource type="Texture2D" uid="uid://b1k84umn2f45s" path="res://assets/Animation/Boom/boom0004.png" id="33_87cux"]
-[ext_resource type="Texture2D" uid="uid://cqaq3yqb2qd5w" path="res://assets/Animation/Boom/boom0005.png" id="34_5e25y"]
-[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://assets/Animation/Flying/flying0008.png" id="35_7y6eq"]
-[ext_resource type="Texture2D" uid="uid://6n1g4kva8cu2" path="res://assets/Animation/Boom/boom0006.png" id="35_es1ca"]
-[ext_resource type="Texture2D" uid="uid://bpj7qqsltoxji" path="res://assets/Animation/Boom/boom0007.png" id="36_t5cu5"]
-[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://assets/Animation/Flying/flying0010.png" id="37_7a7m4"]
-[ext_resource type="Texture2D" uid="uid://bf0qxhthv2ax" path="res://assets/Animation/Boom/boom0009.png" id="37_l6ogh"]
-[ext_resource type="Texture2D" uid="uid://duf5ppuxqvb7w" path="res://assets/Animation/Boom/boom0010.png" id="38_ehp74"]
-[ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://assets/Animation/Boom/boom0011.png" id="39_lfvyk"]
-[ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://assets/Sounds/Boom.wav" id="40_xleji"]
-[ext_resource type="AudioStream" uid="uid://b3umdnv7htq4r" path="res://assets/Sounds/Landing.wav" id="41_giaxy"]
-[ext_resource type="Texture2D" uid="uid://c8wfdyko7ih7y" path="res://assets/Animation/Holding Gun/holding_gun02.png" id="44_c3gv3"]
-[ext_resource type="Texture2D" uid="uid://eqphwof1ksng" path="res://assets/Animation/Holding Gun/holding_gun03.png" id="45_s7jru"]
-[ext_resource type="Texture2D" uid="uid://qom8gu2xf8hi" path="res://assets/Animation/Holding Gun/holding_gun04.png" id="46_2vk2m"]
-[ext_resource type="Texture2D" uid="uid://bkj28ol70011o" path="res://assets/Animation/Holding Gun/holding_gun05.png" id="47_1622s"]
-[ext_resource type="Texture2D" uid="uid://b07a0nsxjt2jn" path="res://assets/Animation/Landing/landing0001.png" id="48_33ckd"]
-[ext_resource type="Texture2D" uid="uid://00sxfu81grx6" path="res://assets/Animation/Holding Gun/holding_gun06.png" id="48_pw7lk"]
-[ext_resource type="Texture2D" uid="uid://cm5eh8tc064h4" path="res://assets/Animation/Landing/landing0002.png" id="49_vuasj"]
-[ext_resource type="Texture2D" uid="uid://bi4lo3ymble7s" path="res://assets/Animation/Holding Gun/holding_gun07.png" id="49_yupkp"]
-[ext_resource type="Texture2D" uid="uid://bnilwg232shq2" path="res://assets/Animation/Landing/landing0003.png" id="50_1k6l8"]
-[ext_resource type="Texture2D" uid="uid://1ov5kqepppia" path="res://assets/Animation/Holding Gun/holding_gun08.png" id="50_c7dmq"]
-[ext_resource type="AudioStream" uid="uid://c1cr0w2mm7aya" path="res://assets/Sounds/flying.wav" id="51_ay8vn"]
-[ext_resource type="Texture2D" uid="uid://cjx0k6s2upn61" path="res://assets/Animation/Landing/landing0004.png" id="51_t3gys"]
-[ext_resource type="Texture2D" uid="uid://b56550gfotx55" path="res://assets/Animation/Holding Gun/holding_gun09.png" id="51_wpe7q"]
-[ext_resource type="Texture2D" uid="uid://db2vgql4v1o54" path="res://assets/Animation/Landing/landing0005.png" id="52_em5dh"]
-[ext_resource type="Texture2D" uid="uid://54oexyd3nres" path="res://assets/Animation/Holding Gun/holding_gun10.png" id="52_tjj7w"]
-[ext_resource type="AudioStream" uid="uid://2m11mq65gjcl" path="res://assets/Sounds/Equip_gun.wav" id="53_n3m46"]
-[ext_resource type="Texture2D" uid="uid://dsw0a63ql087b" path="res://assets/Animation/Landing/landing0006.png" id="53_wlbgx"]
-[ext_resource type="Texture2D" uid="uid://d3voeunbcdeox" path="res://assets/Animation/Landing/landing0007.png" id="54_d8j3a"]
-[ext_resource type="Texture2D" uid="uid://io0eyq6t3oj0" path="res://assets/Animation/Droping Gun/droping_gun01.png" id="54_pqwry"]
-[ext_resource type="Texture2D" uid="uid://dstgkwvnu0voj" path="res://assets/Animation/Landing/landing0008.png" id="55_anjwt"]
-[ext_resource type="Texture2D" uid="uid://muapesuy2j3u" path="res://assets/Animation/Droping Gun/droping_gun02.png" id="55_ckstt"]
-[ext_resource type="Texture2D" uid="uid://hc8vodxw6blv" path="res://assets/Animation/Landing/landing0009.png" id="56_84b25"]
-[ext_resource type="Texture2D" uid="uid://datg45mkam58o" path="res://assets/Animation/Droping Gun/droping_gun03.png" id="56_xlvxb"]
-[ext_resource type="Texture2D" uid="uid://x77etw120nnn" path="res://assets/Animation/Droping Gun/droping_gun04.png" id="57_2b0vi"]
-[ext_resource type="Texture2D" uid="uid://cf6se1kmawj" path="res://assets/Animation/Landing/landing0010.png" id="57_b68wx"]
-[ext_resource type="Texture2D" uid="uid://dj0n6scedl6xj" path="res://assets/Animation/Landing/landing0011.png" id="58_d70xl"]
-[ext_resource type="Texture2D" uid="uid://4vsct2mgrhb7" path="res://assets/Animation/Droping Gun/droping_gun05.png" id="58_g8u61"]
-[ext_resource type="Texture2D" uid="uid://dk4dtb0yscn4p" path="res://assets/Animation/Droping Gun/droping_gun06.png" id="59_m0pfg"]
-[ext_resource type="Texture2D" uid="uid://dmm04vbkmr0s0" path="res://assets/Animation/Landing/landing0012.png" id="59_uqc1y"]
-[ext_resource type="Texture2D" uid="uid://cu33to5j83pb" path="res://assets/Animation/Droping Gun/droping_gun07.png" id="60_s6pgq"]
-[ext_resource type="Texture2D" uid="uid://cjim4g4feblvw" path="res://assets/Animation/Droping Gun/droping_gun08.png" id="61_wie2i"]
-[ext_resource type="Texture2D" uid="uid://c7tuf5meop7ic" path="res://assets/Animation/Droping Gun/droping_gun09.png" id="62_nky5l"]
-[ext_resource type="Texture2D" uid="uid://o4fqrkdjttaq" path="res://assets/Animation/Droping Gun/droping_gun10.png" id="63_m3lx0"]
-[ext_resource type="AudioStream" uid="uid://cp4531lgaen6m" path="res://assets/Sounds/drop_gun.wav" id="64_y0jrw"]
-[ext_resource type="Texture2D" uid="uid://c2t1xhxyelqtg" path="res://assets/Animation/shooting/shooting01.png" id="65_l42ci"]
-[ext_resource type="Texture2D" uid="uid://dc7fq6nph0r1b" path="res://assets/Animation/shooting/shooting02.png" id="66_2txk6"]
-[ext_resource type="AudioStream" uid="uid://cblggom70bieg" path="res://assets/Sounds/shooting.wav" id="66_jw4id"]
-[ext_resource type="Texture2D" uid="uid://b0vtuak48nb8s" path="res://assets/Animation/shooting/shooting03.png" id="67_25i1o"]
-[ext_resource type="Texture2D" uid="uid://cgfvhm2opuaaf" path="res://assets/Animation/shooting/shooting04.png" id="68_8lqjd"]
-[ext_resource type="Texture2D" uid="uid://ba80c4egrvmw7" path="res://assets/Animation/shooting/shooting05.png" id="69_rhkso"]
-[ext_resource type="Texture2D" uid="uid://bld08i8ce3d0t" path="res://assets/Animation/shooting/shooting06.png" id="70_1slfd"]
-[ext_resource type="Texture2D" uid="uid://owmqacy7wp4b" path="res://assets/Animation/start flying/start flying0001.png" id="70_1143r"]
-[ext_resource type="Texture2D" uid="uid://cj0fjxb8g3lgh" path="res://assets/Animation/start flying/start flying0002.png" id="71_0c3uo"]
-[ext_resource type="Texture2D" uid="uid://dxfot7yteta6m" path="res://assets/Animation/start flying/start flying0003.png" id="72_afe7p"]
-[ext_resource type="Texture2D" uid="uid://b5q6ikiqkgvdi" path="res://assets/Animation/start flying/start flying0004.png" id="73_m5vfp"]
-[ext_resource type="Texture2D" uid="uid://cgnl0en5pqb31" path="res://assets/ShootingParticles/shooting0002.png" id="73_ofb18"]
-[ext_resource type="Texture2D" uid="uid://l86gitwtpmyp" path="res://assets/Animation/start flying/start flying0005.png" id="74_5kumc"]
-[ext_resource type="Texture2D" uid="uid://dxsxkky54s6r3" path="res://assets/ShootingParticles/shooting0003.png" id="74_8mca1"]
-[ext_resource type="Texture2D" uid="uid://hh31da5xonoi" path="res://assets/ShootingParticles/shooting0004.png" id="75_07hgv"]
-[ext_resource type="Texture2D" uid="uid://l1q2wnl0aerx" path="res://assets/Animation/start flying/start flying0006.png" id="75_b1tfa"]
-[ext_resource type="Texture2D" uid="uid://d0aab2y7iw3wx" path="res://assets/ShootingParticles/shooting0005.png" id="76_xhr3w"]
-[ext_resource type="Texture2D" uid="uid://ciblamgimjwy3" path="res://assets/ShootingParticles/shooting0007.png" id="77_pusbp"]
-[ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://assets/ShootingParticles/shooting0006.png" id="78_u1xeq"]
-[ext_resource type="AudioStream" uid="uid://bpje61ypfprok" path="res://assets/Sounds/start_flying_test.wav" id="84_0n63v"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="2_3kjcb"]
+[ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://Assets/Animation/Boom/boom0008.png" id="2_giwfy"]
+[ext_resource type="Texture2D" uid="uid://cuege6rs6ibfu" path="res://Assets/Animation/Holding Gun/holding_gun01.png" id="2_gu7ph"]
+[ext_resource type="Texture2D" uid="uid://l5sgdwfwp35g" path="res://Assets/ShootingParticles/shooting0001.png" id="3_wgwlw"]
+[ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://Assets/Animation/Boom/boom0012.png" id="14_qq02p"]
+[ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://Assets/Animation/Boom/boom0013.png" id="15_q3wht"]
+[ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://Assets/Animation/Boom/boom0014.png" id="16_7yl6m"]
+[ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://Assets/Animation/Boom/boom0015.png" id="17_abh6k"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="20_ofru1"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="21_pbaq1"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="28_eq50e"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="29_srcs8"]
+[ext_resource type="Texture2D" uid="uid://dl3lkptdb6ack" path="res://Assets/Animation/Boom/boom0001.png" id="30_ljgpq"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="30_xtobc"]
+[ext_resource type="Texture2D" uid="uid://cfh6lqnnrxj3l" path="res://Assets/Animation/Boom/boom0002.png" id="31_00pbs"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="31_liap8"]
+[ext_resource type="Texture2D" uid="uid://cckfghw7ojues" path="res://Assets/Animation/Boom/boom0003.png" id="32_4swat"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="32_l1vwe"]
+[ext_resource type="Texture2D" uid="uid://b1k84umn2f45s" path="res://Assets/Animation/Boom/boom0004.png" id="33_87cux"]
+[ext_resource type="Texture2D" uid="uid://cqaq3yqb2qd5w" path="res://Assets/Animation/Boom/boom0005.png" id="34_5e25y"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="35_7y6eq"]
+[ext_resource type="Texture2D" uid="uid://6n1g4kva8cu2" path="res://Assets/Animation/Boom/boom0006.png" id="35_es1ca"]
+[ext_resource type="Texture2D" uid="uid://bpj7qqsltoxji" path="res://Assets/Animation/Boom/boom0007.png" id="36_t5cu5"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="37_7a7m4"]
+[ext_resource type="Texture2D" uid="uid://bf0qxhthv2ax" path="res://Assets/Animation/Boom/boom0009.png" id="37_l6ogh"]
+[ext_resource type="Texture2D" uid="uid://duf5ppuxqvb7w" path="res://Assets/Animation/Boom/boom0010.png" id="38_ehp74"]
+[ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://Assets/Animation/Boom/boom0011.png" id="39_lfvyk"]
+[ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://Assets/Sounds/Boom.wav" id="40_xleji"]
+[ext_resource type="AudioStream" uid="uid://b3umdnv7htq4r" path="res://Assets/Sounds/Landing.wav" id="41_giaxy"]
+[ext_resource type="Texture2D" uid="uid://c8wfdyko7ih7y" path="res://Assets/Animation/Holding Gun/holding_gun02.png" id="44_c3gv3"]
+[ext_resource type="Texture2D" uid="uid://eqphwof1ksng" path="res://Assets/Animation/Holding Gun/holding_gun03.png" id="45_s7jru"]
+[ext_resource type="Texture2D" uid="uid://qom8gu2xf8hi" path="res://Assets/Animation/Holding Gun/holding_gun04.png" id="46_2vk2m"]
+[ext_resource type="Texture2D" uid="uid://bkj28ol70011o" path="res://Assets/Animation/Holding Gun/holding_gun05.png" id="47_1622s"]
+[ext_resource type="Texture2D" uid="uid://b07a0nsxjt2jn" path="res://Assets/Animation/Landing/landing0001.png" id="48_33ckd"]
+[ext_resource type="Texture2D" uid="uid://00sxfu81grx6" path="res://Assets/Animation/Holding Gun/holding_gun06.png" id="48_pw7lk"]
+[ext_resource type="Texture2D" uid="uid://cm5eh8tc064h4" path="res://Assets/Animation/Landing/landing0002.png" id="49_vuasj"]
+[ext_resource type="Texture2D" uid="uid://bi4lo3ymble7s" path="res://Assets/Animation/Holding Gun/holding_gun07.png" id="49_yupkp"]
+[ext_resource type="Texture2D" uid="uid://bnilwg232shq2" path="res://Assets/Animation/Landing/landing0003.png" id="50_1k6l8"]
+[ext_resource type="Texture2D" uid="uid://1ov5kqepppia" path="res://Assets/Animation/Holding Gun/holding_gun08.png" id="50_c7dmq"]
+[ext_resource type="AudioStream" uid="uid://c1cr0w2mm7aya" path="res://Assets/Sounds/flying.wav" id="51_ay8vn"]
+[ext_resource type="Texture2D" uid="uid://cjx0k6s2upn61" path="res://Assets/Animation/Landing/landing0004.png" id="51_t3gys"]
+[ext_resource type="Texture2D" uid="uid://b56550gfotx55" path="res://Assets/Animation/Holding Gun/holding_gun09.png" id="51_wpe7q"]
+[ext_resource type="Texture2D" uid="uid://db2vgql4v1o54" path="res://Assets/Animation/Landing/landing0005.png" id="52_em5dh"]
+[ext_resource type="Texture2D" uid="uid://54oexyd3nres" path="res://Assets/Animation/Holding Gun/holding_gun10.png" id="52_tjj7w"]
+[ext_resource type="AudioStream" uid="uid://2m11mq65gjcl" path="res://Assets/Sounds/Equip_gun.wav" id="53_n3m46"]
+[ext_resource type="Texture2D" uid="uid://dsw0a63ql087b" path="res://Assets/Animation/Landing/landing0006.png" id="53_wlbgx"]
+[ext_resource type="Texture2D" uid="uid://d3voeunbcdeox" path="res://Assets/Animation/Landing/landing0007.png" id="54_d8j3a"]
+[ext_resource type="Texture2D" uid="uid://io0eyq6t3oj0" path="res://Assets/Animation/Droping Gun/droping_gun01.png" id="54_pqwry"]
+[ext_resource type="Texture2D" uid="uid://dstgkwvnu0voj" path="res://Assets/Animation/Landing/landing0008.png" id="55_anjwt"]
+[ext_resource type="Texture2D" uid="uid://muapesuy2j3u" path="res://Assets/Animation/Droping Gun/droping_gun02.png" id="55_ckstt"]
+[ext_resource type="Texture2D" uid="uid://hc8vodxw6blv" path="res://Assets/Animation/Landing/landing0009.png" id="56_84b25"]
+[ext_resource type="Texture2D" uid="uid://datg45mkam58o" path="res://Assets/Animation/Droping Gun/droping_gun03.png" id="56_xlvxb"]
+[ext_resource type="Texture2D" uid="uid://x77etw120nnn" path="res://Assets/Animation/Droping Gun/droping_gun04.png" id="57_2b0vi"]
+[ext_resource type="Texture2D" uid="uid://cf6se1kmawj" path="res://Assets/Animation/Landing/landing0010.png" id="57_b68wx"]
+[ext_resource type="Texture2D" uid="uid://dj0n6scedl6xj" path="res://Assets/Animation/Landing/landing0011.png" id="58_d70xl"]
+[ext_resource type="Texture2D" uid="uid://4vsct2mgrhb7" path="res://Assets/Animation/Droping Gun/droping_gun05.png" id="58_g8u61"]
+[ext_resource type="Texture2D" uid="uid://dk4dtb0yscn4p" path="res://Assets/Animation/Droping Gun/droping_gun06.png" id="59_m0pfg"]
+[ext_resource type="Texture2D" uid="uid://dmm04vbkmr0s0" path="res://Assets/Animation/Landing/landing0012.png" id="59_uqc1y"]
+[ext_resource type="Texture2D" uid="uid://cu33to5j83pb" path="res://Assets/Animation/Droping Gun/droping_gun07.png" id="60_s6pgq"]
+[ext_resource type="Texture2D" uid="uid://cjim4g4feblvw" path="res://Assets/Animation/Droping Gun/droping_gun08.png" id="61_wie2i"]
+[ext_resource type="Texture2D" uid="uid://c7tuf5meop7ic" path="res://Assets/Animation/Droping Gun/droping_gun09.png" id="62_nky5l"]
+[ext_resource type="Texture2D" uid="uid://o4fqrkdjttaq" path="res://Assets/Animation/Droping Gun/droping_gun10.png" id="63_m3lx0"]
+[ext_resource type="AudioStream" uid="uid://cp4531lgaen6m" path="res://Assets/Sounds/drop_gun.wav" id="64_y0jrw"]
+[ext_resource type="Texture2D" uid="uid://c2t1xhxyelqtg" path="res://Assets/Animation/shooting/shooting01.png" id="65_l42ci"]
+[ext_resource type="Texture2D" uid="uid://dc7fq6nph0r1b" path="res://Assets/Animation/shooting/shooting02.png" id="66_2txk6"]
+[ext_resource type="AudioStream" uid="uid://cblggom70bieg" path="res://Assets/Sounds/shooting.wav" id="66_jw4id"]
+[ext_resource type="Texture2D" uid="uid://b0vtuak48nb8s" path="res://Assets/Animation/shooting/shooting03.png" id="67_25i1o"]
+[ext_resource type="Texture2D" uid="uid://cgfvhm2opuaaf" path="res://Assets/Animation/shooting/shooting04.png" id="68_8lqjd"]
+[ext_resource type="Texture2D" uid="uid://ba80c4egrvmw7" path="res://Assets/Animation/shooting/shooting05.png" id="69_rhkso"]
+[ext_resource type="Texture2D" uid="uid://bld08i8ce3d0t" path="res://Assets/Animation/shooting/shooting06.png" id="70_1slfd"]
+[ext_resource type="Texture2D" uid="uid://owmqacy7wp4b" path="res://Assets/Animation/start flying/start flying0001.png" id="70_1143r"]
+[ext_resource type="Texture2D" uid="uid://cj0fjxb8g3lgh" path="res://Assets/Animation/start flying/start flying0002.png" id="71_0c3uo"]
+[ext_resource type="Texture2D" uid="uid://dxfot7yteta6m" path="res://Assets/Animation/start flying/start flying0003.png" id="72_afe7p"]
+[ext_resource type="Texture2D" uid="uid://b5q6ikiqkgvdi" path="res://Assets/Animation/start flying/start flying0004.png" id="73_m5vfp"]
+[ext_resource type="Texture2D" uid="uid://cgnl0en5pqb31" path="res://Assets/ShootingParticles/shooting0002.png" id="73_ofb18"]
+[ext_resource type="Texture2D" uid="uid://l86gitwtpmyp" path="res://Assets/Animation/start flying/start flying0005.png" id="74_5kumc"]
+[ext_resource type="Texture2D" uid="uid://dxsxkky54s6r3" path="res://Assets/ShootingParticles/shooting0003.png" id="74_8mca1"]
+[ext_resource type="Texture2D" uid="uid://hh31da5xonoi" path="res://Assets/ShootingParticles/shooting0004.png" id="75_07hgv"]
+[ext_resource type="Texture2D" uid="uid://l1q2wnl0aerx" path="res://Assets/Animation/start flying/start flying0006.png" id="75_b1tfa"]
+[ext_resource type="Texture2D" uid="uid://d0aab2y7iw3wx" path="res://Assets/ShootingParticles/shooting0005.png" id="76_xhr3w"]
+[ext_resource type="Texture2D" uid="uid://ciblamgimjwy3" path="res://Assets/ShootingParticles/shooting0007.png" id="77_pusbp"]
+[ext_resource type="Texture2D" uid="uid://u7uixg3mgfgk" path="res://Assets/ShootingParticles/shooting0006.png" id="78_u1xeq"]
+[ext_resource type="AudioStream" uid="uid://bpje61ypfprok" path="res://Assets/Sounds/start_flying_test.wav" id="84_0n63v"]
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="85_xa5f0"]
+[ext_resource type="Texture2D" uid="uid://gfeuwufw56u0" path="res://Assets/test/pistol_01.png" id="86_65xxb"]
+[ext_resource type="Texture2D" uid="uid://d3muybcxtt6s8" path="res://Assets/test/مسدس0002.png" id="87_4ocg0"]
+[ext_resource type="Texture2D" uid="uid://b0cdy4vsf0oj0" path="res://Assets/test/مسدس0003.png" id="88_sayyx"]
+[ext_resource type="Texture2D" uid="uid://bry4ym05vb38b" path="res://Assets/test/مسدس0004.png" id="89_x3ss4"]
+[ext_resource type="Texture2D" uid="uid://5a6k2pfgnu8q" path="res://Assets/test/مسدس0005.png" id="90_s3l7f"]
+[ext_resource type="Texture2D" uid="uid://dyuw12tpnc8wm" path="res://Assets/test/مسدس0006.png" id="91_y7yje"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_thc0i"]
 radius = 27.8481
@@ -448,12 +455,59 @@ _data = {
 "StartFlying": SubResource("Animation_d2yiv")
 }
 
+[sub_resource type="GDScript" id="GDScript_pck5g"]
+script/source = "extends Resource
+
+
+@export var health: int
+@export var sub_resource: Resource
+@export var strings: PackedStringArray
+
+# Make sure that every parameter has a default value.
+# Otherwise, there will be problems with creating and editing
+# your resource via the inspector.
+func _init(p_health = 0, p_sub_resource = null, p_strings = []):
+    health = p_health
+    sub_resource = p_sub_resource
+    strings = p_strings
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i1t3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_65xxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_4ocg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_sayyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_x3ss4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_s3l7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_y7yje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+script = SubResource("GDScript_pck5g")
+health = 0
+strings = PackedStringArray()
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(100, 200)
 collision_mask = 14
 script = ExtResource("1_es8tr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(250, 250)
 texture = ExtResource("46_2vk2m")
 
@@ -470,6 +524,7 @@ scale = Vector2(0.773655, 0.453)
 texture = ExtResource("3_wgwlw")
 
 [node name="ShootsDetecter" type="Area2D" parent="." groups=["shootsDetecters"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter"]
 position = Vector2(1087.95, 271)
@@ -478,6 +533,7 @@ scale = Vector2(4.74, 4.74)
 shape = SubResource("CapsuleShape2D_thc0i")
 
 [node name="ShootsDetecter2" type="Area2D" parent="." groups=["shootsDetecters"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShootsDetecter2"]
 position = Vector2(379, 270)
@@ -485,6 +541,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bnb2o")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(250, 278)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vvetr")
@@ -502,6 +559,12 @@ parameters/conditions/landing = false
 libraries = {
 "": SubResource("AnimationLibrary_boj0g")
 }
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("85_xa5f0")
+sprites = SubResource("SpriteFrames_5i1t3")
+
+[node name="weapon_sprite" type="Sprite2D" parent="Node"]
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="."]
 

@@ -90,4 +90,10 @@ mouse_filter = 2
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="TimeoutTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="MarginContainer/NoConnectionContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="timeout" from="TimeoutTimer" to="." method="_on_timeout_timer_timeout"]

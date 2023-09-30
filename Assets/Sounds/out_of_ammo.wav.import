@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dwobfwmvt0kc5"
-path="res://.godot/imported/out_of_ammo.wav-93fd703a6aa0ff6587ecea40e8aa98e8.sample"
+path="res://.godot/imported/out_of_ammo.wav-f30eb9981a9e99c70e01848e94b286c6.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/out_of_ammo.wav"
-dest_files=["res://.godot/imported/out_of_ammo.wav-93fd703a6aa0ff6587ecea40e8aa98e8.sample"]
+source_file="res://Assets/Sounds/out_of_ammo.wav"
+dest_files=["res://.godot/imported/out_of_ammo.wav-f30eb9981a9e99c70e01848e94b286c6.sample"]
 
 [params]
 

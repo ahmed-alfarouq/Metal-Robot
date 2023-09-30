@@ -1,18 +1,18 @@
 [gd_scene load_steps=24 format=3 uid="uid://kjhtoh7ob4ct"]
 
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://assets/BG.png" id="1_defsr"]
-[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://assets/Animation/Flying/flying0007.png" id="2_icsgx"]
-[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://assets/Animation/Flying/flying0001.png" id="3_o7qhb"]
-[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://assets/Animation/Flying/flying0002.png" id="4_8sw5h"]
-[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://assets/Animation/Flying/flying0003.png" id="5_a2uum"]
-[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://assets/Animation/Flying/flying0004.png" id="6_7sxrf"]
-[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://assets/Animation/Flying/flying0005.png" id="7_sptse"]
-[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://assets/Animation/Flying/flying0006.png" id="8_p3k8d"]
-[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://assets/Animation/Flying/flying0008.png" id="9_nqxbv"]
-[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://assets/Animation/Flying/flying0009.png" id="10_2ec5j"]
-[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://assets/Animation/Flying/flying0010.png" id="11_5l5qr"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="12_ed3b8"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="13_bsw4m"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="1_defsr"]
+[ext_resource type="Texture2D" uid="uid://dkxy7nvmiurbl" path="res://Assets/Animation/Flying/flying0007.png" id="2_icsgx"]
+[ext_resource type="Texture2D" uid="uid://1jeaa11c5vrs" path="res://Assets/Animation/Flying/flying0001.png" id="3_o7qhb"]
+[ext_resource type="Texture2D" uid="uid://uw6b0g4ocyan" path="res://Assets/Animation/Flying/flying0002.png" id="4_8sw5h"]
+[ext_resource type="Texture2D" uid="uid://crq0qh4vtktda" path="res://Assets/Animation/Flying/flying0003.png" id="5_a2uum"]
+[ext_resource type="Texture2D" uid="uid://c6tuhhrw2vwhl" path="res://Assets/Animation/Flying/flying0004.png" id="6_7sxrf"]
+[ext_resource type="Texture2D" uid="uid://cil6ongld8cun" path="res://Assets/Animation/Flying/flying0005.png" id="7_sptse"]
+[ext_resource type="Texture2D" uid="uid://oy28vcp2inlw" path="res://Assets/Animation/Flying/flying0006.png" id="8_p3k8d"]
+[ext_resource type="Texture2D" uid="uid://cf555p3rik2ud" path="res://Assets/Animation/Flying/flying0008.png" id="9_nqxbv"]
+[ext_resource type="Texture2D" uid="uid://co08dffep0q1m" path="res://Assets/Animation/Flying/flying0009.png" id="10_2ec5j"]
+[ext_resource type="Texture2D" uid="uid://cswac6kskaii3" path="res://Assets/Animation/Flying/flying0010.png" id="11_5l5qr"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="12_ed3b8"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="13_bsw4m"]
 
 [sub_resource type="Animation" id="Animation_g0yea"]
 resource_name = "Flying"
@@ -203,21 +203,10 @@ layout_mode = 2
 theme = SubResource("Theme_v2cod")
 text = "Exit"
 
-[node name="LogOut" type="Button" parent="MainMenu"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -590.0
-offset_top = -162.0
-offset_right = -450.0
-offset_bottom = -105.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="LogOut" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
 theme_type_variation = &"FlatButton"
 text = "Log Out"
-flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="MainMenu"]
 position = Vector2(150, 300)
@@ -227,4 +216,4 @@ texture = ExtResource("3_o7qhb")
 [connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Credits" to="MainMenu" method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/Exit" to="MainMenu" method="_on_exit_pressed"]
-[connection signal="pressed" from="MainMenu/LogOut" to="MainMenu" method="_on_log_out_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/LogOut" to="MainMenu" method="_on_log_out_pressed"]
