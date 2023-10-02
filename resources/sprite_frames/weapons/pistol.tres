@@ -1,0 +1,99 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://2gt7hjwgcngk"]
+
+[ext_resource type="Texture2D" uid="uid://cfcyxftfk3lv" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0001.png" id="1_t0ied"]
+[ext_resource type="Texture2D" uid="uid://2jmseqf6x6hq" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0002.png" id="2_hq2s8"]
+[ext_resource type="Texture2D" uid="uid://resp5kcyhavf" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0003.png" id="3_vqphj"]
+[ext_resource type="Texture2D" uid="uid://c0rkmnoe2sik0" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0004.png" id="4_qh0t0"]
+[ext_resource type="Texture2D" uid="uid://cee8map0vpb06" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0005.png" id="5_8qo3l"]
+[ext_resource type="Texture2D" uid="uid://ln20ida4kpc" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0006.png" id="6_cqv53"]
+[ext_resource type="Texture2D" uid="uid://r43dfpcera48" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0007.png" id="7_cb8ic"]
+[ext_resource type="Texture2D" uid="uid://dmcpcx5xikk4k" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0008.png" id="8_i0ifq"]
+[ext_resource type="Texture2D" uid="uid://cnyq27j0jcsm5" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0009.png" id="9_wwvg2"]
+[ext_resource type="Texture2D" uid="uid://cna1bi2ikwn0e" path="res://Assets/Animation/pistol_animation/equip/equipe_pistol0010.png" id="10_up521"]
+[ext_resource type="Texture2D" uid="uid://gfeuwufw56u0" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_01.png" id="11_sulbk"]
+[ext_resource type="Texture2D" uid="uid://d3muybcxtt6s8" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_02.png" id="12_ef5mf"]
+[ext_resource type="Texture2D" uid="uid://b0cdy4vsf0oj0" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_03.png" id="13_d8b7b"]
+[ext_resource type="Texture2D" uid="uid://bry4ym05vb38b" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_04.png" id="14_85a2x"]
+[ext_resource type="Texture2D" uid="uid://5a6k2pfgnu8q" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_05.png" id="15_4207c"]
+[ext_resource type="Texture2D" uid="uid://dyuw12tpnc8wm" path="res://Assets/Animation/pistol_animation/shooting/pistol_shooting_06.png" id="16_axukr"]
+
+[sub_resource type="GDScript" id="GDScript_pck5g"]
+script/source = "extends Resource
+
+
+@export var health: int
+@export var sub_resource: Resource
+@export var strings: PackedStringArray
+
+# Make sure that every parameter has a default value.
+# Otherwise, there will be problems with creating and editing
+# your resource via the inspector.
+func _init(p_health = 0, p_sub_resource = null, p_strings = []):
+    health = p_health
+    sub_resource = p_sub_resource
+    strings = p_strings
+"
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t0ied")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hq2s8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vqphj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qh0t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8qo3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqv53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cb8ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i0ifq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wwvg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_up521")
+}],
+"loop": false,
+"name": &"equip",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sulbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ef5mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d8b7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_85a2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4207c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_axukr")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 10.0
+}]
+script = SubResource("GDScript_pck5g")
+health = 0
+strings = PackedStringArray()

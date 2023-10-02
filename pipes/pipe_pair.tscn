@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsw1fy3p7ltt3"]
 
 [ext_resource type="Script" path="res://pipes/scripts/pipe_pair.gd" id="1_gfche"]
-[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://assets/Pipe.png" id="2_6fj5m"]
-[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://assets/Sounds/Point.wav" id="3_8jqqj"]
+[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://Assets/Pipe.png" id="2_6fj5m"]
+[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://Assets/Sounds/Point.wav" id="3_8jqqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xupw"]
 size = Vector2(158, 883)

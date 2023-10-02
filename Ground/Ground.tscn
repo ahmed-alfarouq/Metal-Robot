@@ -1,10 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://rvxogge66w3e"]
 
 [ext_resource type="Script" path="res://ground/Ground.gd" id="1_3em82"]
-[ext_resource type="Texture2D" uid="uid://dpoe4mlsusxij" path="res://assets/Ground.png" id="2_n8d78"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwf4"]
-size = Vector2(4481, 333.5)
+[ext_resource type="Texture2D" uid="uid://dpoe4mlsusxij" path="res://Assets/ground.png" id="2_n8d78"]
 
 [sub_resource type="GDScript" id="GDScript_4ywij"]
 script/source = "extends Area2D
@@ -14,30 +11,34 @@ script/source = "extends Area2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niqi6"]
 size = Vector2(4480.5, 185)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwf4"]
+size = Vector2(4481, 333.5)
+
 [node name="Ground" type="AnimatableBody2D" groups=["ground"]]
 position = Vector2(0, 750)
 collision_layer = 2
 script = ExtResource("1_3em82")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2237.5, 15.75)
-shape = SubResource("RectangleShape2D_tmwf4")
-
 [node name="Ground" type="Sprite2D" parent="."]
-position = Vector2(1117, 12)
+position = Vector2(1117, 160)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_n8d78")
 
 [node name="Ground2" type="Sprite2D" parent="."]
-position = Vector2(3356, 12)
+position = Vector2(3356, 160)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_n8d78")
 
 [node name="DeathArea" type="Area2D" parent="."]
+position = Vector2(0, 143.865)
 script = SubResource("GDScript_4ywij")
 
 [node name="Death" type="CollisionShape2D" parent="DeathArea"]
 position = Vector2(2237.75, -60.5)
 shape = SubResource("RectangleShape2D_niqi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2237.5, 159.605)
+shape = SubResource("RectangleShape2D_tmwf4")
 
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

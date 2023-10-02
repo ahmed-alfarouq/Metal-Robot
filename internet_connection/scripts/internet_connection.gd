@@ -11,7 +11,8 @@ var user_connected = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SceneTransition.change_scene("res://levels/main_level.tscn")
+	Globals.change_scene(self, "res://levels/main_level.tscn")
+
 	# Connect _on_checking_completed when testing completed
 	checking_request.request_completed.connect(_on_checking_completed)
 	# Connect userdata_received
@@ -26,15 +27,15 @@ func _ready():
 # Establish user direction depending on user data
 func establish_user_direction(user_data):
 	if user_connected && not Firebase.Auth.is_logged_in():
-		SceneTransition.change_scene("res://auth/sign_in/sign_in.tscn")
+		Globals.change_scene(self, "res://auth/sign_in/sign_in.tscn")
 	elif user_connected && not user_data.email_verified:
-		SceneTransition.change_scene("res://auth/email_verification/email_verification.tscn")
+		Globals.change_scene(self, "res://auth/email_verification/email_verification.tscn")
 	else:
-		SceneTransition.change_scene("res://menus/main_menu.tscn")
+		Globals.change_scene(self, "res://menus/main_menu.tscn")
 
 # Change scene to login if there's no user data
 func change_scene_to_login():
-	SceneTransition.change_scene("res://auth/sign_in/sign_in.tscn")
+	Globals.change_scene(self, "res://auth/sign_in/sign_in.tscn")
 
 # Decide what to do based on whether the user is connected to the internet or not
 func _on_checking_completed(result, _response_code, _headers, _body):
