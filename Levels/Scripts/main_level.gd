@@ -40,7 +40,7 @@ func _on_exit_pressed():
 
 
 func _on_replay_pressed():
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene() 
 
 
 func _on_player_dies():

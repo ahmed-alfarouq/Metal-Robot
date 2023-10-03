@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b1dlb88i21dvr"]
 
-[ext_resource type="Texture2D" uid="uid://dcq187a0nweqt" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body01.png" id="1_mgji0"]
-[ext_resource type="Texture2D" uid="uid://0htxqvqtetli" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body02.png" id="2_bf1cc"]
-[ext_resource type="Texture2D" uid="uid://bhoep6mro6m0f" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body03.png" id="3_d0xo2"]
-[ext_resource type="Texture2D" uid="uid://df8ew5rm2opy2" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body04.png" id="4_pft75"]
-[ext_resource type="Texture2D" uid="uid://kiql5t2tskmo" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body05.png" id="5_w1p8e"]
-[ext_resource type="Texture2D" uid="uid://cfw52iv5r7p4i" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body06.png" id="6_0fm4o"]
-[ext_resource type="Texture2D" uid="uid://dg8wmjom238tg" path="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body07.png" id="7_ef641"]
+[ext_resource type="Texture2D" uid="uid://dcq187a0nweqt" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body01.png" id="1_mgji0"]
+[ext_resource type="Texture2D" uid="uid://0htxqvqtetli" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body02.png" id="2_bf1cc"]
+[ext_resource type="Texture2D" uid="uid://bhoep6mro6m0f" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body03.png" id="3_d0xo2"]
+[ext_resource type="Texture2D" uid="uid://df8ew5rm2opy2" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body04.png" id="4_pft75"]
+[ext_resource type="Texture2D" uid="uid://kiql5t2tskmo" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body05.png" id="5_w1p8e"]
+[ext_resource type="Texture2D" uid="uid://cfw52iv5r7p4i" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body06.png" id="6_0fm4o"]
+[ext_resource type="Texture2D" uid="uid://dg8wmjom238tg" path="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body07.png" id="7_ef641"]
 
 [resource]
 animations = [{

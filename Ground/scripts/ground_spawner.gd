@@ -1,6 +1,6 @@
 extends Node
 
-const Ground = preload("res://Ground/ground.tscn")
+const Ground = preload("res://ground/ground.tscn")
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_ground_speed: int = 350
 @onready var ground_speed: int = 350

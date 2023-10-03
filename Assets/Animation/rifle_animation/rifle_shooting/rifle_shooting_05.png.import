@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c88dg775mdwhu"
-path="res://.godot/imported/rifle_shooting_05.png-e6fb6619b137425ac303c790cb7bbd4f.ctex"
+path="res://.godot/imported/rifle_shooting_05.png-c5985e649ed375725bb64e673151b455.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_05.png"
-dest_files=["res://.godot/imported/rifle_shooting_05.png-e6fb6619b137425ac303c790cb7bbd4f.ctex"]
+source_file="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_05.png"
+dest_files=["res://.godot/imported/rifle_shooting_05.png-c5985e649ed375725bb64e673151b455.ctex"]
 
 [params]
 

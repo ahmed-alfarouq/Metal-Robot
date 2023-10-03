@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kiql5t2tskmo"
-path="res://.godot/imported/shooting_bondqea_body05.png-7731be9ab9da823a084042299d5562ce.ctex"
+path="res://.godot/imported/shooting_bondqea_body05.png-a4543da838231f7b9fa82b32caa1ca66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body05.png"
-dest_files=["res://.godot/imported/shooting_bondqea_body05.png-7731be9ab9da823a084042299d5562ce.ctex"]
+source_file="res://assets/Animation/player_animation/rifle_shooting/shooting_bondqea_body05.png"
+dest_files=["res://.godot/imported/shooting_bondqea_body05.png-a4543da838231f7b9fa82b32caa1ca66.ctex"]
 
 [params]
 

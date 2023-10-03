@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var email = $Email
 @onready var password = $Password
@@ -22,7 +22,7 @@ func _on_sign_in_pressed():
 
 func login_completed(auth_info):
 	Firebase.Auth.save_auth(auth_info)
-	SceneTransition.change_scene("res://menus/main_menu.tscn")
+	SceneTransition.transition("res://menus/main_menu.tscn")
 
 func login_failed(_code, message):
 	if (message == "INVALID_EMAIL"):
@@ -36,8 +36,8 @@ func login_failed(_code, message):
 
 
 func _on_forget_password_pressed():
-	SceneTransition.change_scene("res://auth/reset_password/reset_password.tscn")
+	SceneTransition.transition("res://auth/reset_password/reset_password.tscn")
 
 
 func _on_create_account_pressed():
-	SceneTransition.change_scene("res://auth/sign_up/sign_up.tscn")
+	SceneTransition.transition("res://auth/sign_up/sign_up.tscn")

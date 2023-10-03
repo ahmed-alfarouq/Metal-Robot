@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://hs5xt1icwrf7"
-path="res://.godot/imported/AquireLight-YzE0o.otf-852b1818aeb738e8f0117ea72e1f654d.fontdata"
+path="res://.godot/imported/AquireLight-YzE0o.otf-406ec5db05ab4dc517d4a69dbb6b377c.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/AquireLight-YzE0o.otf"
-dest_files=["res://.godot/imported/AquireLight-YzE0o.otf-852b1818aeb738e8f0117ea72e1f654d.fontdata"]
+source_file="res://assets/Fonts/AquireLight-YzE0o.otf"
+dest_files=["res://.godot/imported/AquireLight-YzE0o.otf-406ec5db05ab4dc517d4a69dbb6b377c.fontdata"]
 
 [params]
 

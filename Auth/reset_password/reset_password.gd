@@ -20,4 +20,4 @@ func _on_send_email_pressed():
 
 
 func _on_login_pressed():
-	SceneTransition.change_scene("res://auth/sign_in/sign_in.tscn")
+	SceneTransition.transition("res://auth/sign_in/sign_in.tscn")

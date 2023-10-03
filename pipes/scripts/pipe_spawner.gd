@@ -1,10 +1,13 @@
 extends Node
 
 const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
+
+
+@export var pipe_speed = 350
+
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_pipe_speed = 350
-@onready var pipe_speed = 350
-@onready var pipe_gap_range = randf_range(50, 80)
+@onready var pipe_gap_range = randf_range(50, 70)
 @onready var spawn_timer = $SpawnTimer
 @onready var speed_timer = $IncreaseSpeedTimer
 
@@ -18,7 +21,7 @@ func spawn_pipes():
 	
 	# Determine pipes position
 	pipe.position.x = screen.end.x + 30
-	pipe.position.y = randf_range(130, -130)
+	pipe.position.y = randi_range(130, -130)
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()

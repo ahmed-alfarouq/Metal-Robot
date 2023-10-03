@@ -21,6 +21,7 @@ signal login_succeeded(auth_result)
 signal login_failed(code, message)
 signal userdata_received(userdata)
 signal userdata_deleted()
+signal user_not_loggedin()
 signal token_exchanged(successful)
 signal token_refresh_succeeded(auth_result)
 signal logged_out()
@@ -580,6 +581,7 @@ func get_user_data() -> void:
 		if not is_logged_in():
 			print_debug("Not logged in")
 			is_busy = false
+			user_not_loggedin.emit()
 			return
 
 		var err = request(_base_url + _userdata_request_url, _headers, HTTPClient.METHOD_POST, JSON.stringify({"idToken":auth.idtoken}))

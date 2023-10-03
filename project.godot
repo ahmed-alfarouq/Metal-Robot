@@ -15,15 +15,16 @@ run/main_scene="res://internet_connection/internet_connection.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 run/max_fps=100
 boot_splash/bg_color=Color(0.136719, 0.121094, 0.125, 1)
-boot_splash/image="res://Assets/logo.png"
+boot_splash/image="res://assets/logo.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://Assets/icon.png"
+config/icon="res://assets/icon.png"
 
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 Globals="*res://globals.gd"
+SceneTransition="*res://scene_transition/scene_transition.tscn"
 
 [display]
 
@@ -57,6 +58,10 @@ flying_down={
 
 [layer_names]
 
+2d_render/layer_1="Player"
+2d_render/layer_2="Ground"
+2d_render/layer_3="Pipes"
+2d_render/layer_4="Areas"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Pipes"

@@ -1,14 +1,135 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsw1fy3p7ltt3"]
+[gd_scene load_steps=13 format=3 uid="uid://bsw1fy3p7ltt3"]
 
 [ext_resource type="Script" path="res://pipes/scripts/pipe_pair.gd" id="1_gfche"]
-[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://Assets/Pipe.png" id="2_6fj5m"]
-[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://Assets/Sounds/Point.wav" id="3_8jqqj"]
+[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://assets/Pipe.png" id="2_6fj5m"]
+[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://assets/Sounds/Point.wav" id="3_8jqqj"]
+
+[sub_resource type="Animation" id="Animation_16xh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopPipe/StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -265)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomPipe/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3.75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomPipe/StaticBody2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_yrw0j"]
+resource_name = "up_down"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottomPipe/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -265), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPipe/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -265), Vector2(0, -530), Vector2(3.05176e-05, -264)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopPipe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -257.5), Vector2(0, -530), Vector2(0, -257.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TopPipe/StaticBody2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -265), Vector2(0, -530), Vector2(0, -265)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BottomPipe/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -3.75), Vector2(0, -261.25), Vector2(0, -3.75)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BottomPipe/StaticBody2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, -275), Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fumn8"]
+_data = {
+"RESET": SubResource("Animation_16xh5"),
+"up_down": SubResource("Animation_yrw0j")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xupw"]
 size = Vector2(158, 883)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2fl5"]
-size = Vector2(152, 873)
+size = Vector2(153, 878.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gc17"]
 size = Vector2(154, 890.5)
@@ -26,24 +147,30 @@ size = Vector2(64, 1395)
 position = Vector2(60, 0)
 script = ExtResource("1_gfche")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fumn8")
+}
+
 [node name="TopPipe" type="Area2D" parent="."]
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
-position = Vector2(3.05176e-05, -264)
+position = Vector2(2.17983e-05, -340)
 rotation = 3.14159
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_6fj5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
-position = Vector2(0, -257.5)
+position = Vector2(0, -335.357)
 shape = SubResource("RectangleShape2D_0xupw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TopPipe"]
+position = Vector2(0, -265)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe/StaticBody2D"]
-position = Vector2(-1, -253.5)
+position = Vector2(-0.5, 2.75)
 shape = SubResource("RectangleShape2D_l2fl5")
 
 [node name="BottomPipe" type="Area2D" parent="."]
@@ -51,6 +178,7 @@ position = Vector2(0, 1000)
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
+position = Vector2(0, -75.7143)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_6fj5m")
 
@@ -66,6 +194,7 @@ collision_layer = 4
 shape = SubResource("RectangleShape2D_hpk36")
 
 [node name="EarnPoint" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EarnPoint"]
@@ -73,6 +202,7 @@ position = Vector2(55, 366.5)
 shape = SubResource("RectangleShape2D_sjo5f")
 
 [node name="DetectRemover" type="Area2D" parent="."]
+visible = false
 position = Vector2(-22, 303)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRemover"]
@@ -80,11 +210,10 @@ position = Vector2(17, 144)
 shape = SubResource("RectangleShape2D_37tl1")
 
 [node name="Point" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-447, 14)
 stream = ExtResource("3_8jqqj")
 
-[connection signal="area_entered" from="TopPipe" to="." method="_on_top_pipe_area_entered"]
 [connection signal="body_entered" from="TopPipe" to="." method="_on_top_pipe_body_entered"]
-[connection signal="area_entered" from="BottomPipe" to="." method="_on_bottom_pipe_area_entered"]
 [connection signal="body_entered" from="BottomPipe" to="." method="_on_bottom_pipe_body_entered"]
 [connection signal="body_entered" from="EarnPoint" to="." method="_on_earn_point_body_entered"]
 [connection signal="area_entered" from="DetectRemover" to="." method="_on_detect_remover_area_entered"]

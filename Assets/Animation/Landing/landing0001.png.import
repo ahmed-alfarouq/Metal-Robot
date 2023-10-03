@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b07a0nsxjt2jn"
-path="res://.godot/imported/landing0001.png-aab87f73dd5fbc78b926050c1812413b.ctex"
+path="res://.godot/imported/landing0001.png-32b5758da7a6792b2bd9012e5539c8f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/Landing/landing0001.png"
-dest_files=["res://.godot/imported/landing0001.png-aab87f73dd5fbc78b926050c1812413b.ctex"]
+source_file="res://assets/Animation/Landing/landing0001.png"
+dest_files=["res://.godot/imported/landing0001.png-32b5758da7a6792b2bd9012e5539c8f2.ctex"]
 
 [params]
 

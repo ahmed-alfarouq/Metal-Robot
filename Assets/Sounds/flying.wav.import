@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c1cr0w2mm7aya"
-path="res://.godot/imported/flying.wav-2466289c5fef0069f6d5dbe8066ed20c.sample"
+path="res://.godot/imported/flying.wav-99d780da2578159bca7c96f06de0c66c.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/flying.wav"
-dest_files=["res://.godot/imported/flying.wav-2466289c5fef0069f6d5dbe8066ed20c.sample"]
+source_file="res://assets/Sounds/flying.wav"
+dest_files=["res://.godot/imported/flying.wav-99d780da2578159bca7c96f06de0c66c.sample"]
 
 [params]
 

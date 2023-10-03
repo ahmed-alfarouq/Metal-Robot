@@ -1,14 +1,14 @@
 [gd_scene load_steps=22 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://levels/Scripts/main_level.gd" id="1_0rt1o"]
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://Assets/BG.png" id="2_ohhby"]
-[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/Player.tscn" id="3_o7jab"]
+[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://assets/BG.png" id="2_ohhby"]
+[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="3_o7jab"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="4_oo7m2"]
-[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://Ground/ground_spawner.tscn" id="5_wiudy"]
+[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="5_wiudy"]
 [ext_resource type="PackedScene" uid="uid://2wymwhvb3djv" path="res://Gun/gun_spawner.tscn" id="6_cb775"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://Assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="7_cnyou"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://Assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="8_i28bs"]
-[ext_resource type="FontFile" uid="uid://cgfr60b7gancf" path="res://Assets/Fonts/AquireBold-8Ma60.otf" id="9_vrlcg"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="7_cnyou"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="8_i28bs"]
+[ext_resource type="FontFile" uid="uid://cgfr60b7gancf" path="res://assets/Fonts/AquireBold-8Ma60.otf" id="9_vrlcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
 size = Vector2(1315, 16)
@@ -80,8 +80,8 @@ metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = []
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(958.5, 544.5)
-scale = Vector2(0.455753, 0.373448)
+position = Vector2(1038.84, 579)
+scale = Vector2(0.493875, 0.397241)
 texture = ExtResource("2_ohhby")
 
 [node name="Camera2D" type="Camera2D" parent="."]

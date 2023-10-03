@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b8ptrolbbij7"]
 
-[ext_resource type="Texture2D" uid="uid://cfefn6k2s5dat" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_01.png" id="1_c02q7"]
-[ext_resource type="Texture2D" uid="uid://baduw6wc26pkc" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_02.png" id="2_h4nt7"]
-[ext_resource type="Texture2D" uid="uid://cvc3m7rqn5j2j" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_03.png" id="3_gafj8"]
-[ext_resource type="Texture2D" uid="uid://b3ciffbyfcdld" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_04.png" id="4_ssi1a"]
-[ext_resource type="Texture2D" uid="uid://c88dg775mdwhu" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_05.png" id="5_5d1rd"]
-[ext_resource type="Texture2D" uid="uid://c3kpi0s5irv5h" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_06.png" id="6_m0g7b"]
-[ext_resource type="Texture2D" uid="uid://b23jc0aka43lq" path="res://Assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_07.png" id="7_f7i8f"]
+[ext_resource type="Texture2D" uid="uid://cfefn6k2s5dat" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_01.png" id="1_c02q7"]
+[ext_resource type="Texture2D" uid="uid://baduw6wc26pkc" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_02.png" id="2_h4nt7"]
+[ext_resource type="Texture2D" uid="uid://cvc3m7rqn5j2j" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_03.png" id="3_gafj8"]
+[ext_resource type="Texture2D" uid="uid://b3ciffbyfcdld" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_04.png" id="4_ssi1a"]
+[ext_resource type="Texture2D" uid="uid://c88dg775mdwhu" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_05.png" id="5_5d1rd"]
+[ext_resource type="Texture2D" uid="uid://c3kpi0s5irv5h" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_06.png" id="6_m0g7b"]
+[ext_resource type="Texture2D" uid="uid://b23jc0aka43lq" path="res://assets/Animation/rifle_animation/rifle_shooting/rifle_shooting_07.png" id="7_f7i8f"]
 
 [resource]
 animations = [{

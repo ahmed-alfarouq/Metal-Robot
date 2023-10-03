@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf8v300xegdxe"
-path="res://.godot/imported/shooting_pistol_body05.png-df59c9a7eb30d2036a5420f65bf82512.ctex"
+path="res://.godot/imported/shooting_pistol_body05.png-b0b0ea69a366b3c9b39600f72a36bf75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/player_animation/pistol_shooting/shooting_pistol_body05.png"
-dest_files=["res://.godot/imported/shooting_pistol_body05.png-df59c9a7eb30d2036a5420f65bf82512.ctex"]
+source_file="res://assets/Animation/player_animation/pistol_shooting/shooting_pistol_body05.png"
+dest_files=["res://.godot/imported/shooting_pistol_body05.png-b0b0ea69a366b3c9b39600f72a36bf75.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxsxkky54s6r3"
-path="res://.godot/imported/shooting0003.png-ec983643fe1d412253622f8a990139e3.ctex"
+path="res://.godot/imported/shooting0003.png-565a44f09139b5e365ba728c5089572f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ShootingParticles/shooting0003.png"
-dest_files=["res://.godot/imported/shooting0003.png-ec983643fe1d412253622f8a990139e3.ctex"]
+source_file="res://assets/ShootingParticles/shooting0003.png"
+dest_files=["res://.godot/imported/shooting0003.png-565a44f09139b5e365ba728c5089572f.ctex"]
 
 [params]
 

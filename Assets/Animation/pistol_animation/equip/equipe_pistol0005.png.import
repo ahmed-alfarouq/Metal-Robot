@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cee8map0vpb06"
-path="res://.godot/imported/equipe_pistol0005.png-acbaf4cc164761ce2f67b5eb895e2c26.ctex"
+path="res://.godot/imported/equipe_pistol0005.png-b8fda1fe5ddb5ddd751a4a30298c71cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/pistol_animation/equip/equipe_pistol0005.png"
-dest_files=["res://.godot/imported/equipe_pistol0005.png-acbaf4cc164761ce2f67b5eb895e2c26.ctex"]
+source_file="res://assets/Animation/pistol_animation/equip/equipe_pistol0005.png"
+dest_files=["res://.godot/imported/equipe_pistol0005.png-b8fda1fe5ddb5ddd751a4a30298c71cb.ctex"]
 
 [params]
 
