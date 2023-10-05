@@ -1,19 +1,20 @@
-[gd_scene load_steps=21 format=3 uid="uid://vsmad7qruv46"]
+[gd_scene load_steps=22 format=3 uid="uid://vsmad7qruv46"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_i14cy"]
-[ext_resource type="Texture2D" uid="uid://cee8map0vpb06" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0005.png" id="2_ennkt"]
+[ext_resource type="Texture2D" uid="uid://cee8map0vpb06" path="res://assets/animation/pistol_animation/equip/equipe_pistol0005.png" id="2_ennkt"]
 [ext_resource type="Script" path="res://player/scripts/player_animation.gd" id="3_hfwrt"]
-[ext_resource type="Texture2D" uid="uid://ln20ida4kpc" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0006.png" id="3_ntv1d"]
-[ext_resource type="Texture2D" uid="uid://r43dfpcera48" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0007.png" id="4_e651w"]
-[ext_resource type="Texture2D" uid="uid://dmcpcx5xikk4k" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0008.png" id="5_3va72"]
-[ext_resource type="Texture2D" uid="uid://cnyq27j0jcsm5" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0009.png" id="6_4w4ym"]
-[ext_resource type="Texture2D" uid="uid://cna1bi2ikwn0e" path="res://assets/Animation/pistol_animation/equip/equipe_pistol0010.png" id="7_jmqt4"]
-[ext_resource type="Texture2D" uid="uid://gfeuwufw56u0" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_01.png" id="8_5c3o3"]
-[ext_resource type="Texture2D" uid="uid://d3muybcxtt6s8" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_02.png" id="9_0xxxj"]
-[ext_resource type="Texture2D" uid="uid://b0cdy4vsf0oj0" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_03.png" id="10_dw6pg"]
-[ext_resource type="Texture2D" uid="uid://bry4ym05vb38b" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_04.png" id="11_uq7ma"]
-[ext_resource type="Texture2D" uid="uid://5a6k2pfgnu8q" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_05.png" id="12_x6fow"]
-[ext_resource type="Texture2D" uid="uid://dyuw12tpnc8wm" path="res://assets/Animation/pistol_animation/shooting/pistol_shooting_06.png" id="13_5dnft"]
+[ext_resource type="Texture2D" uid="uid://ln20ida4kpc" path="res://assets/animation/pistol_animation/equip/equipe_pistol0006.png" id="3_ntv1d"]
+[ext_resource type="Texture2D" uid="uid://r43dfpcera48" path="res://assets/animation/pistol_animation/equip/equipe_pistol0007.png" id="4_e651w"]
+[ext_resource type="Texture2D" uid="uid://dmcpcx5xikk4k" path="res://assets/animation/pistol_animation/equip/equipe_pistol0008.png" id="5_3va72"]
+[ext_resource type="Texture2D" uid="uid://cnyq27j0jcsm5" path="res://assets/animation/pistol_animation/equip/equipe_pistol0009.png" id="6_4w4ym"]
+[ext_resource type="Texture2D" uid="uid://cna1bi2ikwn0e" path="res://assets/animation/pistol_animation/equip/equipe_pistol0010.png" id="7_jmqt4"]
+[ext_resource type="Texture2D" uid="uid://gfeuwufw56u0" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_01.png" id="8_5c3o3"]
+[ext_resource type="Texture2D" uid="uid://d3muybcxtt6s8" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_02.png" id="9_0xxxj"]
+[ext_resource type="Texture2D" uid="uid://b0cdy4vsf0oj0" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_03.png" id="10_dw6pg"]
+[ext_resource type="Texture2D" uid="uid://bry4ym05vb38b" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_04.png" id="11_uq7ma"]
+[ext_resource type="Texture2D" uid="uid://5a6k2pfgnu8q" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_05.png" id="12_x6fow"]
+[ext_resource type="Texture2D" uid="uid://dyuw12tpnc8wm" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_06.png" id="13_5dnft"]
+[ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://assets/sounds/boom.wav" id="17_vckcb"]
 [ext_resource type="SpriteFrames" uid="uid://bic0ahi1qt5ip" path="res://resources/sprite_frames/player/player_base.tres" id="18_jk84j"]
 [ext_resource type="Script" path="res://weapons_scripts/ranged_weapon.gd" id="20_ir263"]
 
@@ -106,7 +107,7 @@ height = 416.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(100, 200)
-collision_mask = 14
+collision_mask = 6
 script = ExtResource("1_i14cy")
 pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 450
@@ -115,8 +116,7 @@ flying_speed = 450
 sprite_frames = ExtResource("18_jk84j")
 animation = &"flying_up"
 autoplay = "flying_up"
-frame = 2
-frame_progress = 0.436051
+frame_progress = 0.270909
 script = ExtResource("3_hfwrt")
 
 [node name="Weapon" type="Node2D" parent="."]
@@ -126,11 +126,22 @@ script = ExtResource("20_ir263")
 sprite_frames = SubResource("SpriteFrames_w1hmb")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22)
+position = Vector2(-7, 24)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vvetr")
 
-[node name="ShootingTimer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="Sounds" type="Node" parent="."]
 
-[connection signal="timeout" from="ShootingTimer" to="." method="_on_shooting_timer_timeout"]
+[node name="Boom" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2(100, 200)
+stream = ExtResource("17_vckcb")
+
+[node name="ScreamingArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 12
+
+[node name="ScreamingTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="ScreamingArea" to="." method="_on_screaming_area_body_entered"]

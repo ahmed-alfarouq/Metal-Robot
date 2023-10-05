@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cgfr60b7gancf"
-path="res://.godot/imported/AquireBold-8Ma60.otf-faf450452124c2b229e75485e98dd0e2.fontdata"
+path="res://.godot/imported/AquireBold-8Ma60.otf-662c2deba0c1ea86bb9d2519c471746a.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/AquireBold-8Ma60.otf"
-dest_files=["res://.godot/imported/AquireBold-8Ma60.otf-faf450452124c2b229e75485e98dd0e2.fontdata"]
+source_file="res://assets/fonts/AquireBold-8Ma60.otf"
+dest_files=["res://.godot/imported/AquireBold-8Ma60.otf-662c2deba0c1ea86bb9d2519c471746a.fontdata"]
 
 [params]
 

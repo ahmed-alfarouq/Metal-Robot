@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciiu1t1cko23m"
-path="res://.godot/imported/flying_up_02.png-4e586e2000256ab362c8a657efc25e3c.ctex"
+path="res://.godot/imported/flying_up_02.png-6089fb27898b00f27962c5503803ef93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Animation/player_animation/base/flying_up/flying_up_02.png"
-dest_files=["res://.godot/imported/flying_up_02.png-4e586e2000256ab362c8a657efc25e3c.ctex"]
+source_file="res://assets/animation/player_animation/base/flying_up/flying_up_02.png"
+dest_files=["res://.godot/imported/flying_up_02.png-6089fb27898b00f27962c5503803ef93.ctex"]
 
 [params]
 

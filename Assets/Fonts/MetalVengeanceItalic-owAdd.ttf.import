@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ckpy413ss42io"
-path="res://.godot/imported/MetalVengeanceItalic-owAdd.ttf-2dfaf3565fe171e478d4d88e90ada95d.fontdata"
+path="res://.godot/imported/MetalVengeanceItalic-owAdd.ttf-67197905302b4e740ec36ce497409f20.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf"
-dest_files=["res://.godot/imported/MetalVengeanceItalic-owAdd.ttf-2dfaf3565fe171e478d4d88e90ada95d.fontdata"]
+source_file="res://assets/fonts/MetalVengeanceItalic-owAdd.ttf"
+dest_files=["res://.godot/imported/MetalVengeanceItalic-owAdd.ttf-67197905302b4e740ec36ce497409f20.fontdata"]
 
 [params]
 

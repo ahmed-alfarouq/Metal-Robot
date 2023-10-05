@@ -1,7 +1,7 @@
 extends Node
 
-var id_token: String = ""
 var loading_screen = preload("res://loading_screen/loading_screen.tscn")
+var screaming_times = 3
 
 # Regex
 @onready var email_regex = RegEx.new()

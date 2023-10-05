@@ -51,6 +51,7 @@ script = ExtResource("1_u1i4x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 50
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")

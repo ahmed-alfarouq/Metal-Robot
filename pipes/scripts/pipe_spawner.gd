@@ -7,7 +7,7 @@ const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_pipe_speed = 350
-@onready var pipe_gap_range = randf_range(50, 70)
+@onready var pipe_gap_range = randf_range(60, 90)
 @onready var spawn_timer = $SpawnTimer
 @onready var speed_timer = $IncreaseSpeedTimer
 
@@ -15,13 +15,13 @@ func _ready():
 	spawn_pipes()
 
 func spawn_pipes():
-	var screen = get_viewport().get_camera_2d().get_viewport_rect()
+	var screen = get_viewport().get_visible_rect()
 	var pipe = PIPEPAIR.instantiate()
 	add_child(pipe, true)
 	
 	# Determine pipes position
-	pipe.position.x = screen.end.x + 30
-	pipe.position.y = randi_range(130, -130)
+	pipe.position.x = screen.end.x + 200
+	pipe.position.y = (screen.size.y / 2) - randi_range(20, 40)
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()
@@ -38,37 +38,3 @@ func stop_spawner():
 
 func _on_player_dies():
 	stop_spawner()
-
-
-func _on_player_start_shooting():
-	prev_pipe_speed = pipe_speed
-
-	# Stop all pipe while equiping gun
-	pipe_speed = 0
-	stop_spawner()
-	spawn_timer.stop()
-	await get_tree().create_timer(0.6).timeout
-
-	# Increase pipes speed and count while shooting, decrease the gap between pipes, and restart spawning them
-	pipe_speed += 250
-	spawn_timer.wait_time = 0.8
-	spawn_timer.start()
-	pipe_gap_range = randf_range(70, 80)
-
-
-func _on_player_stop_shooting():
-	# Stop all pipe while droping gun
-	pipe_speed = 0
-	stop_spawner()
-	spawn_timer.stop()
-	await get_tree().create_timer(0.6).timeout
-
-	# Reset everything
-	pipe_speed = prev_pipe_speed
-	spawn_timer.wait_time = 2
-	spawn_timer.start()
-	pipe_gap_range = randf_range(50, 80)
-	
-	# Add a pipe to prevent a big gap between pipes
-	await get_tree().create_timer(0.9).timeout
-	spawn_pipes()

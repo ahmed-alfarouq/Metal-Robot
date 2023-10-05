@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ground/scripts/ground_spawner.gd" id="1_upwth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyxk4"]
-size = Vector2(20, 50)
+size = Vector2(20, 141.2)
 
 [node name="GroundSpawner" type="Node"]
 script = ExtResource("1_upwth")
@@ -14,6 +14,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Remover"]
+position = Vector2(0, -12)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_cyxk4")
 

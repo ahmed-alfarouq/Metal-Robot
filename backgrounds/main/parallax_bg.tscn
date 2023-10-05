@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://5pyapfi0cabv"]
+
+[ext_resource type="Script" path="res://backgrounds/main/parallax_bg.gd" id="1_mvib3"]
+[ext_resource type="Texture2D" uid="uid://cnpr8p3y8tsd0" path="res://assets/bg/main/bg_sky.png" id="1_o0usm"]
+[ext_resource type="Texture2D" uid="uid://cqf8ygpcim2vy" path="res://assets/bg/main/bg_clouds.png" id="2_8ai6k"]
+[ext_resource type="Texture2D" uid="uid://bnhfxda0xk6g6" path="res://assets/bg/main/bg_back_buildings.png" id="3_6a01d"]
+[ext_resource type="Texture2D" uid="uid://xm3xts08fjpn" path="res://assets/bg/main/bg_middle_building.png" id="4_jcyu8"]
+[ext_resource type="Texture2D" uid="uid://bean7xcfw6igb" path="res://assets/bg/main/bg_front_building.png" id="5_0grco"]
+
+[node name="ParallaxBG" type="ParallaxBackground"]
+follow_viewport_enabled = true
+scroll_ignore_camera_zoom = true
+script = ExtResource("1_mvib3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o0usm")
+metadata/_edit_lock_ = true
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1917, 0)
+
+[node name="BgClouds" type="Sprite2D" parent="Clouds"]
+position = Vector2(4, -128)
+scale = Vector2(1.00208, 0.687037)
+texture = ExtResource("2_8ai6k")
+centered = false
+
+[node name="BackBuildings" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1917, 0)
+
+[node name="BgBackBuildings" type="Sprite2D" parent="BackBuildings"]
+position = Vector2(0, 15)
+scale = Vector2(1.00365, 0.706481)
+texture = ExtResource("3_6a01d")
+centered = false
+
+[node name="MiddleBuildings" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="BgMiddleBuilding" type="Sprite2D" parent="MiddleBuildings"]
+position = Vector2(0, -131)
+scale = Vector2(0.998958, 0.983796)
+texture = ExtResource("4_jcyu8")
+centered = false
+
+[node name="FrontBuildings" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1917, 0)
+
+[node name="BgFrontBuilding" type="Sprite2D" parent="FrontBuildings"]
+position = Vector2(0, -71)
+scale = Vector2(1, 0.925926)
+texture = ExtResource("5_0grco")
+centered = false

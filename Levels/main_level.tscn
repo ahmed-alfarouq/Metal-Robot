@@ -1,23 +1,29 @@
-[gd_scene load_steps=22 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=26 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://levels/Scripts/main_level.gd" id="1_0rt1o"]
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://assets/BG.png" id="2_ohhby"]
 [ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="3_o7jab"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="4_oo7m2"]
 [ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="5_wiudy"]
-[ext_resource type="PackedScene" uid="uid://2wymwhvb3djv" path="res://Gun/gun_spawner.tscn" id="6_cb775"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="7_cnyou"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="8_i28bs"]
-[ext_resource type="FontFile" uid="uid://cgfr60b7gancf" path="res://assets/Fonts/AquireBold-8Ma60.otf" id="9_vrlcg"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/fonts/MetalVengeanceItalic-owAdd.ttf" id="7_cnyou"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="8_i28bs"]
+[ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="9_suvop"]
+[ext_resource type="FontFile" uid="uid://cgfr60b7gancf" path="res://assets/fonts/AquireBold-8Ma60.otf" id="9_vrlcg"]
+[ext_resource type="Texture2D" uid="uid://c2ylwwc4fd7dg" path="res://assets/ui/controls/arrow_up.png" id="10_0xa71"]
+[ext_resource type="Texture2D" uid="uid://dm221i67rpa04" path="res://assets/ui/controls/arrow_down.png" id="11_c2gau"]
+[ext_resource type="Texture2D" uid="uid://do47q247gkfwr" path="res://assets/ui/controls/shoot.png" id="12_8g8yl"]
+[ext_resource type="Texture2D" uid="uid://ghjjrpiku0lq" path="res://assets/ui/controls/scream.png" id="13_f7tby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
-size = Vector2(1315, 16)
+size = Vector2(1954, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkie"]
-size = Vector2(42, 655.5)
+size = Vector2(42, 1089.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8s67"]
-size = Vector2(135, 731)
+size = Vector2(186.5, 2079)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04yfw"]
+size = Vector2(6273, 266)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5i31"]
 bg_color = Color(0.109804, 0.109804, 0.109804, 1)
@@ -77,83 +83,97 @@ default_font_size = 70
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_0rt1o")
 metadata/_edit_vertical_guides_ = []
-metadata/_edit_horizontal_guides_ = []
-
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(1038.84, 579)
-scale = Vector2(0.493875, 0.397241)
-texture = ExtResource("2_ohhby")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+metadata/_edit_horizontal_guides_ = [1922.0]
 
 [node name="Player" parent="." instance=ExtResource("3_o7jab")]
-position = Vector2(208, 312)
-scale = Vector2(0.3, 0.3)
+position = Vector2(517, 312)
+scale = Vector2(0.4, 0.4)
+flying_speed = 510
 
-[node name="TopBlocker" type="StaticBody2D" parent="."]
+[node name="Areas" type="Node" parent="."]
+
+[node name="TopBlocker" type="StaticBody2D" parent="Areas"]
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBlocker"]
-position = Vector2(623.5, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TopBlocker"]
+position = Vector2(943, -2)
 shape = SubResource("RectangleShape2D_hl534")
 
-[node name="BackBlocker" type="StaticBody2D" parent="."]
+[node name="BackBlocker" type="StaticBody2D" parent="Areas"]
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BackBlocker"]
-position = Vector2(-21, 318.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/BackBlocker"]
+position = Vector2(-21, 535.25)
 shape = SubResource("RectangleShape2D_rtkie")
 
-[node name="ItemsRemover" type="Area2D" parent="."]
-collision_layer = 9
+[node name="ItemsRemover" type="Area2D" parent="Areas"]
+position = Vector2(-200, 0)
+collision_layer = 8
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemsRemover"]
-position = Vector2(-270, 365)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ItemsRemover"]
+position = Vector2(-244.25, 589.5)
 shape = SubResource("RectangleShape2D_g8s67")
 
-[node name="PipeSpawner" parent="." instance=ExtResource("4_oo7m2")]
+[node name="BottomItemsRemover" type="Area2D" parent="Areas"]
+position = Vector2(900, 5000)
+collision_layer = 8
+collision_mask = 12
 
-[node name="GroundSpawner" parent="." instance=ExtResource("5_wiudy")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/BottomItemsRemover"]
+position = Vector2(490.5, 33)
+shape = SubResource("RectangleShape2D_04yfw")
 
-[node name="GunSpawner" parent="." instance=ExtResource("6_cb775")]
+[node name="Spawners" type="Node" parent="."]
+
+[node name="PipeSpawner" parent="Spawners" instance=ExtResource("4_oo7m2")]
+
+[node name="GroundSpawner" parent="Spawners" instance=ExtResource("5_wiudy")]
 
 [node name="loseMenu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Exit" type="Button" parent="loseMenu"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -190.0
-offset_top = 500.0
-offset_right = 143.0
-offset_bottom = 577.0
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = 52.0
+offset_right = 150.0
+offset_bottom = 129.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_nlskd")
 text = "Exit"
 
 [node name="Replay" type="Button" parent="loseMenu"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -202.0
-offset_top = 400.0
-offset_right = 133.0
-offset_bottom = 475.0
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -52.0
+offset_right = 147.0
+offset_bottom = 23.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_jwgu0")
 text = "Replay"
 
 [node name="Name" type="RichTextLabel" parent="loseMenu"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -423.0
-offset_top = 60.0
-offset_right = 423.0
-offset_bottom = 280.0
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -427.0
+offset_right = 412.0
+offset_bottom = -207.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
@@ -163,14 +183,17 @@ text = "Metal Robot"
 fit_content = true
 
 [node name="Score" type="RichTextLabel" parent="loseMenu"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -243.0
-offset_top = 255.0
-offset_right = 501.0
-offset_bottom = 329.0
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -232.0
+offset_right = 431.0
+offset_bottom = -158.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -182,14 +205,17 @@ text = "Score:  30"
 fit_content = true
 
 [node name="BestScore" type="RichTextLabel" parent="loseMenu"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -237.0
-offset_top = 316.0
-offset_right = 585.0
-offset_bottom = 383.0
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -169.0
+offset_right = 505.0
+offset_bottom = -102.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.960784, 0.960784, 0.960784, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -200,9 +226,11 @@ theme_override_font_sizes/normal_font_size = 42
 text = "Best Score: 54"
 fit_content = true
 
-[node name="Score" type="CanvasLayer" parent="."]
+[node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="Score" type="Label" parent="Score"]
+[node name="ParallaxBG" parent="GUI" instance=ExtResource("9_suvop")]
+
+[node name="Score" type="Label" parent="GUI"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -216,11 +244,58 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 25
 text = "1"
 
+[node name="LeftContainer" type="VBoxContainer" parent="GUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -288.0
+offset_right = 385.0
+offset_bottom = -14.0
+grow_vertical = 0
+
+[node name="Up" type="TouchScreenButton" parent="GUI/LeftContainer"]
+position = Vector2(174, -305)
+scale = Vector2(3.0125, 3.0125)
+texture_normal = ExtResource("10_0xa71")
+action = "fly_up"
+
+[node name="Down" type="TouchScreenButton" parent="GUI/LeftContainer"]
+position = Vector2(180, -35)
+scale = Vector2(3, 3.025)
+texture_normal = ExtResource("11_c2gau")
+action = "fly_down"
+
+[node name="scream" type="TouchScreenButton" parent="GUI/LeftContainer"]
+position = Vector2(1284, -269)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("13_f7tby")
+action = "screaming"
+
+[node name="RightContainer" type="HBoxContainer" parent="GUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -344.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="shoot" type="TouchScreenButton" parent="GUI/RightContainer"]
+position = Vector2(96, -16)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("12_8g8yl")
+action = "screaming"
+
 [connection signal="dies" from="Player" to="." method="_on_player_dies"]
-[connection signal="dies" from="Player" to="PipeSpawner" method="_on_player_dies"]
-[connection signal="start_shooting" from="Player" to="PipeSpawner" method="_on_player_start_shooting"]
-[connection signal="start_shooting" from="Player" to="GroundSpawner" method="_on_player_start_shooting"]
-[connection signal="stop_shooting" from="Player" to="PipeSpawner" method="_on_player_stop_shooting"]
-[connection signal="stop_shooting" from="Player" to="GroundSpawner" method="_on_player_stop_shooting"]
+[connection signal="dies" from="Player" to="Spawners/PipeSpawner" method="_on_player_dies"]
+[connection signal="start_shooting" from="Player" to="Spawners/PipeSpawner" method="_on_player_start_shooting"]
+[connection signal="start_shooting" from="Player" to="Spawners/GroundSpawner" method="_on_player_start_shooting"]
+[connection signal="stop_shooting" from="Player" to="Spawners/PipeSpawner" method="_on_player_stop_shooting"]
+[connection signal="stop_shooting" from="Player" to="Spawners/GroundSpawner" method="_on_player_stop_shooting"]
+[connection signal="body_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_body_entered"]
+[connection signal="body_entered" from="Areas/BottomItemsRemover" to="." method="_on_bottom_items_remover_body_entered"]
 [connection signal="pressed" from="loseMenu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="loseMenu/Replay" to="." method="_on_replay_pressed"]

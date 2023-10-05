@@ -1,18 +1,149 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://bic0ahi1qt5ip"]
+[gd_resource type="SpriteFrames" load_steps=40 format=3 uid="uid://bic0ahi1qt5ip"]
 
-[ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/Animation/player_animation/base/flying_up/flying_up_01.png" id="1_dgmhv"]
-[ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/Animation/player_animation/base/flying_up/flying_up_02.png" id="2_1o6l4"]
-[ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/Animation/player_animation/base/flying_up/flying_up_03.png" id="3_np4dt"]
-[ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/Animation/player_animation/base/flying_up/flying_up_04.png" id="4_wyegg"]
-[ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/Animation/player_animation/base/flying_up/flying_up_05.png" id="5_qrmo4"]
-[ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/Animation/player_animation/base/flying_up/flying_up_06.png" id="6_0lval"]
-[ext_resource type="Texture2D" uid="uid://bhoc6vprnl6gj" path="res://assets/Animation/player_animation/base/flying_up/flying_up_07.png" id="7_xtq21"]
-[ext_resource type="Texture2D" uid="uid://d2um5se5prhka" path="res://assets/Animation/player_animation/base/flying_up/flying_up_08.png" id="8_li3j4"]
-[ext_resource type="Texture2D" uid="uid://btdnev6xnoe4y" path="res://assets/Animation/player_animation/base/flying_up/flying_up_9.png" id="9_ug5ir"]
-[ext_resource type="Texture2D" uid="uid://bnqujv1bhcm7g" path="res://assets/Animation/player_animation/base/flying_up/flying_up_10.png" id="10_g4w55"]
+[ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/animation/player_animation/base/flying_up/flying_up_01.png" id="1_dgmhv"]
+[ext_resource type="Texture2D" uid="uid://dl3lkptdb6ack" path="res://assets/animation/player_animation/base/boom/boom_01.png" id="1_wkd5q"]
+[ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/animation/player_animation/base/flying_up/flying_up_02.png" id="2_1o6l4"]
+[ext_resource type="Texture2D" uid="uid://cfh6lqnnrxj3l" path="res://assets/animation/player_animation/base/boom/boom_02.png" id="2_ai6mn"]
+[ext_resource type="Texture2D" uid="uid://cckfghw7ojues" path="res://assets/animation/player_animation/base/boom/boom_03.png" id="3_jeuxm"]
+[ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/animation/player_animation/base/flying_up/flying_up_03.png" id="3_np4dt"]
+[ext_resource type="Texture2D" uid="uid://b1k84umn2f45s" path="res://assets/animation/player_animation/base/boom/boom_04.png" id="4_ghfj2"]
+[ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/animation/player_animation/base/flying_up/flying_up_04.png" id="4_wyegg"]
+[ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/animation/player_animation/base/flying_up/flying_up_05.png" id="5_qrmo4"]
+[ext_resource type="Texture2D" uid="uid://cqaq3yqb2qd5w" path="res://assets/animation/player_animation/base/boom/boom_05.png" id="5_u5f7g"]
+[ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/animation/player_animation/base/flying_up/flying_up_06.png" id="6_0lval"]
+[ext_resource type="Texture2D" uid="uid://6n1g4kva8cu2" path="res://assets/animation/player_animation/base/boom/boom_06.png" id="6_mld55"]
+[ext_resource type="Texture2D" uid="uid://bpj7qqsltoxji" path="res://assets/animation/player_animation/base/boom/boom_07.png" id="7_s5nhn"]
+[ext_resource type="Texture2D" uid="uid://bhoc6vprnl6gj" path="res://assets/animation/player_animation/base/flying_up/flying_up_07.png" id="7_xtq21"]
+[ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://assets/animation/player_animation/base/boom/boom_08.png" id="8_50auq"]
+[ext_resource type="Texture2D" uid="uid://d2um5se5prhka" path="res://assets/animation/player_animation/base/flying_up/flying_up_08.png" id="8_li3j4"]
+[ext_resource type="Texture2D" uid="uid://bf0qxhthv2ax" path="res://assets/animation/player_animation/base/boom/boom_09.png" id="9_gb0vb"]
+[ext_resource type="Texture2D" uid="uid://btdnev6xnoe4y" path="res://assets/animation/player_animation/base/flying_up/flying_up_9.png" id="9_ug5ir"]
+[ext_resource type="Texture2D" uid="uid://bnqujv1bhcm7g" path="res://assets/animation/player_animation/base/flying_up/flying_up_10.png" id="10_g4w55"]
+[ext_resource type="Texture2D" uid="uid://duf5ppuxqvb7w" path="res://assets/animation/player_animation/base/boom/boom_10.png" id="10_vt3n7"]
+[ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://assets/animation/player_animation/base/boom/boom_11.png" id="11_2htwy"]
+[ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://assets/animation/player_animation/base/boom/boom_12.png" id="12_63tvg"]
+[ext_resource type="Texture2D" uid="uid://blg4qpc1a8c2c" path="res://assets/animation/player_animation/base/boom/boom_13.png" id="13_glf86"]
+[ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://assets/animation/player_animation/base/boom/boom_14.png" id="14_pbspu"]
+[ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://assets/animation/player_animation/base/boom/boom_15.png" id="15_urofc"]
+[ext_resource type="Texture2D" uid="uid://bmojax5f04pw0" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_01.png" id="16_a8qg5"]
+[ext_resource type="Texture2D" uid="uid://b02mpmj3n3bfo" path="res://assets/animation/player_animation/base/flying_down/flying_down_01.png" id="16_tp655"]
+[ext_resource type="Texture2D" uid="uid://cip4ngehfynq7" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_02.png" id="17_fa0os"]
+[ext_resource type="Texture2D" uid="uid://bpxygd60febmg" path="res://assets/animation/player_animation/base/flying_down/flying_down_02.png" id="17_orm42"]
+[ext_resource type="Texture2D" uid="uid://bvx2fbeumy3y4" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_03.png" id="18_jiokc"]
+[ext_resource type="Texture2D" uid="uid://buy3uxmchd2ds" path="res://assets/animation/player_animation/base/flying_down/flying_down_03.png" id="18_tswd6"]
+[ext_resource type="Texture2D" uid="uid://chl6ycq1t7uc" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_04.png" id="19_5p2qe"]
+[ext_resource type="Texture2D" uid="uid://ctscnfaihfsip" path="res://assets/animation/player_animation/base/flying_down/flying_down_04.png" id="19_df1xx"]
+[ext_resource type="Texture2D" uid="uid://crgeqa7aa2cg3" path="res://assets/animation/player_animation/base/flying_down/flying_down_05.png" id="20_wy3oi"]
+[ext_resource type="Texture2D" uid="uid://c6jgk5vjbtjrf" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_05.png" id="20_ytp37"]
+[ext_resource type="Texture2D" uid="uid://8puhik6brwnc" path="res://assets/animation/player_animation/base/flying_down/flying_down_06.png" id="21_vxmkf"]
+[ext_resource type="Texture2D" uid="uid://booew58ty6c74" path="res://assets/animation/player_animation/base/flying_down/flying_down_07.png" id="22_mkk24"]
+[ext_resource type="Texture2D" uid="uid://h5lm0n5o5dyc" path="res://assets/animation/player_animation/base/flying_down/flying_down_08.png" id="23_u71qg"]
+[ext_resource type="Texture2D" uid="uid://cup7gtpduom5e" path="res://assets/animation/player_animation/base/flying_down/flying_down_09.png" id="24_d0ghu"]
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wkd5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ai6mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jeuxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ghfj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u5f7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mld55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s5nhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_50auq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gb0vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vt3n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2htwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_63tvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_glf86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pbspu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_urofc")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_tp655")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_orm42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tswd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_df1xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wy3oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vxmkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mkk24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_u71qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_d0ghu")
+}],
+"loop": true,
+"name": &"flying_down",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_a8qg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fa0os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jiokc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5p2qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ytp37")
+}],
+"loop": false,
+"name": &"flying_transition",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dgmhv")

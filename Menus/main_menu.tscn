@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Script" path="res://menus/Scripts/main_menu.gd" id="1_sxlyg"]
-[ext_resource type="Texture2D" uid="uid://brygt02n1hnvh" path="res://assets/BG.png" id="2_trn7j"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/Fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="3_65uvy"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/Fonts/MetalVengeanceItalic-owAdd.ttf" id="4_o6n0c"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="2_ushcs"]
+[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="3_ipk36"]
+[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/fonts/MetalVengeanceItalic-owAdd.ttf" id="4_1b1ql"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rp0g"]
 bg_color = Color(0.109804, 0.109804, 0.109804, 1)
@@ -19,7 +19,7 @@ shadow_size = 8
 shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_k123p"]
-default_font = ExtResource("4_o6n0c")
+default_font = ExtResource("4_1b1ql")
 default_font_size = 30
 Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
 Button/styles/hover = SubResource("StyleBoxFlat_qwmld")
@@ -40,7 +40,7 @@ shadow_size = 8
 shadow_offset = Vector2(-0.59, 0)
 
 [sub_resource type="Theme" id="Theme_v2cod"]
-default_font = ExtResource("4_o6n0c")
+default_font = ExtResource("4_1b1ql")
 default_font_size = 30
 Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
 Button/styles/hover = SubResource("StyleBoxFlat_54qei")
@@ -59,9 +59,12 @@ script = ExtResource("1_sxlyg")
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
-offset_right = 2469.41
-offset_bottom = 1437.0
-texture = ExtResource("2_trn7j")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ushcs")
 expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
@@ -70,10 +73,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -1014.0
-offset_top = -181.0
-offset_right = -168.0
-offset_bottom = 39.0
+offset_left = -1011.0
+offset_top = -189.0
+offset_right = -165.0
+offset_bottom = 31.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -81,10 +84,9 @@ size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_fonts/normal_font = ExtResource("3_65uvy")
+theme_override_fonts/normal_font = ExtResource("3_ipk36")
 theme_override_font_sizes/normal_font_size = 220
 text = "Metal Robot"
-fit_content = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 anchors_preset = 6

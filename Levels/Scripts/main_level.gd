@@ -2,16 +2,21 @@ extends Node2D
 
 const SAVE_FILE_PATH = "user://bestscore.save"
 
-@onready var main_score = $Score/Score
-@onready var lose_menu = $loseMenu
-@onready var lose_menu_score = $loseMenu/Score
-@onready var lose_menu_best_score = $loseMenu/BestScore
+@onready var parallax_bg = $GUI/ParallaxBG
+@onready var main_gui = $GUI
+@onready var main_score = $GUI/Score
+@onready var lose_gui = $loseMenu
+@onready var lose_gui_score = $loseMenu/Score
+@onready var lose_gui_best_score = $loseMenu/BestScore
 @onready var is_dead: bool = false
 @onready var is_shooting: bool = false
-@onready var score: int = 0
+@onready var score: int = 28
 @onready var best_score: int = 0
 
 
+var camera: Camera2D
+var play_camera_shake: bool = false
+var parallax_prev_offset
 
 func _ready():
 	load_best_score()
@@ -19,12 +24,10 @@ func _ready():
 func _physics_process(_delta):
 	if (!is_dead):
 		main_score.text = str(score)
-
-	if (is_dead && !lose_menu.visible):
-		lose_menu.visible = true
-		lose_menu_score.text = "Score: " + str(score)
-		lose_menu_best_score.text = "Best Score: " + str(maxi(best_score, score))
-		main_score.visible = false
+	
+	if (play_camera_shake):
+		var rng = RandomNumberGenerator.new()
+		camera.offset = Vector2(rng.randf_range(-20, 20), rng.randf_range(20, -20))
 
 func save_best_score(new_best_score: int):
 	var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
@@ -35,6 +38,26 @@ func load_best_score():
 		var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
 		best_score = save_file.get_64()
 
+func shake_camera(shaking_time):
+	camera = Camera2D.new()
+	var shaking_timer = Timer.new()
+	# Change camera anchor mode
+	camera.anchor_mode = Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
+	# Make shaking work for one time and set wait time to shaking_time
+	shaking_timer.autostart = true
+	shaking_timer.one_shot = true
+	shaking_timer.wait_time = shaking_time
+	# Save parallax offset
+	parallax_prev_offset = parallax_bg.scroll_offset
+	# Add it to the scene
+	call_deferred("add_child", camera, true)
+	camera.call_deferred("add_child", shaking_timer, true)
+	# Disable shaking after timeout
+	shaking_timer.timeout.connect(_on_shaking_timer_timeout)
+	# Shake the camera
+	play_camera_shake = true
+	
+
 func _on_exit_pressed():
 	get_tree().quit()
 
@@ -44,4 +67,29 @@ func _on_replay_pressed():
 
 
 func _on_player_dies():
+	shake_camera(1)
 	save_best_score(maxi(best_score, score))
+	# Set score values
+	lose_gui_score.text = "Score: " + str(score)
+	lose_gui_best_score.text = "Best Score: " + str(maxi(best_score, score))
+	# Toggle visibility
+	main_gui.visible = false
+	lose_gui.visible = true
+
+func _on_items_remover_body_entered(body):
+	if (body.is_in_group("pipes")):
+		body.queue_free()
+
+func _on_shaking_timer_timeout():
+	# Stop shaking
+	play_camera_shake = false
+	# Delete the camera
+	if (has_node("Camera2D")):
+		remove_child($Camera2D)
+	# Reset offset
+	parallax_bg.scroll_offset = parallax_prev_offset
+
+
+func _on_bottom_items_remover_body_entered(body):
+	if (body.is_in_group("pipes")):
+		body.queue_free()

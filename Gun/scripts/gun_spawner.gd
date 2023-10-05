@@ -1,6 +1,6 @@
 extends Node
 
-const GUN_ITEM = preload("res://Gun/gun.tscn")
+const GUN_ITEM = preload("res://gun/gun.tscn")
 @onready var main = get_node("/root/MainLevel")
 @onready var gun_timer = $GunTimer
 var gun_speed = 250
@@ -10,8 +10,9 @@ func _ready():
 	gun_timer.start()
 
 func _physics_process(_delta):
-	if (main.is_dead && !gun_timer.is_stopped()):
-		gun_timer.stop()
+	#if (main.is_dead && !gun_timer.is_stopped()):
+	#	gun_timer.stop()
+	pass
 
 func _on_gun_timer_timeout():
 	# To reset the timer wait time
@@ -20,7 +21,7 @@ func _on_gun_timer_timeout():
 	gun_timer.start()
 	
 	# Add a new gun item
-	var screen = get_viewport().get_camera_2d().get_viewport_rect()
+	var screen = get_viewport().get_visible_rect()
 	var gun = GUN_ITEM.instantiate()
 	add_child(gun)
 	
