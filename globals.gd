@@ -18,6 +18,7 @@ func change_scene(current_scene, next_scene_path):
 	var scene_load_status
 	var progress: Array = []
 	var loading_screen_instance = loading_screen.instantiate()
+	var loading_bar = loading_screen_instance.get_node("CanvasLayer/Loader")
 
 	# Add the loading screen then delete the current scene
 	get_tree().root.call_deferred("add_child", loading_screen_instance)
@@ -36,7 +37,7 @@ func change_scene(current_scene, next_scene_path):
 				print("Error: can't load the resource")
 				return
 			1:
-				loading_screen_instance.get_node("CanvasLayer/Loader").value = progress[0]
+				loading_bar.value = floor(progress[0] * 100)
 			2:
 				print("Error: Loading failed")
 				return

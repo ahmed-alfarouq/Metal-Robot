@@ -3,7 +3,7 @@ extends Control
 @onready var canvas_layer = $CanvasLayer
 @onready var animation = $CanvasLayer/AnimationPlayer
 
-func transition(next_scene):
+func transition(current_scene, next_scene):
 	# Enable visibilty
 	canvas_layer.visible = true
 	# Start loading scene in background
@@ -11,6 +11,8 @@ func transition(next_scene):
 	# Play animation
 	animation.play("fade_in")
 	await animation.animation_finished
+	# Destroy current scene
+	current_scene.queue_free()
 	# Check status
 	var status = ResourceLoader.load_threaded_get_status(next_scene, [])
 	match status:

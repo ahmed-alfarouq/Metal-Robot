@@ -7,7 +7,7 @@ const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_pipe_speed = 350
-@onready var pipe_gap_range = randf_range(60, 90)
+@onready var pipe_gap_range = randf_range(90, 110)
 @onready var spawn_timer = $SpawnTimer
 @onready var speed_timer = $IncreaseSpeedTimer
 

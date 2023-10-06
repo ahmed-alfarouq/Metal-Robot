@@ -5,21 +5,15 @@ const SAVE_FILE_PATH = "user://bestscore.save"
 @onready var parallax_bg = $GUI/ParallaxBG
 @onready var main_gui = $GUI
 @onready var main_score = $GUI/Score
-@onready var lose_gui = $loseMenu
-@onready var lose_gui_score = $loseMenu/Score
-@onready var lose_gui_best_score = $loseMenu/BestScore
 @onready var is_dead: bool = false
 @onready var is_shooting: bool = false
-@onready var score: int = 28
+@onready var score: int = 0
 @onready var best_score: int = 0
 
 
 var camera: Camera2D
 var play_camera_shake: bool = false
 var parallax_prev_offset
-
-func _ready():
-	load_best_score()
 
 func _physics_process(_delta):
 	if (!is_dead):
@@ -56,25 +50,11 @@ func shake_camera(shaking_time):
 	shaking_timer.timeout.connect(_on_shaking_timer_timeout)
 	# Shake the camera
 	play_camera_shake = true
-	
-
-func _on_exit_pressed():
-	get_tree().quit()
-
-
-func _on_replay_pressed():
-	get_tree().reload_current_scene() 
 
 
 func _on_player_dies():
 	shake_camera(1)
 	save_best_score(maxi(best_score, score))
-	# Set score values
-	lose_gui_score.text = "Score: " + str(score)
-	lose_gui_best_score.text = "Best Score: " + str(maxi(best_score, score))
-	# Toggle visibility
-	main_gui.visible = false
-	lose_gui.visible = true
 
 func _on_items_remover_body_entered(body):
 	if (body.is_in_group("pipes")):

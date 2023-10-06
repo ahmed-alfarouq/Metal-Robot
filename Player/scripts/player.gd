@@ -17,7 +17,6 @@ signal stop_shooting
 @onready var screaming_timer = $ScreamingTimer
 @onready var collision = $Collision
 @onready var boom_sound = $Sounds/Boom
-
 var screaming_collision = CollisionShape2D.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,16 +28,20 @@ func _physics_process(_delta):
 func handle_flying():
 	if(Input.is_action_pressed("fly_up") && !main.is_dead):
 		velocity.y = -flying_speed
+		animation.flying_up()
 	elif (Input.is_action_pressed("fly_down") && !main.is_dead):
 		velocity.y = flying_speed
+		animation.flying_down()
 	else:
 		velocity.y = 0
 	move_and_slide()
 
 func handle_screaming():
-	if (Input.is_action_just_pressed("screaming") && Globals.screaming_times != 0 && screaming_timer.is_stopped()):
+	if (Input.is_action_pressed("screaming") && Globals.screaming_times != 0 && screaming_timer.is_stopped()):
 		screaming_timer.start()
 		add_screaming_collision()
+		# Animation
+		animation.scream()
 		# Shake camera for 1 sec
 		main.shake_camera(1)
 		# Wait 1 sec before deleting the collision
@@ -59,15 +62,18 @@ func add_screaming_collision():
 	screaming_collision.shape.radius = 2260
 
 func player_dies():
+	# Emit signal
 	dies.emit()
 	main.is_dead = true
-	collision.queue_free()
+	# play animation and sounds
 	boom_sound.play()
-	animation.play("boom")
+	animation.boom()
 	await animation.animation_finished
 	await boom_sound.finished
-	queue_free()
+	# Reset screaming_times
 	Globals.screaming_times = 3
+	# Take player to the lose menu
+	SceneTransition.transition(main, "res://menus/loss_menu.tscn")
 
 
 func _on_screaming_area_body_entered(body):

@@ -1,24 +1,14 @@
-[gd_resource type="SpriteFrames" load_steps=40 format=3 uid="uid://bic0ahi1qt5ip"]
+[gd_resource type="SpriteFrames" load_steps=52 format=3 uid="uid://bic0ahi1qt5ip"]
 
-[ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/animation/player_animation/base/flying_up/flying_up_01.png" id="1_dgmhv"]
 [ext_resource type="Texture2D" uid="uid://dl3lkptdb6ack" path="res://assets/animation/player_animation/base/boom/boom_01.png" id="1_wkd5q"]
-[ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/animation/player_animation/base/flying_up/flying_up_02.png" id="2_1o6l4"]
 [ext_resource type="Texture2D" uid="uid://cfh6lqnnrxj3l" path="res://assets/animation/player_animation/base/boom/boom_02.png" id="2_ai6mn"]
 [ext_resource type="Texture2D" uid="uid://cckfghw7ojues" path="res://assets/animation/player_animation/base/boom/boom_03.png" id="3_jeuxm"]
-[ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/animation/player_animation/base/flying_up/flying_up_03.png" id="3_np4dt"]
 [ext_resource type="Texture2D" uid="uid://b1k84umn2f45s" path="res://assets/animation/player_animation/base/boom/boom_04.png" id="4_ghfj2"]
-[ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/animation/player_animation/base/flying_up/flying_up_04.png" id="4_wyegg"]
-[ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/animation/player_animation/base/flying_up/flying_up_05.png" id="5_qrmo4"]
 [ext_resource type="Texture2D" uid="uid://cqaq3yqb2qd5w" path="res://assets/animation/player_animation/base/boom/boom_05.png" id="5_u5f7g"]
-[ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/animation/player_animation/base/flying_up/flying_up_06.png" id="6_0lval"]
 [ext_resource type="Texture2D" uid="uid://6n1g4kva8cu2" path="res://assets/animation/player_animation/base/boom/boom_06.png" id="6_mld55"]
 [ext_resource type="Texture2D" uid="uid://bpj7qqsltoxji" path="res://assets/animation/player_animation/base/boom/boom_07.png" id="7_s5nhn"]
-[ext_resource type="Texture2D" uid="uid://bhoc6vprnl6gj" path="res://assets/animation/player_animation/base/flying_up/flying_up_07.png" id="7_xtq21"]
 [ext_resource type="Texture2D" uid="uid://bflbkqjrajun1" path="res://assets/animation/player_animation/base/boom/boom_08.png" id="8_50auq"]
-[ext_resource type="Texture2D" uid="uid://d2um5se5prhka" path="res://assets/animation/player_animation/base/flying_up/flying_up_08.png" id="8_li3j4"]
 [ext_resource type="Texture2D" uid="uid://bf0qxhthv2ax" path="res://assets/animation/player_animation/base/boom/boom_09.png" id="9_gb0vb"]
-[ext_resource type="Texture2D" uid="uid://btdnev6xnoe4y" path="res://assets/animation/player_animation/base/flying_up/flying_up_9.png" id="9_ug5ir"]
-[ext_resource type="Texture2D" uid="uid://bnqujv1bhcm7g" path="res://assets/animation/player_animation/base/flying_up/flying_up_10.png" id="10_g4w55"]
 [ext_resource type="Texture2D" uid="uid://duf5ppuxqvb7w" path="res://assets/animation/player_animation/base/boom/boom_10.png" id="10_vt3n7"]
 [ext_resource type="Texture2D" uid="uid://cmhs8rekbg0gv" path="res://assets/animation/player_animation/base/boom/boom_11.png" id="11_2htwy"]
 [ext_resource type="Texture2D" uid="uid://bpxcx48nf0w1q" path="res://assets/animation/player_animation/base/boom/boom_12.png" id="12_63tvg"]
@@ -26,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dnjobg845bdi3" path="res://assets/animation/player_animation/base/boom/boom_14.png" id="14_pbspu"]
 [ext_resource type="Texture2D" uid="uid://blult718mrm5x" path="res://assets/animation/player_animation/base/boom/boom_15.png" id="15_urofc"]
 [ext_resource type="Texture2D" uid="uid://bmojax5f04pw0" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_01.png" id="16_a8qg5"]
-[ext_resource type="Texture2D" uid="uid://b02mpmj3n3bfo" path="res://assets/animation/player_animation/base/flying_down/flying_down_01.png" id="16_tp655"]
 [ext_resource type="Texture2D" uid="uid://cip4ngehfynq7" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_02.png" id="17_fa0os"]
 [ext_resource type="Texture2D" uid="uid://bpxygd60febmg" path="res://assets/animation/player_animation/base/flying_down/flying_down_02.png" id="17_orm42"]
 [ext_resource type="Texture2D" uid="uid://bvx2fbeumy3y4" path="res://assets/animation/player_animation/base/flying_transition/flying_transition_03.png" id="18_jiokc"]
@@ -39,6 +28,29 @@
 [ext_resource type="Texture2D" uid="uid://booew58ty6c74" path="res://assets/animation/player_animation/base/flying_down/flying_down_07.png" id="22_mkk24"]
 [ext_resource type="Texture2D" uid="uid://h5lm0n5o5dyc" path="res://assets/animation/player_animation/base/flying_down/flying_down_08.png" id="23_u71qg"]
 [ext_resource type="Texture2D" uid="uid://cup7gtpduom5e" path="res://assets/animation/player_animation/base/flying_down/flying_down_09.png" id="24_d0ghu"]
+[ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/animation/player_animation/base/flying_up/flying_up_01.png" id="30_x30xv"]
+[ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/animation/player_animation/base/flying_up/flying_up_02.png" id="31_6kjdv"]
+[ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/animation/player_animation/base/flying_up/flying_up_03.png" id="32_piwh5"]
+[ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/animation/player_animation/base/flying_up/flying_up_04.png" id="33_qipr2"]
+[ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/animation/player_animation/base/flying_up/flying_up_05.png" id="34_bm314"]
+[ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/animation/player_animation/base/flying_up/flying_up_06.png" id="35_nne06"]
+[ext_resource type="Texture2D" uid="uid://bhoc6vprnl6gj" path="res://assets/animation/player_animation/base/flying_up/flying_up_07.png" id="36_bwppp"]
+[ext_resource type="Texture2D" uid="uid://d2um5se5prhka" path="res://assets/animation/player_animation/base/flying_up/flying_up_08.png" id="37_ao15x"]
+[ext_resource type="Texture2D" uid="uid://bdn800qpny0jw" path="res://assets/animation/player_animation/base/flying_up/flying_up_09.png" id="38_n085n"]
+[ext_resource type="Texture2D" uid="uid://dnaggw2wod7i0" path="res://assets/animation/player_animation/base/screaming/screaming_01.png" id="39_rb12n"]
+[ext_resource type="Texture2D" uid="uid://bnqujv1bhcm7g" path="res://assets/animation/player_animation/base/flying_up/flying_up_10.png" id="40_12gkg"]
+[ext_resource type="Texture2D" uid="uid://dey4mt746velx" path="res://assets/animation/player_animation/base/screaming/screaming_02.png" id="40_ndyma"]
+[ext_resource type="Texture2D" uid="uid://du65uj0as17bn" path="res://assets/animation/player_animation/base/screaming/screaming_03.png" id="41_x4jbj"]
+[ext_resource type="Texture2D" uid="uid://dmapt7t61roew" path="res://assets/animation/player_animation/base/screaming/screaming_04.png" id="42_phmv3"]
+[ext_resource type="Texture2D" uid="uid://bn5wonfrjmqq6" path="res://assets/animation/player_animation/base/screaming/screaming_05.png" id="43_al0lw"]
+[ext_resource type="Texture2D" uid="uid://bdi3nxuhdg8mi" path="res://assets/animation/player_animation/base/screaming/screaming_06.png" id="44_fiqe5"]
+[ext_resource type="Texture2D" uid="uid://y7ax364qknm8" path="res://assets/animation/player_animation/base/screaming/screaming_07.png" id="45_wlrog"]
+[ext_resource type="Texture2D" uid="uid://bcl8aougdx8xd" path="res://assets/animation/player_animation/base/screaming/screaming_08.png" id="46_xvff5"]
+[ext_resource type="Texture2D" uid="uid://c38t2wpiia4ph" path="res://assets/animation/player_animation/base/screaming/screaming_09.png" id="47_fwdk4"]
+[ext_resource type="Texture2D" uid="uid://dw20w5p51mq8u" path="res://assets/animation/player_animation/base/screaming/screaming_10.png" id="48_23cit"]
+[ext_resource type="Texture2D" uid="uid://wlcbec0j2xxi" path="res://assets/animation/player_animation/base/screaming/screaming_11.png" id="49_83ypr"]
+[ext_resource type="Texture2D" uid="uid://07x1ruumw2i1" path="res://assets/animation/player_animation/base/screaming/screaming_12.png" id="50_vpusk"]
+[ext_resource type="Texture2D" uid="uid://bvqyw0u4yea1r" path="res://assets/animation/player_animation/base/screaming/screaming_13.png" id="51_i04w8"]
 
 [resource]
 animations = [{
@@ -94,9 +106,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_tp655")
-}, {
-"duration": 1.0,
 "texture": ExtResource("17_orm42")
 }, {
 "duration": 1.0,
@@ -142,40 +151,84 @@ animations = [{
 }],
 "loop": false,
 "name": &"flying_transition",
-"speed": 10.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dgmhv")
+"texture": ExtResource("30_x30xv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_1o6l4")
+"texture": ExtResource("31_6kjdv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_np4dt")
+"texture": ExtResource("32_piwh5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_wyegg")
+"texture": ExtResource("33_qipr2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qrmo4")
+"texture": ExtResource("34_bm314")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_0lval")
+"texture": ExtResource("35_nne06")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xtq21")
+"texture": ExtResource("36_bwppp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_li3j4")
+"texture": ExtResource("37_ao15x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ug5ir")
+"texture": ExtResource("38_n085n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_g4w55")
+"texture": ExtResource("40_12gkg")
 }],
 "loop": true,
 "name": &"flying_up",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_rb12n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ndyma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_x4jbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_phmv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_al0lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_fiqe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_wlrog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_xvff5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_fwdk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_23cit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_83ypr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_vpusk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_i04w8")
+}],
+"loop": false,
+"name": &"screaming",
+"speed": 14.0
 }]

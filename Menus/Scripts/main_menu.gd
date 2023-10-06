@@ -10,10 +10,10 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_credits_pressed():
-	SceneTransition.transition("res://credits/credits.tscn")
+	SceneTransition.transition(self, "res://credits/credits.tscn")
 
 func _on_log_out_pressed():
 	Firebase.Auth.logout()
 
 func _on_log_out():
-	SceneTransition.transition("res://auth/sign_in/sign_in.tscn")
+	SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")

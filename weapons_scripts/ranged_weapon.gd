@@ -2,7 +2,6 @@ class_name RagedWeapon
 
 extends Weapon
 
-
 func _shooting(reload_time: float):
 	weapon_animation.play("shooting")
 	await get_tree().create_timer(reload_time).time_out

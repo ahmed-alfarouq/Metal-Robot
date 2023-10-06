@@ -1,8 +1,19 @@
-[gd_resource type="Theme" format=3 uid="uid://cu6ud31n83w7d"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cu6ud31n83w7d"]
+
+[ext_resource type="Texture2D" uid="uid://bt23yk0ws3l6w" path="res://assets/ui/button-min.png" id="1_6vf70"]
+[ext_resource type="FontFile" uid="uid://b313ygi8kjlr5" path="res://assets/fonts/Jokerman.ttf" id="2_ewhbr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gh2ow"]
+texture = ExtResource("1_6vf70")
 
 [resource]
-Button/font_sizes/font_size = 45
+Button/colors/font_color = Color(0.996094, 0.867188, 0.00390625, 1)
+Button/font_sizes/font_size = 75
+Button/styles/normal = SubResource("StyleBoxTexture_gh2ow")
 FlatButton/base_type = &"Button"
 FlatButton/font_sizes/font_size = 20
 HeaderLarge/font_sizes/font_size = 35
-Label/font_sizes/font_size = 18
+Label/font_sizes/font_size = 150
+title/base_type = &"Label"
+title/font_sizes/font_size = 180
+title/fonts/font = ExtResource("2_ewhbr")
