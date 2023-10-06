@@ -6,6 +6,7 @@ const Ground = preload("res://ground/ground.tscn")
 
 @onready var screen = get_viewport().get_visible_rect()
 @onready var main = get_node("/root/MainLevel")
+@onready var increase_speed_timer = $IncreaseSpeedTimer
 @onready var prev_ground_speed: int = 350
 @onready var ground_copy = Ground.instantiate()
 @onready var ground_width = 6400
@@ -37,6 +38,8 @@ func _on_increase_speed_timer_timeout():
 		ground_speed += 20
 	elif (ground_speed >= 650):
 		ground_speed += 10
+	elif (ground_speed >= 800):
+		increase_speed_timer.stop()
 
 func _on_player_start_shooting():
 	prev_ground_speed = ground_speed

@@ -22,7 +22,7 @@ func _on_sign_in_pressed():
 
 func login_completed(auth_info):
 	Firebase.Auth.save_auth(auth_info)
-	SceneTransition.transition("res://menus/main_menu.tscn")
+	SceneTransition.transition(self, "res://menus/main_menu.tscn")
 
 func login_failed(_code, message):
 	if (message == "INVALID_EMAIL"):

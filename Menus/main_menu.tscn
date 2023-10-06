@@ -1,51 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=8 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Script" path="res://menus/Scripts/main_menu.gd" id="1_sxlyg"]
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="2_ushcs"]
-[ext_resource type="FontFile" uid="uid://d17u65gtxrg6x" path="res://assets/fonts/MetalGothicDemoVersionRegular-WyB9A.ttf" id="3_ipk36"]
-[ext_resource type="FontFile" uid="uid://ckpy413ss42io" path="res://assets/fonts/MetalVengeanceItalic-owAdd.ttf" id="4_1b1ql"]
+[ext_resource type="Texture2D" uid="uid://u5es22vjwq23" path="res://assets/ui/main_menu_bg.jpg" id="2_pjl4t"]
+[ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_gyk1i"]
+[ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_oihhl"]
+[ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_pseys"]
+[ext_resource type="Texture2D" uid="uid://bllv8lgw7ei0a" path="res://assets/ui/References/UI-metal-robot.jpg" id="5_pktvo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rp0g"]
-bg_color = Color(0.109804, 0.109804, 0.109804, 1)
-skew = Vector2(-0.14, 0)
-shadow_size = 8
-shadow_offset = Vector2(-0.59, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwmld"]
-bg_color = Color(0.109375, 0.109375, 0.109375, 1)
-skew = Vector2(-0.14, 0)
-shadow_color = Color(0.12549, 0.12549, 0.12549, 0.6)
-shadow_size = 8
-shadow_offset = Vector2(-0.59, 0)
-
-[sub_resource type="Theme" id="Theme_k123p"]
-default_font = ExtResource("4_1b1ql")
-default_font_size = 30
-Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
-Button/styles/hover = SubResource("StyleBoxFlat_qwmld")
-Button/styles/normal = SubResource("StyleBoxFlat_8rp0g")
-Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54qei"]
-bg_color = Color(0.109375, 0.109375, 0.109375, 1)
-skew = Vector2(-0.14, 0)
-shadow_color = Color(0.12549, 0.12549, 0.12549, 0.6)
-shadow_size = 8
-shadow_offset = Vector2(-0.59, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5vy7"]
-bg_color = Color(0.109804, 0.109804, 0.109804, 1)
-skew = Vector2(-0.14, 0)
-shadow_size = 8
-shadow_offset = Vector2(-0.59, 0)
-
-[sub_resource type="Theme" id="Theme_v2cod"]
-default_font = ExtResource("4_1b1ql")
-default_font_size = 30
-Button/styles/focus = SubResource("StyleBoxFlat_8rp0g")
-Button/styles/hover = SubResource("StyleBoxFlat_54qei")
-Button/styles/normal = SubResource("StyleBoxFlat_x5vy7")
-Button/styles/pressed = SubResource("StyleBoxFlat_8rp0g")
+[sub_resource type="Environment" id="Environment_jx762"]
+background_mode = 3
+background_canvas_max_layer = 1
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 3.0
+glow_strength = 1.2
+glow_blend_mode = 1
+glow_hdr_threshold = 0.63
+glow_hdr_scale = 2.9
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -56,75 +27,216 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxlyg")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jx762")
+
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="MainMenu"]
+[node name="BG" type="TextureRect" parent="MainMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ushcs")
+texture = ExtResource("2_pjl4t")
 expand_mode = 3
+metadata/_edit_lock_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu"]
+[node name="GearTopLeft" type="TextureRect" parent="MainMenu"]
+offset_left = -240.0
+offset_top = -290.0
+offset_right = 356.0
+offset_bottom = 306.0
+texture = ExtResource("3_oihhl")
+
+[node name="GearBottomRight" type="TextureRect" parent="MainMenu"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -424.0
+offset_right = 236.0
+offset_bottom = 172.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_oihhl")
+
+[node name="TitleContainer" type="Control" parent="MainMenu"]
+layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -1011.0
-offset_top = -189.0
-offset_right = -165.0
-offset_bottom = 31.0
+offset_left = -758.0
+offset_top = 213.0
+offset_right = -758.0
+offset_bottom = 213.0
 grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/normal_font = ExtResource("3_ipk36")
-theme_override_font_sizes/normal_font_size = 220
-text = "Metal Robot"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
-anchors_preset = 6
-anchor_left = 1.0
+[node name="Title" type="Label" parent="MainMenu/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1909.0
-offset_top = -259.0
-offset_right = -1497.0
-offset_bottom = 25.9999
-grow_horizontal = 0
+offset_left = -501.0
+offset_top = -415.0
+offset_right = 840.0
+offset_bottom = -78.0
+grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.33278, 1.90472)
-theme_override_constants/separation = 40
+theme_type_variation = &"title"
+theme_override_font_sizes/font_size = 160
+text = "METAL ROBOT"
+metadata/_edit_lock_ = true
+
+[node name="RobotLeft" type="TextureRect" parent="MainMenu/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -562.0
+offset_top = -465.0
+offset_right = -459.0
+offset_bottom = -362.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gyk1i")
+expand_mode = 4
+
+[node name="LinesLeft" type="TextureRect" parent="MainMenu/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -494.0
+offset_top = -487.0
+offset_right = -295.0
+offset_bottom = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pseys")
+expand_mode = 4
+
+[node name="RobotRight" type="TextureRect" parent="MainMenu/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 655.0
+offset_top = -254.0
+offset_right = 758.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gyk1i")
+expand_mode = 4
+
+[node name="LinesRight" type="TextureRect" parent="MainMenu/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -277.0
+offset_right = 667.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pseys")
+expand_mode = 4
+
+[node name="BtnsVContainer" type="VBoxContainer" parent="MainMenu"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = -452.0
+offset_right = 479.0
+offset_bottom = 112.0
+grow_vertical = 2
+rotation = 0.0872665
+scale = Vector2(1, 1.4)
+theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Play" type="Button" parent="MainMenu/VBoxContainer"]
+[node name="Play" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
-theme = SubResource("Theme_k123p")
 text = "Play"
+metadata/_edit_lock_ = true
 
-[node name="Credits" type="Button" parent="MainMenu/VBoxContainer"]
+[node name="Credits" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
-theme = SubResource("Theme_v2cod")
 text = "Credits"
+metadata/_edit_lock_ = true
 
-[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
+[node name="Skins" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
-theme = SubResource("Theme_v2cod")
+disabled = true
+text = "Skins
+"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Button" parent="MainMenu/BtnsVContainer"]
+layout_mode = 2
+disabled = true
+text = "Settings
+"
+metadata/_edit_lock_ = true
+
+[node name="Leaderboard" type="Button" parent="MainMenu/BtnsVContainer"]
+layout_mode = 2
+disabled = true
+text = "Leaderboard
+"
+metadata/_edit_lock_ = true
+
+[node name="BtnsHContainer" type="HBoxContainer" parent="MainMenu"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -306.0
+offset_top = -211.0
+offset_right = 367.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1.4)
+theme_override_constants/separation = 350
+
+[node name="Exit" type="Button" parent="MainMenu/BtnsHContainer"]
+layout_mode = 2
 text = "Exit"
+metadata/_edit_lock_ = true
 
-[node name="LogOut" type="Button" parent="MainMenu/VBoxContainer"]
+[node name="LogOut" type="Button" parent="MainMenu/BtnsHContainer"]
 layout_mode = 2
-theme_type_variation = &"FlatButton"
 text = "Log Out"
+metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="MainMenu/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/LogOut" to="." method="_on_log_out_pressed"]
+[node name="Ui-metal-robot" type="Sprite2D" parent="."]
+position = Vector2(902, 1437)
+texture = ExtResource("5_pktvo")
+
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Skins" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Leaderboard" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsHContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsHContainer/LogOut" to="." method="_on_log_out_pressed"]

@@ -27,15 +27,15 @@ func _ready():
 # Establish user direction depending on user data
 func establish_user_direction(user_data):
 	if user_connected && not Firebase.Auth.is_logged_in():
-		SceneTransition.transition("res://auth/sign_in/sign_in.tscn")
+		SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")
 	elif user_connected && not user_data.email_verified:
-		SceneTransition.transition("res://auth/email_verification/email_verification.tscn")
+		SceneTransition.transition(self, "res://auth/email_verification/email_verification.tscn")
 	else:
-		SceneTransition.transition("res://menus/main_menu.tscn")
+		SceneTransition.transition(self, "res://menus/main_menu.tscn")
 
 # Change scene to login if there's no user data
 func change_scene_to_login():
-	SceneTransition.transition("res://auth/sign_in/sign_in.tscn")
+	SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")
 
 # Decide what to do based on whether the user is connected to the internet or not
 func _on_checking_completed(result, _response_code, _headers, _body):

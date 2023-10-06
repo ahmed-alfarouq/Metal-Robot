@@ -1,70 +1,287 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4m7e3boqnmnu"]
+[gd_scene load_steps=8 format=3 uid="uid://b4m7e3boqnmnu"]
 
 [ext_resource type="Script" path="res://menus/Scripts/loss_menu.gd" id="1_3fgej"]
 [ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="1_ijrdr"]
+[ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_0ub3l"]
+[ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_phuko"]
+[ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_72d5i"]
+[ext_resource type="Texture2D" uid="uid://dnu30fqtemftl" path="res://assets/ui/References/loss-menu.jpg" id="6_6oxkl"]
+
+[sub_resource type="Environment" id="Environment_0y5ea"]
+background_mode = 3
+background_canvas_max_layer = 1
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 3.0
+glow_strength = 1.2
+glow_blend_mode = 1
+glow_hdr_threshold = 0.63
+glow_hdr_scale = 2.9
 
 [node name="LossMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3fgej")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0y5ea")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ijrdr")
+metadata/_edit_lock_ = true
 
-[node name="Title" type="Label" parent="CanvasLayer"]
+[node name="TitleContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="CanvasLayer/TitleContainer"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -568.0
-offset_top = -373.0
-offset_right = 512.0
-offset_bottom = -96.0
+offset_left = -682.0
+offset_top = -452.0
+offset_right = 659.0
+offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"title"
-text = "Metal Robot"
+text = "METAL ROBOT"
+metadata/_edit_lock_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="RobotLeft" type="TextureRect" parent="CanvasLayer/TitleContainer"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -606.0
-offset_top = 57.0
-offset_right = 709.0
-offset_bottom = 435.0
+offset_left = -695.0
+offset_top = -499.0
+offset_right = -592.0
+offset_bottom = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0ub3l")
+expand_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="LinesLeft" type="TextureRect" parent="CanvasLayer/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -627.0
+offset_top = -521.0
+offset_right = -428.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_72d5i")
+expand_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="RobotRight" type="TextureRect" parent="CanvasLayer/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 655.0
+offset_top = -254.0
+offset_right = 758.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0ub3l")
+expand_mode = 4
+
+[node name="LinesRight" type="TextureRect" parent="CanvasLayer/TitleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 468.0
+offset_top = -277.0
+offset_right = 667.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_72d5i")
+expand_mode = 4
+
+[node name="BtnsContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -657.0
+offset_top = 174.0
+offset_right = 832.0
+offset_bottom = 552.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 100
+theme_override_constants/separation = 350
 
-[node name="Menu" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Menu" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
 text = "Menu"
 metadata/_edit_lock_ = true
 
-[node name="Leaderboard" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Leaderboard" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
+disabled = true
 text = "Leaderboard"
 metadata/_edit_lock_ = true
 
-[node name="Replay" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="Replay" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
 text = "Replay
 "
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[node name="GearLeft" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 303.0
+offset_top = -44.0
+offset_right = 774.0
+offset_bottom = 427.0
+grow_vertical = 2
+rotation = 2.26893
+texture = ExtResource("3_phuko")
+metadata/_edit_lock_ = true
+
+[node name="GearRight" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -196.0
+offset_right = 261.0
+offset_bottom = 275.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_phuko")
+metadata/_edit_lock_ = true
+
+[node name="Score" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 20.0
+offset_right = 242.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreTitle" type="Label" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -701.0
+offset_top = -134.0
+offset_right = -417.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCORE"
+
+[node name="ScoreCirlce" type="PanelContainer" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -174.0
+offset_right = 119.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ScorePanel1"
+
+[node name="Score" type="Label" parent="CanvasLayer/Score/ScoreCirlce"]
+layout_mode = 2
+theme_type_variation = &"ScoreLabel"
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScoreTitle" type="Label" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -699.0
+offset_top = 21.0
+offset_right = -187.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BEST SCORE"
+
+[node name="BestScoreCirlce" type="PanelContainer" parent="CanvasLayer/Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -15.0
+offset_right = 127.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ScorePanel1"
+
+[node name="BestScore" type="Label" parent="CanvasLayer/Score/BestScoreCirlce"]
+layout_mode = 2
+theme_type_variation = &"ScoreLabel"
+text = "50000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Loss-menu" type="Sprite2D" parent="."]
+position = Vector2(882, -242)
+texture = ExtResource("6_6oxkl")
+
+[connection signal="pressed" from="CanvasLayer/BtnsContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/BtnsContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="CanvasLayer/BtnsContainer/Replay" to="." method="_on_replay_pressed"]

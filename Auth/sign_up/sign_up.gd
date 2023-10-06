@@ -39,11 +39,11 @@ func signup_failed(_code, message):
 
 func email_verification_completed(message):
 	if (message.is_empty()):
-		SceneTransition.transition("res://auth/email_verification/email_verification.tscn")
+		SceneTransition.transition(self, "res://auth/email_verification/email_verification.tscn")
 	else:
 		error_message.text = "An error occurred. Kindly get in touch with us and provide the following message. \n" + message
 
 # Singals
 
 func _on_log_in_pressed():
-	SceneTransition.transition("res://auth/sign_in/sign_in.tscn")
+	SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")

@@ -9,6 +9,8 @@ signal stop_shooting
 @export var pistol_resource: SpriteFrames
 @export var flying_speed: int = 200
 
+var screaming_collision = CollisionShape2D.new()
+
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
 @onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -17,7 +19,6 @@ signal stop_shooting
 @onready var screaming_timer = $ScreamingTimer
 @onready var collision = $Collision
 @onready var boom_sound = $Sounds/Boom
-var screaming_collision = CollisionShape2D.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -37,7 +38,16 @@ func handle_flying():
 	move_and_slide()
 
 func handle_screaming():
-	if (Input.is_action_pressed("screaming") && Globals.screaming_times != 0 && screaming_timer.is_stopped()):
+	if (
+		Input.is_action_pressed("screaming") &&
+		Globals.screaming_times != 0 &&
+		screaming_timer.is_stopped() &&
+		not main.is_dead
+		):
+		var pipe_spawner = main.get_node("Spawners/PipeSpawner")
+		# Stop pipe spwaner
+		pipe_spawner.stop_spawner()
+		# Start screaming timer
 		screaming_timer.start()
 		add_screaming_collision()
 		# Animation
@@ -54,6 +64,10 @@ func handle_screaming():
 		screaming_area.remove_child(screaming_collision)
 		# Increase score
 		main.score += 3
+		# Restart spawner
+		pipe_spawner.spawn_pipes()
+		pipe_spawner.start_spawner()
+		
 
 func add_screaming_collision():
 	screaming_area.call_deferred("add_child", screaming_collision, true)

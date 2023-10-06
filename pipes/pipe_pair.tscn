@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsw1fy3p7ltt3"]
+[gd_scene load_steps=14 format=3 uid="uid://bsw1fy3p7ltt3"]
 
 [ext_resource type="Script" path="res://pipes/scripts/pipe_pair.gd" id="1_gfche"]
-[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://assets/pipe.png" id="2_6fj5m"]
-[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://assets/sounds/Point.wav" id="3_8jqqj"]
+[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://assets/Pipe.png" id="2_4o642"]
+[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://assets/Sounds/Point.wav" id="3_1l1rt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk43d"]
 size = Vector2(225, 3067)
@@ -159,9 +159,87 @@ tracks/5/keys = {
 "values": [Vector2(1, 0), Vector2(1, -263), Vector2(1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1eisw"]
+resource_name = "down_up"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottomPipe/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -265), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopPipe/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -530), Vector2(3.05176e-05, -264)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottomPipe/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -261.25), Vector2(0, -0.417)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TopPipe/TopPipeCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.667, -519), Vector2(-0.667, -256.667)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopPipe/TopCollisionShape:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, -520), Vector2(1.5, -255)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BottomPipe/BottomCollisionShape:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, -263), Vector2(1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fumn8"]
 _data = {
 "RESET": SubResource("Animation_x18t6"),
+"down_up": SubResource("Animation_1eisw"),
 "up_down": SubResource("Animation_yrw0j")
 }
 
@@ -184,6 +262,7 @@ size = Vector2(65.25, 2117)
 position = Vector2(60, 0)
 collision_layer = 8
 collision_mask = 0
+mass = 3.0
 script = ExtResource("1_gfche")
 
 [node name="PipeBodyCollision" type="CollisionShape2D" parent="."]
@@ -191,6 +270,7 @@ position = Vector2(-0.5, -255.5)
 shape = SubResource("RectangleShape2D_pk43d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_fumn8")
 }
@@ -204,7 +284,7 @@ collision_layer = 4
 position = Vector2(0, -265)
 rotation = 3.14159
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_6fj5m")
+texture = ExtResource("2_4o642")
 
 [node name="TopPipeCollision" type="CollisionShape2D" parent="TopPipe"]
 position = Vector2(-0.666664, -256.667)
@@ -222,7 +302,7 @@ collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_6fj5m")
+texture = ExtResource("2_4o642")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
 position = Vector2(0, -0.417)
@@ -243,7 +323,7 @@ shape = SubResource("RectangleShape2D_sjo5f")
 [node name="Point" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(-447, 14)
-stream = ExtResource("3_8jqqj")
+stream = ExtResource("3_1l1rt")
 
 [connection signal="body_entered" from="TopPipe" to="." method="_on_top_pipe_body_entered"]
 [connection signal="body_entered" from="BottomPipe" to="." method="_on_bottom_pipe_body_entered"]

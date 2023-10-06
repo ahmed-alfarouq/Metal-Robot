@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://bw0grikohtfk8"]
 
-[ext_resource type="Script" path="res://levels/Scripts/main_level.gd" id="1_0rt1o"]
-[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="3_o7jab"]
-[ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="4_oo7m2"]
-[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="5_wiudy"]
-[ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="9_suvop"]
-[ext_resource type="Texture2D" uid="uid://c2ylwwc4fd7dg" path="res://assets/ui/controls/arrow_up.png" id="10_0xa71"]
-[ext_resource type="Texture2D" uid="uid://dm221i67rpa04" path="res://assets/ui/controls/arrow_down.png" id="11_c2gau"]
-[ext_resource type="Texture2D" uid="uid://do47q247gkfwr" path="res://assets/ui/controls/shoot.png" id="12_8g8yl"]
-[ext_resource type="Texture2D" uid="uid://ghjjrpiku0lq" path="res://assets/ui/controls/scream.png" id="13_f7tby"]
+[ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_7q5bb"]
+[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="2_imw3q"]
+[ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="2_xss3r"]
+[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="3_fuved"]
+[ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="4_3tcsj"]
+[ext_resource type="Texture2D" uid="uid://c2ylwwc4fd7dg" path="res://assets/ui/controls/arrow_up.png" id="5_mxs1o"]
+[ext_resource type="Texture2D" uid="uid://dm221i67rpa04" path="res://assets/ui/controls/arrow_down.png" id="6_fsge7"]
+[ext_resource type="Texture2D" uid="uid://do47q247gkfwr" path="res://assets/ui/controls/shoot.png" id="7_07gyd"]
+[ext_resource type="Texture2D" uid="uid://ghjjrpiku0lq" path="res://assets/ui/controls/scream.png" id="8_ed4t7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
 size = Vector2(1954, 16)
@@ -26,14 +26,12 @@ size = Vector2(6273, 266)
 default_font_size = 70
 
 [node name="MainLevel" type="Node2D"]
-script = ExtResource("1_0rt1o")
+script = ExtResource("1_7q5bb")
 metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = [1922.0]
 
-[node name="Player" parent="." instance=ExtResource("3_o7jab")]
-position = Vector2(517, 312)
-scale = Vector2(0.9, 0.9)
-flying_speed = 510
+[node name="Player" parent="." instance=ExtResource("2_imw3q")]
+position = Vector2(390, 312)
 
 [node name="Areas" type="Node" parent="."]
 
@@ -71,13 +69,13 @@ shape = SubResource("RectangleShape2D_04yfw")
 
 [node name="Spawners" type="Node" parent="."]
 
-[node name="PipeSpawner" parent="Spawners" instance=ExtResource("4_oo7m2")]
+[node name="PipeSpawner" parent="Spawners" instance=ExtResource("2_xss3r")]
 
-[node name="GroundSpawner" parent="Spawners" instance=ExtResource("5_wiudy")]
+[node name="GroundSpawner" parent="Spawners" instance=ExtResource("3_fuved")]
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="ParallaxBG" parent="GUI" instance=ExtResource("9_suvop")]
+[node name="ParallaxBG" parent="GUI" instance=ExtResource("4_3tcsj")]
 
 [node name="Score" type="Label" parent="GUI"]
 anchors_preset = 5
@@ -107,13 +105,13 @@ grow_vertical = 0
 [node name="Up" type="TouchScreenButton" parent="GUI/LeftContainer"]
 position = Vector2(174, -305)
 scale = Vector2(3, 3)
-texture_normal = ExtResource("10_0xa71")
+texture_normal = ExtResource("5_mxs1o")
 action = "fly_up"
 
 [node name="Down" type="TouchScreenButton" parent="GUI/LeftContainer"]
 position = Vector2(177, -32)
 scale = Vector2(3, 3.025)
-texture_normal = ExtResource("11_c2gau")
+texture_normal = ExtResource("6_fsge7")
 action = "fly_down"
 
 [node name="RightContainer" type="HBoxContainer" parent="GUI"]
@@ -130,20 +128,14 @@ grow_vertical = 0
 [node name="shoot" type="TouchScreenButton" parent="GUI/RightContainer"]
 position = Vector2(-14, 18)
 scale = Vector2(3, 3)
-texture_normal = ExtResource("12_8g8yl")
+texture_normal = ExtResource("7_07gyd")
 action = "screaming"
 
 [node name="Scream" type="TouchScreenButton" parent="GUI/RightContainer"]
 position = Vector2(-195, -219)
 scale = Vector2(3, 3)
-texture_normal = ExtResource("13_f7tby")
+texture_normal = ExtResource("8_ed4t7")
 action = "screaming"
 
-[connection signal="dies" from="Player" to="." method="_on_player_dies"]
-[connection signal="dies" from="Player" to="Spawners/PipeSpawner" method="_on_player_dies"]
-[connection signal="start_shooting" from="Player" to="Spawners/PipeSpawner" method="_on_player_start_shooting"]
-[connection signal="start_shooting" from="Player" to="Spawners/GroundSpawner" method="_on_player_start_shooting"]
-[connection signal="stop_shooting" from="Player" to="Spawners/PipeSpawner" method="_on_player_stop_shooting"]
-[connection signal="stop_shooting" from="Player" to="Spawners/GroundSpawner" method="_on_player_stop_shooting"]
 [connection signal="body_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_body_entered"]
 [connection signal="body_entered" from="Areas/BottomItemsRemover" to="." method="_on_bottom_items_remover_body_entered"]
