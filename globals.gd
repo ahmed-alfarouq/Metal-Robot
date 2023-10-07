@@ -14,7 +14,6 @@ func _ready():
 	Firebase.Auth.check_auth_file()
 
 func change_scene(current_scene, next_scene_path):
-	var next_scene
 	var scene_load_status
 	var progress: Array = []
 	var loading_screen_instance = loading_screen.instantiate()
@@ -27,22 +26,22 @@ func change_scene(current_scene, next_scene_path):
 
 	# If scene exists make a request
 	if (ResourceLoader.exists(next_scene_path)):
-		next_scene = ResourceLoader.load_threaded_request(next_scene_path)
+		ResourceLoader.load_threaded_request(next_scene_path)
 	
 	# A loop until the request finishes
-	while true:
+	while ResourceLoader.exists(next_scene_path):
 		scene_load_status = ResourceLoader.load_threaded_get_status(next_scene_path, progress)
 		match scene_load_status:
 			0:
-				print("Error: can't load the resource")
+				ErrorHandler.error("The resource is invalid.")
 				return
 			1:
 				loading_bar.value = floor(progress[0] * 100)
 			2:
-				print("Error: Loading failed")
+				ErrorHandler.error("Some error occurred during loading and it failed.")
 				return
 			3:
-				next_scene = ResourceLoader.load_threaded_get(next_scene_path).instantiate()
-				get_tree().root.call_deferred("add_child", next_scene)
+				var scene_instance = ResourceLoader.load_threaded_get(next_scene_path).instantiate()
+				get_tree().root.call_deferred("add_child", scene_instance)
 				loading_screen_instance.fade_out()
 				return

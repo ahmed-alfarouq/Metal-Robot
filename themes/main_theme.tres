@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://cu6ud31n83w7d"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://cu6ud31n83w7d"]
 
 [ext_resource type="FontFile" uid="uid://b313ygi8kjlr5" path="res://assets/fonts/Jokerman.ttf" id="2_8cprm"]
 [ext_resource type="Texture2D" uid="uid://bt23yk0ws3l6w" path="res://assets/ui/button.png" id="2_rd630"]
+[ext_resource type="Texture2D" uid="uid://li11jkpdwmqu" path="res://assets/ui/check_connection/form_bg.png" id="3_juy3j"]
 [ext_resource type="FontFile" uid="uid://wyilhw388fqe" path="res://assets/fonts/arial.ttf" id="3_tyedm"]
 [ext_resource type="Texture2D" uid="uid://faja2n64fvy6" path="res://assets/ui/half_circle.png" id="4_fklug"]
 
@@ -21,17 +22,27 @@ expand_margin_bottom = 140.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0uwn"]
 texture = ExtResource("2_rd630")
-expand_margin_left = 200.0
-expand_margin_top = 140.0
-expand_margin_right = 200.0
-expand_margin_bottom = 140.0
+expand_margin_bottom = 180.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswc8"]
 texture = ExtResource("2_rd630")
-expand_margin_left = 200.0
-expand_margin_top = 140.0
-expand_margin_right = 200.0
-expand_margin_bottom = 140.0
+expand_margin_left = 190.0
+expand_margin_top = 180.0
+expand_margin_right = 160.0
+expand_margin_bottom = 180.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3d1ij"]
+texture = ExtResource("3_juy3j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p73to"]
+bg_color = Color(0.796875, 0.796875, 0.789063, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to0ia"]
 texture = ExtResource("4_fklug")
@@ -50,15 +61,36 @@ Button/styles/disabled = SubResource("StyleBoxTexture_pyk6u")
 Button/styles/focus = SubResource("StyleBoxTexture_6qce2")
 Button/styles/hover = SubResource("StyleBoxTexture_q0uwn")
 Button/styles/normal = SubResource("StyleBoxTexture_tswc8")
+Error/base_type = &"Label"
+Error/colors/font_color = Color(0.411765, 0, 0, 1)
+Error/colors/font_outline_color = Color(0.607843, 0.607843, 0.607843, 1)
+Error/constants/outline_size = 5
+Error/font_sizes/font_size = 25
+ErrorTitle/base_type = &"Label"
+ErrorTitle/colors/font_color = Color(0.615686, 0.027451, 0.0509804, 1)
+ErrorTitle/font_sizes/font_size = 160
+ErrorTitle/fonts/font = ExtResource("2_8cprm")
 FlatButton/base_type = &"Button"
 FlatButton/font_sizes/font_size = 20
 HBoxContainer/constants/separation = 180
 HeaderLarge/font_sizes/font_size = 35
-Label/colors/font_color = Color(0.148438, 0.148438, 0.148438, 1)
+HeaderMedium/base_type = &"Label"
+HeaderMedium/colors/font_color = Color(0.355469, 0.347656, 0.351563, 1)
+HeaderMedium/colors/font_outline_color = Color(0.351563, 0.347656, 0.351563, 1)
+HeaderMedium/constants/outline_size = 5
+HeaderMedium/font_sizes/font_size = 100
+IconPanel/base_type = &"PanelContainer"
+IconPanel/styles/panel = SubResource("StyleBoxTexture_3d1ij")
+Label/colors/font_color = Color(0.0976563, 0.113281, 0.140625, 1)
 Label/colors/font_outline_color = Color(0.148438, 0.148438, 0.148438, 1)
 Label/constants/outline_size = 5
 Label/font_sizes/font_size = 80
 Label/fonts/font = ExtResource("3_tyedm")
+Message/base_type = &"Label"
+Message/font_sizes/font_size = 50
+MessageSmall/base_type = &"Label"
+MessageSmall/font_sizes/font_size = 40
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_p73to")
 ScoreLabel/base_type = &"Label"
 ScoreLabel/colors/font_color = Color(0.992188, 0.863281, 0.00390625, 1)
 ScoreLabel/colors/font_outline_color = Color(0.992188, 0.863281, 0.00390625, 1)

@@ -17,7 +17,9 @@ func transition(current_scene, next_scene):
 	var status = ResourceLoader.load_threaded_get_status(next_scene, [])
 	match status:
 		0:
-			print("Error: something went wrong!")
+			ErrorHandler.error("The resource is invalid.")
+		2:
+			ErrorHandler.error("Some error occurred during loading and it failed.")
 		3:
 			var packed_scene = ResourceLoader.load_threaded_get(next_scene)
 			get_tree().change_scene_to_packed(packed_scene)

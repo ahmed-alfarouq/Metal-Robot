@@ -13,7 +13,6 @@ var screaming_collision = CollisionShape2D.new()
 
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
-@onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation = $Player
 @onready var screaming_area = $ScreamingArea
 @onready var screaming_timer = $ScreamingTimer

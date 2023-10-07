@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_7q5bb"]
-[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="2_imw3q"]
+[ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="2_d0vbx"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="2_xss3r"]
 [ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="3_fuved"]
 [ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="4_3tcsj"]
@@ -30,8 +30,8 @@ script = ExtResource("1_7q5bb")
 metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = [1922.0]
 
-[node name="Player" parent="." instance=ExtResource("2_imw3q")]
-position = Vector2(390, 312)
+[node name="Player" parent="." instance=ExtResource("2_d0vbx")]
+position = Vector2(323, 325)
 
 [node name="Areas" type="Node" parent="."]
 
@@ -74,8 +74,6 @@ shape = SubResource("RectangleShape2D_04yfw")
 [node name="GroundSpawner" parent="Spawners" instance=ExtResource("3_fuved")]
 
 [node name="GUI" type="CanvasLayer" parent="."]
-
-[node name="ParallaxBG" parent="GUI" instance=ExtResource("4_3tcsj")]
 
 [node name="Score" type="Label" parent="GUI"]
 anchors_preset = 5
@@ -136,6 +134,8 @@ position = Vector2(-195, -219)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("8_ed4t7")
 action = "screaming"
+
+[node name="ParallaxBG" parent="GUI" instance=ExtResource("4_3tcsj")]
 
 [connection signal="body_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_body_entered"]
 [connection signal="body_entered" from="Areas/BottomItemsRemover" to="." method="_on_bottom_items_remover_body_entered"]

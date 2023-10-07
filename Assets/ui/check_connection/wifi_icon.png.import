@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3stun0mm7m5"
-path="res://.godot/imported/pipe.png-d1f75b14bde36399e8b8e081ce8a470c.ctex"
+uid="uid://bq0w27qlqoiyk"
+path="res://.godot/imported/wifi_icon.png-4c1526b7e687aac6f0a7bc0580a539c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pipe.png"
-dest_files=["res://.godot/imported/pipe.png-d1f75b14bde36399e8b8e081ce8a470c.ctex"]
+source_file="res://assets/ui/check_connection/wifi_icon.png"
+dest_files=["res://.godot/imported/wifi_icon.png-4c1526b7e687aac6f0a7bc0580a539c7.ctex"]
 
 [params]
 

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl7jc1f43htnb"]
+
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="1_3latq"]
+[ext_resource type="Script" path="res://error_handler/error_handler.gd" id="1_w4eec"]
+
+[node name="ErrorHandler" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4eec")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 30
+visible = false
+
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3latq")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -834.5
+offset_top = -424.5
+offset_right = 834.5
+offset_bottom = 424.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ErrorTitle" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"ErrorTitle"
+text = "Unhandled Error"
+horizontal_alignment = 1
+
+[node name="Error" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"Error"
+theme_override_font_sizes/font_size = 60
+text = "Something went wrong please send us the next line:"

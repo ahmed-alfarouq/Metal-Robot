@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dfx64f11n0x2t" path="res://assets/logo.png" id="1_ewt8k"]
 [ext_resource type="Script" path="res://credits/credits.gd" id="1_y2l3c"]
-[ext_resource type="FontFile" path="res://assets/Fonts/Aquire-BW0ox.otf" id="2_juvpx"]
+[ext_resource type="FontFile" uid="uid://wyilhw388fqe" path="res://assets/fonts/arial.ttf" id="2_juvpx"]
 
 [sub_resource type="Theme" id="Theme_ub3jv"]
 RichTextLabel/font_sizes/normal_font_size = 65

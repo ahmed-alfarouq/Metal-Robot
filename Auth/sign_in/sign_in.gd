@@ -36,8 +36,8 @@ func login_failed(_code, message):
 
 
 func _on_forget_password_pressed():
-	SceneTransition.transition("res://auth/reset_password/reset_password.tscn")
+	SceneTransition.transition(self, "res://auth/reset_password/reset_password.tscn")
 
 
 func _on_create_account_pressed():
-	SceneTransition.transition("res://auth/sign_up/sign_up.tscn")
+	SceneTransition.transition(self, "res://auth/sign_up/sign_up.tscn")

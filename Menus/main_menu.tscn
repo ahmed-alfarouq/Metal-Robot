@@ -1,22 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://kjhtoh7ob4ct"]
+[gd_scene load_steps=6 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Script" path="res://menus/Scripts/main_menu.gd" id="1_sxlyg"]
 [ext_resource type="Texture2D" uid="uid://u5es22vjwq23" path="res://assets/ui/main_menu_bg.jpg" id="2_pjl4t"]
 [ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_gyk1i"]
 [ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_oihhl"]
 [ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_pseys"]
-[ext_resource type="Texture2D" uid="uid://bllv8lgw7ei0a" path="res://assets/ui/References/UI-metal-robot.jpg" id="5_pktvo"]
-
-[sub_resource type="Environment" id="Environment_jx762"]
-background_mode = 3
-background_canvas_max_layer = 1
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 3.0
-glow_strength = 1.2
-glow_blend_mode = 1
-glow_hdr_threshold = 0.63
-glow_hdr_scale = 2.9
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,9 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxlyg")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jx762")
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -164,9 +149,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 110.0
-offset_top = -452.0
+offset_top = -420.0
 offset_right = 479.0
-offset_bottom = 112.0
+offset_bottom = 144.0
 grow_vertical = 2
 rotation = 0.0872665
 scale = Vector2(1, 1.4)
@@ -178,9 +163,11 @@ layout_mode = 2
 text = "Play"
 metadata/_edit_lock_ = true
 
-[node name="Credits" type="Button" parent="MainMenu/BtnsVContainer"]
+[node name="Leaderboard" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
-text = "Credits"
+disabled = true
+text = "Leaderboard
+"
 metadata/_edit_lock_ = true
 
 [node name="Skins" type="Button" parent="MainMenu/BtnsVContainer"]
@@ -190,17 +177,15 @@ text = "Skins
 "
 metadata/_edit_lock_ = true
 
+[node name="Credits" type="Button" parent="MainMenu/BtnsVContainer"]
+layout_mode = 2
+text = "Credits"
+metadata/_edit_lock_ = true
+
 [node name="Settings" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
 disabled = true
 text = "Settings
-"
-metadata/_edit_lock_ = true
-
-[node name="Leaderboard" type="Button" parent="MainMenu/BtnsVContainer"]
-layout_mode = 2
-disabled = true
-text = "Leaderboard
 "
 metadata/_edit_lock_ = true
 
@@ -211,9 +196,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -306.0
-offset_top = -211.0
+offset_top = -200.0
 offset_right = 367.0
-offset_bottom = -127.0
+offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1, 1.4)
@@ -229,14 +214,10 @@ layout_mode = 2
 text = "Log Out"
 metadata/_edit_lock_ = true
 
-[node name="Ui-metal-robot" type="Sprite2D" parent="."]
-position = Vector2(902, 1437)
-texture = ExtResource("5_pktvo")
-
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Skins" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Leaderboard" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Skins" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsHContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsHContainer/LogOut" to="." method="_on_log_out_pressed"]

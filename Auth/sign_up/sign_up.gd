@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var email = $Email
 @onready var password = $Password

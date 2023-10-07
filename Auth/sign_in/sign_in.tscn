@@ -59,6 +59,7 @@ placeholder_text = "Password"
 secret = true
 
 [node name="ErrorMessage" type="Label" parent="."]
+layout_mode = 0
 offset_left = 799.0
 offset_top = 540.0
 offset_right = 839.0

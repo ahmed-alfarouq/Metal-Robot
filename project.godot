@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metal Robot"
-run/main_scene="res://levels/main_level.tscn"
+run/main_scene="res://internet_connection/check_connection.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 run/max_fps=100
 boot_splash/bg_color=Color(0.136719, 0.121094, 0.125, 1)
@@ -25,6 +25,7 @@ config/icon="res://assets/icon.png"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 Globals="*res://globals.gd"
 SceneTransition="*res://scene_transition/scene_transition.tscn"
+ErrorHandler="*res://error_handler/error_handler.tscn"
 
 [display]
 
