@@ -77,6 +77,9 @@ func add_screaming_collision():
 func player_dies():
 	# Emit signal
 	dies.emit()
+	# Delection collision to prevent player from colliding with other objects after death
+	collision.queue_free()
+	# Set is_dead to true
 	main.is_dead = true
 	# play animation and sounds
 	boom_sound.play()

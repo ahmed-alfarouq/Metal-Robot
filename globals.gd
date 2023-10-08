@@ -16,8 +16,8 @@ func _ready():
 func change_scene(current_scene, next_scene_path):
 	var scene_load_status
 	var progress: Array = []
+	var scene_instance
 	var loading_screen_instance = loading_screen.instantiate()
-	var loading_bar = loading_screen_instance.get_node("CanvasLayer/Loader")
 
 	# Add the loading screen then delete the current scene
 	get_tree().root.call_deferred("add_child", loading_screen_instance)
@@ -27,7 +27,6 @@ func change_scene(current_scene, next_scene_path):
 	# If scene exists make a request
 	if (ResourceLoader.exists(next_scene_path)):
 		ResourceLoader.load_threaded_request(next_scene_path)
-	
 	# A loop until the request finishes
 	while ResourceLoader.exists(next_scene_path):
 		scene_load_status = ResourceLoader.load_threaded_get_status(next_scene_path, progress)
@@ -35,13 +34,11 @@ func change_scene(current_scene, next_scene_path):
 			0:
 				ErrorHandler.error("The resource is invalid.")
 				return
-			1:
-				loading_bar.value = floor(progress[0] * 100)
 			2:
 				ErrorHandler.error("Some error occurred during loading and it failed.")
 				return
 			3:
-				var scene_instance = ResourceLoader.load_threaded_get(next_scene_path).instantiate()
-				get_tree().root.call_deferred("add_child", scene_instance)
-				loading_screen_instance.fade_out()
+				scene_instance = ResourceLoader.load_threaded_get(next_scene_path).instantiate()
+				var add_next_scene = func(): get_tree().root.call_deferred("add_child", scene_instance)
+				loading_screen_instance.go_to_next_scene(add_next_scene)
 				return
