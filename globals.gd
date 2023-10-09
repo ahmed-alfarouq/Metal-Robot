@@ -1,12 +1,13 @@
 extends Node
 
-var loading_screen = preload("res://loading_screen/loading_screen.tscn")
-var screaming_times = 3
+var loading_screen: PackedScene = preload("res://loading_screen/loading_screen.tscn")
+var screaming_times: int = 3
+var current_weapon: String = "pistol"
 
 # Regex
-@onready var email_regex = RegEx.new()
+@onready var email_regex: RegEx = RegEx.new()
 
-# Pepsi Man
+
 func _ready():
 	email_regex.compile("(^[a-zA-Z0-9_.+-]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]+$)")
 

@@ -125,7 +125,7 @@ grow_vertical = 0
 position = Vector2(-14, 18)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_07gyd")
-action = "screaming"
+action = "shooting"
 
 [node name="Scream" type="TouchScreenButton" parent="GUI/RightContainer"]
 position = Vector2(-195, -219)

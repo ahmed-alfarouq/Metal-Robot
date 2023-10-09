@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcn8m7h8nxkbj"]
+
+[ext_resource type="Script" path="res://weapon/script/weapon.gd" id="1_fqlrb"]
+[ext_resource type="Script" path="res://weapon/script/player_sprite.gd" id="3_yxwav"]
+[ext_resource type="Script" path="res://weapon/script/weapon_sprite.gd" id="5_f532j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vijyr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fny2b"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_fqlrb")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_vijyr")
+script = ExtResource("3_yxwav")
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_fny2b")
+script = ExtResource("5_f532j")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(500, 0)
+collision_mask = 4

@@ -69,7 +69,12 @@ animations = [{
 }],
 "loop": false,
 "name": &"equip",
-"speed": 12.0
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"reload",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,9 +95,14 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_axukr")
 }],
-"loop": true,
+"loop": false,
 "name": &"shooting",
-"speed": 10.0
+"speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"unequip",
+"speed": 5.0
 }]
 script = SubResource("GDScript_pck5g")
 health = 0

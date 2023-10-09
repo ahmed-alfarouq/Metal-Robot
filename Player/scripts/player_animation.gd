@@ -2,9 +2,7 @@ extends AnimatedSprite2D
 
 class_name PLAYER_ANIMATION
 
-@onready var animation_sprites = sprite_frames
-
-var prev_animation_state = "flying_up"
+var prev_animation_state: String = "flying_up"
 
 func boom():
 	play("boom")
@@ -33,15 +31,3 @@ func scream():
 	play("screaming")
 	await animation_finished
 	play(prev_animation_state)
-
-func equip():
-	play("equip")
-
-func shooting():
-	play("shooting")
-
-func reload():
-	play("reload")
-
-func drop():
-	play("drop")

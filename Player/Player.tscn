@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://vsmad7qruv46"]
+[gd_scene load_steps=21 format=3 uid="uid://vsmad7qruv46"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_bdrq7"]
 [ext_resource type="Texture2D" uid="uid://cee8map0vpb06" path="res://assets/animation/pistol_animation/equip/equipe_pistol0005.png" id="2_jvrcw"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dyuw12tpnc8wm" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_06.png" id="13_fay6v"]
 [ext_resource type="SpriteFrames" uid="uid://bic0ahi1qt5ip" path="res://resources/sprite_frames/player/player_base.tres" id="14_wya43"]
 [ext_resource type="Script" path="res://player/scripts/player_animation.gd" id="15_venmw"]
-[ext_resource type="Script" path="res://weapons_scripts/ranged_weapon.gd" id="16_lwbti"]
-[ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://assets/Sounds/Boom.wav" id="17_qp86i"]
+[ext_resource type="PackedScene" uid="uid://bcn8m7h8nxkbj" path="res://weapon/weapon.tscn" id="16_mwqhj"]
+[ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://assets/sounds/boom.wav" id="17_qp86i"]
 
 [sub_resource type="GDScript" id="GDScript_pck5g"]
 script/source = "extends Resource
@@ -99,20 +99,18 @@ script = SubResource("GDScript_pck5g")
 health = 0
 strings = PackedStringArray()
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w1hmb"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
 radius = 35.0
 height = 170.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(100, 200)
+position = Vector2(500, 200)
 collision_mask = 6
 script = ExtResource("1_bdrq7")
 pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 550
 
-[node name="Player" type="AnimatedSprite2D" parent="."]
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = ExtResource("14_wya43")
 animation = &"flying_down"
@@ -121,12 +119,7 @@ frame = 2
 frame_progress = 0.124615
 script = ExtResource("15_venmw")
 
-[node name="Weapon" type="Node2D" parent="."]
-scale = Vector2(0.8, 0.8)
-script = ExtResource("16_lwbti")
-
-[node name="WeaponAnim" type="AnimatedSprite2D" parent="Weapon"]
-sprite_frames = SubResource("SpriteFrames_w1hmb")
+[node name="Weapon" parent="." instance=ExtResource("16_mwqhj")]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 16)
@@ -140,6 +133,7 @@ position = Vector2(100, 200)
 stream = ExtResource("17_qp86i")
 
 [node name="ScreamingArea" type="Area2D" parent="."]
+position = Vector2(-4, 18)
 collision_layer = 8
 collision_mask = 8
 

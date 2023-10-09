@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcn8m7h8nxkbj"]
+
+[ext_resource type="Script" path="res://weapon/script/weapon.gd" id="1_fqlrb"]
+[ext_resource type="Script" path="res://weapon/script/player_sprite.gd" id="3_yxwav"]
+[ext_resource type="Script" path="res://weapon/script/weapon_sprite.gd" id="5_f532j"]
+
+[node name="Weapon" type="Node2D"]
+position = Vector2(382, 334)
+script = ExtResource("1_fqlrb")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+animation = &"equip"
+script = ExtResource("3_yxwav")
+
+[node name="WeaponSprite" type="AnimatedSprite2D" parent="."]
+animation = &"equip"
+script = ExtResource("5_f532j")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(500, 0)
+collision_mask = 4

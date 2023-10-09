@@ -1,0 +1,15 @@
+{
+	"pistol": {
+		"weapon_animation_resource": "res://resources/sprite_frames/weapons/pistol.tres",
+		"player_weapon_animation_resource": "res://resources/sprite_frames/player/player_pistol.tres",
+		"shooting_range": 30,
+		"bullets": 5,
+		"reload_times": 1,
+		"sounds": {
+			"equip": "",
+			"shooting": "",
+			"reload": "",
+			"unequip": "",
+		}
+	}
+}

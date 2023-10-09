@@ -1,31 +1,34 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://cu6ud31n83w7d"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://cu6ud31n83w7d"]
 
 [ext_resource type="FontFile" uid="uid://b313ygi8kjlr5" path="res://assets/fonts/Jokerman.ttf" id="2_8cprm"]
-[ext_resource type="Texture2D" uid="uid://bt23yk0ws3l6w" path="res://assets/ui/button.png" id="2_rd630"]
+[ext_resource type="Texture2D" uid="uid://bt23yk0ws3l6w" path="res://assets/ui/btns/btn_normal.png" id="2_gkb3m"]
 [ext_resource type="Texture2D" uid="uid://li11jkpdwmqu" path="res://assets/ui/check_connection/form_bg.png" id="3_juy3j"]
 [ext_resource type="FontFile" uid="uid://wyilhw388fqe" path="res://assets/fonts/arial.ttf" id="3_tyedm"]
 [ext_resource type="Texture2D" uid="uid://faja2n64fvy6" path="res://assets/ui/half_circle.png" id="4_fklug"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyk6u"]
-texture = ExtResource("2_rd630")
+texture = ExtResource("2_gkb3m")
 expand_margin_left = 200.0
 expand_margin_top = 140.0
 expand_margin_right = 200.0
 expand_margin_bottom = 140.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6qce2"]
-texture = ExtResource("2_rd630")
+texture = ExtResource("2_gkb3m")
 expand_margin_left = 200.0
 expand_margin_top = 140.0
 expand_margin_right = 200.0
 expand_margin_bottom = 140.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hnr6t"]
+load_path = "res://.godot/imported/btn_hovered.png-ed34ffa3e3d308c61d2e075540300557.ctex"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0uwn"]
-texture = ExtResource("2_rd630")
+texture = SubResource("CompressedTexture2D_hnr6t")
 expand_margin_bottom = 180.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswc8"]
-texture = ExtResource("2_rd630")
+texture = ExtResource("2_gkb3m")
 expand_margin_left = 190.0
 expand_margin_top = 180.0
 expand_margin_right = 160.0
