@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl7jc1f43htnb"]
 
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="1_3latq"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_3latq"]
 [ext_resource type="Script" path="res://error_handler/error_handler.gd" id="1_w4eec"]
 
 [node name="ErrorHandler" type="Control"]

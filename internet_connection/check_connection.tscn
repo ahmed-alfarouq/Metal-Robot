@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://shbxcqmjf7f7"]
 
 [ext_resource type="Script" path="res://internet_connection/scripts/check_connection.gd" id="1_w4fpe"]
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="2_cffum"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_cffum"]
 [ext_resource type="Texture2D" uid="uid://bq0w27qlqoiyk" path="res://assets/ui/check_connection/wifi_icon.png" id="3_l65py"]
 
 [sub_resource type="Animation" id="Animation_7rhn6"]

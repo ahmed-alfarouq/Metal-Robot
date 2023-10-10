@@ -39,6 +39,7 @@ func _physics_process(_delta):
 	handle_flying()
 	handle_screaming()
 	handle_shooting()
+	handle_colliding()
 
 # Handle start flying & flying animation
 func handle_flying():
@@ -83,6 +84,22 @@ func handle_screaming():
 		pipe_spawner.spawn_pipes()
 		pipe_spawner.start_spawner()
 
+func handle_shooting():
+	if (Input.is_action_pressed("shooting") && not is_shooting):
+		is_shooting = true
+		weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
+		weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
+		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
+
+func handle_colliding():
+	var killers = ["TopPipe", "BottomPipe"]
+	var collision_count = get_slide_collision_count()
+	for i in collision_count:
+		var collision_info = get_slide_collision(i)
+		var collider = collision_info.get_collider()
+		if (killers.has(collider.name)):
+			player_dies()
+
 func player_dies():
 	# Emit signal
 	dies.emit()
@@ -99,13 +116,6 @@ func player_dies():
 	Globals.screaming_times = 3
 	# Take player to the lose menu
 	SceneTransition.transition(main, "res://menus/loss_menu.tscn")
-
-func handle_shooting():
-	if (Input.is_action_pressed("shooting") && not is_shooting):
-		is_shooting = true
-		weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
-		weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
-		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
 
 func load_weapons_json(file_path: String):
 	if (FileAccess.file_exists(file_path)):

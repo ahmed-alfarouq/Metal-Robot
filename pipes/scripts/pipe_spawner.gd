@@ -7,7 +7,6 @@ const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 
 @onready var main = get_node("/root/MainLevel")
 @onready var prev_pipe_speed = 400
-@onready var pipe_gap_range
 @onready var spawn_timer = $SpawnTimer
 @onready var increase_speed_timer = $IncreaseSpeedTimer
 
@@ -15,14 +14,14 @@ func _ready():
 	spawn_pipes()
 
 func spawn_pipes():
-	pipe_gap_range = randi_range(130, 160)
 	var screen = get_viewport().get_visible_rect()
 	var pipe = PIPEPAIR.instantiate()
 	add_child(pipe, true)
 	
 	# Determine pipes position
+	var pos_y_range = randi_range(10, 60)
 	pipe.position.x = screen.end.x + 200
-	pipe.position.y = (screen.size.y / 2) - randi_range(20, 40)
+	pipe.position.y = (screen.size.y / 2) - pos_y_range
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()

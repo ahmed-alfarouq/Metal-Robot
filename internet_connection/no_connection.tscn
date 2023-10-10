@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buqkkcqs6j31m"]
 
 [ext_resource type="Script" path="res://internet_connection/scripts/no_connection.gd" id="1_sooxi"]
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="1_xp4nn"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_xp4nn"]
 [ext_resource type="Texture2D" uid="uid://breb1xhvktbrn" path="res://assets/ui/check_connection/internet_icon.png" id="2_0e6fm"]
 
 [node name="NoConnection" type="Control"]

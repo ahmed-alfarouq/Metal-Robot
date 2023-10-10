@@ -42,7 +42,6 @@ func equip():
 	# Start shooting after equiping finishes
 	player_sprite.shooting(weapon_info["bullets"], weapon_info["reload_times"])
 	weapon_sprite.shooting(weapon_info["bullets"], weapon_info["reload_times"])
-	print("Done!")
 
 func unequip():
 	weapon_sprite.play("unequip")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kjhtoh7ob4ct"]
 
 [ext_resource type="Script" path="res://menus/Scripts/main_menu.gd" id="1_sxlyg"]
-[ext_resource type="Texture2D" uid="uid://u5es22vjwq23" path="res://assets/ui/main_menu_bg.jpg" id="2_pjl4t"]
+[ext_resource type="Texture2D" uid="uid://u5es22vjwq23" path="res://assets/ui/bgs/main_menu_bg.jpg" id="2_ijqsd"]
 [ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_gyk1i"]
 [ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_oihhl"]
 [ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_pseys"]
@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxlyg")
+metadata/_edit_lock_ = true
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 
@@ -23,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pjl4t")
+texture = ExtResource("2_ijqsd")
 expand_mode = 3
 metadata/_edit_lock_ = true
 
@@ -69,16 +70,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -501.0
-offset_top = -415.0
-offset_right = 840.0
-offset_bottom = -78.0
+offset_left = -688.0
+offset_top = -434.0
+offset_right = 729.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"title"
-theme_override_font_sizes/font_size = 160
+theme_override_font_sizes/font_size = 190
 text = "METAL ROBOT"
-metadata/_edit_lock_ = true
 
 [node name="RobotLeft" type="TextureRect" parent="MainMenu/TitleContainer"]
 layout_mode = 1
@@ -87,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -562.0
-offset_top = -465.0
-offset_right = -459.0
-offset_bottom = -362.0
+offset_left = -656.0
+offset_top = -475.0
+offset_right = -553.0
+offset_bottom = -372.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gyk1i")
@@ -103,10 +103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -494.0
-offset_top = -487.0
-offset_right = -295.0
-offset_bottom = -288.0
+offset_left = -582.0
+offset_top = -499.0
+offset_right = -383.0
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_pseys")
@@ -119,10 +119,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 655.0
-offset_top = -254.0
-offset_right = 758.0
-offset_bottom = -151.0
+offset_left = 669.0
+offset_top = -226.0
+offset_right = 772.0
+offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gyk1i")
@@ -135,10 +135,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 468.0
-offset_top = -277.0
-offset_right = 667.0
-offset_bottom = -78.0
+offset_left = 486.0
+offset_top = -263.0
+offset_right = 685.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_pseys")
@@ -148,14 +148,13 @@ expand_mode = 4
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 110.0
-offset_top = -420.0
-offset_right = 479.0
-offset_bottom = 144.0
+offset_left = 141.0
+offset_top = -369.0
+offset_right = 357.0
+offset_bottom = 251.0
 grow_vertical = 2
-rotation = 0.0872665
-scale = Vector2(1, 1.4)
-theme_override_constants/separation = 30
+rotation = 0.139626
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Play" type="Button" parent="MainMenu/BtnsVContainer"]
@@ -166,7 +165,7 @@ metadata/_edit_lock_ = true
 [node name="Leaderboard" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
 disabled = true
-text = "Leaderboard
+text = "Ranks
 "
 metadata/_edit_lock_ = true
 

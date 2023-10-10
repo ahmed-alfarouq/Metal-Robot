@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4m7e3boqnmnu"]
 
 [ext_resource type="Script" path="res://menus/Scripts/loss_menu.gd" id="1_3fgej"]
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/check_connection/bg.jpg" id="1_ijrdr"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_ijrdr"]
 [ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_0ub3l"]
 [ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_phuko"]
 [ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_72d5i"]

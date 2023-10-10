@@ -100,8 +100,8 @@ health = 0
 strings = PackedStringArray()
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
-radius = 35.0
-height = 170.0
+radius = 38.0
+height = 174.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(500, 200)
@@ -135,7 +135,7 @@ stream = ExtResource("17_qp86i")
 [node name="ScreamingArea" type="Area2D" parent="."]
 position = Vector2(-4, 18)
 collision_layer = 8
-collision_mask = 8
+collision_mask = 4
 
 [node name="ScreamingTimer" type="Timer" parent="."]
 wait_time = 2.2
