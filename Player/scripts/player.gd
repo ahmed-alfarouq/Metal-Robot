@@ -92,7 +92,7 @@ func handle_shooting():
 		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
 
 func handle_colliding():
-	var killers = ["TopPipe", "BottomPipe"]
+	var killers = ["TopPipe", "BottomPipe", "Fire"]
 	var collision_count = get_slide_collision_count()
 	for i in collision_count:
 		var collision_info = get_slide_collision(i)
@@ -115,7 +115,7 @@ func player_dies():
 	# Reset screaming_times
 	Globals.screaming_times = 3
 	# Take player to the lose menu
-	SceneTransition.transition(main, "res://menus/loss_menu.tscn")
+	#SceneTransition.transition(main, "res://menus/loss_menu.tscn")
 
 func load_weapons_json(file_path: String):
 	if (FileAccess.file_exists(file_path)):
@@ -140,5 +140,5 @@ func add_screaming_collision():
 
 # Signals
 func _on_screaming_area_body_entered(body):
-	if (body.is_in_group("pipes")):
-		body.set_process(false)
+	if (body.get_parent().has_method("drop_pipes")):
+		body.get_parent().call_deferred("drop_pipes")

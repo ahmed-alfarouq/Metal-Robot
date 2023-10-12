@@ -1,0 +1,251 @@
+[gd_scene load_steps=22 format=3 uid="uid://bu0fitp656vco"]
+
+[ext_resource type="Script" path="res://pipes/scripts/fire_pipe_pair.gd" id="1_7i4o5"]
+[ext_resource type="Texture2D" uid="uid://3stun0mm7m5" path="res://assets/pipe.png" id="1_hsxpp"]
+[ext_resource type="Texture2D" uid="uid://bfe7g8hkqg706" path="res://assets/pipe_fire/pipe_fire_01.png" id="1_rk57k"]
+[ext_resource type="Texture2D" uid="uid://w7huv4y086yh" path="res://assets/pipe_fire/pipe_fire_02.png" id="2_18q6m"]
+[ext_resource type="AudioStream" uid="uid://dog4jabfreafw" path="res://assets/sounds/Point.wav" id="2_abgnj"]
+[ext_resource type="Texture2D" uid="uid://bykpq2npg5dhl" path="res://assets/pipe_fire/pipe_fire_03.png" id="3_u8utd"]
+[ext_resource type="Texture2D" uid="uid://juv8ufxem3ca" path="res://assets/pipe_fire/pipe_fire_04.png" id="4_b7h58"]
+[ext_resource type="Texture2D" uid="uid://dcqwr8qh47wd5" path="res://assets/pipe_fire/pipe_fire_05.png" id="5_5tkjx"]
+[ext_resource type="Texture2D" uid="uid://c2l2q41nr8k21" path="res://assets/pipe_fire/pipe_fire_06.png" id="6_jo6my"]
+[ext_resource type="Texture2D" uid="uid://civgy3xpajyxl" path="res://assets/pipe_fire/pipe_fire_07.png" id="7_4naey"]
+[ext_resource type="Texture2D" uid="uid://ij025ua0okxx" path="res://assets/pipe_fire/pipe_fire_08.png" id="8_wcd2q"]
+[ext_resource type="Texture2D" uid="uid://b6qf4l2fk4y30" path="res://assets/pipe_fire/pipe_fire_09.png" id="9_5a27k"]
+[ext_resource type="Texture2D" uid="uid://cjw52nqujn2ia" path="res://assets/pipe_fire/pipe_fire_10.png" id="10_5dji7"]
+
+[sub_resource type="Animation" id="Animation_302hk"]
+resource_name = "down_up"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopPipe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -300), Vector2(0, -500), Vector2(0, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomPipe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1000), Vector2(0, 900), Vector2(0, 1000)]
+}
+
+[sub_resource type="Animation" id="Animation_36xxp"]
+resource_name = "up_down"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopPipe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -600), Vector2(0, -500), Vector2(0, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottomPipe:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1200), Vector2(0, 900), Vector2(0, 1200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fg63"]
+_data = {
+"down_up": SubResource("Animation_302hk"),
+"up_down": SubResource("Animation_36xxp")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpbwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rk57k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_18q6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u8utd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b7h58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5tkjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jo6my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4naey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wcd2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5a27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5dji7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h3kk"]
+size = Vector2(238, 1315.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2h05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rk57k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_18q6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u8utd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b7h58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5tkjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jo6my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4naey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wcd2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5a27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5dji7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsr17"]
+size = Vector2(244, 1330.17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0kmc"]
+size = Vector2(102, 3165)
+
+[node name="FirePipePair" type="Node2D" groups=["pipes"]]
+script = ExtResource("1_7i4o5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fg63")
+}
+
+[node name="TopPipe" type="RigidBody2D" parent="."]
+position = Vector2(0, -300)
+collision_layer = 4
+collision_mask = 9
+lock_rotation = true
+freeze = true
+
+[node name="Fire" type="AnimatedSprite2D" parent="TopPipe"]
+position = Vector2(10, 409)
+rotation = -3.14159
+scale = Vector2(1.78016, 1.78016)
+sprite_frames = SubResource("SpriteFrames_lpbwe")
+autoplay = "default"
+frame = 6
+frame_progress = 0.796794
+
+[node name="FireArea" type="Area2D" parent="TopPipe/Fire"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopPipe/Fire/FireArea"]
+polygon = PackedVector2Array(-18.5377, 30.8962, -42.1311, 39.3224, -57.2984, 76.9596, -61.2306, 138.19, 73.0274, 137.067, 69.6569, 89.8798, 60.6689, 63.4776, 52.8044, 43.8164, 33.7049, 46.0634, 30.3344, 51.6809, 24.1552, 32.5814, 16.8525, 18.5377, 10.6732, 0.561745, -3.93224, -21.3465)
+
+[node name="TopPipeSprite" type="Sprite2D" parent="TopPipe"]
+position = Vector2(0, -507.917)
+rotation = 3.14159
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_hsxpp")
+
+[node name="PipeCollision" type="CollisionShape2D" parent="TopPipe"]
+position = Vector2(1.5, -497.917)
+shape = SubResource("RectangleShape2D_2h3kk")
+debug_color = Color(0, 0, 0, 0.419608)
+
+[node name="BottomPipe" type="RigidBody2D" parent="."]
+position = Vector2(0, 1000)
+collision_layer = 4
+collision_mask = 9
+lock_rotation = true
+freeze = true
+
+[node name="Fire" type="AnimatedSprite2D" parent="BottomPipe"]
+position = Vector2(1, -1168)
+scale = Vector2(1.78, 1.78)
+sprite_frames = SubResource("SpriteFrames_a2h05")
+autoplay = "default"
+frame = 4
+frame_progress = 0.124197
+
+[node name="FireArea" type="Area2D" parent="BottomPipe/Fire"]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomPipe/Fire/FireArea"]
+polygon = PackedVector2Array(-1.68539, -20.7865, -13.4831, -1.68539, -18.5393, 12.9213, -19.1011, 24.7191, -32.5843, 18.5393, -44.382, 23.5955, -48.8764, 38.764, -57.3034, 60.1124, -61.7978, 87.0787, -65.1685, 111.798, -65.1685, 132.584, -63.4831, 139.326, -49.4382, 141.011, -28.0899, 139.888, 8.42696, 139.326, 29.7753, 139.326, 60.6742, 139.326, 68.5393, 139.888, 72.4719, 123.034, 69.1011, 101.685, 58.427, 79.2135, 52.2472, 61.236, 44.382, 53.3708, 36.5169, 50, 29.7753, 53.9326, 23.0337, 30.8989, 17.9775, 7.86517, 17.9775, -7.30338, 19.6629, -19.1011, 21.3483, -30.3371, 14.6067, -37.6404, 2.24719, -37.6404, -2.80899, -29.2135, -6.74157, -20.7865)
+
+[node name="BottomPipeSprite" type="Sprite2D" parent="BottomPipe"]
+position = Vector2(0, -242.917)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_hsxpp")
+
+[node name="PipeCollision" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(1, -247.917)
+shape = SubResource("RectangleShape2D_lsr17")
+debug_color = Color(0, 0, 0, 0.419608)
+
+[node name="EarnPointArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EarnPointArea"]
+position = Vector2(81, 73.5)
+shape = SubResource("RectangleShape2D_o0kmc")
+metadata/_edit_lock_ = true
+
+[node name="Point" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-447, 14)
+stream = ExtResource("2_abgnj")
+
+[connection signal="body_entered" from="TopPipe/Fire/FireArea" to="." method="_on_fire_area_body_entered"]
+[connection signal="body_entered" from="BottomPipe/Fire/FireArea" to="." method="_on_fire_area_body_entered"]

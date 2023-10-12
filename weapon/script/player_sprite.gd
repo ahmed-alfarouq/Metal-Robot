@@ -20,7 +20,7 @@ func shooting(bullets, reload_times):
 
 func reload():
 	if (weapon_reload_times > 0):
-		play("equip")
+		play("reload")
 		await animation_finished
 		weapon_reload_times -= 1
 		shooting(weapon_bullets, weapon_reload_times)

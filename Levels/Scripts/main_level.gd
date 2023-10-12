@@ -52,13 +52,14 @@ func shake_camera(shaking_time):
 	play_camera_shake = true
 
 
+# Signals
 func _on_player_dies():
 	shake_camera(1)
 	save_best_score(maxi(best_score, score))
 
 func _on_items_remover_body_entered(body):
-	if (body.is_in_group("pipes")):
-		body.queue_free()
+	if (body.get_parent().is_in_group("pipes")):
+		body.get_parent().queue_free()
 
 func _on_shaking_timer_timeout():
 	# Stop shaking
@@ -69,7 +70,10 @@ func _on_shaking_timer_timeout():
 	# Reset offset
 	parallax_bg.scroll_offset = parallax_prev_offset
 
-
-func _on_bottom_items_remover_body_entered(body):
-	if (body.is_in_group("pipes")):
-		body.queue_free()
+"""
+	I use this to remove pipes when they get out of the screen
+	there's an issue with this area while detecting pipes
+"""
+func _on_items_remover_area_entered(area):
+	if (area.name == "EarnPointArea"):
+		area.get_parent().queue_free()

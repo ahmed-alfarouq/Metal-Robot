@@ -16,8 +16,8 @@ size = Vector2(1954, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtkie"]
 size = Vector2(42, 1089.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8s67"]
-size = Vector2(186.5, 2079)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6kse"]
+size = Vector2(250, 3500)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04yfw"]
 size = Vector2(6273, 266)
@@ -28,37 +28,36 @@ metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = [1922.0]
 
 [node name="Player" parent="." instance=ExtResource("2_d0vbx")]
-position = Vector2(323, 325)
+position = Vector2(493, 181)
 
 [node name="Areas" type="Node" parent="."]
 
 [node name="TopBlocker" type="StaticBody2D" parent="Areas"]
-collision_layer = 8
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/TopBlocker"]
 position = Vector2(943, -2)
 shape = SubResource("RectangleShape2D_hl534")
 
 [node name="BackBlocker" type="StaticBody2D" parent="Areas"]
-collision_layer = 8
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/BackBlocker"]
 position = Vector2(-21, 535.25)
 shape = SubResource("RectangleShape2D_rtkie")
 
 [node name="ItemsRemover" type="Area2D" parent="Areas"]
-position = Vector2(-200, 0)
+position = Vector2(-600, 1000)
 collision_layer = 8
-collision_mask = 8
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ItemsRemover"]
-position = Vector2(-244.25, 589.5)
-shape = SubResource("RectangleShape2D_g8s67")
+shape = SubResource("RectangleShape2D_t6kse")
 
 [node name="BottomItemsRemover" type="Area2D" parent="Areas"]
 position = Vector2(900, 5000)
 collision_layer = 8
-collision_mask = 12
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/BottomItemsRemover"]
 position = Vector2(490.5, 33)
@@ -135,5 +134,7 @@ action = "screaming"
 
 [node name="ParallaxBG" parent="GUI" instance=ExtResource("4_3tcsj")]
 
+[connection signal="dies" from="Player" to="." method="_on_player_dies"]
+[connection signal="area_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_area_entered"]
 [connection signal="body_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_body_entered"]
-[connection signal="body_entered" from="Areas/BottomItemsRemover" to="." method="_on_bottom_items_remover_body_entered"]
+[connection signal="body_entered" from="Areas/BottomItemsRemover" to="." method="_on_items_remover_body_entered"]

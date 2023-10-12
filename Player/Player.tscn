@@ -1,12 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://vsmad7qruv46"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_bdrq7"]
-[ext_resource type="Texture2D" uid="uid://cee8map0vpb06" path="res://assets/animation/pistol_animation/equip/equipe_pistol0005.png" id="2_jvrcw"]
-[ext_resource type="Texture2D" uid="uid://ln20ida4kpc" path="res://assets/animation/pistol_animation/equip/equipe_pistol0006.png" id="3_hrauu"]
-[ext_resource type="Texture2D" uid="uid://r43dfpcera48" path="res://assets/animation/pistol_animation/equip/equipe_pistol0007.png" id="4_sxafy"]
-[ext_resource type="Texture2D" uid="uid://dmcpcx5xikk4k" path="res://assets/animation/pistol_animation/equip/equipe_pistol0008.png" id="5_tw3rk"]
-[ext_resource type="Texture2D" uid="uid://cnyq27j0jcsm5" path="res://assets/animation/pistol_animation/equip/equipe_pistol0009.png" id="6_4aig6"]
-[ext_resource type="Texture2D" uid="uid://cna1bi2ikwn0e" path="res://assets/animation/pistol_animation/equip/equipe_pistol0010.png" id="7_uox1f"]
 [ext_resource type="Texture2D" uid="uid://gfeuwufw56u0" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_01.png" id="8_0poa3"]
 [ext_resource type="Texture2D" uid="uid://d3muybcxtt6s8" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_02.png" id="9_1o1w4"]
 [ext_resource type="Texture2D" uid="uid://b0cdy4vsf0oj0" path="res://assets/animation/pistol_animation/shooting/pistol_shooting_03.png" id="10_jey6j"]
@@ -17,6 +11,18 @@
 [ext_resource type="Script" path="res://player/scripts/player_animation.gd" id="15_venmw"]
 [ext_resource type="PackedScene" uid="uid://bcn8m7h8nxkbj" path="res://weapon/weapon.tscn" id="16_mwqhj"]
 [ext_resource type="AudioStream" uid="uid://k4m8irhq45yb" path="res://assets/sounds/boom.wav" id="17_qp86i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xfb0b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0craf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x88p0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1wcbu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0dgph"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pgn5t"]
 
 [sub_resource type="GDScript" id="GDScript_pck5g"]
 script/source = "extends Resource
@@ -51,22 +57,22 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jvrcw")
+"texture": SubResource("CompressedTexture2D_xfb0b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hrauu")
+"texture": SubResource("CompressedTexture2D_0craf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sxafy")
+"texture": SubResource("CompressedTexture2D_x88p0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tw3rk")
+"texture": SubResource("CompressedTexture2D_1wcbu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_4aig6")
+"texture": SubResource("CompressedTexture2D_0dgph")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_uox1f")
+"texture": SubResource("CompressedTexture2D_pgn5t")
 }],
 "loop": false,
 "name": &"equip",
@@ -105,7 +111,7 @@ height = 174.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(500, 200)
-collision_mask = 6
+collision_mask = 30
 script = ExtResource("1_bdrq7")
 pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 550

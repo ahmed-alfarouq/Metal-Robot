@@ -1,89 +1,193 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://dsiurfwtf4qur"]
+[gd_resource type="SpriteFrames" load_steps=43 format=3 uid="uid://dsiurfwtf4qur"]
 
-[ext_resource type="Texture2D" uid="uid://djiyw7sebr5ke" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0001.png" id="1_pd8kh"]
-[ext_resource type="Texture2D" uid="uid://sllh65c2incw" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0002.png" id="2_jbypx"]
-[ext_resource type="Texture2D" uid="uid://c7xbxst8k21bn" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0003.png" id="3_1nh7s"]
-[ext_resource type="Texture2D" uid="uid://btntb63e31l28" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0004.png" id="4_aw5fl"]
-[ext_resource type="Texture2D" uid="uid://l5n0yimx8o05" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0005.png" id="5_8nq1i"]
-[ext_resource type="Texture2D" uid="uid://bv500oxw655lh" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0006.png" id="6_lcrbt"]
-[ext_resource type="Texture2D" uid="uid://skvot8baded1" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0007.png" id="7_52cmj"]
-[ext_resource type="Texture2D" uid="uid://ct2npcw2yx1qj" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0008.png" id="8_7tjor"]
-[ext_resource type="Texture2D" uid="uid://bgif2rh1iyg8m" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0009.png" id="9_owups"]
-[ext_resource type="Texture2D" uid="uid://dg83v8lh4qttg" path="res://assets/animation/player_animation/pistol/pistol_equip/equipe_pistol_body0010.png" id="10_t2xoa"]
-[ext_resource type="Texture2D" uid="uid://fnejh6mlj2dk" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body01.png" id="11_thm74"]
-[ext_resource type="Texture2D" uid="uid://d2ny48rptdiqr" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body02.png" id="12_b6kwm"]
-[ext_resource type="Texture2D" uid="uid://coe0cux5qpgqj" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body03.png" id="13_2v4ym"]
-[ext_resource type="Texture2D" uid="uid://db7vp0ngksl02" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body04.png" id="14_4pilw"]
-[ext_resource type="Texture2D" uid="uid://bf8v300xegdxe" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body05.png" id="15_nb1w0"]
-[ext_resource type="Texture2D" uid="uid://ed05j0d4g8jb" path="res://assets/animation/player_animation/pistol/pistol_shooting/shooting_pistol_body06.png" id="16_0f5ah"]
+[ext_resource type="Texture2D" uid="uid://dsm76q580el86" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_01.png" id="1_5pljb"]
+[ext_resource type="Texture2D" uid="uid://d38ty26bg3vv" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_02.png" id="2_mkvg2"]
+[ext_resource type="Texture2D" uid="uid://b4lxvgfg5p2n8" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_03.png" id="3_cli42"]
+[ext_resource type="Texture2D" uid="uid://o8ayulx37j2i" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_04.png" id="4_bpxbs"]
+[ext_resource type="Texture2D" uid="uid://ctadeo0q1k3kk" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_05.png" id="5_owvpr"]
+[ext_resource type="Texture2D" uid="uid://brwurdtx6gieh" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_06.png" id="6_ifomh"]
+[ext_resource type="Texture2D" uid="uid://44beurr37kmv" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_07.png" id="7_48ixy"]
+[ext_resource type="Texture2D" uid="uid://dihhu02kd6qrq" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_08.png" id="8_jd1ue"]
+[ext_resource type="Texture2D" uid="uid://bmjuffp503qaa" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_09.png" id="9_x2ie4"]
+[ext_resource type="Texture2D" uid="uid://4wwflolf2i2y" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_10.png" id="10_1put6"]
+[ext_resource type="Texture2D" uid="uid://b2et0uchecjf" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_01.png" id="11_3rkoe"]
+[ext_resource type="Texture2D" uid="uid://3y42jnn67cdk" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_01.png" id="11_u14uh"]
+[ext_resource type="Texture2D" uid="uid://cy5f0ef0vuxao" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_02.png" id="12_0a64x"]
+[ext_resource type="Texture2D" uid="uid://cwwgu0dbx8pao" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_02.png" id="12_mgqsy"]
+[ext_resource type="Texture2D" uid="uid://w35o0bnwaj51" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_03.png" id="13_gwdsx"]
+[ext_resource type="Texture2D" uid="uid://3y33inajj7jv" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_03.png" id="13_trkoc"]
+[ext_resource type="Texture2D" uid="uid://dygx17rn43q1e" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_04.png" id="14_njgyf"]
+[ext_resource type="Texture2D" uid="uid://bgkkd71im5ntq" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_04.png" id="14_xpk5p"]
+[ext_resource type="Texture2D" uid="uid://d11too1gre22d" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_05.png" id="15_rqd14"]
+[ext_resource type="Texture2D" uid="uid://btgav456tc7bi" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_05.png" id="15_ynr6f"]
+[ext_resource type="Texture2D" uid="uid://bgaxotjh7ju3p" path="res://assets/animation/player_animation/pistol/pistol_shooting/pistol_shooting_body_06.png" id="16_4awt0"]
+[ext_resource type="Texture2D" uid="uid://b648fgaswnsnh" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_06.png" id="16_51p81"]
+[ext_resource type="Texture2D" uid="uid://b50ybfyo2yyeg" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_07.png" id="17_nxtql"]
+[ext_resource type="Texture2D" uid="uid://yoy8enfw3mu3" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_08.png" id="18_wk52h"]
+[ext_resource type="Texture2D" uid="uid://cdpqn56hilmau" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_09.png" id="19_g378n"]
+[ext_resource type="Texture2D" uid="uid://bp2n8epwtoyla" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_10.png" id="20_poah7"]
+[ext_resource type="Texture2D" uid="uid://r6bpgelomkdc" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_11.png" id="21_o0f74"]
+[ext_resource type="Texture2D" uid="uid://dds3obsurqv5o" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_12.png" id="22_f5024"]
+[ext_resource type="Texture2D" uid="uid://blv5o821co5hb" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_13.png" id="23_jw5mw"]
+[ext_resource type="Texture2D" uid="uid://b4ts0ktl4slim" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_14.png" id="24_3hc2h"]
+[ext_resource type="Texture2D" uid="uid://c83lkdl8v22u1" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_15.png" id="25_yrotl"]
+[ext_resource type="Texture2D" uid="uid://kqbf3c0gqt5k" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_16.png" id="26_1o1q7"]
+[ext_resource type="Texture2D" uid="uid://bo5s3roghy3e4" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_17.png" id="27_4vfsu"]
+[ext_resource type="Texture2D" uid="uid://nwlnhay4nuvy" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_18.png" id="28_r2mun"]
+[ext_resource type="Texture2D" uid="uid://dp0eag8b3a7t0" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_19.png" id="29_k12h4"]
+[ext_resource type="Texture2D" uid="uid://cmnkb0fx2lvfw" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_20.png" id="30_lffsl"]
+[ext_resource type="Texture2D" uid="uid://bgcxt8ca5ufxh" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_21.png" id="31_edp71"]
+[ext_resource type="Texture2D" uid="uid://c2wlflq8ecfsu" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_22.png" id="32_yrrxw"]
+[ext_resource type="Texture2D" uid="uid://cr83724ek63f4" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_23.png" id="33_b6dkj"]
+[ext_resource type="Texture2D" uid="uid://c10u1d4bgd751" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_24.png" id="34_54f4n"]
+[ext_resource type="Texture2D" uid="uid://cr5cnyqi6uonn" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_25.png" id="35_ilcow"]
+[ext_resource type="Texture2D" uid="uid://cdr5gaww4hkmq" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_26.png" id="36_ihds1"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pd8kh")
+"texture": ExtResource("1_5pljb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_jbypx")
+"texture": ExtResource("2_mkvg2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1nh7s")
+"texture": ExtResource("3_cli42")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_aw5fl")
+"texture": ExtResource("4_bpxbs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_8nq1i")
+"texture": ExtResource("5_owvpr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_lcrbt")
+"texture": ExtResource("6_ifomh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_52cmj")
+"texture": ExtResource("7_48ixy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7tjor")
+"texture": ExtResource("8_jd1ue")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_owups")
+"texture": ExtResource("9_x2ie4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_t2xoa")
+"texture": ExtResource("10_1put6")
 }],
 "loop": false,
 "name": &"equip",
 "speed": 20.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_u14uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0a64x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gwdsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_njgyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ynr6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_51p81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nxtql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wk52h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_g378n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_poah7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_o0f74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f5024")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jw5mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3hc2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yrotl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1o1q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4vfsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_r2mun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_k12h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lffsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_edp71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yrrxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_b6dkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_54f4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ilcow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ihds1")
+}],
+"loop": false,
 "name": &"reload",
-"speed": 5.0
+"speed": 26.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_thm74")
+"texture": ExtResource("11_3rkoe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_b6kwm")
+"texture": ExtResource("12_mgqsy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_2v4ym")
+"texture": ExtResource("13_trkoc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_4pilw")
+"texture": ExtResource("14_xpk5p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_nb1w0")
+"texture": ExtResource("15_rqd14")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_0f5ah")
+"texture": ExtResource("16_4awt0")
 }],
 "loop": false,
 "name": &"shooting",
 "speed": 12.0
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"unequip",
 "speed": 5.0
 }]

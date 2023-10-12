@@ -1,6 +1,7 @@
 extends Node
 
-const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
+const PIPEPAIR = preload("res://pipes/pipe_pairs/pipe_pair.tscn")
+const FIRE_PIPEPAIR = preload("res://pipes/pipe_pairs/fire_pipe_pair.tscn")
 
 
 @export var pipe_speed = 400
@@ -13,15 +14,24 @@ const PIPEPAIR = preload("res://pipes/pipe_pair.tscn")
 func _ready():
 	spawn_pipes()
 
+func _physics_process(_delta):
+	if (main.is_dead):
+		stop_spawner()
+
 func spawn_pipes():
 	var screen = get_viewport().get_visible_rect()
-	var pipe = PIPEPAIR.instantiate()
-	add_child(pipe, true)
+	var pipe
+
+	#if (main.score < 5):
+	pipe = PIPEPAIR.instantiate()
+	#elif (main.score >= 5):
+	#pipe = FIRE_PIPEPAIR.instantiate()
 	
+	add_child(pipe, true)
+
 	# Determine pipes position
-	var pos_y_range = randi_range(10, 60)
-	pipe.position.x = screen.end.x + 200
-	pipe.position.y = (screen.size.y / 2) - pos_y_range
+	pipe.position.x = screen.end.x + 300
+	pipe.position.y = (screen.size.y / 2) - 40
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()

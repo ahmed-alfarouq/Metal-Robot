@@ -1,32 +1,44 @@
+class_name PipePair
+
 extends Node2D
 
+var stop_movement: bool = false
+var animation_kind: String
 
-var gape_decreased: bool = false
-var animation_kind
-
-@onready var pipe_spawner = get_parent()
 @onready var main = get_node("/root/MainLevel")
-@onready var animation = $AnimationPlayer
-@onready var top_pipe = $TopPipe
-@onready var bottom_pipe = $BottomPipe
-@onready var point_sound = $Point
+@onready var pipe_spawner: Node = get_parent()
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var top_pipe: RigidBody2D = $TopPipe
+@onready var bottom_pipe: RigidBody2D = $BottomPipe
+@onready var point_area: Area2D = $EarnPointArea
+@onready var point_sound: AudioStreamPlayer2D = $Point
+
+func connect_area():
+	# Connect point area
+	point_area.body_entered.connect(_on_earn_point_body_entered)
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func play_animation():
+	# Decide which animation should work
 	var animations = ["up_down", "down_up"]
 	animation_kind = animations[randi_range(0, 1)]
 	animation.play(animation_kind)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if (not main.is_dead):
-		position.x -= pipe_spawner.pipe_speed * delta
-	elif (main.is_dead):
-		# Unlock rotations
+func drop_pipes():
+	stop_movement = true
+	
+	# Uncheck rotations and freeze
+	# Check first if it does exist, because sometimes we remove one of them such as fire_pipes
+	if (is_instance_valid(top_pipe)):
 		top_pipe.lock_rotation = false
+		top_pipe.freeze = false
+	
+	if (is_instance_valid(bottom_pipe)):
 		bottom_pipe.lock_rotation = false
-		# Make them fall down
-		animation.pause()
+		bottom_pipe.freeze = false
+
+	# Make them fall down
+	animation.pause()
 
 # Singals
 func _on_earn_point_body_entered(body):

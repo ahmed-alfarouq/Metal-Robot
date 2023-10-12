@@ -87,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -656.0
-offset_top = -475.0
-offset_right = -553.0
-offset_bottom = -372.0
+offset_left = -719.0
+offset_top = -476.0
+offset_right = -616.0
+offset_bottom = -373.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_gyk1i")
@@ -103,10 +103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -582.0
-offset_top = -499.0
-offset_right = -383.0
-offset_bottom = -300.0
+offset_left = -645.0
+offset_top = -500.0
+offset_right = -446.0
+offset_bottom = -301.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_pseys")
@@ -148,12 +148,13 @@ expand_mode = 4
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 141.0
-offset_top = -369.0
-offset_right = 357.0
-offset_bottom = 251.0
+offset_left = 93.0
+offset_top = -450.0
+offset_right = 309.0
+offset_bottom = 170.0
 grow_vertical = 2
-rotation = 0.139626
+rotation = 0.0872665
+scale = Vector2(1.0167, 1.32802)
 theme_override_constants/separation = 50
 alignment = 1
 
@@ -162,18 +163,17 @@ layout_mode = 2
 text = "Play"
 metadata/_edit_lock_ = true
 
-[node name="Leaderboard" type="Button" parent="MainMenu/BtnsVContainer"]
+[node name="Ranks" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
 disabled = true
 text = "Ranks
 "
 metadata/_edit_lock_ = true
 
-[node name="Skins" type="Button" parent="MainMenu/BtnsVContainer"]
+[node name="Shop" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
 disabled = true
-text = "Skins
-"
+text = "Shop"
 metadata/_edit_lock_ = true
 
 [node name="Credits" type="Button" parent="MainMenu/BtnsVContainer"]
@@ -214,8 +214,8 @@ text = "Log Out"
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Leaderboard" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Skins" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Ranks" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Shop" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsHContainer/Exit" to="." method="_on_exit_pressed"]

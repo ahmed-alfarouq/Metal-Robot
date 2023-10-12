@@ -1,30 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4m7e3boqnmnu"]
+[gd_scene load_steps=6 format=3 uid="uid://b4m7e3boqnmnu"]
 
 [ext_resource type="Script" path="res://menus/Scripts/loss_menu.gd" id="1_3fgej"]
 [ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_ijrdr"]
 [ext_resource type="Texture2D" uid="uid://cdx36l7ajr14i" path="res://assets/ui/robot.png" id="3_0ub3l"]
 [ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_phuko"]
 [ext_resource type="Texture2D" uid="uid://dt0lirdevwjam" path="res://assets/ui/lines.png" id="4_72d5i"]
-[ext_resource type="Texture2D" uid="uid://dnu30fqtemftl" path="res://assets/ui/References/loss-menu.jpg" id="6_6oxkl"]
-
-[sub_resource type="Environment" id="Environment_0y5ea"]
-background_mode = 3
-background_canvas_max_layer = 1
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 3.0
-glow_strength = 1.2
-glow_blend_mode = 1
-glow_hdr_threshold = 0.63
-glow_hdr_scale = 2.9
 
 [node name="LossMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_3fgej")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_0y5ea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -135,10 +124,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -657.0
-offset_top = 174.0
-offset_right = 832.0
-offset_bottom = 552.0
+offset_left = -655.0
+offset_top = 194.0
+offset_right = 745.0
+offset_bottom = 514.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -277,10 +266,6 @@ theme_type_variation = &"ScoreLabel"
 text = "50000"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Loss-menu" type="Sprite2D" parent="."]
-position = Vector2(882, -242)
-texture = ExtResource("6_6oxkl")
 
 [connection signal="pressed" from="CanvasLayer/BtnsContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/BtnsContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]

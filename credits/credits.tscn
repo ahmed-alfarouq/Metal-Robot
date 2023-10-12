@@ -1,48 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqok5meeihgwt"]
+[gd_scene load_steps=3 format=3 uid="uid://bqok5meeihgwt"]
 
-[ext_resource type="Texture2D" uid="uid://dfx64f11n0x2t" path="res://assets/logo.png" id="1_ewt8k"]
 [ext_resource type="Script" path="res://credits/credits.gd" id="1_y2l3c"]
-[ext_resource type="FontFile" uid="uid://wyilhw388fqe" path="res://assets/fonts/arial.ttf" id="2_juvpx"]
-
-[sub_resource type="Theme" id="Theme_ub3jv"]
-RichTextLabel/font_sizes/normal_font_size = 65
-RichTextLabel/fonts/normal_font = ExtResource("2_juvpx")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8se1"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0.74902, 0.74902, 0.74902, 0.6)
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbama"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0.74902, 0.74902, 0.74902, 0.6)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnr6i"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0.74902, 0.74902, 0.74902, 0.6)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="Theme" id="Theme_2rpbw"]
-Button/font_sizes/font_size = 35
-Button/styles/focus = SubResource("StyleBoxFlat_s8se1")
-Button/styles/hover = SubResource("StyleBoxFlat_tbama")
-Button/styles/normal = SubResource("StyleBoxFlat_vnr6i")
-Button/styles/pressed = SubResource("StyleBoxFlat_s8se1")
+[ext_resource type="Texture2D" uid="uid://c3cc78rd0xqrs" path="res://assets/ui/bgs/credits_bg.jpg" id="2_i221y"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -64,121 +23,125 @@ color = Color(0.136719, 0.121094, 0.125, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-offset_right = 500.0
-offset_bottom = 500.0
-texture = ExtResource("1_ewt8k")
-
-[node name="Developer" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -805.0
-offset_top = -434.0
-offset_right = -392.0
-offset_bottom = -296.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_ub3jv")
-text = " Developer"
+texture = ExtResource("2_i221y")
 
-[node name="GD In Arabic" type="RichTextLabel" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -788.0
-offset_top = -302.0
-offset_right = -375.0
-offset_bottom = -164.0
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_ub3jv")
-theme_override_font_sizes/normal_font_size = 45
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -702.0
+offset_top = 46.0
+offset_right = 702.0
+offset_bottom = 236.0
+grow_horizontal = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Developer" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 65
+text = " Project Manager & Developer"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="GD In Arabic" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.929412, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 60
 text = " GD In Arabic"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Animator" type="RichTextLabel" parent="."]
-layout_mode = 2
-offset_left = 989.0
-offset_top = 342.0
-offset_right = 1691.0
-offset_bottom = 446.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -703.0
+offset_top = -333.0
+offset_right = -10.0
+offset_bottom = -150.0
 grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = SubResource("Theme_ub3jv")
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Animator" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 70
 text = "Artist & Animator"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
-[node name="Mohamed Khaled" type="RichTextLabel" parent="."]
+[node name="Mohamed Khaled" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
-offset_left = 1094.0
-offset_top = 452.0
-offset_right = 1535.0
-offset_bottom = 492.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_ub3jv")
-theme_override_font_sizes/normal_font_size = 45
-text = "mohamed khaled"
-fit_content = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.929412, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 60
+text = "Mohamed Khaled"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="UI & UX Designer" type="RichTextLabel" parent="."]
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -909.0
-offset_top = -15.0
-offset_right = -207.0
-offset_bottom = 89.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = SubResource("Theme_ub3jv")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -333.0
+offset_right = 693.0
+offset_bottom = -150.0
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="UI & UX Designer" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 70
 text = "UI & UX Designer"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
-[node name="Ahmed Fayed" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -769.0
-offset_top = 93.0
-offset_right = -439.0
-offset_bottom = 133.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_ub3jv")
-theme_override_font_sizes/normal_font_size = 45
+[node name="Ahmed Fayed" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.929412, 0.929412, 0.929412, 1)
+theme_override_font_sizes/font_size = 60
 text = "Ahmed Fayed"
-fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -798.0
-offset_top = 215.0
-offset_right = -410.0
-offset_bottom = 302.0
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_2rpbw")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -164.0
+offset_right = 75.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.12, 1.36)
 text = "Go Back"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
