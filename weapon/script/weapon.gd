@@ -44,11 +44,10 @@ func equip():
 	weapon_sprite.shooting(weapon_info["bullets"], weapon_info["reload_times"])
 
 func unequip():
-	weapon_sprite.play("unequip")
 	player_sprite.play("unequip")
 
 	# You can wait for one of them because they take the same time
-	await weapon_sprite.animation_finished
+	await player_sprite.animation_finished
 	exit()
 
 func exit():
@@ -58,3 +57,7 @@ func exit():
 	# Disable raycast
 	raycast.enabled = false
 	weapon_exited.emit()
+
+
+func _on_player_dies():
+	exit()

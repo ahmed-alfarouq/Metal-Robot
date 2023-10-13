@@ -22,10 +22,10 @@ func spawn_pipes():
 	var screen = get_viewport().get_visible_rect()
 	var pipe
 
-	#if (main.score < 5):
-	pipe = PIPEPAIR.instantiate()
-	#elif (main.score >= 5):
-	#pipe = FIRE_PIPEPAIR.instantiate()
+	if (main.score < 30):
+		pipe = PIPEPAIR.instantiate()
+	elif (main.score >= 30):
+		pipe = FIRE_PIPEPAIR.instantiate()
 	
 	add_child(pipe, true)
 

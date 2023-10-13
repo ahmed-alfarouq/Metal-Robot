@@ -36,6 +36,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
+	# Connect weapon signals
+	weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
+	weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
+	##
 	handle_flying()
 	handle_screaming()
 	handle_shooting()
@@ -87,8 +91,6 @@ func handle_screaming():
 func handle_shooting():
 	if (Input.is_action_pressed("shooting") && not is_shooting):
 		is_shooting = true
-		weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
-		weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
 		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
 
 func handle_colliding():
@@ -115,7 +117,7 @@ func player_dies():
 	# Reset screaming_times
 	Globals.screaming_times = 3
 	# Take player to the lose menu
-	#SceneTransition.transition(main, "res://menus/loss_menu.tscn")
+	SceneTransition.transition(main, "res://menus/loss_menu.tscn")
 
 func load_weapons_json(file_path: String):
 	if (FileAccess.file_exists(file_path)):

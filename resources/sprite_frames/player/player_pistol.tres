@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=43 format=3 uid="uid://dsiurfwtf4qur"]
+[gd_resource type="SpriteFrames" load_steps=53 format=3 uid="uid://dsiurfwtf4qur"]
 
 [ext_resource type="Texture2D" uid="uid://dsm76q580el86" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_01.png" id="1_5pljb"]
 [ext_resource type="Texture2D" uid="uid://d38ty26bg3vv" path="res://assets/animation/player_animation/pistol/pistol_equip/pistol_equipe_body_02.png" id="2_mkvg2"]
@@ -42,6 +42,16 @@
 [ext_resource type="Texture2D" uid="uid://c10u1d4bgd751" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_24.png" id="34_54f4n"]
 [ext_resource type="Texture2D" uid="uid://cr5cnyqi6uonn" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_25.png" id="35_ilcow"]
 [ext_resource type="Texture2D" uid="uid://cdr5gaww4hkmq" path="res://assets/animation/player_animation/pistol/pistol_reload/pistole_reloading_body_26.png" id="36_ihds1"]
+[ext_resource type="Texture2D" uid="uid://bel12lfy5s607" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_01.png" id="43_o41bk"]
+[ext_resource type="Texture2D" uid="uid://dn4daypypmvec" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_02.png" id="44_o3fig"]
+[ext_resource type="Texture2D" uid="uid://hwm0j3e35bxc" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_03.png" id="45_mdptp"]
+[ext_resource type="Texture2D" uid="uid://ck1lp5gjl8g2o" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_04.png" id="46_6ej6n"]
+[ext_resource type="Texture2D" uid="uid://5vtj1tw4ilkd" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_05.png" id="47_ewqf7"]
+[ext_resource type="Texture2D" uid="uid://dr48ytgug4tmi" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_06.png" id="48_rj1pm"]
+[ext_resource type="Texture2D" uid="uid://cug5evbu5g5al" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_07.png" id="49_w2ih2"]
+[ext_resource type="Texture2D" uid="uid://beue5gu71qin6" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_08.png" id="50_a560y"]
+[ext_resource type="Texture2D" uid="uid://bivjtnnqjickn" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_09.png" id="51_8g4nm"]
+[ext_resource type="Texture2D" uid="uid://bxjbq3h3b30ty" path="res://assets/animation/player_animation/pistol/pistol_unequip/pistol_unquipe_body_10.png" id="52_lphpp"]
 
 [resource]
 animations = [{
@@ -186,8 +196,38 @@ animations = [{
 "name": &"shooting",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_o41bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_o3fig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mdptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6ej6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ewqf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_rj1pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_w2ih2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_a560y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8g4nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_lphpp")
+}],
 "loop": false,
 "name": &"unequip",
-"speed": 5.0
+"speed": 10.0
 }]

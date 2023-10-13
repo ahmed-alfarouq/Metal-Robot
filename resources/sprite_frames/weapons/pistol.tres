@@ -206,7 +206,7 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"unequip",
-"speed": 5.0
+"speed": 10.0
 }]
 script = SubResource("GDScript_pck5g")
 health = 0

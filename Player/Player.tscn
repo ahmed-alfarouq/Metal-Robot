@@ -119,10 +119,8 @@ flying_speed = 550
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 sprite_frames = ExtResource("14_wya43")
-animation = &"flying_down"
+animation = &"flying_up"
 autoplay = "flying_up"
-frame = 2
-frame_progress = 0.124615
 script = ExtResource("15_venmw")
 
 [node name="Weapon" parent="." instance=ExtResource("16_mwqhj")]
@@ -147,4 +145,5 @@ collision_mask = 4
 wait_time = 2.2
 one_shot = true
 
+[connection signal="dies" from="." to="Weapon" method="_on_player_dies"]
 [connection signal="body_entered" from="ScreamingArea" to="." method="_on_screaming_area_body_entered"]

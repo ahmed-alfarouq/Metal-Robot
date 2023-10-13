@@ -17,12 +17,8 @@ func shooting(bullets, reload_times):
 		elif (i ==  bullets - 1 && weapon_reload_times == 0):
 			weapon.unequip()
 
-
 func reload():
-	if (weapon_reload_times > 0):
-		play("reload")
-		await animation_finished
-		weapon_reload_times -= 1
-		shooting(weapon_bullets, weapon_reload_times)
-	else:
-		weapon.unequip()
+	play("reload")
+	await animation_finished
+	weapon_reload_times -= 1
+	shooting(weapon_bullets, weapon_reload_times)
