@@ -27,11 +27,11 @@ func spawn_pipes():
 	elif (main.score >= 30):
 		pipe = FIRE_PIPEPAIR.instantiate()
 	
-	add_child(pipe, true)
-
 	# Determine pipes position
 	pipe.position.x = screen.end.x + 300
 	pipe.position.y = (screen.size.y / 2) - 40
+
+	add_child(pipe, true)
 
 func _on_spawn_timer_timeout():
 	spawn_pipes()

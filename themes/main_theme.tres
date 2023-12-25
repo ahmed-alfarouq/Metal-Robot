@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cu6ud31n83w7d"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://cu6ud31n83w7d"]
 
 [ext_resource type="FontFile" uid="uid://b313ygi8kjlr5" path="res://assets/fonts/Jokerman.ttf" id="2_8cprm"]
 [ext_resource type="Texture2D" uid="uid://3frnei3ykbl3" path="res://assets/ui/btns/btn_disabled.png" id="2_d7r02"]
@@ -10,31 +10,58 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37brp"]
 texture = ExtResource("2_d7r02")
-expand_margin_left = 180.0
-expand_margin_top = 150.0
-expand_margin_right = 180.0
-expand_margin_bottom = 130.0
+texture_margin_left = 100.0
+texture_margin_top = 10.0
+texture_margin_right = 70.0
+texture_margin_bottom = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 110.0
+expand_margin_right = 30.0
+expand_margin_bottom = 102.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hffq"]
-texture = ExtResource("2_gkb3m")
-expand_margin_left = 180.0
-expand_margin_top = 150.0
-expand_margin_right = 180.0
-expand_margin_bottom = 130.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47ndt"]
+texture = ExtResource("3_u6vsb")
+texture_margin_left = 100.0
+texture_margin_top = 10.0
+texture_margin_right = 70.0
+texture_margin_bottom = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 110.0
+expand_margin_right = 30.0
+expand_margin_bottom = 102.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ipt2"]
 texture = ExtResource("3_u6vsb")
-expand_margin_left = 180.0
-expand_margin_top = 150.0
-expand_margin_right = 180.0
-expand_margin_bottom = 130.0
+texture_margin_left = 100.0
+texture_margin_top = 10.0
+texture_margin_right = 70.0
+texture_margin_bottom = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 110.0
+expand_margin_right = 30.0
+expand_margin_bottom = 102.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswc8"]
 texture = ExtResource("2_gkb3m")
-expand_margin_left = 180.0
-expand_margin_top = 150.0
-expand_margin_right = 180.0
-expand_margin_bottom = 130.0
+texture_margin_left = 100.0
+texture_margin_top = 10.0
+texture_margin_right = 70.0
+texture_margin_bottom = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 110.0
+expand_margin_right = 30.0
+expand_margin_bottom = 102.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uv217"]
+texture = ExtResource("2_gkb3m")
+texture_margin_left = 100.0
+texture_margin_top = 10.0
+texture_margin_right = 70.0
+texture_margin_bottom = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 110.0
+expand_margin_right = 30.0
+expand_margin_bottom = 102.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3d1ij"]
 texture = ExtResource("3_juy3j")
@@ -64,9 +91,10 @@ Button/colors/font_disabled_color = Color(0.858824, 0.745098, 0, 1)
 Button/font_sizes/font_size = 55
 Button/fonts/font = ExtResource("2_8cprm")
 Button/styles/disabled = SubResource("StyleBoxTexture_37brp")
-Button/styles/focus = SubResource("StyleBoxTexture_2hffq")
+Button/styles/focus = SubResource("StyleBoxTexture_47ndt")
 Button/styles/hover = SubResource("StyleBoxTexture_1ipt2")
 Button/styles/normal = SubResource("StyleBoxTexture_tswc8")
+Button/styles/pressed = SubResource("StyleBoxTexture_uv217")
 Error/base_type = &"Label"
 Error/colors/font_color = Color(0.411765, 0, 0, 1)
 Error/colors/font_outline_color = Color(0.607843, 0.607843, 0.607843, 1)

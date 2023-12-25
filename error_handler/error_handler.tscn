@@ -50,3 +50,5 @@ size_flags_horizontal = 4
 theme_type_variation = &"Error"
 theme_override_font_sizes/font_size = 60
 text = "Something went wrong please send us the next line:"
+horizontal_alignment = 1
+vertical_alignment = 1

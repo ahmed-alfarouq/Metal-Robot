@@ -4,16 +4,19 @@ func _ready():
 	Firebase.Auth.logged_out.connect(_on_log_out)
 
 func _on_play_pressed():
-	Globals.change_scene(self, "res://levels/main_level.tscn")
+	Globals.change_scene("res://levels/main_level.tscn", "loading_screen")
 
 func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_credits_pressed():
-	SceneTransition.transition(self, "res://credits/credits.tscn")
+	Globals.change_scene("res://menus/credits.tscn", "transition")
+
+func _on_shop_pressed():
+	Globals.change_scene("res://menus/shop.tscn", "transition")
 
 func _on_log_out_pressed():
 	Firebase.Auth.logout()
 
 func _on_log_out():
-	SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")
+	Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")

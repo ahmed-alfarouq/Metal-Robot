@@ -21,7 +21,7 @@ var player_weapon_sprites: SpriteFrames
 @onready var weapon: Node2D = $Weapon
 @onready var screaming_area: Area2D = $ScreamingArea
 @onready var screaming_timer: Timer = $ScreamingTimer
-@onready var collision: CollisionShape2D = $Collision
+@onready var player_collision: CollisionShape2D = $Collision
 @onready var boom_sound: AudioStreamPlayer2D = $Sounds/Boom
 
 func _ready():
@@ -105,8 +105,8 @@ func handle_colliding():
 func player_dies():
 	# Emit signal
 	dies.emit()
-	# Delection collision to prevent player from colliding with other objects after death
-	collision.queue_free()
+	# Deleting collision to prevent player from colliding with other objects after death
+	player_collision.queue_free()
 	# Set is_dead to true
 	main.is_dead = true
 	# play animation and sounds
@@ -117,7 +117,7 @@ func player_dies():
 	# Reset screaming_times
 	Globals.screaming_times = 3
 	# Take player to the lose menu
-	SceneTransition.transition(main, "res://menus/loss_menu.tscn")
+	Globals.change_scene("res://menus/loss_menu.tscn", "transition")
 
 func load_weapons_json(file_path: String):
 	if (FileAccess.file_exists(file_path)):

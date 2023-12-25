@@ -9,10 +9,10 @@ script/source = "extends Area2D
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niqi6"]
-size = Vector2(21330.1, 751.551)
+size = Vector2(21330.1, 1560)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmwf4"]
-size = Vector2(21330, 932.099)
+size = Vector2(21330, 1458.77)
 
 [node name="Ground" type="AnimatableBody2D" groups=["ground"]]
 collision_layer = 2
@@ -20,26 +20,27 @@ script = ExtResource("1_3em82")
 metadata/_edit_vertical_guides_ = [6402.0]
 
 [node name="Ground" type="Sprite2D" parent="."]
-position = Vector2(1603, 165)
+position = Vector2(1603, 0)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_n8d78")
 
 [node name="Ground2" type="Sprite2D" parent="."]
-position = Vector2(4802, 165)
+position = Vector2(4802, 0)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_n8d78")
 
 [node name="DeathArea" type="Area2D" parent="."]
 position = Vector2(0, 143.865)
 scale = Vector2(0.3, 0.3)
+collision_layer = 8
 script = SubResource("GDScript_4ywij")
 
 [node name="Death" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2(10675, -343.775)
+position = Vector2(10675, -476.217)
 shape = SubResource("RectangleShape2D_niqi6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3202.5, 69.8149)
+[node name="GroundCollision" type="CollisionShape2D" parent="."]
+position = Vector2(3202.5, -9.18512)
 scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_tmwf4")
 

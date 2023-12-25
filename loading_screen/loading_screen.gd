@@ -2,18 +2,22 @@ extends Control
 
 signal safe_to_load
 
-@onready var anim_player1 = $AnimationPlayer
-@onready var anim_player2 = $AnimationPlayer2
+@onready var transition_and_text_anim = $TransitionTextAnimation
+@onready var circle_anim = $CircleAnimation
 
 func _ready():
-	anim_player2.play("circle")
-	await anim_player1.animation_finished
-	anim_player1.play("text")
+	circle_anim.play("circle")
+	await transition_and_text_anim.animation_finished
+	transition_and_text_anim.play("text")
 
 func go_to_next_scene(callback_function: Callable):
-	anim_player1.get_animation("text").loop_mode = Animation.LOOP_NONE
-	await anim_player1.animation_finished
+	transition_and_text_anim.get_animation("text").loop_mode = Animation.LOOP_NONE
+	await transition_and_text_anim.animation_finished
+
+	# Change scene
 	callback_function.call()
-	anim_player1.play("fade_out")
-	await anim_player1.animation_finished
+
+	# Animation Out
+	transition_and_text_anim.play("fade_out")
+	await transition_and_text_anim.animation_finished
 	queue_free()

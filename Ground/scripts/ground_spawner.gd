@@ -13,7 +13,7 @@ const Ground = preload("res://ground/ground.tscn")
 
 func _ready():
 	call_deferred("add_child", ground_copy)
-	ground_copy.position = Vector2(0, screen.size.y - 200)
+	ground_copy.position = Vector2(0, screen.size.y - 100)
 	
 	# Calculate ground width
 	if (ground_copy.get_node_or_null("Ground")):
@@ -26,7 +26,7 @@ func _on_remover_body_entered(body):
 		ground_copy = Ground.instantiate()
 		call_deferred("add_child", ground_copy, true)
 		var position_x = ground_width - 10 + snapped(body.position.x, 0.01) # It's plus because the ground position will be negative
-		ground_copy.position = Vector2(position_x, screen.size.y - 200)
+		ground_copy.position = Vector2(position_x, screen.size.y - 100)
 
 func _on_remover_body_exited(body):
 	if (body.is_in_group("ground")):

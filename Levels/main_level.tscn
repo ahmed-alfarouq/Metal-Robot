@@ -91,20 +91,18 @@ text = "1"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 89.0
-offset_top = -288.0
-offset_right = 385.0
-offset_bottom = -14.0
+offset_top = -274.0
+offset_right = 296.0
 grow_vertical = 0
 
 [node name="Up" type="TouchScreenButton" parent="GUI/LeftContainer"]
-position = Vector2(174, -305)
+position = Vector2(127, -300)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_mxs1o")
 action = "fly_up"
 
 [node name="Down" type="TouchScreenButton" parent="GUI/LeftContainer"]
-position = Vector2(177, -32)
+position = Vector2(130, -27)
 scale = Vector2(3, 3.025)
 texture_normal = ExtResource("6_fsge7")
 action = "fly_down"
@@ -121,13 +119,13 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="shoot" type="TouchScreenButton" parent="GUI/RightContainer"]
-position = Vector2(-14, 18)
+position = Vector2(74, 34)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_07gyd")
 action = "shooting"
 
 [node name="Scream" type="TouchScreenButton" parent="GUI/RightContainer"]
-position = Vector2(-195, -219)
+position = Vector2(-107, -203)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("8_ed4t7")
 action = "screaming"

@@ -1,29 +1,18 @@
 extends Control
 
-@onready var canvas_layer = $CanvasLayer
+signal safe_to_load
+
+@onready var layer = $CanvasLayer
 @onready var animation = $CanvasLayer/AnimationPlayer
 
-func transition(current_scene, next_scene):
-	# Enable visibilty
-	canvas_layer.visible = true
-	# Start loading scene in background
-	ResourceLoader.load_threaded_request(next_scene)
-	# Play animation
+func _ready():
 	animation.play("fade_in")
 	await animation.animation_finished
-	# Destroy current scene
-	current_scene.queue_free()
-	# Check status
-	var status = ResourceLoader.load_threaded_get_status(next_scene, [])
-	match status:
-		0:
-			ErrorHandler.error("The resource is invalid.")
-		2:
-			ErrorHandler.error("Some error occurred during loading and it failed.")
-		3:
-			var packed_scene = ResourceLoader.load_threaded_get(next_scene)
-			get_tree().change_scene_to_packed(packed_scene)
-			animation.play("fade_out")
-	
-	# Disable visibility. If it's enabled, the player won't be able to interact with other layers.
-	canvas_layer.visible = false
+
+func go_to_next_scene(callback_function: Callable):
+	# Change Scene
+	callback_function.call()
+
+	# Animation Out
+	animation.play("fade_out")
+	await animation.animation_finished

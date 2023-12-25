@@ -15,7 +15,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.0784314, 0.0784314, 0.0784314, 0), Color(0.0784314, 0.0784314, 0.0784314, 1)]
+"values": [Color(0.0784314, 0.0784314, 0.0784314, 0), Color(0.662745, 0.662745, 0.662745, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"safe_to_load"],
+"method": &"emit_signal"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_mvy05"]
@@ -31,7 +45,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.0784314, 0.0784314, 0.0784314, 1), Color(0.0784314, 0.0784314, 0.0784314, 0)]
+"values": [Color(0.662745, 0.662745, 0.662745, 1), Color(0.0784314, 0.0784314, 0.0784314, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"safe_to_load"],
+"method": &"emit_signal"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rfy67"]
@@ -51,7 +79,6 @@ script = ExtResource("1_u1i4x")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 50
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
@@ -60,7 +87,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-modulate = Color(0.0784314, 0.0784314, 0.0784314, 0)
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
