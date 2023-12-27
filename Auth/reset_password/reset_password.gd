@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var email = $Email
 @onready var error_message = $ErrorMessage
@@ -20,4 +20,4 @@ func _on_send_email_pressed():
 
 
 func _on_login_pressed():
-	SceneTransition.transition(self, "res://auth/sign_in/sign_in.tscn")
+	Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")

@@ -22,7 +22,7 @@ func _on_sign_in_pressed():
 
 func login_completed(auth_info):
 	Firebase.Auth.save_auth(auth_info)
-	SceneTransition.transition(self, "res://menus/main_menu.tscn")
+	Globals.change_scene("res://menus/main_menu.tscn", "transition")
 
 func login_failed(_code, message):
 	if (message == "INVALID_EMAIL"):
@@ -36,8 +36,8 @@ func login_failed(_code, message):
 
 
 func _on_forget_password_pressed():
-	SceneTransition.transition(self, "res://auth/reset_password/reset_password.tscn")
+	Globals.change_scene("res://auth/reset_password/reset_password.tscn", "transition")
 
 
 func _on_create_account_pressed():
-	SceneTransition.transition(self, "res://auth/sign_up/sign_up.tscn")
+	Globals.change_scene("res://auth/sign_up/sign_up.tscn", "transition")

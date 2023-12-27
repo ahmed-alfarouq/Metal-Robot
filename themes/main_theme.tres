@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://cu6ud31n83w7d"]
+[gd_resource type="Theme" load_steps=22 format=3 uid="uid://cu6ud31n83w7d"]
 
 [ext_resource type="FontFile" uid="uid://b313ygi8kjlr5" path="res://assets/fonts/Jokerman.ttf" id="2_8cprm"]
 [ext_resource type="Texture2D" uid="uid://3frnei3ykbl3" path="res://assets/ui/btns/btn_disabled.png" id="2_d7r02"]
@@ -63,6 +63,16 @@ expand_margin_top = 110.0
 expand_margin_right = 30.0
 expand_margin_bottom = 102.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe852"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6iino"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6vce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs2r2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46foh"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3d1ij"]
 texture = ExtResource("3_juy3j")
 
@@ -105,7 +115,12 @@ ErrorTitle/colors/font_color = Color(0.615686, 0.027451, 0.0509804, 1)
 ErrorTitle/font_sizes/font_size = 160
 ErrorTitle/fonts/font = ExtResource("2_8cprm")
 FlatButton/base_type = &"Button"
-FlatButton/font_sizes/font_size = 20
+FlatButton/font_sizes/font_size = 30
+FlatButton/styles/disabled = SubResource("StyleBoxEmpty_qe852")
+FlatButton/styles/focus = SubResource("StyleBoxEmpty_6iino")
+FlatButton/styles/hover = SubResource("StyleBoxEmpty_o6vce")
+FlatButton/styles/normal = SubResource("StyleBoxEmpty_bs2r2")
+FlatButton/styles/pressed = SubResource("StyleBoxEmpty_46foh")
 HBoxContainer/constants/separation = 180
 HeaderLarge/base_type = &"Label"
 HeaderLarge/colors/font_color = Color(0, 0, 0, 1)

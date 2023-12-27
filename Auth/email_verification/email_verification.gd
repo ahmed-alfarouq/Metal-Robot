@@ -26,7 +26,7 @@ func email_verification_completed(message):
 
 func email_verification_checking_completed(user_data):
 	if (user_data.email_verified):
-		SceneTransition.transition(self, "res://menus/main_menu.tscn")
+		Globals.change_scene("res://menus/main_menu.tscn", "transition")
 	else:
 		message_label.text = "It seems you haven't verified your email yet. Please go ahead and verify it."
 

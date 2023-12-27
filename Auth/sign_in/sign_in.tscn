@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw64hvl57h21p"]
+[gd_scene load_steps=3 format=3 uid="uid://cw64hvl57h21p"]
 
 [ext_resource type="Script" path="res://auth/sign_in/sign_in.gd" id="1_lad7n"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_kofim"]
 
 [node name="SignIn" type="Control"]
 layout_mode = 3
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lad7n")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kofim")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -59,11 +69,19 @@ placeholder_text = "Password"
 secret = true
 
 [node name="ErrorMessage" type="Label" parent="."]
-layout_mode = 0
-offset_left = 799.0
-offset_top = 540.0
-offset_right = 839.0
-offset_bottom = 563.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -6.0
+offset_right = 312.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Error"
 
 [node name="ForgetPassword" type="Button" parent="."]
 layout_mode = 1
@@ -72,10 +90,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = 19.0
-offset_right = 225.0
-offset_bottom = 76.0
+offset_left = -24.0
+offset_top = 36.0
+offset_right = 146.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"FlatButton"
@@ -89,14 +107,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -142.0
-offset_top = 169.0
-offset_right = 148.0
-offset_bottom = 247.0
+offset_left = -26.0
+offset_top = 67.0
+offset_right = 167.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"FlatButton"
-text = "Create account"
+text = "Create and account"
 
 [node name="Sign In" type="Button" parent="."]
 layout_mode = 1
@@ -105,10 +123,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = 78.0
-offset_right = 145.0
-offset_bottom = 155.0
+offset_left = -166.0
+offset_top = 105.0
+offset_right = 166.0
+offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
