@@ -27,17 +27,17 @@ func spawn_pipes():
 	var screen = get_viewport().get_visible_rect()
 	var pipe
 
-	if (main.score < 2):
+	if (main.score < 30):
 		pipe = PIPEPAIR.instantiate()
-	elif (main.score >= 2):
+	elif (main.score >= 30):
 		pipe = FIRE_PIPEPAIR.instantiate()
-	
+
 	# Determine pipes position
 	pipe.position.x = screen.end.x + 300
 	pipe.position.y = (screen.size.y / 2) - 40
 
 	add_child(pipe, true)
-	
+
 	if (pipe.has_method("remove_pipe")):
 		remove_pipe(pipe)
 
