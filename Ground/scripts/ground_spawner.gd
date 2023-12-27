@@ -1,6 +1,6 @@
 extends Node
 
-const Ground = preload("res://ground/ground.tscn")
+const GROUND = preload("res://ground/ground.tscn")
 
 @export var ground_speed: int = 350
 
@@ -8,12 +8,12 @@ const Ground = preload("res://ground/ground.tscn")
 @onready var main = get_node("/root/MainLevel")
 @onready var increase_speed_timer = $IncreaseSpeedTimer
 @onready var prev_ground_speed: int = 350
-@onready var ground_copy = Ground.instantiate()
+@onready var ground_copy = GROUND.instantiate()
 @onready var ground_width = 6400
 
 func _ready():
 	call_deferred("add_child", ground_copy)
-	ground_copy.position = Vector2(0, screen.size.y - 100)
+	ground_copy.position = Vector2(0, screen.size.y - 60)
 	
 	# Calculate ground width
 	if (ground_copy.get_node_or_null("Ground")):
@@ -23,10 +23,10 @@ func _ready():
 
 func _on_remover_body_entered(body):
 	if (not main.is_dead):
-		ground_copy = Ground.instantiate()
+		ground_copy = GROUND.instantiate()
 		call_deferred("add_child", ground_copy, true)
 		var position_x = ground_width - 10 + snapped(body.position.x, 0.01) # It's plus because the ground position will be negative
-		ground_copy.position = Vector2(position_x, screen.size.y - 100)
+		ground_copy.position = Vector2(position_x, screen.size.y - 60)
 
 func _on_remover_body_exited(body):
 	if (body.is_in_group("ground")):

@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -300), Vector2(0, -500), Vector2(0, -300)]
+"values": [Vector2(0, -400), Vector2(0, -500), Vector2(0, -400)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -600), Vector2(0, -500), Vector2(0, -300)]
+"values": [Vector2(0, -600), Vector2(0, -500), Vector2(0, -400)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -172,7 +172,7 @@ libraries = {
 }
 
 [node name="TopPipe" type="RigidBody2D" parent="."]
-position = Vector2(0, -300)
+position = Vector2(0, -400)
 collision_layer = 4
 collision_mask = 9
 lock_rotation = true
@@ -244,7 +244,7 @@ shape = SubResource("RectangleShape2D_o0kmc")
 metadata/_edit_lock_ = true
 
 [node name="Point" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-447, 14)
+position = Vector2(-7, -2)
 stream = ExtResource("2_abgnj")
 
 [connection signal="body_entered" from="TopPipe/Fire/FireArea" to="." method="_on_fire_area_body_entered"]
