@@ -25,6 +25,9 @@ var player_weapon_sprites: SpriteFrames
 @onready var boom_sound: AudioStreamPlayer2D = $Sounds/Boom
 
 func _ready():
+	# Connect weapon signals
+	weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
+	weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
 	# Getting current weapon data
 	var weapon_name: String = Globals.current_weapon
 	var weapons_data: Dictionary = load_weapons_json("res://weapons.json")
@@ -32,14 +35,9 @@ func _ready():
 		weapon_info = weapons_data[weapon_name]
 		weapon_sprites = load(weapon_info["weapon_sprites_resource"])
 		player_weapon_sprites = load(weapon_info["player_weapon_sprites_resource"])
-		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	# Connect weapon signals
-	weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
-	weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
-	##
 	handle_flying()
 	handle_screaming()
 	handle_shooting()

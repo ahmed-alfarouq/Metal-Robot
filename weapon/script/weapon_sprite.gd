@@ -20,9 +20,9 @@ func shooting(bullets, reload_times):
 			weapon.unequip()
 
 func reload():
+	weapon.reloading = true
 	play("reload")
 	await animation_finished
 	weapon_reload_times -= 1
+	weapon.reloading = false
 	shooting(weapon_bullets, weapon_reload_times)
-
-

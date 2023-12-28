@@ -172,7 +172,7 @@ libraries = {
 }
 
 [node name="TopPipe" type="RigidBody2D" parent="."]
-position = Vector2(0, -400)
+position = Vector2(0, -500)
 collision_layer = 4
 collision_mask = 9
 lock_rotation = true
@@ -205,7 +205,7 @@ shape = SubResource("RectangleShape2D_2h3kk")
 debug_color = Color(0, 0, 0, 0.419608)
 
 [node name="BottomPipe" type="RigidBody2D" parent="."]
-position = Vector2(0, 1000)
+position = Vector2(0, 900)
 collision_layer = 4
 collision_mask = 9
 lock_rotation = true
