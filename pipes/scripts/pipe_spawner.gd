@@ -20,16 +20,16 @@ func _ready():
 	spawn_pipes()
 
 func _physics_process(_delta):
-	if (main.is_dead):
+	if main.is_dead:
 		stop_spawner()
 
 func spawn_pipes():
 	var screen = get_viewport().get_visible_rect()
 	var pipe
 
-	if (main.score < 30):
+	if main.score < 30:
 		pipe = PIPEPAIR.instantiate()
-	elif (main.score >= 30):
+	elif main.score >= 30:
 		pipe = FIRE_PIPEPAIR.instantiate()
 
 	# Determine pipes position
@@ -38,7 +38,7 @@ func spawn_pipes():
 
 	add_child(pipe, true)
 
-	if (pipe.has_method("remove_pipe")):
+	if pipe.has_method("remove_pipe"):
 		remove_pipe(pipe)
 
 func stop_spawner():
@@ -53,12 +53,12 @@ func start_spawner():
 func remove_pipe(pipe):
 	var pipe_name = ["top", "bottom"].pick_random()
 	
-	if (prev_pipe_name == pipe_name && same_pipe_removed < 2):
+	if prev_pipe_name == pipe_name && same_pipe_removed < 2:
 		same_pipe_removed += 1
 		pipe.remove_pipe(pipe_name)
-	elif (prev_pipe_name == pipe_name && same_pipe_removed >= 2):
+	elif prev_pipe_name == pipe_name && same_pipe_removed >= 2:
 		same_pipe_removed = 0
-		if (pipe_name == "top"):
+		if pipe_name == "top":
 			pipe.remove_pipe("bottom")
 			prev_pipe_name = "bottom"
 		else:
@@ -74,15 +74,15 @@ func _on_spawn_timer_timeout():
 	spawn_pipes()
 
 func _on_increase_speed_timer_timeout():
-	if (pipe_speed < 650):
+	if pipe_speed < 650:
 		pipe_speed += 30
-	elif (pipe_speed >= 650):
+	elif pipe_speed >= 650:
 		pipe_speed += 20
-		if (spawn_timer.wait_time == 1.8):
+		if spawn_timer.wait_time == 1.8:
 			spawn_timer.wait_time = 1.5
-	elif (pipe_speed >= 800):
+	elif pipe_speed >= 800:
 		increase_speed_timer.stop()
-		if (spawn_timer.wait_time == 1.5):
+		if spawn_timer.wait_time == 1.5:
 			spawn_timer.wait_time = 1
 
 func _on_player_dies():

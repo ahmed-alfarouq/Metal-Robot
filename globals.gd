@@ -19,7 +19,7 @@ func change_scene(next_scene_path: String, type: String):
 	var scene_load_status
 	var loading_screen_instance
 
-	if ( type == "loading_screen" ):
+	if type == "loading_screen":
 		loading_screen_instance = loading_screen_scene.instantiate()
 	else:
 		loading_screen_instance = transition_screen_scene.instantiate()
@@ -29,7 +29,7 @@ func change_scene(next_scene_path: String, type: String):
 	await loading_screen_instance.safe_to_load
 
 	# If scene exists make a request
-	if (ResourceLoader.exists(next_scene_path)):
+	if ResourceLoader.exists(next_scene_path):
 		ResourceLoader.load_threaded_request(next_scene_path)
 	else:
 		ErrorHandler.error("The resource is invalid.")

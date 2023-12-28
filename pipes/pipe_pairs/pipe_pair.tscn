@@ -92,8 +92,6 @@ collision_mask = 9
 gravity_scale = 5.0
 lock_rotation = true
 freeze = true
-freeze_mode = 1
-angular_velocity = 0.0698132
 
 [node name="TopPipeSprite" type="Sprite2D" parent="TopPipe"]
 position = Vector2(0, -507.917)
@@ -113,6 +111,7 @@ collision_mask = 9
 gravity_scale = 5.0
 lock_rotation = true
 freeze = true
+freeze_mode = 1
 angular_velocity = 0.0698132
 
 [node name="BottomPipeSprite" type="Sprite2D" parent="BottomPipe"]

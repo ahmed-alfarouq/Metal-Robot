@@ -7,9 +7,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (not main.is_dead && not stop_movement):
+	if not main.is_dead && not stop_movement:
 		position.x -= pipe_spawner.pipe_speed * delta
-	elif (main.is_dead):
+	elif main.is_dead:
 		drop_pipes()
 
 func remove_pipe(pipe_name):
@@ -18,7 +18,7 @@ func remove_pipe(pipe_name):
 	var bottom_collision = bottom_pipe.get_node("PipeCollision")
 	var bottom_fire = bottom_pipe.get_node("Fire")
 	
-	if (pipe_name == "top"):
+	if pipe_name == "top":
 		top_pipe.visible = false
 		top_collision.queue_free()
 		top_fire.queue_free()
@@ -30,5 +30,5 @@ func remove_pipe(pipe_name):
 
 # Signals
 func _on_fire_area_body_entered(body):
-	if (body.name == "Player"):
+	if body.name == "Player":
 		body.player_dies()

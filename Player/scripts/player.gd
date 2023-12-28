@@ -3,14 +3,13 @@ class_name Player
 extends CharacterBody2D
 
 signal dies
-signal start_shooting
-signal stop_shooting
 
 @export var pistol_resource: SpriteFrames
 @export var flying_speed: int = 200
 
 var screaming_collision: CollisionShape2D = CollisionShape2D.new()
 var is_shooting: bool
+var is_screaming: bool
 var weapon_info: Dictionary
 var weapon_sprites: SpriteFrames
 var player_weapon_sprites: SpriteFrames
@@ -27,7 +26,7 @@ var player_weapon_sprites: SpriteFrames
 func _ready():
 	# Connect weapon signals
 	weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
-	weapon.weapon_exited.connect(func(): player_animation_sprite.visible = true)
+	weapon.weapon_exited.connect(stop_shooting)
 	# Getting current weapon data
 	var weapon_name: String = Globals.current_weapon
 	var weapons_data: Dictionary = load_weapons_json("res://weapons.json")
@@ -60,8 +59,10 @@ func handle_screaming():
 		Input.is_action_pressed("screaming") &&
 		Globals.screaming_times != 0 &&
 		screaming_timer.is_stopped() &&
-		not main.is_dead
+		not main.is_dead &&
+		not is_shooting
 		):
+		is_screaming = true
 		var pipe_spawner = main.get_node("Spawners/PipeSpawner")
 		# Stop pipe spwaner
 		pipe_spawner.stop_spawner()
@@ -74,7 +75,7 @@ func handle_screaming():
 		main.shake_camera(1)
 		# Wait 1 sec before deleting the collision
 		await get_tree().create_timer(1).timeout
-		if (Globals.screaming_times != 0):
+		if Globals.screaming_times != 0:
 			Globals.screaming_times -= 1
 		await screaming_timer.timeout
 
@@ -85,11 +86,16 @@ func handle_screaming():
 		# Restart spawner
 		pipe_spawner.spawn_pipes()
 		pipe_spawner.start_spawner()
+		is_screaming = false
 
 func handle_shooting():
-	if (Input.is_action_pressed("shooting") && not is_shooting):
+	if Input.is_action_pressed("shooting") && not is_shooting && not is_screaming:
 		is_shooting = true
 		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
+
+func stop_shooting():
+	is_shooting = false
+	player_animation_sprite.visible = true
 
 func handle_colliding():
 	var killers = ["TopPipe", "BottomPipe", "Fire"]
@@ -118,11 +124,11 @@ func player_dies():
 	Globals.change_scene("res://menus/loss_menu.tscn", "transition")
 
 func load_weapons_json(file_path: String):
-	if (FileAccess.file_exists(file_path)):
+	if FileAccess.file_exists(file_path):
 		var data_file = FileAccess.open(file_path, FileAccess.READ)
 		var parsed_data = JSON.parse_string(data_file.get_as_text())
 		
-		if (parsed_data is Dictionary):
+		if parsed_data is Dictionary:
 			return parsed_data
 		else:
 			ErrorHandler.error("Some thing went wrong, when trying to get weapon data")
@@ -140,5 +146,6 @@ func add_screaming_collision():
 
 # Signals
 func _on_screaming_area_body_entered(body):
-	if (body.get_parent().has_method("drop_pipes")):
+	if body.get_parent().has_method("drop_pipes"):
 		body.get_parent().call_deferred("drop_pipes")
+		body.get_parent()

@@ -16,10 +16,10 @@ var play_camera_shake: bool = false
 var parallax_prev_offset
 
 func _physics_process(_delta):
-	if (!is_dead):
+	if !is_dead:
 		main_score.text = str(score)
 	
-	if (play_camera_shake):
+	if play_camera_shake:
 		var rng = RandomNumberGenerator.new()
 		camera.offset = Vector2(rng.randf_range(-20, 20), rng.randf_range(20, -20))
 
@@ -28,7 +28,7 @@ func save_best_score(new_best_score: int):
 	save_file.store_64(new_best_score)
 
 func load_best_score():
-	if (FileAccess.file_exists(SAVE_FILE_PATH)):
+	if FileAccess.file_exists(SAVE_FILE_PATH):
 		var save_file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
 		best_score = save_file.get_64()
 
@@ -58,14 +58,14 @@ func _on_player_dies():
 	save_best_score(maxi(best_score, score))
 
 func _on_items_remover_body_entered(body):
-	if (body.get_parent().is_in_group("pipes")):
+	if body.get_parent().is_in_group("pipes"):
 		body.get_parent().queue_free()
 
 func _on_shaking_timer_timeout():
 	# Stop shaking
 	play_camera_shake = false
 	# Delete the camera
-	if (has_node("Camera2D")):
+	if has_node("Camera2D"):
 		remove_child($Camera2D)
 	# Reset offset
 	parallax_bg.scroll_offset = parallax_prev_offset
@@ -75,5 +75,5 @@ func _on_shaking_timer_timeout():
 	there's an issue with this area while detecting pipes
 """
 func _on_items_remover_area_entered(area):
-	if (area.name == "EarnPointArea"):
+	if area.name == "EarnPointArea":
 		area.get_parent().queue_free()

@@ -16,29 +16,29 @@ func _ready():
 	ground_copy.position = Vector2(0, screen.size.y - 60)
 	
 	# Calculate ground width
-	if (ground_copy.get_node_or_null("Ground")):
+	if ground_copy.get_node_or_null("Ground"):
 		var ground_child = ground_copy.get_node("Ground")
 		ground_width = snapped(ground_child.texture.get_width() * ground_child.scale.x * 2, 0.1)
 
 
 func _on_remover_body_entered(body):
-	if (not main.is_dead):
+	if not main.is_dead:
 		ground_copy = GROUND.instantiate()
 		call_deferred("add_child", ground_copy, true)
 		var position_x = ground_width - 10 + snapped(body.position.x, 0.01) # It's plus because the ground position will be negative
 		ground_copy.position = Vector2(position_x, screen.size.y - 60)
 
 func _on_remover_body_exited(body):
-	if (body.is_in_group("ground")):
+	if body.is_in_group("ground"):
 		body.queue_free()
 
 
 func _on_increase_speed_timer_timeout():
-	if (ground_speed < 650):
+	if ground_speed < 650:
 		ground_speed += 20
-	elif (ground_speed >= 650):
+	elif ground_speed >= 650:
 		ground_speed += 10
-	elif (ground_speed >= 800):
+	elif ground_speed >= 800:
 		increase_speed_timer.stop()
 
 func _on_player_start_shooting():

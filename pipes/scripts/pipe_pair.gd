@@ -30,11 +30,9 @@ func drop_pipes():
 	
 	# Uncheck rotations and freeze if exist
 	if is_instance_valid(top_pipe):
-		top_pipe.lock_rotation = false
 		top_pipe.freeze = false
 	
 	if is_instance_valid(bottom_pipe):
-		bottom_pipe.lock_rotation = false
 		bottom_pipe.freeze = false
 
 	# Make them fall down
