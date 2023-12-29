@@ -2,7 +2,8 @@
 	"pistol": {
 		"weapon_sprites_resource": "res://resources/sprite_frames/weapons/pistol.tres",
 		"player_weapon_sprites_resource": "res://resources/sprite_frames/player/player_pistol.tres",
-		"shooting_range": 30,
+		"shooting_range": 400,
+		"damage": 40,
 		"bullets": 5,
 		"reload_times": 1,
 		"sounds": {

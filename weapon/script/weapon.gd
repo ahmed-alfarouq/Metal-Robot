@@ -14,9 +14,15 @@ var unequiping: bool = false
 @onready var weapon_sprite: AnimatedSprite2D = $WeaponSprite
 @onready var raycast: RayCast2D = $RayCast2D
 
+func _ready():
+	# Set raycast length
+	var weapon_data = Globals.current_weapon_data
+
+	if not weapon_data.is_empty():
+		raycast.target_position.x = weapon_data["shooting_range"]
 
 func _physics_process(_delta):
-	if (raycast.is_colliding()):
+	if raycast.is_colliding():
 		var pipes = ["TopPipe", "BottomPipe"]
 		var collider = raycast.get_collider()
 	

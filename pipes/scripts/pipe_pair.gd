@@ -4,6 +4,8 @@ extends Node2D
 
 var stop_movement: bool = false
 var animation_kind: String
+var top_pipe_health = 100
+var bottom_pipe_health = 100
 
 @onready var main = get_node("/root/MainLevel")
 @onready var pipe_spawner: Node = get_parent()
@@ -40,17 +42,25 @@ func drop_pipes():
 
 # Using it when the pipe is hit
 func take_damage(pipe_name):
-	var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
+	## Assin Tween when you will use it, or it'll cause an error
+	var tween
+	var weapon_damage = Globals.current_weapon_data["damage"]
 
 	animation.pause()
 	
 	# I use bind node becuase Tween will be automatically killed when the bound object is freed
-	if pipe_name == "TopPipe":
+	if pipe_name == "TopPipe" && top_pipe_health > 0:
+		top_pipe_health -= weapon_damage
+	elif pipe_name == "TopPipe" && top_pipe_health <= 0:
+		tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
 		tween.bind_node(top_pipe)
 		tween.tween_property(top_pipe, "rotation_degrees", -70, 0.3)
 		tween.tween_property(top_pipe, "position", Vector2(top_pipe.position.x, -600), 0.3)
 		tween.chain().tween_callback(top_pipe.queue_free)
-	else:
+	elif pipe_name == "bottom_pipe" && bottom_pipe_health > 0:
+		bottom_pipe_health -= weapon_damage
+	elif pipe_name == "bottom_pipe" && bottom_pipe_health <= 0:
+		tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
 		tween.bind_node(bottom_pipe)
 		bottom_pipe.lock_rotation = false
 		bottom_pipe.freeze = false

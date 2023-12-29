@@ -10,9 +10,6 @@ signal dies
 var screaming_collision: CollisionShape2D = CollisionShape2D.new()
 var is_shooting: bool
 var is_screaming: bool
-var weapon_info: Dictionary
-var weapon_sprites: SpriteFrames
-var player_weapon_sprites: SpriteFrames
 
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
@@ -27,13 +24,6 @@ func _ready():
 	# Connect weapon signals
 	weapon.weapon_entered.connect(func(): player_animation_sprite.visible = false)
 	weapon.weapon_exited.connect(stop_shooting)
-	# Getting current weapon data
-	var weapon_name: String = Globals.current_weapon
-	var weapons_data: Dictionary = load_weapons_json("res://weapons.json")
-	if (weapons_data.has(weapon_name)):
-		weapon_info = weapons_data[weapon_name]
-		weapon_sprites = load(weapon_info["weapon_sprites_resource"])
-		player_weapon_sprites = load(weapon_info["player_weapon_sprites_resource"])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -44,10 +34,10 @@ func _physics_process(_delta):
 
 # Handle start flying & flying animation
 func handle_flying():
-	if(Input.is_action_pressed("fly_up") && !main.is_dead):
+	if Input.is_action_pressed("fly_up") && !main.is_dead:
 		velocity.y = -flying_speed
 		player_animation_sprite.flying_up()
-	elif (Input.is_action_pressed("fly_down") && !main.is_dead):
+	elif Input.is_action_pressed("fly_down") && !main.is_dead:
 		velocity.y = flying_speed
 		player_animation_sprite.flying_down()
 	else:
@@ -91,7 +81,7 @@ func handle_screaming():
 func handle_shooting():
 	if Input.is_action_pressed("shooting") && not is_shooting && not is_screaming:
 		is_shooting = true
-		weapon.enter(weapon_sprites, weapon_info, player_weapon_sprites)
+		weapon.enter(Globals.weapon_sprites, Globals.current_weapon_data, Globals.player_weapon_sprites)
 
 func stop_shooting():
 	is_shooting = false
@@ -103,7 +93,7 @@ func handle_colliding():
 	for i in collision_count:
 		var collision_info = get_slide_collision(i)
 		var collider = collision_info.get_collider()
-		if (killers.has(collider.name)):
+		if killers.has(collider.name):
 			player_dies()
 
 func player_dies():
@@ -122,20 +112,6 @@ func player_dies():
 	Globals.screaming_times = 3
 	# Take player to the lose menu
 	Globals.change_scene("res://menus/loss_menu.tscn", "transition")
-
-func load_weapons_json(file_path: String):
-	if FileAccess.file_exists(file_path):
-		var data_file = FileAccess.open(file_path, FileAccess.READ)
-		var parsed_data = JSON.parse_string(data_file.get_as_text())
-		
-		if parsed_data is Dictionary:
-			return parsed_data
-		else:
-			ErrorHandler.error("Some thing went wrong, when trying to get weapon data")
-			return {}
-	else:
-		ErrorHandler.error("Weapon data file doesn't exist")
-		return {}
 
 # Helping functions
 func add_screaming_collision():

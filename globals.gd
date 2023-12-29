@@ -3,7 +3,10 @@ extends Node
 var loading_screen_scene: PackedScene = preload("res://loading_screen/loading_screen.tscn")
 var transition_screen_scene: PackedScene = preload("res://scene_transition/scene_transition.tscn")
 var screaming_times: int = 3
-var current_weapon: String = "pistol"
+var current_weapon_name: String = "pistol"
+var current_weapon_data: Dictionary
+var weapon_sprites: SpriteFrames
+var player_weapon_sprites: SpriteFrames
 
 # Regex
 @onready var email_regex: RegEx = RegEx.new()
@@ -14,6 +17,8 @@ func _ready():
 
 	# If user is signed in load the data
 	Firebase.Auth.check_auth_file()
+
+	get_current_weapon_data()
 
 func change_scene(next_scene_path: String, type: String):
 	var scene_load_status
@@ -55,3 +60,25 @@ func change_scene(next_scene_path: String, type: String):
 				# Delete loading scene
 				loading_screen_instance.queue_free()
 				return
+
+func get_current_weapon_data():
+	var weapons_data: Dictionary = load_json("res://weapons.json")
+
+	if weapons_data.has(current_weapon_name):
+		current_weapon_data = weapons_data[current_weapon_name]
+		weapon_sprites = load(current_weapon_data["weapon_sprites_resource"])
+		player_weapon_sprites = load(current_weapon_data["player_weapon_sprites_resource"])
+
+func load_json(file_path: String):
+	if FileAccess.file_exists(file_path):
+		var data_file = FileAccess.open(file_path, FileAccess.READ)
+		var parsed_data = JSON.parse_string(data_file.get_as_text())
+		
+		if parsed_data is Dictionary:
+			return parsed_data
+		else:
+			ErrorHandler.error("Some thing went wrong, when trying to get JSON file")
+			return {}
+	else:
+		ErrorHandler.error("JSON file doesn't exist")
+		return {}
