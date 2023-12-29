@@ -42,8 +42,6 @@ func drop_pipes():
 
 # Using it when the pipe is hit
 func take_damage(pipe_name):
-	## Assin Tween when you will use it, or it'll cause an error
-	var tween
 	var weapon_damage = Globals.current_weapon_data["damage"]
 
 	animation.pause()
@@ -52,21 +50,20 @@ func take_damage(pipe_name):
 	if pipe_name == "TopPipe" && top_pipe_health > 0:
 		top_pipe_health -= weapon_damage
 	elif pipe_name == "TopPipe" && top_pipe_health <= 0:
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
-		tween.bind_node(top_pipe)
-		tween.tween_property(top_pipe, "rotation_degrees", -70, 0.3)
-		tween.tween_property(top_pipe, "position", Vector2(top_pipe.position.x, -600), 0.3)
-		tween.chain().tween_callback(top_pipe.queue_free)
+		tween_pipe(top_pipe)
 	elif pipe_name == "bottom_pipe" && bottom_pipe_health > 0:
 		bottom_pipe_health -= weapon_damage
 	elif pipe_name == "bottom_pipe" && bottom_pipe_health <= 0:
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
-		tween.bind_node(bottom_pipe)
-		bottom_pipe.lock_rotation = false
-		bottom_pipe.freeze = false
-		tween.tween_property(bottom_pipe, "rotation_degrees", 90, 0.3)
-		tween.tween_property(bottom_pipe, "position", Vector2(bottom_pipe.position.x, 2000), 0.3)
-		tween.chain().tween_callback(bottom_pipe.queue_free)
+		tween_pipe(bottom_pipe)
+
+func tween_pipe(pipe):
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
+	tween.bind_node(pipe)
+	pipe.lock_rotation = false
+	pipe.freeze = false
+	tween.tween_property(pipe, "rotation_degrees", 90, 0.3)
+	tween.tween_property(pipe, "position", Vector2(pipe.position.x, 2000), 0.3)
+	tween.chain().tween_callback(pipe.queue_free)
 
 # Singals
 func _on_earn_point_body_entered(body):
