@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://320mfw4dt5e7"]
+
+[node name="Ranking" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -25.0
+offset_right = 234.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Ranking"
+
+[node name="GridContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Name" type="Label" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+theme_type_variation = &"RankingName"
+text = "USERNAME 01"
+
+[node name="ScoreBG" type="PanelContainer" parent="PanelContainer/GridContainer"]
+layout_mode = 2
+theme_type_variation = &"leaderboarScorePanel"
+
+[node name="Score" type="Label" parent="PanelContainer/GridContainer/ScoreBG"]
+layout_mode = 2
+theme_type_variation = &"ScoreLabel"
+theme_override_font_sizes/font_size = 35
+text = "1000"

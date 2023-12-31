@@ -45,8 +45,7 @@ func take_damage(pipe_name):
 	var weapon_damage = Globals.current_weapon_data["damage"]
 
 	animation.pause()
-	
-	# I use bind node becuase Tween will be automatically killed when the bound object is freed
+
 	if pipe_name == "TopPipe" && top_pipe_health > 0:
 		top_pipe_health -= weapon_damage
 	elif pipe_name == "TopPipe" && top_pipe_health <= 0:
@@ -58,6 +57,7 @@ func take_damage(pipe_name):
 
 func tween_pipe(pipe):
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR).set_parallel(true)
+	# Using bind node to automatically kill Tween when the bound object is freed
 	tween.bind_node(pipe)
 	pipe.lock_rotation = false
 	pipe.freeze = false

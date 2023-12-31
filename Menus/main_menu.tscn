@@ -70,10 +70,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -688.0
-offset_top = -434.0
-offset_right = 729.0
-offset_bottom = -97.0
+offset_left = -732.0
+offset_top = -422.0
+offset_right = 774.0
+offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"title"
@@ -87,9 +87,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -719.0
+offset_left = -779.0
 offset_top = -476.0
-offset_right = -616.0
+offset_right = -676.0
 offset_bottom = -373.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -103,9 +103,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -645.0
+offset_left = -705.0
 offset_top = -500.0
-offset_right = -446.0
+offset_right = -506.0
 offset_bottom = -301.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -148,13 +148,12 @@ expand_mode = 4
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 14.0
-offset_top = -463.0
-offset_right = 360.0
-offset_bottom = 257.0
+offset_top = -364.0
+offset_right = 346.0
+offset_bottom = 216.0
 grow_vertical = 2
 scale = Vector2(1.0167, 1.32802)
-theme_override_constants/separation = 30
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Play" type="Button" parent="MainMenu/BtnsVContainer"]
@@ -164,7 +163,6 @@ metadata/_edit_lock_ = true
 
 [node name="Ranks" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
-disabled = true
 text = "Ranks
 "
 metadata/_edit_lock_ = true
@@ -188,19 +186,16 @@ text = "Settings
 metadata/_edit_lock_ = true
 
 [node name="BtnsHContainer" type="HBoxContainer" parent="MainMenu"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -361.0
-offset_top = -236.0
-offset_right = 502.0
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 699.0
+offset_top = 294.0
+offset_right = 1342.0
+offset_bottom = 378.0
+grow_vertical = 2
 scale = Vector2(1, 1.4)
-theme_override_constants/separation = 150
+theme_override_constants/separation = 200
 
 [node name="Exit" type="Button" parent="MainMenu/BtnsHContainer"]
 layout_mode = 2
@@ -213,7 +208,7 @@ text = "Log Out"
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Ranks" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Ranks" to="." method="_on_ranks_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]

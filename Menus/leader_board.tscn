@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1atgnvwx8bpc"]
+
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_7aowl"]
+[ext_resource type="Script" path="res://menus/Scripts/leader_board.gd" id="1_jvw4s"]
+[ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="2_m1518"]
+[ext_resource type="Texture2D" uid="uid://bntn22yl35bj1" path="res://assets/ui/leaderboard/leaderboard_border.png" id="3_2i7ci"]
+[ext_resource type="PackedScene" uid="uid://320mfw4dt5e7" path="res://menus/leaederboard/ranking.tscn" id="5_gab38"]
+
+[node name="LeaderBoard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvw4s")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7aowl")
+
+[node name="GearLeft" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -454.0
+offset_right = 401.0
+offset_bottom = 310.0
+grow_vertical = 0
+texture = ExtResource("2_m1518")
+
+[node name="GearRight" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -401.0
+offset_top = -363.0
+offset_right = 233.0
+offset_bottom = 271.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_m1518")
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -550.0
+offset_right = 550.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2i7ci")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Border"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 237.0
+offset_right = -98.0
+offset_bottom = -238.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Border/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+
+[node name="MarginContainer2" type="MarginContainer" parent="Border/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Ranking" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking5" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking6" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking7" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking8" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking9" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking10" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking11" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking12" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking13" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking14" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking2" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking3" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="Ranking4" parent="Border/ScrollContainer/VBoxContainer" instance=ExtResource("5_gab38")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Border/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Border"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 124.0
+offset_right = 219.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_type_variation = &"title"
+theme_override_font_sizes/font_size = 55
+text = "Leaderboard"
+uppercase = true
+
+[node name="Top10" type="Button" parent="Border"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -181.0
+offset_right = 175.0
+offset_bottom = -96.9999
+grow_vertical = 0
+rotation = -0.250861
+text = "Top 10"
+
+[node name="MyRanking" type="Button" parent="Border"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -252.0
+offset_right = 230.0
+offset_bottom = -151.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.252311
+text = "My Ranking"
+
+[node name="Back" type="Button" parent="Border"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -110.0
+offset_right = 94.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+
+[connection signal="pressed" from="Border/Back" to="." method="_on_back_pressed"]
