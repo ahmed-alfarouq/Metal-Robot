@@ -13,12 +13,12 @@ script = ExtResource("1_fqlrb")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vijyr")
 script = ExtResource("3_yxwav")
 
 [node name="WeaponSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_fny2b")
 script = ExtResource("5_f532j")
 

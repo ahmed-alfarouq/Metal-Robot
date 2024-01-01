@@ -22,9 +22,9 @@ config/icon="res://assets/icon.png"
 
 [autoload]
 
-Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 Globals="*res://globals.gd"
 ErrorHandler="*res://error_handler/error_handler.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -36,7 +36,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [gui]
 

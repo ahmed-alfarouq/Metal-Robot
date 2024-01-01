@@ -106,8 +106,8 @@ health = 0
 strings = PackedStringArray()
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvetr"]
-radius = 38.0
-height = 174.0
+radius = 33.0
+height = 146.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(500, 200)
@@ -117,16 +117,16 @@ pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 550
 
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("14_wya43")
-animation = &"flying_up"
+animation = &"flying_down"
 autoplay = "flying_up"
 script = ExtResource("15_venmw")
 
 [node name="Weapon" parent="." instance=ExtResource("16_mwqhj")]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 16)
+position = Vector2(-3, 12)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vvetr")
 

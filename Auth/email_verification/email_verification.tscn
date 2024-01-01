@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://rnkssd7xo63b"]
+[gd_scene load_steps=5 format=3 uid="uid://rnkssd7xo63b"]
 
 [ext_resource type="Script" path="res://auth/email_verification/email_verification.gd" id="1_o08kk"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_7ombw"]
+
+[sub_resource type="Animation" id="Animation_v4m7s"]
+resource_name = "processing"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ErrorMarginContainer/Processing:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t3gw0"]
+_data = {
+"processing": SubResource("Animation_v4m7s")
+}
 
 [node name="EmailVerification" type="Control"]
 layout_mode = 3
@@ -11,83 +34,121 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o08kk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7ombw")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -306.0
-offset_top = -161.0
-offset_right = 306.0
-offset_bottom = -57.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_type_variation = &"HeaderLarge"
-text = "We sent you a verificaiton email.
-Please, verify your email to continue"
-
-[node name="TimeLeft" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -13.0
-offset_right = 308.0
-offset_bottom = 23.0
+offset_left = -339.0
+offset_top = -531.0
+offset_right = 339.0
+offset_bottom = 531.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Message" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -297.0
-offset_top = -40.0
-offset_right = 298.0
-offset_bottom = -11.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
 
-[node name="CheckVerification" type="Button" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -395.0
-offset_top = 161.0
-offset_right = 420.0
-offset_bottom = 277.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "I've successfully verified my email"
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 250
 
-[node name="ResendVerification" type="Button" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -274.0
-offset_top = 20.0
-offset_right = 253.0
-offset_bottom = 135.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Resend Verification"
+[node name="FormTitle" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"FormTitle"
+text = "Hey Fighter!"
+horizontal_alignment = 1
 
-[node name="ResendVerificationTimer" type="Timer" parent="."]
-wait_time = 90.0
-one_shot = true
-autostart = true
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/CheckVerification" to="." method="_on_check_verification_pressed"]
-[connection signal="pressed" from="CanvasLayer/ResendVerification" to="." method="_on_resend_verification_pressed"]
-[connection signal="timeout" from="ResendVerificationTimer" to="." method="_on_resend_verification_timeout"]
+[node name="Message" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"Message"
+text = "Confirm your email address"
+horizontal_alignment = 1
+
+[node name="VerifCode" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 80)
+layout_mode = 2
+theme_type_variation = &"Field"
+placeholder_text = "Code"
+max_length = 30
+
+[node name="ErrorMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -30
+
+[node name="Processing" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ErrorMarginContainer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.264622)
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+text = "Processing..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ErrorMessage" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ErrorMarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+theme_type_variation = &"Error"
+text = "Code resend failed for player:"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="WarningMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -30
+
+[node name="WarningMessage" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/WarningMarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+theme_type_variation = &"WarningMessage"
+text = "Code resend successful for player: ahmed omar"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Submit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Submit"
+
+[node name="ResendCode" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resend Code"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t3gw0")
+}
+autoplay = "processing"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ResendCode" to="." method="_on_resend_code_pressed"]

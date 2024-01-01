@@ -8,16 +8,26 @@ var current_weapon_data: Dictionary
 var weapon_sprites: SpriteFrames
 var player_weapon_sprites: SpriteFrames
 
-# Regex
-@onready var email_regex: RegEx = RegEx.new()
-
 
 func _ready():
-	email_regex.compile("(^[a-zA-Z0-9_.+-]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]+$)")
-
-	# If user is signed in load the data
-	Firebase.Auth.check_auth_file()
-
+	# Auth
+	SilentWolf.configure({
+		"api_key": "X367RUXQW031HNj8bQP82anPrCAj7CNN6ixrauQk",
+		"game_id": "metalrobot",
+		"log_level": 0
+	})
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://menus/main_menu.tscn"
+	 })
+	SilentWolf.configure_auth({
+		"redirect_to_scene": "res://menus/main_menu.tscn",
+		"login_scene": "res://auth/sign_in/sign_in.tscn",
+		"email_confirmation_scene": "res://auth/email_verification/email_verification.tscn",
+		"reset_password_scene": "res://auth/reset_password/reset_password.tscn",
+		"session_duration_seconds": 0,
+		"saved_session_expiration_days": 60
+	})
+	# Weapon data
 	get_current_weapon_data()
 
 func change_scene(next_scene_path: String, type: String):

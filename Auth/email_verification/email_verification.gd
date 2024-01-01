@@ -1,48 +1,42 @@
 extends Control
 
-@onready var message_label = $CanvasLayer/Message
-@onready var time_left_message = $CanvasLayer/TimeLeft
-@onready var resend_btn = $CanvasLayer/ResendVerification
-@onready var checker_btn = $CanvasLayer/CheckVerification
-@onready var resend_timer = $ResendVerificationTimer
+@onready var verif_code = %VerifCode
+@onready var error_message = %ErrorMessage
+@onready var warning_message = %WarningMessage
+@onready var processing = %Processing
 
 func _ready():
-	# Connect send_account_verification_email_completed
-	Firebase.Auth.send_account_verification_email_completed.connect(email_verification_completed)
-	# Connect userdata_received
-	Firebase.Auth.userdata_received.connect(email_verification_checking_completed)
-
-func _process(_delta):
-	if (not resend_timer.is_stopped() && resend_btn.disabled):
-		time_left_message.text = "You can resend the verification email in: " + str(floor(resend_timer.time_left)) + "s"
-	else:
-		time_left_message.text = ""
-
-func email_verification_completed(message):
-	if (message.is_empty()):
-		message_label.text = "Verification Email Sent Successfully"
-	else:
-		message_label.text = "An error occurred. Kindly get in touch with us and provide the following message. \n" + message
-
-func email_verification_checking_completed(user_data):
-	if (user_data.email_verified):
-		Globals.change_scene("res://menus/main_menu.tscn", "transition")
-	else:
-		message_label.text = "It seems you haven't verified your email yet. Please go ahead and verify it."
+	SilentWolf.Auth.sw_email_verif_complete.connect(_on_confirmation_complete)
+	SilentWolf.Auth.sw_resend_conf_code_complete.connect(_on_resend_code_complete)
 
 # Signals
-func _on_resend_verification_pressed():
-	Firebase.Auth.send_account_verification_email()
-	resend_btn.disabled = true
-	resend_timer.start()
+func _on_submit_pressed():
+	var player_name = SilentWolf.Auth.tmp_username
+	processing.visible = true
+	if player_name:
+		SilentWolf.Auth.verify_email(player_name, verif_code.text)
 
+func _on_resend_code_pressed():
+	var player_name = SilentWolf.Auth.tmp_username
+	if player_name:
+		SilentWolf.Auth.resend_conf_code(player_name)
 
-func _on_resend_verification_timeout():
-	message_label.text = "If you haven't received the Verification Email, please try resending it."
-	resend_btn.disabled = false
-	checker_btn.disabled = false
+func _on_confirmation_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		processing.visible = false
+		warning_message.text = "email verification succeeded!"
+		Globals.change_scene("res://menus/main_menu.tscn", "transition")
+	else:
+		warning_message.visible = false
+		error_message.visible = true
+		error_message.text = "email verification failed: " + str(sw_result.error)
 
-
-func _on_check_verification_pressed():
-	Firebase.Auth.get_user_data()
-	checker_btn.disabled = true
+func _on_resend_code_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		warning_message.visible = true
+		error_message.visible = false
+		warning_message.text = "Code resend successful for player: " + str(SilentWolf.Auth.tmp_username)
+	else:
+		warning_message.visible = false
+		error_message.visible = true
+		error_message.text = "Code resend failed for player: " + str(SilentWolf.Auth.tmp_username)

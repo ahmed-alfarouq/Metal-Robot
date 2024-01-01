@@ -1,43 +1,32 @@
 extends Control
 
-@onready var email = $Email
-@onready var password = $Password
-@onready var error_message = $ErrorMessage
+@onready var player_name = %PlayerName
+@onready var password = %Password
+@onready var error_message = %ErrorMessage
+@onready var processing = %Processing
 
 func _ready():
-	Firebase.Auth.login_succeeded.connect(login_completed)
-	Firebase.Auth.login_failed.connect(login_failed)
+	SilentWolf.Auth.sw_login_complete.connect(_on_login_complete)
 
-func _on_sign_in_pressed():
-	var result = Globals.email_regex.search(email.text)
-
-	if email.text.is_empty():
-		error_message.text = "Email can't be empty."
-	elif !result:
-		error_message.text = "Please, enter a valid email"
-	elif password.text.is_empty():
-		error_message.text = "Password can't be empty"
-	else:
-		Firebase.Auth.login_with_email_and_password(email.text, password.text)
-
-func login_completed(auth_info):
-	Firebase.Auth.save_auth(auth_info)
-	Globals.change_scene("res://menus/main_menu.tscn", "transition")
-
-func login_failed(_code, message):
-	if message == "INVALID_EMAIL":
-		error_message.text = "Please, enter a valid email"
-	elif message == "INVALID_LOGIN_CREDENTIALS":
-		error_message.text = "Invalid Email or Password. Please try again"
-	elif message == "USER_DISABLED":
-		error_message.text = "Access Denied: Your account has been temporarily suspended from the game. \n Please contact support for further information."
-	else:
-		error_message.text = "Kindly reach out to us and provide the following error message. \n" + message
-
+# Signals
+func _on_login_pressed():
+	processing.visible = true
+	error_message.visible = false
+	SilentWolf.Auth.login_player(player_name.text, password.text, true)
 
 func _on_forget_password_pressed():
 	Globals.change_scene("res://auth/reset_password/reset_password.tscn", "transition")
 
-
 func _on_create_account_pressed():
 	Globals.change_scene("res://auth/sign_up/sign_up.tscn", "transition")
+
+func _on_password_toggle_toggled(toggled_on):
+	password.secret = !toggled_on
+
+func _on_login_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		Globals.change_scene("res://menus/main_menu.tscn", "transition")
+	else:
+		processing.visible = false
+		error_message.visible = true
+		error_message.text = "Error: " + str(sw_result.error)

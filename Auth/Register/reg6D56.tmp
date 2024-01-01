@@ -1,0 +1,155 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwsln1l2skwxe"]
+
+[ext_resource type="Script" path="res://auth/Register/register.gd" id="1_un4ss"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_7r83c"]
+[ext_resource type="Texture2D" uid="uid://dpe5noin3pspv" path="res://assets/ui/References/Login-Ui.jpg" id="3_clm8x"]
+
+[node name="Register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_un4ss")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7r83c")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.0
+offset_top = -531.0
+offset_right = 339.0
+offset_bottom = 531.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="FormTitle" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"FormTitle"
+text = "Hey Fighter!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Field"
+placeholder_text = "Player Name"
+caret_blink = true
+
+[node name="Email" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Field"
+placeholder_text = "Email"
+caret_blink = true
+
+[node name="Password" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Field"
+placeholder_text = "Password"
+caret_blink = true
+secret = true
+
+[node name="PasswordToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Password"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -31.0
+offset_right = 466.0
+offset_bottom = 481.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.06, 0.06)
+theme_type_variation = &"EyeIcon"
+
+[node name="ConfirmPassword" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Field"
+placeholder_text = "Confirm Password"
+caret_blink = true
+secret = true
+
+[node name="ConfirmPasswordToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ConfirmPassword"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -31.0
+offset_right = 466.0
+offset_bottom = 481.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.06, 0.06)
+theme_type_variation = &"EyeIcon"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -30
+
+[node name="ErrorMessage" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+theme_type_variation = &"Error"
+autowrap_mode = 3
+
+[node name="Register" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Register"
+
+[node name="LogIn" type="Button" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Log In"
+
+[node name="Login-ui" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(965.111, 547)
+scale = Vector2(1.5, 1.51111)
+texture = ExtResource("3_clm8x")
+
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Password/PasswordToggle" to="." method="_on_password_toggle_toggled"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ConfirmPassword/ConfirmPasswordToggle" to="." method="_on_confirm_password_toggle_toggled"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/LogIn" to="." method="_on_log_in_pressed"]
