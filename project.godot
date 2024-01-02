@@ -22,9 +22,9 @@ config/icon="res://assets/icon.png"
 
 [autoload]
 
-Globals="*res://globals.gd"
 ErrorHandler="*res://error_handler/error_handler.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Globals="*res://globals.gd"
 
 [display]
 

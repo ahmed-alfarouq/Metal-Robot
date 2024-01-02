@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwsln1l2skwxe"]
 
-[ext_resource type="Script" path="res://auth/Register/register.gd" id="1_un4ss"]
+[ext_resource type="Script" path="res://auth/register/register.gd" id="1_un4ss"]
 [ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_7r83c"]
 
 [sub_resource type="Animation" id="Animation_0ofs5"]

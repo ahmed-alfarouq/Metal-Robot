@@ -8,6 +8,7 @@ extends Control
 func _ready():
 	SilentWolf.Auth.sw_login_complete.connect(_on_login_complete)
 
+
 # Signals
 func _on_login_pressed():
 	processing.visible = true
@@ -18,7 +19,7 @@ func _on_forget_password_pressed():
 	Globals.change_scene("res://auth/reset_password/reset_password.tscn", "transition")
 
 func _on_create_account_pressed():
-	Globals.change_scene("res://auth/sign_up/sign_up.tscn", "transition")
+	Globals.change_scene("res://auth/register/register.tscn", "transition")
 
 func _on_password_toggle_toggled(toggled_on):
 	password.secret = !toggled_on

@@ -119,7 +119,7 @@ flying_speed = 550
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("14_wya43")
-animation = &"flying_down"
+animation = &"screaming"
 autoplay = "flying_up"
 script = ExtResource("15_venmw")
 

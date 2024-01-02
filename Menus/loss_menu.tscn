@@ -26,6 +26,34 @@ grow_vertical = 2
 texture = ExtResource("1_ijrdr")
 metadata/_edit_lock_ = true
 
+[node name="GearLeft" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 303.0
+offset_top = -44.0
+offset_right = 774.0
+offset_bottom = 427.0
+grow_vertical = 2
+rotation = 2.26893
+texture = ExtResource("3_phuko")
+metadata/_edit_lock_ = true
+
+[node name="GearRight" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -196.0
+offset_right = 261.0
+offset_bottom = 275.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_phuko")
+metadata/_edit_lock_ = true
+
 [node name="TitleContainer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -124,9 +152,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -805.0
-offset_top = -320.0
-offset_right = 805.0
+offset_left = -640.0
+offset_top = -248.0
+offset_right = 640.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -140,7 +169,6 @@ metadata/_edit_lock_ = true
 
 [node name="Leaderboard" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
-disabled = true
 text = "Leaderboard"
 metadata/_edit_lock_ = true
 
@@ -148,34 +176,6 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 text = "Replay
 "
-metadata/_edit_lock_ = true
-
-[node name="GearLeft" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 303.0
-offset_top = -44.0
-offset_right = 774.0
-offset_bottom = 427.0
-grow_vertical = 2
-rotation = 2.26893
-texture = ExtResource("3_phuko")
-metadata/_edit_lock_ = true
-
-[node name="GearRight" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -196.0
-offset_right = 261.0
-offset_bottom = 275.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("3_phuko")
 metadata/_edit_lock_ = true
 
 [node name="Score" type="Control" parent="CanvasLayer"]
@@ -199,12 +199,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -701.0
-offset_top = -134.0
-offset_right = -417.0
-offset_bottom = -41.0
+offset_left = -703.0
+offset_top = -126.0
+offset_right = -490.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"ScoreLabel"
 text = "SCORE"
 
 [node name="ScoreCirlce" type="PanelContainer" parent="CanvasLayer/Score"]
@@ -223,9 +224,9 @@ grow_vertical = 2
 theme_type_variation = &"ScorePanel1"
 
 [node name="Score" type="Label" parent="CanvasLayer/Score/ScoreCirlce"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScoreLabel"
-text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -236,12 +237,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -699.0
-offset_top = 21.0
-offset_right = -187.0
-offset_bottom = 114.0
+offset_left = -698.0
+offset_top = 39.0
+offset_right = -312.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"ScoreLabel"
 text = "BEST SCORE"
 
 [node name="BestScoreCirlce" type="PanelContainer" parent="CanvasLayer/Score"]
@@ -260,9 +262,9 @@ grow_vertical = 2
 theme_type_variation = &"ScorePanel1"
 
 [node name="BestScore" type="Label" parent="CanvasLayer/Score/BestScoreCirlce"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScoreLabel"
-text = "50000"
 horizontal_alignment = 1
 vertical_alignment = 1
 

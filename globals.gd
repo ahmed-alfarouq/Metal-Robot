@@ -7,7 +7,9 @@ var current_weapon_name: String = "pistol"
 var current_weapon_data: Dictionary
 var weapon_sprites: SpriteFrames
 var player_weapon_sprites: SpriteFrames
-
+var score: int = 0
+var best_score: int = 0
+var player_name = null
 
 func _ready():
 	# Auth
@@ -27,8 +29,32 @@ func _ready():
 		"session_duration_seconds": 0,
 		"saved_session_expiration_days": 60
 	})
+	SilentWolf.Auth.sw_session_check_complete.connect(_on_session_check_complete)
+	SilentWolf.Auth.auto_login_player()
 	# Weapon data
 	get_current_weapon_data()
+
+func get_current_weapon_data():
+	var weapons_data: Dictionary = load_json("res://weapons.json")
+
+	if weapons_data.has(current_weapon_name):
+		current_weapon_data = weapons_data[current_weapon_name]
+		weapon_sprites = load(current_weapon_data["weapon_sprites_resource"])
+		player_weapon_sprites = load(current_weapon_data["player_weapon_sprites_resource"])
+
+func load_json(file_path: String):
+	if FileAccess.file_exists(file_path):
+		var data_file = FileAccess.open(file_path, FileAccess.READ)
+		var parsed_data = JSON.parse_string(data_file.get_as_text())
+		
+		if parsed_data is Dictionary:
+			return parsed_data
+		else:
+			ErrorHandler.error("Some thing went wrong, when trying to get JSON file")
+			return {}
+	else:
+		ErrorHandler.error("JSON file doesn't exist")
+		return {}
 
 func change_scene(next_scene_path: String, type: String):
 	var scene_load_status
@@ -48,6 +74,7 @@ func change_scene(next_scene_path: String, type: String):
 		ResourceLoader.load_threaded_request(next_scene_path)
 	else:
 		ErrorHandler.error("The resource is invalid.")
+		loading_screen_instance.queue_free()
 		return
 	
 
@@ -71,24 +98,21 @@ func change_scene(next_scene_path: String, type: String):
 				loading_screen_instance.queue_free()
 				return
 
-func get_current_weapon_data():
-	var weapons_data: Dictionary = load_json("res://weapons.json")
+func save_score(new_score):
+	if player_name:
+		SilentWolf.Scores.save_score(player_name, new_score)
 
-	if weapons_data.has(current_weapon_name):
-		current_weapon_data = weapons_data[current_weapon_name]
-		weapon_sprites = load(current_weapon_data["weapon_sprites_resource"])
-		player_weapon_sprites = load(current_weapon_data["player_weapon_sprites_resource"])
+func load_best_score():
+	if player_name:
+		var sw_result = await SilentWolf.Scores.get_scores_by_player(player_name, 1).sw_get_player_scores_complete
+		if sw_result.scores.size() > 0:
+			best_score = sw_result.scores[0].score
 
-func load_json(file_path: String):
-	if FileAccess.file_exists(file_path):
-		var data_file = FileAccess.open(file_path, FileAccess.READ)
-		var parsed_data = JSON.parse_string(data_file.get_as_text())
-		
-		if parsed_data is Dictionary:
-			return parsed_data
-		else:
-			ErrorHandler.error("Some thing went wrong, when trying to get JSON file")
-			return {}
+# Signals
+func _on_session_check_complete(sw_result):
+	if sw_result == null:
+		Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
 	else:
-		ErrorHandler.error("JSON file doesn't exist")
-		return {}
+		player_name = SilentWolf.Auth.logged_in_player
+		load_best_score()
+		Globals.change_scene("res://menus/main_menu.tscn", "transition")
