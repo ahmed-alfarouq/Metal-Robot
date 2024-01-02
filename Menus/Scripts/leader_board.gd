@@ -14,9 +14,14 @@ func get_scores():
 	SilentWolf.Scores.get_scores()
 
 func add_list(scores_list):
-	for score in scores_list:
+	var pos = 1
+	for score_record in scores_list:
 		var ranking_instance = ranking_scene.instantiate()
+		ranking_instance.player_pos = pos
+		ranking_instance.player_name = score_record.player_name
+		ranking_instance.player_score = score_record.score
 		list_container.add_child(ranking_instance)
+		pos += 1
 
 func _on_get_scores_complete(sw_result):
 	scores = sw_result.scores
