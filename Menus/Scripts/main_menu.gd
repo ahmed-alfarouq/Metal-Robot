@@ -22,4 +22,4 @@ func _on_ranks_pressed():
 	Globals.change_scene("res://menus/leader_board.tscn", "transition")
 
 func _on_log_out_complete():
-	Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
+	Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")

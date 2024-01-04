@@ -19,11 +19,6 @@ func _ready():
 	SilentWolf.Auth.sw_request_password_reset_complete.connect(_on_request_password_complete)
 	SilentWolf.Auth.sw_reset_password_complete.connect(_on_reset_password_complete)
 
-func valid_name(n: String):
-	if n.find(" ") == 1:
-		return false
-	return true
-
 func display_error(error):
 	if processing.visible:
 		processing.visible = false
@@ -35,7 +30,7 @@ func display_error(error):
 
 # Signals
 func _on_send_code_pressed():
-	if !valid_name(player_name.text):
+	if !Globals.valid_name(player_name.text):
 		display_error("Player name can't contain spaces")
 	else:
 		processing.visible = true

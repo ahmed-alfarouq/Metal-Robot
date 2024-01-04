@@ -30,7 +30,7 @@ func silentwolf_config():
 	 })
 	SilentWolf.configure_auth({
 		"redirect_to_scene": "res://menus/main_menu.tscn",
-		"login_scene": "res://auth/sign_in/sign_in.tscn",
+		"login_scene": "res://auth/log_in/log_in.tscn",
 		"email_confirmation_scene": "res://auth/email_verification/email_verification.tscn",
 		"reset_password_scene": "res://auth/reset_password/reset_password.tscn",
 		"session_duration_seconds": 0,
@@ -112,13 +112,17 @@ func load_best_score():
 		if !sw_result.top_score.is_empty():
 			best_score_data = sw_result.top_score
 			best_score = best_score_data.score
-			print(best_score_data)
+
+func valid_player_name(n):
+	if n.find(" ") == 1:
+		return false
+	return true
 
 # Signals
 func _on_session_check_complete(sw_result):
 	if sw_result == null:
-		Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
+		change_scene("res://auth/log_in/log_in.tscn", "transition")
 	else:
 		player_name = SilentWolf.Auth.logged_in_player
 		load_best_score()
-		Globals.change_scene("res://menus/main_menu.tscn", "transition")
+		change_scene("res://menus/main_menu.tscn", "transition")

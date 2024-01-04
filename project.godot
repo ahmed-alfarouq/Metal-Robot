@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metal Robot"
-run/main_scene="res://auth/sign_in/sign_in.tscn"
+run/main_scene="res://auth/log_in/log_in.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=100
 boot_splash/bg_color=Color(0.136719, 0.121094, 0.125, 1)

@@ -17,10 +17,11 @@ func _on_LoginButton_pressed() -> void:
 
 
 func _on_login_complete(sw_result: Dictionary) -> void:
+	var error = sw_result.error
 	if sw_result.success:
 		login_success()
 	else:
-		login_failure(sw_result.error)
+		login_failure(error)
 
 
 func login_success() -> void:

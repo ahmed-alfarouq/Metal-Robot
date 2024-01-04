@@ -78,7 +78,7 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
@@ -146,7 +146,7 @@ theme_type_variation = &"EyeIcon"
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_top = -30
+theme_override_constants/margin_top = -35
 
 [node name="Processing" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -167,6 +167,7 @@ theme_type_variation = &"Error"
 autowrap_mode = 3
 
 [node name="Register" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Register"

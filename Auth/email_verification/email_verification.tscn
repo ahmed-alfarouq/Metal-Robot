@@ -134,11 +134,13 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Submit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Submit"
 
 [node name="ResendCode" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

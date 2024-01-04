@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw64hvl57h21p"]
 
-[ext_resource type="Script" path="res://auth/sign_in/sign_in.gd" id="1_lad7n"]
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_kofim"]
+[ext_resource type="Script" path="res://auth/log_in/log_in.gd" id="1_y33q8"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_o5dji"]
 
 [sub_resource type="Animation" id="Animation_0de0f"]
 resource_name = "processing"
@@ -25,14 +25,14 @@ _data = {
 "processing": SubResource("Animation_0de0f")
 }
 
-[node name="SignIn" type="Control"]
+[node name="LogIn" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lad7n")
+script = ExtResource("1_y33q8")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kofim")
+texture = ExtResource("2_o5dji")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
