@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1atgnvwx8bpc"]
+[gd_scene load_steps=6 format=3 uid="uid://c1atgnvwx8bpc"]
 
 [ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_7aowl"]
 [ext_resource type="Script" path="res://menus/Scripts/leader_board.gd" id="1_jvw4s"]
 [ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="2_m1518"]
 [ext_resource type="Texture2D" uid="uid://bntn22yl35bj1" path="res://assets/ui/leaderboard/leaderboard_border.png" id="3_2i7ci"]
+[ext_resource type="PackedScene" uid="uid://cxr8kll2m35we" path="res://loading_icon/loading_icon.tscn" id="5_e7no0"]
 
 [node name="LeaderBoard" type="Control"]
 layout_mode = 3
@@ -89,6 +90,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 80
 
+[node name="LoadingIcon" parent="Border" instance=ExtResource("5_e7no0")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
 [node name="Title" type="Label" parent="Border"]
 layout_mode = 1
 anchors_preset = 5
@@ -105,6 +115,7 @@ text = "Leaderboard"
 uppercase = true
 
 [node name="Top10" type="Button" parent="Border"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -115,9 +126,11 @@ offset_right = 175.0
 offset_bottom = -96.9999
 grow_vertical = 0
 rotation = -0.250861
+disabled = true
 text = "Top 10"
 
 [node name="MyRanking" type="Button" parent="Border"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -131,6 +144,7 @@ offset_bottom = -151.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 0.252311
+disabled = true
 text = "My Ranking"
 
 [node name="Back" type="Button" parent="Border"]
@@ -140,13 +154,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -93.0
+offset_left = -253.0
 offset_top = -110.0
-offset_right = 94.0
+offset_right = -66.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back"
+
+[node name="Play" type="Button" parent="Border"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = -110.0
+offset_right = 233.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Play"
 
 [node name="EmptyMessage" type="Label" parent="Border"]
 unique_name_in_owner = true
@@ -166,4 +195,6 @@ grow_vertical = 2
 theme_type_variation = &"Message"
 text = "Leaderboard is currently empty!"
 
+[connection signal="pressed" from="Border/MyRanking" to="." method="_on_my_ranking_pressed"]
 [connection signal="pressed" from="Border/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Border/Play" to="." method="_on_play_pressed"]

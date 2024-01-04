@@ -5,7 +5,10 @@ extends Control
 
 func _ready():
 	score.text = str(Globals.score)
-	best_score.text = str(Globals.best_score)
+	if Globals.score > Globals.best_score:
+		best_score.text = str(Globals.score)
+	else:
+		best_score.text = str(Globals.best_score)
 
 func _on_menu_pressed():
 	Globals.change_scene("res://menus/main_menu.tscn", "transition")

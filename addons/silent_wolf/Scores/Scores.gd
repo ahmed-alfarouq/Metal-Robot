@@ -376,13 +376,14 @@ func translate_score_fields_in_array(scores: Array) -> Array:
 
 func translate_score_fields(score: Dictionary) -> Dictionary:
 	var translated_score = {}
-	translated_score["score_id"] = score["sid"]
-	translated_score["score"] = score["s"]
-	translated_score["player_name"] = score["pn"]
-	if "md" in score:
-		translated_score["metadata"] = score["md"]
-	if "position" in score:
-		translated_score["position"] = score["position"]
-	if "t" in score:
-		translated_score["timestamp"] = score["t"]
+	if !score.is_empty():
+		translated_score["score_id"] = score["sid"]
+		translated_score["score"] = score["s"]
+		translated_score["player_name"] = score["pn"]
+		if "md" in score:
+			translated_score["metadata"] = score["md"]
+		if "position" in score:
+			translated_score["position"] = score["position"]
+		if "t" in score:
+			translated_score["timestamp"] = score["t"]
 	return translated_score

@@ -9,10 +9,17 @@ var weapon_sprites: SpriteFrames
 var player_weapon_sprites: SpriteFrames
 var score: int = 0
 var best_score: int = 0
+var best_score_data: Dictionary
 var player_name = null
 
 func _ready():
-	# Auth
+	silentwolf_config()
+	SilentWolf.Auth.sw_session_check_complete.connect(_on_session_check_complete)
+	SilentWolf.Auth.auto_login_player()
+	# Weapon data
+	get_current_weapon_data()
+
+func silentwolf_config():
 	SilentWolf.configure({
 		"api_key": "X367RUXQW031HNj8bQP82anPrCAj7CNN6ixrauQk",
 		"game_id": "metalrobot",
@@ -29,10 +36,6 @@ func _ready():
 		"session_duration_seconds": 0,
 		"saved_session_expiration_days": 60
 	})
-	SilentWolf.Auth.sw_session_check_complete.connect(_on_session_check_complete)
-	SilentWolf.Auth.auto_login_player()
-	# Weapon data
-	get_current_weapon_data()
 
 func get_current_weapon_data():
 	var weapons_data: Dictionary = load_json("res://weapons.json")
@@ -101,12 +104,15 @@ func change_scene(next_scene_path: String, type: String):
 func save_score(new_score):
 	if player_name:
 		SilentWolf.Scores.save_score(player_name, new_score)
+		best_score = new_score
 
 func load_best_score():
 	if player_name:
-		var sw_result = await SilentWolf.Scores.get_scores_by_player(player_name, 1).sw_get_player_scores_complete
-		if sw_result.scores.size() > 0:
-			best_score = sw_result.scores[0].score
+		var sw_result = await SilentWolf.Scores.get_top_score_by_player(player_name).sw_top_player_score_complete
+		if !sw_result.top_score.is_empty():
+			best_score_data = sw_result.top_score
+			best_score = best_score_data.score
+			print(best_score_data)
 
 # Signals
 func _on_session_check_complete(sw_result):
