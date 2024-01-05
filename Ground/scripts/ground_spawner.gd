@@ -32,7 +32,6 @@ func _on_remover_body_exited(body):
 	if body.is_in_group("ground"):
 		body.queue_free()
 
-
 func _on_increase_speed_timer_timeout():
 	if ground_speed < 650:
 		ground_speed += 20

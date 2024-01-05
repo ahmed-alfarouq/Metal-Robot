@@ -96,6 +96,7 @@ offset_right = 296.0
 grow_vertical = 0
 
 [node name="Up" type="TouchScreenButton" parent="GUI/LeftContainer"]
+self_modulate = Color(0.662745, 0.101961, 0, 1)
 position = Vector2(127, -300)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_mxs1o")
@@ -104,6 +105,7 @@ action = "fly_up"
 visibility_mode = 1
 
 [node name="Down" type="TouchScreenButton" parent="GUI/LeftContainer"]
+self_modulate = Color(0.662745, 0.101961, 0, 1)
 position = Vector2(130, -27)
 scale = Vector2(3, 3.025)
 texture_normal = ExtResource("6_fsge7")
@@ -123,6 +125,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="shoot" type="TouchScreenButton" parent="GUI/RightContainer"]
+self_modulate = Color(0.662745, 0.101961, 0, 1)
 position = Vector2(74, 34)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("7_07gyd")
@@ -130,6 +133,7 @@ action = "shooting"
 visibility_mode = 1
 
 [node name="Scream" type="TouchScreenButton" parent="GUI/RightContainer"]
+self_modulate = Color(0.662745, 0.101961, 0, 1)
 position = Vector2(-107, -203)
 scale = Vector2(3, 3)
 texture_normal = ExtResource("8_ed4t7")

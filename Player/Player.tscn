@@ -111,7 +111,7 @@ height = 146.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(500, 200)
-collision_mask = 30
+collision_mask = 26
 script = ExtResource("1_bdrq7")
 pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 550

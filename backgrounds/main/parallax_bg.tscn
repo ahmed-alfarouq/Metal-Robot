@@ -22,6 +22,7 @@ texture = ExtResource("1_o0usm")
 metadata/_edit_lock_ = true
 
 [node name="Clouds" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1917, 0)
 
@@ -32,16 +33,19 @@ texture = ExtResource("2_8ai6k")
 centered = false
 
 [node name="BackBuildings" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1917, 0)
 
 [node name="BgBackBuildings" type="Sprite2D" parent="BackBuildings"]
-position = Vector2(0, 15)
+position = Vector2(0, 169)
 scale = Vector2(1.00365, 0.706481)
 texture = ExtResource("3_6a01d")
 centered = false
 
 [node name="MiddleBuildings" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.117647)
 motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(1900, 0)
 
@@ -52,6 +56,7 @@ texture = ExtResource("4_jcyu8")
 centered = false
 
 [node name="FrontBuildings" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
 motion_mirroring = Vector2(1917, 0)
 
 [node name="BgFrontBuilding" type="Sprite2D" parent="FrontBuildings"]
