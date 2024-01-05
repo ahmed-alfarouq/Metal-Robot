@@ -4,5 +4,5 @@ extends ParallaxBackground
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (not main.is_dead):
+	if (is_instance_valid(main) && not main.is_dead):
 		scroll_offset.x -= 200 * delta

@@ -22,22 +22,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"Ranking"
 
-[node name="GridContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 150
 
-[node name="PlayerName" type="Label" parent="PanelContainer/GridContainer"]
+[node name="PlayerName" type="Label" parent="PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"RankingName"
 uppercase = true
 
-[node name="ScoreBG" type="PanelContainer" parent="PanelContainer/GridContainer"]
+[node name="ScoreBG" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"leaderboarScorePanel"
 
-[node name="PlayerScore" type="Label" parent="PanelContainer/GridContainer/ScoreBG"]
+[node name="PlayerScore" type="Label" parent="PanelContainer/HBoxContainer/ScoreBG"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScoreLabel"

@@ -19,6 +19,7 @@ func get_scores():
 func add_list(scores_list):
 	var pos = 1
 	for score_data in scores_list:
+		var margin_container = MarginContainer.new()
 		var ranking_instance = ranking_scene.instantiate()
 		ranking_instance.player_name = score_data.player_name
 		ranking_instance.player_score = score_data.score
@@ -28,8 +29,14 @@ func add_list(scores_list):
 		else:
 			ranking_instance.player_pos = pos
 			pos += 1
+		
+		if pos % 2 != 0:
+			margin_container.add_theme_constant_override("margin_right", -80)
+		else:
+			margin_container.add_theme_constant_override("margin_right", 70)
 
-		list_container.add_child(ranking_instance)
+		margin_container.add_child(ranking_instance)
+		list_container.add_child(margin_container)
 
 func clear_list():
 	var list_children = list_container.get_children()
