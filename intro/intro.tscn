@@ -1,0 +1,200 @@
+[gd_scene load_steps=18 format=3 uid="uid://dlvxbaffu3sj6"]
+
+[ext_resource type="Script" path="res://intro/intro.gd" id="1_5iidm"]
+[ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/animation/player_animation/base/flying_up/flying_up_01.png" id="1_iesv3"]
+[ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/animation/player_animation/base/flying_up/flying_up_02.png" id="2_nx0v4"]
+[ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/animation/player_animation/base/flying_up/flying_up_03.png" id="3_og3vg"]
+[ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/animation/player_animation/base/flying_up/flying_up_04.png" id="4_xxdur"]
+[ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/animation/player_animation/base/flying_up/flying_up_05.png" id="5_jpsuk"]
+[ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/animation/player_animation/base/flying_up/flying_up_06.png" id="6_nm31f"]
+[ext_resource type="Texture2D" uid="uid://bhoc6vprnl6gj" path="res://assets/animation/player_animation/base/flying_up/flying_up_07.png" id="7_7isvd"]
+[ext_resource type="Texture2D" uid="uid://d2um5se5prhka" path="res://assets/animation/player_animation/base/flying_up/flying_up_08.png" id="8_of03j"]
+[ext_resource type="Texture2D" uid="uid://bdn800qpny0jw" path="res://assets/animation/player_animation/base/flying_up/flying_up_09.png" id="9_eimn8"]
+[ext_resource type="Texture2D" uid="uid://bnqujv1bhcm7g" path="res://assets/animation/player_animation/base/flying_up/flying_up_10.png" id="10_awi71"]
+[ext_resource type="Texture2D" uid="uid://bbhejlcrrfmd5" path="res://assets/message.png" id="12_8lkwi"]
+[ext_resource type="AudioStream" uid="uid://df7xlicpr08fp" path="res://assets/sounds/robot.mp3" id="13_it78b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_107i6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iesv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nx0v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_og3vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xxdur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jpsuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nm31f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7isvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_of03j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eimn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_awi71")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 18.0
+}]
+
+[sub_resource type="Animation" id="Animation_11k7d"]
+resource_name = "enter_scene"
+length = 1.86
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-100, 500), Vector2(960, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/Message:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Message/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3, 1.34, 1.38, 1.42, 1.46, 1.5, 1.54, 1.58, 1.62, 1.66, 1.7, 1.74, 1.78, 1.82, 1.86),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["W", "We", "Wel", "Welc", "Welco", "Welcom", "Welcome", "Welcome
+F", "Welcome
+Fi", "Welcome
+Fig", "Welcome
+Figh", "Welcome
+Fight", "Welcome
+Fighte", "Welcome
+Fighter", "Welcome
+Fighter!"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Robot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 8.47723,
+"start_offset": 0.101958,
+"stream": ExtResource("13_it78b")
+}],
+"times": PackedFloat32Array(1.29558)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_tvmua"]
+resource_name = "moving_up_down"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 500), Vector2(960, 480)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2q5ij"]
+_data = {
+"enter_scene": SubResource("Animation_11k7d"),
+"moving_up_down": SubResource("Animation_tvmua")
+}
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5iidm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.286275, 0.286275, 0.286275, 0.278431)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 500)
+sprite_frames = SubResource("SpriteFrames_107i6")
+animation = &"flying"
+autoplay = "flying"
+
+[node name="Message" type="TextureRect" parent="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.999173)
+offset_left = 81.0
+offset_top = -220.243
+offset_right = 298.0
+offset_bottom = -12.2434
+texture = ExtResource("12_8lkwi")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="AnimatedSprite2D/Message"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 29.0
+offset_right = 202.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="RequestTimeout" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_2q5ij")
+}
+
+[node name="Robot" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="timeout" from="RequestTimeout" to="." method="_on_request_timeout"]

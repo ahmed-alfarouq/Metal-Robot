@@ -63,9 +63,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -686.5
+offset_left = -586.5
 offset_top = -584.5
-offset_right = 686.5
+offset_right = 586.5
 offset_bottom = 584.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -98,14 +98,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_type_variation = &"Message"
+theme_override_font_sizes/font_size = 42
 text = "Checking Internet Connection..."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-autoplay = "loading_animation"
-speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_rll6h")
 }
+autoplay = "loading_animation"
+speed_scale = 2.0
 
 [node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer"]
 unique_name_in_owner = true

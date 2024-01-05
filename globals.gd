@@ -14,8 +14,6 @@ var player_name = null
 
 func _ready():
 	silentwolf_config()
-	SilentWolf.Auth.sw_session_check_complete.connect(_on_session_check_complete)
-	SilentWolf.Auth.auto_login_player()
 	# Weapon data
 	get_current_weapon_data()
 
@@ -79,7 +77,6 @@ func change_scene(next_scene_path: String, type: String):
 		ErrorHandler.error("The resource is invalid.")
 		loading_screen_instance.queue_free()
 		return
-	
 
 	# A loop until the request finishes
 	while ResourceLoader.exists(next_scene_path):
@@ -117,12 +114,3 @@ func valid_player_name(n):
 	if n.find(" ") == 1:
 		return false
 	return true
-
-# Signals
-func _on_session_check_complete(sw_result):
-	if sw_result == null:
-		change_scene("res://auth/log_in/log_in.tscn", "transition")
-	else:
-		player_name = SilentWolf.Auth.logged_in_player
-		load_best_score()
-		change_scene("res://menus/main_menu.tscn", "transition")
