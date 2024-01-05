@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1atgnvwx8bpc"]
 
-[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="1_7aowl"]
-[ext_resource type="Script" path="res://menus/Scripts/leader_board.gd" id="1_jvw4s"]
-[ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="2_m1518"]
-[ext_resource type="Texture2D" uid="uid://bntn22yl35bj1" path="res://assets/ui/leaderboard/leaderboard_border.png" id="3_2i7ci"]
-[ext_resource type="PackedScene" uid="uid://cxr8kll2m35we" path="res://loading_icon/loading_icon.tscn" id="5_e7no0"]
+[ext_resource type="Script" path="res://menus/Scripts/leaderboard.gd" id="1_6pqvf"]
+[ext_resource type="Texture2D" uid="uid://beng3465m1vqw" path="res://assets/ui/bgs/check_connection_bg.jpg" id="2_ofdh3"]
+[ext_resource type="Texture2D" uid="uid://bouqfrd68266k" path="res://assets/ui/gear_p3.png" id="3_x3cme"]
+[ext_resource type="Texture2D" uid="uid://bntn22yl35bj1" path="res://assets/ui/leaderboard/leaderboard_border.png" id="4_12hob"]
+[ext_resource type="PackedScene" uid="uid://cxr8kll2m35we" path="res://loading_icon/loading_icon.tscn" id="5_170jx"]
 
 [node name="LeaderBoard" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jvw4s")
+script = ExtResource("1_6pqvf")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7aowl")
+texture = ExtResource("2_ofdh3")
 
 [node name="GearLeft" type="TextureRect" parent="."]
 layout_mode = 1
@@ -34,7 +34,7 @@ offset_top = -454.0
 offset_right = 401.0
 offset_bottom = 310.0
 grow_vertical = 0
-texture = ExtResource("2_m1518")
+texture = ExtResource("3_x3cme")
 
 [node name="GearRight" type="TextureRect" parent="."]
 layout_mode = 1
@@ -49,7 +49,7 @@ offset_right = 233.0
 offset_bottom = 271.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("2_m1518")
+texture = ExtResource("3_x3cme")
 
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 1
@@ -64,7 +64,7 @@ offset_right = 550.0
 offset_bottom = 550.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_2i7ci")
+texture = ExtResource("4_12hob")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Border"]
 layout_mode = 1
@@ -90,7 +90,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 80
 
-[node name="LoadingIcon" parent="Border" instance=ExtResource("5_e7no0")]
+[node name="LoadingIcon" parent="Border" instance=ExtResource("5_170jx")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -195,6 +195,7 @@ grow_vertical = 2
 theme_type_variation = &"Message"
 text = "Leaderboard is currently empty!"
 
+[connection signal="pressed" from="Border/Top10" to="." method="_on_top_10_pressed"]
 [connection signal="pressed" from="Border/MyRanking" to="." method="_on_my_ranking_pressed"]
 [connection signal="pressed" from="Border/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Border/Play" to="." method="_on_play_pressed"]

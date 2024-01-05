@@ -12,13 +12,9 @@ var ranking_scene = preload("res://menus/leaederboard/ranking.tscn")
 func _ready():
 	SilentWolf.Scores.sw_get_scores_complete.connect(_on_get_scores_complete)
 	get_scores()
-	
-	# Enable my_ranking button if player's best_score > 0
-	if Globals.best_score > 0:
-		my_ranking_btn.disabled = false
 
 func get_scores():
-	SilentWolf.Scores.get_scores()
+	SilentWolf.Scores.get_scores(50)
 
 func add_list(scores_list):
 	var pos = 1
@@ -47,6 +43,7 @@ func _on_get_scores_complete(sw_result):
 	if scores.size() > 0:
 		add_list(scores)
 		top_10_btn.disabled = false
+		my_ranking_btn.disabled = false
 	else:
 		empty_message.visible = true
 
@@ -57,6 +54,7 @@ func _on_back_pressed():
 
 func _on_my_ranking_pressed():
 	clear_list()
+	top_10_btn.disabled = true
 	my_ranking_btn.disabled = true
 	loading_icon.visible = true
 	# Get player score's position and 4 scores before and after player's best score
@@ -67,9 +65,17 @@ func _on_my_ranking_pressed():
 
 	add_list(all_scores)
 
-	# Enable btn and hide loading_icon
+	# Enable btns and hide loading_icon
 	my_ranking_btn.disabled = false
+	top_10_btn.disabled = false
 	loading_icon.visible = false
 
 func _on_play_pressed():
 	Globals.change_scene("res://levels/main_level.tscn", "loading_screen")
+
+func _on_top_10_pressed():
+	clear_list()
+	top_10_btn.disabled = true
+	my_ranking_btn.disabled = true
+	loading_icon.visible = true
+	SilentWolf.Scores.get_scores()

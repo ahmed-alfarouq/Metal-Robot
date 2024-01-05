@@ -19,7 +19,7 @@ func _on_log_out_pressed():
 	SilentWolf.Auth.logout_player()
 
 func _on_ranks_pressed():
-	Globals.change_scene("res://menus/leader_board.tscn", "transition")
+	Globals.change_scene("res://menus/leaderboard.tscn", "transition")
 
 func _on_log_out_complete():
 	Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")

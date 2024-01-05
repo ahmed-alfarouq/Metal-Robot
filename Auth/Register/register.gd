@@ -23,7 +23,7 @@ func _on_register_pressed():
 		SilentWolf.Auth.register_player(player_name.text.dedent(), email.text, password.text, confirm_password.text)
 
 func _on_log_in_pressed():
-	Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
+	Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")
 
 func _on_password_toggle_toggled(toggled_on):
 	password.secret = !toggled_on

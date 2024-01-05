@@ -30,43 +30,16 @@ func display_error(error):
 
 # Signals
 func _on_send_code_pressed():
-	if !Globals.valid_name(player_name.text):
-		display_error("Player name can't contain spaces")
+	send_code_btn.disabled = true
+	if !Globals.valid_player_name(player_name.text):
+		display_error("Player name can't contain spaces.")
 	else:
 		processing.visible = true
 		error_message.visible = false
 		SilentWolf.Auth.request_player_password_reset(player_name.text.dedent())
 
-func _on_request_password_complete(sw_result: Dictionary) -> void:
-	if sw_result.success:
-		anim_player.play("disolve")
-		processing.visible = false
-		reset_code_container.visible = false
-		send_code_btn.visible = false
-		await safe_to_load
-		reset_password_container.visible = true
-		reset_btn.visible = true
-	else:
-		processing.visible = false
-		error_message.visible = true
-		error_message.text = sw_result.error
-
-func _on_reset_password_complete(sw_result: Dictionary) -> void:
-	if sw_result.success:
-		Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
-	else:
-		display_error(sw_result.error)
-
-func _on_login_pressed():
-	Globals.change_scene("res://auth/sign_in/sign_in.tscn", "transition")
-
-func _on_password_toggle_toggled(toggled_on):
-	password.secret = !toggled_on
-
-func _on_confirm_password_toggle_toggled(toggled_on):
-	confirm_password.secret = !toggled_on
-
 func _on_reset_passowrd_pressed():
+	reset_btn.disabled = true
 	if error_message.visible:
 		error_message.visible = false
 
@@ -78,3 +51,41 @@ func _on_reset_passowrd_pressed():
 			password.text,
 			confirm_password.text
 		)
+
+func _on_login_pressed():
+	Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")
+
+func _on_password_toggle_toggled(toggled_on):
+	password.secret = !toggled_on
+
+func _on_confirm_password_toggle_toggled(toggled_on):
+	confirm_password.secret = !toggled_on
+
+func _on_request_password_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		anim_player.play("disolve")
+		processing.visible = false
+		reset_code_container.visible = false
+		send_code_btn.visible = false
+		await safe_to_load
+		reset_password_container.visible = true
+		reset_btn.visible = true
+	else:
+		send_code_btn.disabled = false
+		processing.visible = false
+		error_message.visible = true
+		error_message.text = sw_result.error
+
+func _on_reset_password_complete(sw_result: Dictionary) -> void:
+	var error = sw_result.error
+	if sw_result.success:
+		Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")
+	elif error.contains("Password must have numeric characters"):
+		reset_btn.disabled = false
+		display_error("Password must have at least one number")
+	elif error.contains("Password must have uppercase characters"):
+		reset_btn.disabled = false
+		display_error("Password must have at least one uppercase character")
+	else:
+		reset_btn.disabled = false
+		display_error(error)
