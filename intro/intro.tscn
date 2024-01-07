@@ -157,10 +157,11 @@ grow_vertical = 2
 color = Color(0.286275, 0.286275, 0.286275, 0.278431)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(960, 500)
+position = Vector2(941, 483)
 sprite_frames = SubResource("SpriteFrames_107i6")
 animation = &"flying"
 autoplay = "flying"
+frame_progress = 0.633722
 
 [node name="Message" type="TextureRect" parent="AnimatedSprite2D"]
 modulate = Color(1, 1, 1, 0.999173)

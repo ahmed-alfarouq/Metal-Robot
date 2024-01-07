@@ -2,9 +2,8 @@ extends Node2D
 
 const SAVE_FILE_PATH = "user://bestscore.save"
 
-@onready var parallax_bg = $GUI/ParallaxBG
-@onready var main_gui = $GUI
-@onready var main_score = $GUI/Score
+@onready var parallax_bg = %ParallaxBG
+@onready var main_score = %Score
 @onready var is_dead: bool = false
 @onready var is_shooting: bool = false
 @onready var score: int = 0
@@ -21,6 +20,9 @@ func _physics_process(_delta):
 	if play_camera_shake:
 		var rng = RandomNumberGenerator.new()
 		camera.offset = Vector2(rng.randf_range(-20, 20), rng.randf_range(20, -20))
+	
+	if Input.is_action_just_pressed("pause"):
+		Globals.pause_game()
 
 func shake_camera(shaking_time):
 	camera = Camera2D.new()

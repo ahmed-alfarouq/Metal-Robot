@@ -221,7 +221,7 @@ offset_right = 119.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_type_variation = &"ScorePanel1"
+theme_type_variation = &"ScorePanel"
 
 [node name="Score" type="Label" parent="CanvasLayer/Score/ScoreCirlce"]
 unique_name_in_owner = true
@@ -259,7 +259,7 @@ offset_right = 127.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_type_variation = &"ScorePanel1"
+theme_type_variation = &"ScorePanel"
 
 [node name="BestScore" type="Label" parent="CanvasLayer/Score/BestScoreCirlce"]
 unique_name_in_owner = true

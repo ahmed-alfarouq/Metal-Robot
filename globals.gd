@@ -1,5 +1,7 @@
 extends Node
 
+const PAUSE_MENU: PackedScene = preload("res://menus/pause_menu.tscn")
+
 var loading_screen_scene: PackedScene = preload("res://loading_screen/loading_screen.tscn")
 var transition_screen_scene: PackedScene = preload("res://scene_transition/scene_transition.tscn")
 var screaming_times: int = 3
@@ -114,3 +116,9 @@ func valid_player_name(n):
 	if n.find(" ") == 1:
 		return false
 	return true
+
+func pause_game():
+	var tree = get_tree()
+	var pause_menu = PAUSE_MENU.instantiate()
+	tree.paused = true
+	tree.get_root().add_child(pause_menu)

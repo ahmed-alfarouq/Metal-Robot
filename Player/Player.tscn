@@ -111,7 +111,7 @@ height = 146.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(500, 200)
-collision_mask = 26
+collision_mask = 30
 script = ExtResource("1_bdrq7")
 pistol_resource = SubResource("SpriteFrames_mpci6")
 flying_speed = 550
@@ -119,7 +119,7 @@ flying_speed = 550
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("14_wya43")
-animation = &"screaming"
+animation = &"flying_up"
 autoplay = "flying_up"
 script = ExtResource("15_venmw")
 
