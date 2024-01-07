@@ -47,6 +47,7 @@ func shake_camera(shaking_time):
 # Signals
 func _on_player_dies():
 	shake_camera(1)
+	parallax_bg.set_process(false)
 	Globals.score = score
 	if score > Globals.best_score:
 		Globals.save_score(score)

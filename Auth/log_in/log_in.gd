@@ -19,7 +19,7 @@ func _on_login_pressed():
 		error_message.visible = true
 		error_message.text = "Player name can't contain spaces"
 	else:
-		SilentWolf.Auth.login_player(player_name.text.dedent(), password.text, true)
+		SilentWolf.Auth.login_player(player_name.text.dedent().to_upper(), password.text, true)
 
 func _on_forget_password_pressed():
 	Globals.change_scene("res://auth/reset_password/reset_password.tscn", "transition")
@@ -38,7 +38,7 @@ func _on_login_complete(sw_result: Dictionary) -> void:
 		Globals.load_best_score()
 		Globals.change_scene("res://menus/main_menu.tscn", "transition")
 	elif error.contains("User is not confirmed"):
-		SilentWolf.Auth.tmp_username = player_name.text.dedent()
+		SilentWolf.Auth.tmp_username = player_name.text.dedent().to_upper()
 		Globals.change_scene("res://auth/email_verification/email_verification.tscn", "transition")
 	elif error.contains("Missing required parameter USERNAME"):
 		processing.visible = false

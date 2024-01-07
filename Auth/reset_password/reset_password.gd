@@ -11,6 +11,7 @@ signal safe_to_load
 @onready var processing = %Processing
 @onready var send_code_btn = %SendCode
 @onready var reset_btn = %ResetPassowrd
+@onready var login_btn = %Login
 @onready var reset_code_container = %ResetCodeContainer
 @onready var reset_password_container = %ResetPasswordContainer
 @onready var anim_player = %AnimationPlayer
@@ -20,23 +21,24 @@ func _ready():
 	SilentWolf.Auth.sw_reset_password_complete.connect(_on_reset_password_complete)
 
 func display_error(error):
-	if processing.visible:
-		processing.visible = false
-
-	if !error_message.visible:
-		error_message.visible = true
-
+	processing.visible = false
+	error_message.visible = true
+	login_btn.disabled = false
+	send_code_btn.disabled = false
+	reset_btn.disabled = false
 	error_message.text = error
 
 # Signals
 func _on_send_code_pressed():
 	send_code_btn.disabled = true
+	login_btn.disabled = true
+
 	if !Globals.valid_player_name(player_name.text):
 		display_error("Player name can't contain spaces.")
 	else:
 		processing.visible = true
 		error_message.visible = false
-		SilentWolf.Auth.request_player_password_reset(player_name.text.dedent())
+		SilentWolf.Auth.request_player_password_reset(player_name.text.dedent().to_upper())
 
 func _on_reset_passowrd_pressed():
 	reset_btn.disabled = true
@@ -46,7 +48,7 @@ func _on_reset_passowrd_pressed():
 	processing.visible = true
 
 	SilentWolf.Auth.reset_player_password(
-			player_name.text.dedent(),
+			player_name.text.dedent().to_upper(),
 			code.text,
 			password.text,
 			confirm_password.text
@@ -67,11 +69,13 @@ func _on_request_password_complete(sw_result: Dictionary) -> void:
 		processing.visible = false
 		reset_code_container.visible = false
 		send_code_btn.visible = false
+		login_btn.disabled = false
 		await safe_to_load
 		reset_password_container.visible = true
 		reset_btn.visible = true
 	else:
 		send_code_btn.disabled = false
+		login_btn.disabled = false
 		processing.visible = false
 		error_message.visible = true
 		error_message.text = sw_result.error
@@ -81,11 +85,8 @@ func _on_reset_password_complete(sw_result: Dictionary) -> void:
 	if sw_result.success:
 		Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")
 	elif error.contains("Password must have numeric characters"):
-		reset_btn.disabled = false
 		display_error("Password must have at least one number")
 	elif error.contains("Password must have uppercase characters"):
-		reset_btn.disabled = false
 		display_error("Password must have at least one uppercase character")
 	else:
-		reset_btn.disabled = false
 		display_error(error)

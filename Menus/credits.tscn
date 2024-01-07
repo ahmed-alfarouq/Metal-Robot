@@ -136,4 +136,34 @@ grow_vertical = 0
 scale = Vector2(1.12, 1.36)
 text = "Go Back"
 
+[node name="Godot" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -833.5
+offset_top = -59.0
+offset_right = 833.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur"
+
+[node name="Godot2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -833.5
+offset_top = -59.0
+offset_right = 833.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Copyright (c) 2014-present Godot Engine contributors. Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

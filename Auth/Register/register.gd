@@ -6,6 +6,7 @@ extends Control
 @onready var error_message = %ErrorMessage
 @onready var processing = %Processing
 @onready var register_btn = %Register
+@onready var login_btn = %LogIn
 
 func _ready():
 	# Connect signup signal
@@ -20,7 +21,8 @@ func _on_register_pressed():
 		error_message.visible = false
 		processing.visible = true
 		register_btn.disabled = true
-		SilentWolf.Auth.register_player(player_name.text.dedent(), email.text, password.text, confirm_password.text)
+		login_btn.disabled = true
+		SilentWolf.Auth.register_player(player_name.text.dedent().to_upper(), email.text, password.text, confirm_password.text)
 
 func _on_log_in_pressed():
 	Globals.change_scene("res://auth/log_in/log_in.tscn", "transition")
@@ -38,4 +40,5 @@ func _on_registration_complete(sw_result: Dictionary) -> void:
 		error_message.visible = true
 		processing.visible = false
 		register_btn.disabled = false
-		error_message.text = str(sw_result.error)
+		login_btn.disabled = false
+		error_message.text = sw_result.error

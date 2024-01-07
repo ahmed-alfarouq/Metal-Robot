@@ -119,17 +119,16 @@ text = "Code resend failed for player:"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="WarningMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="AlertMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = -30
 
-[node name="WarningMessage" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/WarningMarginContainer"]
+[node name="AlertMessage" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/AlertMarginContainer"]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(600, 80)
 layout_mode = 2
 theme_type_variation = &"WarningMessage"
-text = "Code resend successful for player: ahmed omar"
 vertical_alignment = 1
 autowrap_mode = 3
 

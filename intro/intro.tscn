@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlvxbaffu3sj6"]
+[gd_scene load_steps=20 format=3 uid="uid://dlvxbaffu3sj6"]
 
 [ext_resource type="Script" path="res://intro/intro.gd" id="1_5iidm"]
 [ext_resource type="Texture2D" uid="uid://cjino7w7oqkhv" path="res://assets/animation/player_animation/base/flying_up/flying_up_01.png" id="1_iesv3"]
 [ext_resource type="Texture2D" uid="uid://ciiu1t1cko23m" path="res://assets/animation/player_animation/base/flying_up/flying_up_02.png" id="2_nx0v4"]
+[ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="2_qa4gl"]
 [ext_resource type="Texture2D" uid="uid://cb4f4o8cyumkk" path="res://assets/animation/player_animation/base/flying_up/flying_up_03.png" id="3_og3vg"]
+[ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="3_ounqm"]
 [ext_resource type="Texture2D" uid="uid://c6hhh8tpltiwi" path="res://assets/animation/player_animation/base/flying_up/flying_up_04.png" id="4_xxdur"]
 [ext_resource type="Texture2D" uid="uid://mdn46axddti7" path="res://assets/animation/player_animation/base/flying_up/flying_up_05.png" id="5_jpsuk"]
 [ext_resource type="Texture2D" uid="uid://3p578shuicfo" path="res://assets/animation/player_animation/base/flying_up/flying_up_06.png" id="6_nm31f"]
@@ -65,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-100, 500), Vector2(960, 500)]
+"values": [Vector2(-100, 500), Vector2(940, 500)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -129,7 +131,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 500), Vector2(960, 480)]
+"values": [Vector2(940, 500), Vector2(940, 480)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2q5ij"]
@@ -147,24 +149,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5iidm")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.286275, 0.286275, 0.286275, 0.278431)
+[node name="ParallaxBG" parent="." instance=ExtResource("2_qa4gl")]
+unique_name_in_owner = true
+
+[node name="GroundSpawner" parent="." instance=ExtResource("3_ounqm")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(941, 483)
+position = Vector2(960, 500)
+scale = Vector2(1.04134, 1.04134)
 sprite_frames = SubResource("SpriteFrames_107i6")
 animation = &"flying"
 autoplay = "flying"
 frame_progress = 0.633722
 
 [node name="Message" type="TextureRect" parent="AnimatedSprite2D"]
-modulate = Color(1, 1, 1, 0.999173)
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.168627, 0.168627, 0.168627, 1)
 offset_left = 81.0
 offset_top = -220.243
 offset_right = 298.0
@@ -178,6 +178,7 @@ offset_left = 15.0
 offset_top = 29.0
 offset_right = 202.0
 offset_bottom = 137.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1

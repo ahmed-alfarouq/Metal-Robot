@@ -5,7 +5,7 @@ const GROUND = preload("res://ground/ground.tscn")
 @export var ground_speed: int = 350
 
 @onready var screen = get_viewport().get_visible_rect()
-@onready var main = get_node("/root/MainLevel")
+@onready var main = get_node_or_null("/root/MainLevel")
 @onready var increase_speed_timer = $IncreaseSpeedTimer
 @onready var prev_ground_speed: int = 350
 @onready var ground_copy = GROUND.instantiate()
@@ -22,7 +22,7 @@ func _ready():
 
 
 func _on_remover_body_entered(body):
-	if not main.is_dead:
+	if is_instance_valid(main) && not main.is_dead:
 		ground_copy = GROUND.instantiate()
 		call_deferred("add_child", ground_copy, true)
 		var position_x = ground_width - 10 + snapped(body.position.x, 0.01) # It's plus because the ground position will be negative

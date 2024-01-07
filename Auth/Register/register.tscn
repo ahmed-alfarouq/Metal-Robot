@@ -173,6 +173,7 @@ size_flags_horizontal = 4
 text = "Register"
 
 [node name="LogIn" type="Button" parent="PanelContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

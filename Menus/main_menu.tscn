@@ -178,11 +178,10 @@ layout_mode = 2
 text = "Credits"
 metadata/_edit_lock_ = true
 
-[node name="Settings" type="Button" parent="MainMenu/BtnsVContainer"]
+[node name="Options" type="Button" parent="MainMenu/BtnsVContainer"]
 layout_mode = 2
 disabled = true
-text = "Settings
-"
+text = "Options"
 metadata/_edit_lock_ = true
 
 [node name="BtnsHContainer" type="HBoxContainer" parent="MainMenu"]
@@ -211,6 +210,6 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Ranks" to="." method="_on_ranks_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsVContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MainMenu/BtnsVContainer/Settings" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/BtnsVContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsHContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MainMenu/BtnsHContainer/LogOut" to="." method="_on_log_out_pressed"]

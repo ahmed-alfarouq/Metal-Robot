@@ -113,7 +113,7 @@ func load_best_score():
 			best_score = best_score_data.score
 
 func valid_player_name(n):
-	if n.find(" ") == 1:
+	if n.find(" ") == 1 || n.begins_with(" ") || n.ends_with(" "):
 		return false
 	return true
 
