@@ -213,7 +213,7 @@ func login_player(username: String, password: String, remember_me:bool=false) ->
 		payload["remember_me_expires_in"] = str(SilentWolf.auth_config.saved_session_expiration_days)
 	var payload_for_logging = payload
 	var obfuscated_password = SWUtils.obfuscate_string(payload["password"])
-	print("obfuscated password: " + str(obfuscated_password))
+
 	payload_for_logging["password"] = obfuscated_password
 	SWLogger.debug("SilentWolf login player payload: " + str(payload_for_logging))
 	var request_url = "https://api.silentwolf.com/login_player"
@@ -250,7 +250,7 @@ func logout_player() -> void:
 	SilentWolf.Players.clear_player_data()
 	# remove stored session if any
 	var delete_success = remove_stored_session()
-	print("delete_success: " + str(delete_success))
+
 	sw_access_token = null
 	sw_id_token = null
 	sw_logout_complete.emit()
@@ -400,7 +400,7 @@ func get_anon_user_id() -> String:
 	var anon_user_id = OS.get_unique_id()
 	if anon_user_id == '':
 		anon_user_id = UUID.generate_uuid_v4()
-	print("anon_user_id: " + str(anon_user_id))
+
 	return anon_user_id
 
 

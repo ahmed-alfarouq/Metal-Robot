@@ -152,24 +152,24 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -640.0
-offset_top = -248.0
-offset_right = 640.0
-offset_bottom = -164.0
+offset_left = -537.0
+offset_top = -282.0
+offset_right = 537.0
+offset_bottom = -198.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 200
+theme_override_constants/separation = 250
 
 [node name="Menu" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
 text = "Menu"
 metadata/_edit_lock_ = true
 
-[node name="Leaderboard" type="Button" parent="CanvasLayer/BtnsContainer"]
+[node name="Ranks" type="Button" parent="CanvasLayer/BtnsContainer"]
 layout_mode = 2
-text = "Leaderboard"
+text = "Ranks"
 metadata/_edit_lock_ = true
 
 [node name="Replay" type="Button" parent="CanvasLayer/BtnsContainer"]
@@ -227,6 +227,7 @@ theme_type_variation = &"ScorePanel"
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScoreLabel"
+text = "150"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -265,9 +266,10 @@ theme_type_variation = &"ScorePanel"
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScoreLabel"
+text = "10000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/BtnsContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/BtnsContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="CanvasLayer/BtnsContainer/Ranks" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="CanvasLayer/BtnsContainer/Replay" to="." method="_on_replay_pressed"]

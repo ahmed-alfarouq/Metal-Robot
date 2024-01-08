@@ -5,7 +5,7 @@ extends Control
 
 func _ready():
 	score.text = str(Globals.score)
-	print(Globals.best_score)
+
 	if Globals.score > Globals.best_score:
 		best_score.text = str(Globals.score)
 	else:

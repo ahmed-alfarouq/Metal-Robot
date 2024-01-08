@@ -42,6 +42,8 @@ func _on_send_code_pressed():
 
 func _on_reset_passowrd_pressed():
 	reset_btn.disabled = true
+	login_btn.disabled = true
+
 	if error_message.visible:
 		error_message.visible = false
 

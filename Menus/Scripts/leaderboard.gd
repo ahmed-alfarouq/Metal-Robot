@@ -13,6 +13,9 @@ func _ready():
 	SilentWolf.Scores.sw_get_scores_complete.connect(_on_get_scores_complete)
 	get_scores()
 
+	if Globals.best_score > 0:
+		my_ranking_btn.disabled = false
+
 func get_scores():
 	SilentWolf.Scores.get_scores(50)
 
@@ -50,7 +53,6 @@ func _on_get_scores_complete(sw_result):
 	if scores.size() > 0:
 		add_list(scores)
 		top_10_btn.disabled = false
-		my_ranking_btn.disabled = false
 	else:
 		empty_message.visible = true
 
