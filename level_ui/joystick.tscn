@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgbmb0m3cayks"]
+
+[ext_resource type="Texture2D" uid="uid://d0qckg6kdf727" path="res://assets/ui/level/joystick_inter.png" id="1_n4sh8"]
+[ext_resource type="Script" path="res://level_ui/joystick.gd" id="1_potfd"]
+[ext_resource type="Texture2D" uid="uid://dxtt2wrcnt56r" path="res://assets/ui/level/joystick_outer.png" id="2_duavd"]
+
+[node name="Joystick" type="Node2D"]
+scale = Vector2(1.7, 1.7)
+script = ExtResource("1_potfd")
+
+[node name="JoystickOuter" type="Sprite2D" parent="."]
+texture = ExtResource("2_duavd")
+
+[node name="JoystickInner" type="Sprite2D" parent="."]
+texture = ExtResource("1_n4sh8")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -63.0
+offset_top = -64.0
+offset_right = 70.0
+offset_bottom = 71.0
+pivot_offset = Vector2(1811, -202)
+theme_type_variation = &"FlatButton"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

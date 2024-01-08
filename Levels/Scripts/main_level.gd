@@ -3,7 +3,7 @@ extends Node2D
 const SAVE_FILE_PATH = "user://bestscore.save"
 
 @onready var parallax_bg = %ParallaxBG
-@onready var main_score = %Score
+@onready var main_score = %LevelUI.get_node("%Score")
 @onready var is_dead: bool = false
 @onready var is_shooting: bool = false
 @onready var score: int = 0

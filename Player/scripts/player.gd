@@ -13,6 +13,7 @@ var is_screaming: bool
 
 # On Ready vars
 @onready var main = get_node("/root/MainLevel")
+@onready var joystick = %LevelUI.get_node("%Joystick")
 @onready var player_animation_sprite: AnimatedSprite2D = $PlayerAnimatedSprite
 @onready var weapon: Node2D = $Weapon
 @onready var screaming_area: Area2D = $ScreamingArea
@@ -34,10 +35,18 @@ func _physics_process(_delta):
 
 # Handle start flying & flying animation
 func handle_flying():
-	if Input.is_action_pressed("fly_up") && !main.is_dead:
+	var joystick_pos = joystick.pos_vector
+
+	if (
+		(Input.is_action_pressed("fly_up") || joystick_pos.y < 0) &&
+		!main.is_dead
+		):
 		velocity.y = -flying_speed
 		player_animation_sprite.flying_up()
-	elif Input.is_action_pressed("fly_down") && !main.is_dead:
+	elif (
+		(Input.is_action_pressed("fly_down") || joystick_pos.y > 0) &&
+		!main.is_dead
+		):
 		velocity.y = flying_speed
 		player_animation_sprite.flying_down()
 	else:

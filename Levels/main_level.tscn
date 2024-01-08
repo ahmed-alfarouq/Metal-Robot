@@ -1,16 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw0grikohtfk8"]
+[gd_scene load_steps=11 format=3 uid="uid://bw0grikohtfk8"]
 
 [ext_resource type="Script" path="res://levels/scripts/main_level.gd" id="1_7q5bb"]
 [ext_resource type="PackedScene" uid="uid://vsmad7qruv46" path="res://player/player.tscn" id="2_d0vbx"]
 [ext_resource type="PackedScene" uid="uid://bqbachg4pcrpt" path="res://pipes/pipe_spawner.tscn" id="2_xss3r"]
 [ext_resource type="PackedScene" uid="uid://ck1h0pp2evjxr" path="res://ground/ground_spawner.tscn" id="3_fuved"]
 [ext_resource type="PackedScene" uid="uid://5pyapfi0cabv" path="res://backgrounds/main/parallax_bg.tscn" id="4_3tcsj"]
-[ext_resource type="Texture2D" uid="uid://cjtgt7cxaku1i" path="res://assets/ui/level/medal.png" id="5_kgbyo"]
-[ext_resource type="Texture2D" uid="uid://c2ylwwc4fd7dg" path="res://assets/ui/controls/arrow_up.png" id="5_mxs1o"]
-[ext_resource type="Texture2D" uid="uid://dm221i67rpa04" path="res://assets/ui/controls/arrow_down.png" id="6_fsge7"]
-[ext_resource type="Texture2D" uid="uid://11lk0al5wgc1" path="res://assets/ui/level/shooting_icon.png" id="7_xhgdf"]
-[ext_resource type="Texture2D" uid="uid://c0dodn7xauwpf" path="res://assets/ui/level/screaming_icon.png" id="8_3d31s"]
-[ext_resource type="Texture2D" uid="uid://h1r2y17tacw1" path="res://assets/ui/level/pause-button.png" id="11_rrte7"]
+[ext_resource type="PackedScene" uid="uid://cf5n6pw4s2h3s" path="res://level_ui/level_ui.tscn" id="6_kk0cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl534"]
 size = Vector2(1954, 16)
@@ -73,103 +68,11 @@ shape = SubResource("RectangleShape2D_04yfw")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="ScorePanelContainer" type="PanelContainer" parent="GUI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -142.5
-offset_top = 15.0
-offset_right = 142.5
-offset_bottom = 107.0
-grow_horizontal = 2
-theme_type_variation = &"ScoreCoinsPanel"
-
-[node name="SplitContainer" type="HSplitContainer" parent="GUI/ScorePanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 80
-metadata/_edit_lock_ = true
-
-[node name="Score" type="Label" parent="GUI/ScorePanelContainer/SplitContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_type_variation = &"ScoreLabel"
-theme_override_font_sizes/font_size = 40
-text = "2500"
-
-[node name="Icon" type="TextureRect" parent="GUI/ScorePanelContainer/SplitContainer"]
-layout_mode = 2
-texture = ExtResource("5_kgbyo")
-expand_mode = 2
-
-[node name="LeftContainer" type="VBoxContainer" parent="GUI"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -274.0
-offset_right = 296.0
-grow_vertical = 0
-
-[node name="Up" type="TouchScreenButton" parent="GUI/LeftContainer"]
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(127, -300)
-scale = Vector2(3, 3)
-texture_normal = ExtResource("5_mxs1o")
-passby_press = true
-action = "fly_up"
-visibility_mode = 1
-
-[node name="Down" type="TouchScreenButton" parent="GUI/LeftContainer"]
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(130, -27)
-scale = Vector2(3, 3.025)
-texture_normal = ExtResource("6_fsge7")
-passby_press = true
-action = "fly_down"
-visibility_mode = 1
-
-[node name="RightContainer" type="HBoxContainer" parent="GUI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -410.0
-offset_top = -344.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="shoot" type="TouchScreenButton" parent="GUI/RightContainer"]
-position = Vector2(-64, -166)
-scale = Vector2(1.83089, 1.83089)
-texture_normal = ExtResource("7_xhgdf")
-action = "shooting"
-visibility_mode = 1
-
-[node name="Scream" type="TouchScreenButton" parent="GUI/RightContainer"]
-position = Vector2(143, 48)
-scale = Vector2(1.87916, 1.87916)
-texture_normal = ExtResource("8_3d31s")
-action = "screaming"
-visibility_mode = 1
-
 [node name="ParallaxBG" parent="GUI" instance=ExtResource("4_3tcsj")]
 unique_name_in_owner = true
 
-[node name="MarginContainer" type="MarginContainer" parent="GUI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -127.0
-offset_bottom = 124.0
-grow_horizontal = 0
-
-[node name="Pause" type="TouchScreenButton" parent="GUI/MarginContainer"]
-position = Vector2(-31, 33)
-scale = Vector2(0.197266, 0.197266)
-texture_normal = ExtResource("11_rrte7")
-action = "pause"
+[node name="LevelUI" parent="GUI" instance=ExtResource("6_kk0cw")]
+unique_name_in_owner = true
 
 [connection signal="dies" from="Player" to="." method="_on_player_dies"]
 [connection signal="area_entered" from="Areas/ItemsRemover" to="." method="_on_items_remover_area_entered"]

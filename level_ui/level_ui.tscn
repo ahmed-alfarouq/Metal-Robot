@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf5n6pw4s2h3s"]
+
+[ext_resource type="Script" path="res://level_ui/level_ui.gd" id="1_fno5x"]
+[ext_resource type="Texture2D" uid="uid://cjtgt7cxaku1i" path="res://assets/ui/level/medal.png" id="1_ygfah"]
+[ext_resource type="PackedScene" uid="uid://dgbmb0m3cayks" path="res://level_ui/joystick.tscn" id="3_0s88h"]
+[ext_resource type="Texture2D" uid="uid://11lk0al5wgc1" path="res://assets/ui/level/shooting_icon.png" id="4_88qg0"]
+[ext_resource type="Texture2D" uid="uid://c0dodn7xauwpf" path="res://assets/ui/level/screaming_icon.png" id="5_58ss3"]
+[ext_resource type="Texture2D" uid="uid://h1r2y17tacw1" path="res://assets/ui/level/pause-button.png" id="6_od11e"]
+
+[node name="LevelUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fno5x")
+metadata/_edit_horizontal_guides_ = [976.0, 618.0]
+
+[node name="ScorePanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 17.0
+offset_right = 148.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_type_variation = &"ScoreCoinsPanel"
+
+[node name="SplitContainer" type="HSplitContainer" parent="ScorePanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+metadata/_edit_lock_ = true
+
+[node name="Score" type="Label" parent="ScorePanelContainer/SplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ScoreLabel"
+theme_override_font_sizes/font_size = 40
+text = "2500"
+
+[node name="Icon" type="TextureRect" parent="ScorePanelContainer/SplitContainer"]
+layout_mode = 2
+texture = ExtResource("1_ygfah")
+expand_mode = 2
+
+[node name="LeftContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -288.0
+offset_right = 273.0
+grow_vertical = 0
+
+[node name="Joystick" parent="LeftContainer" instance=ExtResource("3_0s88h")]
+unique_name_in_owner = true
+position = Vector2(274, 8)
+
+[node name="RightContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -410.0
+offset_top = -344.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="shoot" type="TouchScreenButton" parent="RightContainer"]
+position = Vector2(-64, -166)
+scale = Vector2(1.83089, 1.83089)
+texture_normal = ExtResource("4_88qg0")
+action = "shooting"
+visibility_mode = 1
+
+[node name="Scream" type="TouchScreenButton" parent="RightContainer"]
+position = Vector2(143, 48)
+scale = Vector2(1.87916, 1.87916)
+texture_normal = ExtResource("5_58ss3")
+action = "screaming"
+visibility_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -127.0
+offset_bottom = 124.0
+grow_horizontal = 0
+
+[node name="Pause" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(-14, 13)
+scale = Vector2(0.197266, 0.197266)
+texture_normal = ExtResource("6_od11e")
+action = "pause"
